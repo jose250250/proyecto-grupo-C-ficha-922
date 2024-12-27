@@ -1,0 +1,50 @@
+body{
+    background-image: url(../Assets/recursos/pag2.jpg);
+    background-size: cover;
+    color: green;
+}
+.btn-custom {
+    background-color: limegreen;
+    border-radius: 25px;
+    color: black;
+    font-weight: bold;
+  }
+.btn-nav {
+    border-radius: 20px;
+    margin-right: 10px;
+  }
+.danger{
+    background: red;
+}
+.inicio{
+    background: green;
+}
+
+
+/*pruebas */
+.title{
+    text-align: center;
+    font-size: 2.5rem;
+    margin-top: 20px;
+    font-weight: bold;
+}
+.img-container img {
+    width: 100%;
+    border-radius: 10px;
+  }
+.btn-container {
+    display: flex;
+    justify-content: center;
+  }
+.nav-buttons {
+    text-align: right;
+    padding-right: 30px;
+  }
+.nav-buttons a {
+    font-weight: bold;
+    margin: 5px;
+    padding: 10px 20px;
+  }
+.row-spacing {
+    margin-bottom: 160px; 
+  }
