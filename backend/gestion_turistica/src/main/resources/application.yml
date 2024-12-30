@@ -1,6 +1,6 @@
 spring:
   application:
-    name: gestio_turistica
+    name: gestion_turistica
   datasource:
     hikari:
       maximum-pool-size: 5

@@ -1,4 +1,4 @@
-package co.edu.sena.gestionTuristica;
+package co.edu.sena.gestion_turistica;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
