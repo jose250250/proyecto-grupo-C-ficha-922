@@ -1,4 +1,4 @@
-package co.edu.sena.gestion_turistica.controller;
+package co.edu.sena.gestion_turistica.bk;
 
 
 import org.springframework.web.bind.annotation.RestController;
@@ -34,13 +34,13 @@ dto.setSegundoNombre("test");
 dto.setPrimerApellido("persa");
 dto.setSegundoApellido("marcos");
 dto.setTipoIdentificacion("cc");
-dto.setIdentificacion("1053423443");
+dto.setIdentificacion("1423443");
 dto.setFechaNacimiento(new Date(0));
 dto.setCelular("3233244");
 dto.setIdMunicipio(323);
 dto.setDireccion("calle 2 djj 34");
 dto.setGenero("f");
-dto.setCorreo("jose@dksksms");
+dto.setCorreo("jose@dsms");
 
 service.save(dto);
 
