@@ -3,6 +3,7 @@ package co.edu.sena.gestion_turistica.service;
 
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -65,6 +66,65 @@ public List<PersonaDto> getAll(){
       return dtos;
     }
     
+
+    public PersonaDto getById(Long id) {
+      
+        Optional<PersonaEntity> optionalPersona = this.repository.findById(id);
+        if (optionalPersona.isPresent()) {
+            PersonaEntity entity = optionalPersona.get();
+            PersonaDto dto = new PersonaDto();
+            dto.setId(entity.getId());
+            dto.setPrimerNombre(entity.getPrimerNombre());
+            dto.setSegundoNombre(entity.getSegundoNombre());
+            dto.setPrimerApellido(entity.getPrimerApellido());
+            dto.setSegundoApellido(entity.getSegundoApellido());
+            dto.setFechaNacimiento(entity.getFechaNacimiento());
+            dto.setTipoIdentificacion(entity.getTipoIdentificacion());
+            dto.setIdentificacion(entity.getIdentificacion());  
+            dto.setCelular(entity.getCelular());
+            dto.setIdMunicipio(entity.getIdMunicipio());
+            dto.setDireccion(entity.getDireccion());
+            dto.setGenero(entity.getGenero());
+            dto.setCorreo(entity.getCorreo());  
+            return dto;
+        }
+
+        return null;
+    }
+
+
+public void delete(Long id) {
+    this.repository.deleteById(id);
+}
+
+public PersonaDto update(PersonaDto newdata){
+
+    Optional<PersonaEntity> optionalPersona = this.repository.findById(newdata.getId());
+    if (optionalPersona.isPresent()) {
+        PersonaEntity entity = optionalPersona.get();        
+       
+        entity.setPrimerNombre(newdata.getPrimerNombre());
+        entity.setSegundoNombre(newdata.getSegundoNombre());
+        entity.setPrimerApellido(newdata.getPrimerApellido());
+        entity.setSegundoApellido(newdata.getSegundoApellido());
+        entity.setFechaNacimiento(newdata.getFechaNacimiento());
+        entity.setTipoIdentificacion(newdata.getTipoIdentificacion());
+        entity.setIdentificacion(newdata.getIdentificacion());  
+        entity.setCelular(newdata.getCelular());
+        entity.setIdMunicipio(newdata.getIdMunicipio());
+        entity.setDireccion(newdata.getDireccion());
+        entity.setGenero(newdata.getGenero());
+        entity.setCorreo(newdata.getCorreo());
+
+        this.repository.save(entity);
+
+        return newdata;
+}
+
+return null;
+
+
 }
 
 
+}
