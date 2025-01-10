@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 30-12-2024 a las 16:10:13
+-- Tiempo de generación: 10-01-2025 a las 16:08:32
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -1293,18 +1293,26 @@ INSERT INTO `paquete_turistico` (`id`, `nombre`, `clase`, `descripcion`, `id_mun
 CREATE TABLE `persona` (
   `id` int(11) NOT NULL COMMENT 'llave primaria de cada usuario',
   `primer_nombre` varchar(30) NOT NULL COMMENT 'Primer nombre del usuario',
-  `segundo-nombre(opcional)` varchar(30) DEFAULT NULL COMMENT 'El segundo nombre del usuario , no es obligatorio',
+  `segundo_nombre` varchar(30) DEFAULT NULL COMMENT 'El segundo nombre del usuario , no es obligatorio',
   `primer_apellido` varchar(30) NOT NULL COMMENT 'El primer apellido del usuario, es obligatorio',
-  `segundo_apellido (opcional)` varchar(30) DEFAULT NULL COMMENT 'EL segundo apellido del usuario, no es obligatorio',
+  `segundo_apellido` varchar(30) DEFAULT NULL COMMENT 'EL segundo apellido del usuario, no es obligatorio',
   `tipo_identificacion` enum('cc','pasaporte','extrangeria') NOT NULL COMMENT 'EL tipo de identificacion del usuario, se usa un indice para enlazar la tabla de tipo de identificacion',
-  `identificacion` int(11) NOT NULL COMMENT 'El nu mero de identificacion del usuario, no se coloca el valor unico por que debe diferir entre el tipo de identificacion.',
+  `identificacion` int(15) NOT NULL,
   `fecha_nacimiento` date NOT NULL,
   `celular` varchar(20) NOT NULL COMMENT 'El numero de celular del usuario, se usa modo varchar debido a que no se usara para realizar operaciones matematicas',
   `id_municipio` int(11) NOT NULL,
   `direccion` varchar(30) NOT NULL COMMENT 'Direccion del usuario',
-  `genero` enum('masculino','femenino','otro') NOT NULL COMMENT 'Genero de el usuario',
-  `correo` varchar(100) NOT NULL
+  `genero` enum('m','f','otro') NOT NULL COMMENT 'Genero de el usuario',
+  `correo` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `persona`
+--
+
+INSERT INTO `persona` (`id`, `primer_nombre`, `segundo_nombre`, `primer_apellido`, `segundo_apellido`, `tipo_identificacion`, `identificacion`, `fecha_nacimiento`, `celular`, `id_municipio`, `direccion`, `genero`, `correo`) VALUES
+(12, 'juliytfrlo', 'jose', 'cayio', 'hjh', 'cc', 78884238, '2008-11-22', '43234433', 403, 'jffhskfk', 'm', 'jfj@jhsuytlllj'),
+(13, 'julilo', 'jose', 'calio', 'hjh', 'cc', 234238, '2008-11-22', '43234433', 403, 'jffhskfk', 'm', 'jfj@jhshj');
 
 -- --------------------------------------------------------
 
@@ -1455,6 +1463,8 @@ ALTER TABLE `paquete_turistico`
 --
 ALTER TABLE `persona`
   ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `identificacion` (`identificacion`),
+  ADD UNIQUE KEY `correo` (`correo`),
   ADD KEY `id_municipio` (`id_municipio`);
 
 --
@@ -1530,7 +1540,7 @@ ALTER TABLE `paquete_turistico`
 -- AUTO_INCREMENT de la tabla `persona`
 --
 ALTER TABLE `persona`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'llave primaria de cada usuario', AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'llave primaria de cada usuario', AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT de la tabla `restaurante`
