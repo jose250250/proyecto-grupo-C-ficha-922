@@ -6,10 +6,7 @@ import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-
 import co.edu.sena.gestion_turistica.dto.RestauranteDto;
-
 import co.edu.sena.gestion_turistica.entity.RestauranteEntity;
 import co.edu.sena.gestion_turistica.repository.RestauranteRepository;
 
@@ -73,4 +70,31 @@ public class RestauranteService {
   return null;
 
 }
+
+public void delete(Long id) {
+    this.repository.deleteById(id);
+}
+
+public RestauranteDto update(RestauranteDto newdata){
+
+    Optional<RestauranteEntity> optionalRestaurante = this.repository.findById(newdata.getId());
+    if (optionalRestaurante.isPresent()) {
+        RestauranteEntity entity = optionalRestaurante.get();        
+        
+        entity.setNombre(newdata.getNombre());
+        entity.setIdMunicipio(newdata.getIdMunicipio());
+        entity.setCelular(newdata.getCelular());
+        entity.setDireccion(newdata.getDireccion());
+       
+        this.repository.save(entity);
+
+        return newdata;
+}
+
+return null;
+
+
+}
+
+
 }
