@@ -73,6 +73,7 @@ public class RestauranteService {
 
 public void delete(Long id) {
     this.repository.deleteById(id);
+    
 }
 
 public RestauranteDto update(RestauranteDto newdata){
