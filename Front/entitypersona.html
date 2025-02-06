@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Persona </title>
+</head>
+<body class="container 4">
+
+    <h2 class="text-center">Registro de Persona</h2>
+    <form id="personaForm" class="primernombre">
+        <div class="Nombre">
+            <label class="form-label">Primer Nombre</label>
+            <input type="text" class="form-control" id="primerNombre" required>
+        </div>
+        <div class="Nombre2">
+            <label class="form-label">Segundo Nombre</label>
+            <input type="text" class="form-control" id="segundoNombre">
+        </div>
+        <div class="Apellido1">
+            <label class="form-label">Primer Apellido</label>
+            <input type="text" class="form-control" id="primerApellido" required>
+        </div>
+        <div class="Apellido2">
+            <label class="form-label">Segundo Apellido</label>
+            <input type="text" class="form-control" id="segundoApellido">
+        </div>
+        <div class="identificaciontipo">
+            <label class="form-label">Tipo de Identificación</label>
+            <input type="text" class="form-control" id="tipoIdentificacion" required>
+        </div>
+        <div class="identificacion">
+            <label class="form-label">Identificación</label>
+            <input type="text" class="form-control" id="identificacion" required>
+        </div>
+        <div class="fechaNacimiento">
+            <label class="form-label">Fecha de Nacimiento</label>
+            <input type="date" class="form-control" id="fechaNacimiento" required>
+        </div>
+        <div class="genero">
+            <label class="form-label">Género</label>
+            <select class="form-control" id="genero" required>
+                <option value="Masculino">Masculino</option>
+                <option value="Femenino">Femenino</option>
+                <option value="Otro">Otro</option>
+            </select>
+        </div>
+        <div class="celular">
+            <label class="form-label">Celular</label>
+            <input type="text" class="form-control" id="celular" required>
+        </div>
+        <div class="Municipio">
+            <label class="form-label">ID Municipio</label>
+            <input type="number" class="form-control" id="idMunicipioPersona" required>
+        </div>
+        <div class="dirreccion">
+            <label class="form-label">Dirección</label>
+            <input type="text" class="form-control" id="direccion">
+        </div>
+        <div class="correoelectronico">
+            <label class="form-label">Correo Electrónico</label>
+            <input type="email" class="form-control" id="correo">
+        </div>
+        <button type="submit" class="btn btn-primary">Registrar Persona</button>
+    </form>
