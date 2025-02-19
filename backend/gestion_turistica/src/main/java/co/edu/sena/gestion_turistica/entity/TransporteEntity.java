@@ -23,7 +23,7 @@ public class TransporteEntity {
      private String nombre;
 
      @Column(name="id_municipio") 
-     private String IdMunicipio;
+     private long IdMunicipio;
 
      @Column(name="celular")
      private String celular;
