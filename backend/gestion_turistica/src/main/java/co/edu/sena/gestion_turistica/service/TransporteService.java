@@ -3,6 +3,7 @@ package co.edu.sena.gestion_turistica.service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -45,10 +46,50 @@ public class TransporteService {
     return dtos;
     }
     
+    public TransporteDto getById(long id){
 
-    
+        Optional<TransporteEntity> opcionalTransporte = this.repository.findById(id);
+          
+        if (opcionalTransporte.isPresent()) {
+            TransporteEntity entity = opcionalTransporte.get();
+            TransporteDto dto = new TransporteDto();
+            dto.setId(entity.getId());
+            dto.setNombre(entity.getNombre());
+            dto.setIdMunicipio(entity.getIdMunicipio());
+            dto.setCelular(entity.getCelular());
+            return dto;
+            
+        }
+        return null;
+    }
 
+    public void delete(Long id) {
+        this.repository.deleteById(id);
+    }
+     
+    public TransporteDto update(TransporteDto newdata){
 
+       Optional<TransporteEntity> optionalTransporte =  this.repository.findById(newdata.getId());
 
+       if (optionalTransporte.isPresent()) {
+           TransporteEntity entity = optionalTransporte.get();
+           entity.setNombre(newdata.getNombre());
+           entity.setIdMunicipio(newdata.getIdMunicipio());
+           entity.setCelular(newdata.getCelular());
 
+           this.repository.save(entity);
+
+           return newdata;
+        
+       }
+       return null;
+    }
 }
+
+
+
+
+
+
+
+
