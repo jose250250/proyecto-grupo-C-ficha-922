@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 10-01-2025 a las 16:08:32
+-- Tiempo de generación: 21-02-2025 a las 15:57:29
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -117,22 +117,23 @@ CREATE TABLE `detalle_persona_paquete` (
 
 CREATE TABLE `hotel` (
   `id` int(11) NOT NULL,
-  `nombre_hotel` varchar(30) NOT NULL,
+  `nombre` varchar(30) NOT NULL,
   `id_municipio` int(11) NOT NULL,
-  `celular` varchar(15) NOT NULL
+  `celular` varchar(15) NOT NULL,
+  `direccion` varchar(60) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `hotel`
 --
 
-INSERT INTO `hotel` (`id`, `nombre_hotel`, `id_municipio`, `celular`) VALUES
-(3, 'Hotel casa blanca', 249, '32123231'),
-(4, 'hotel san antonio', 791, '31123211'),
-(5, 'hotel san roque', 171, '321232323'),
-(6, 'hotel el palmar', 57, '32123212'),
-(7, 'hotel los robles', 877, '321232323'),
-(8, 'hotel san francisco', 249, '3123344433');
+INSERT INTO `hotel` (`id`, `nombre`, `id_municipio`, `celular`, `direccion`) VALUES
+(3, 'Hotel casa blanca', 249, '32123231', 'calle 3 n 4-3'),
+(4, 'hotel san antonio', 791, '31123211', 'valle 2 d 4-3'),
+(5, 'hotel san roque', 171, '321232323', '25 de diciembre -32'),
+(6, 'hotel el palmar', 57, '32123212', 'cra 3 n4-32'),
+(7, 'hotel los robles', 877, '321232323', 'hab 34-54'),
+(8, 'hotel san francisco', 249, '3123344433', 'cra 3 n4-3243');
 
 -- --------------------------------------------------------
 
@@ -1323,7 +1324,7 @@ INSERT INTO `persona` (`id`, `primer_nombre`, `segundo_nombre`, `primer_apellido
 CREATE TABLE `restaurante` (
   `id` int(11) NOT NULL,
   `nombre` varchar(50) NOT NULL,
-  `id_mmunicipio` int(11) NOT NULL,
+  `id_municipio` int(11) NOT NULL,
   `celular` varchar(20) NOT NULL,
   `direccion` varchar(60) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -1332,17 +1333,18 @@ CREATE TABLE `restaurante` (
 -- Volcado de datos para la tabla `restaurante`
 --
 
-INSERT INTO `restaurante` (`id`, `nombre`, `id_mmunicipio`, `celular`, `direccion`) VALUES
+INSERT INTO `restaurante` (`id`, `nombre`, `id_municipio`, `celular`, `direccion`) VALUES
 (1, 'restaurante la zazon', 249, '32121232', 'calle 3 rde34'),
-(2, 'restaurante la abuela', 249, '321232211', 'cl 34 cr 34-3'),
-(3, 'restaurante caribe', 171, '32121232', 'calle 3 rde34'),
+(3, 'restaurante el caribe', 171, '32121232', 'cra 3 rde34'),
 (4, 'restaurante calbrasas', 171, '212321122', 'cl 34 cr 34-333'),
 (5, 'restaurante la olla', 57, '321232122', 'calle 3 rde3423'),
 (6, 'restaurante grandolo', 57, '2323231', 'cl 34 cr 34-22'),
 (7, 'restaurante el fogon', 791, '32122122', 'calle 3 rd423'),
 (8, 'restaurante grande', 791, '232323231', 'cl 34 cr 3-2'),
 (9, 'restaurante la fogata', 877, '32122122', 'calle 3 d423'),
-(10, 'restaurante holan', 877, '23232221', 'cl 34 cr 33-2');
+(10, 'restaurante holan', 877, '23232221', 'cl 34 cr 33-2'),
+(14, 'la zasonn', 345, '3212314354', 'calle 24 n 4356'),
+(15, 'la trasnosonn', 345, '314354', 'calle n 4356');
 
 -- --------------------------------------------------------
 
@@ -1373,7 +1375,7 @@ INSERT INTO `rol` (`id`, `nombre`) VALUES
 CREATE TABLE `transporte` (
   `id` int(11) NOT NULL,
   `nombre` varchar(30) NOT NULL,
-  `municipio` int(11) NOT NULL,
+  `id_municipio` int(11) NOT NULL,
   `celular` varchar(15) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -1381,7 +1383,7 @@ CREATE TABLE `transporte` (
 -- Volcado de datos para la tabla `transporte`
 --
 
-INSERT INTO `transporte` (`id`, `nombre`, `municipio`, `celular`) VALUES
+INSERT INTO `transporte` (`id`, `nombre`, `id_municipio`, `celular`) VALUES
 (3, 'transvala', 249, '43233332'),
 (4, 'trasvala', 249, '32123222'),
 (5, 'taxiexpres', 171, '43233332'),
@@ -1472,7 +1474,7 @@ ALTER TABLE `persona`
 --
 ALTER TABLE `restaurante`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `id_mmunicipio` (`id_mmunicipio`);
+  ADD KEY `id_mmunicipio` (`id_municipio`);
 
 --
 -- Indices de la tabla `rol`
@@ -1485,7 +1487,7 @@ ALTER TABLE `rol`
 --
 ALTER TABLE `transporte`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `municipio` (`municipio`);
+  ADD KEY `municipio` (`id_municipio`);
 
 --
 -- Indices de la tabla `usuario`
@@ -1522,7 +1524,7 @@ ALTER TABLE `detalle_persona_paquete`
 -- AUTO_INCREMENT de la tabla `hotel`
 --
 ALTER TABLE `hotel`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT de la tabla `municipio`
@@ -1546,7 +1548,7 @@ ALTER TABLE `persona`
 -- AUTO_INCREMENT de la tabla `restaurante`
 --
 ALTER TABLE `restaurante`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT de la tabla `rol`
@@ -1615,13 +1617,13 @@ ALTER TABLE `persona`
 -- Filtros para la tabla `restaurante`
 --
 ALTER TABLE `restaurante`
-  ADD CONSTRAINT `fk id municipio a municipio` FOREIGN KEY (`id_mmunicipio`) REFERENCES `municipio` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `fk id municipio a municipio` FOREIGN KEY (`id_municipio`) REFERENCES `municipio` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Filtros para la tabla `transporte`
 --
 ALTER TABLE `transporte`
-  ADD CONSTRAINT `transporte a id municipio` FOREIGN KEY (`municipio`) REFERENCES `municipio` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `transporte a id municipio` FOREIGN KEY (`id_municipio`) REFERENCES `municipio` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Filtros para la tabla `usuario`
