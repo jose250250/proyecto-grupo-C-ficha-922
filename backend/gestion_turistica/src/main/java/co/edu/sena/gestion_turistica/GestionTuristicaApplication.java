@@ -10,4 +10,5 @@ public class GestionTuristicaApplication {
 		SpringApplication.run(GestionTuristicaApplication.class, args);
 	}
 
+	
 }
