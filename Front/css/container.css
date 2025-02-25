@@ -1,6 +1,5 @@
 body{
-    background-image: url(../Assets/recursos/pan3.jpg);
-   
+    background-color: rgb(255, 254, 255);  
 }
 .col-2 img{
     width: 100px;
