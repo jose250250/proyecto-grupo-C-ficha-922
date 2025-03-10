@@ -8,19 +8,7 @@ $(function(){
         var idContent = 'content-header';
         loadZone(url, idContent);
        
-    };
-
-    $("#personaAdmin").click(function(){
-        $("#MenuPersona").removeClass('d-none');   
-        $(this).removeClass('btn btn-outline-primary').addClass('btn btn-success');
-        $('#grupo2', 'restauranteAdmin').addClass('d-none');
-
-         
-    });
-
-    $('')
-    
-    
+    };  
 
 
 
@@ -30,6 +18,13 @@ $(function(){
         var idContent = 'content-header';
        loadZone(url, idContent);
        }
+    });
+
+    $("#entrarPersona").click(function(){
+        var url = 'template/pages/homepersona.html';
+        var idContent = 'content-main';
+        loadZone(url, idContent);
+
     });
 
 })
