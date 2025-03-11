@@ -1,0 +1,1695 @@
+<!DOCTYPE html>
+<!-- saved from url=(0075)https://zajuna.sena.edu.co/zajuna/mod/assign/view.php?id=617517&forceview=1 -->
+<html dir="ltr" lang="es" xml:lang="es" class="yui3-js-enabled"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>P_228118_V_2834922_R_19_C_9307: Diseño y Desarrollo de servicios web - proyecto GA7-220501096-AA5-EV03 | Zajuna</title>
+    <link rel="shortcut icon" href="https://zajuna.sena.edu.co/zajuna/theme/image.php/zajuna/theme/1739042184/favicon">
+    
+<meta name="keywords" content="moodle, P_228118_V_2834922_R_19_C_9307: Diseño y Desarrollo de servicios web - proyecto GA7-220501096-AA5-EV03 | Zajuna">
+<link rel="stylesheet" type="text/css" href="./P_228118_V_2834922_R_19_C_9307_files/combo"><script charset="utf-8" id="yui_3_18_1_1_1741704840479_13" src="./P_228118_V_2834922_R_19_C_9307_files/javascript.php" async=""></script><script charset="utf-8" id="yui_3_18_1_1_1741704840479_14" src="./P_228118_V_2834922_R_19_C_9307_files/combo(1)" async=""></script><script charset="utf-8" id="yui_3_18_1_1_1741704840479_15" src="./P_228118_V_2834922_R_19_C_9307_files/combo(2)" async=""></script><script charset="utf-8" id="yui_3_18_1_1_1741704840479_32" src="./P_228118_V_2834922_R_19_C_9307_files/combo(3)" async=""></script><script id="firstthemesheet" type="text/css">/** Required in order to fix style inclusion problems in IE with YUI **/</script><link rel="stylesheet" type="text/css" href="./P_228118_V_2834922_R_19_C_9307_files/styles.php">
+<script>
+//<![CDATA[
+var M = {}; M.yui = {};
+M.pageloadstarttime = new Date();
+M.cfg = {"wwwroot":"https:\/\/zajuna.sena.edu.co\/zajuna","homeurl":{},"sesskey":"TlD8BwigxY","sessiontimeout":"1800","sessiontimeoutwarning":"1200","themerev":"1739042184","slasharguments":1,"theme":"zajuna","iconsystemmodule":"core\/icon_system_fontawesome","jsrev":"1739042203","admin":"admin","svgicons":true,"usertimezone":"Am\u00e9rica\/Bogot\u00e1","language":"es","courseId":6127,"courseContextId":746797,"contextid":747563,"contextInstanceId":617517,"langrev":1735594592,"templaterev":"1739037280"};var yui1ConfigFn = function(me) {if(/-skin|reset|fonts|grids|base/.test(me.name)){me.type='css';me.path=me.path.replace(/\.js/,'.css');me.path=me.path.replace(/\/yui2-skin/,'/assets/skins/sam/yui2-skin')}};
+var yui2ConfigFn = function(me) {var parts=me.name.replace(/^moodle-/,'').split('-'),component=parts.shift(),module=parts[0],min='-min';if(/-(skin|core)$/.test(me.name)){parts.pop();me.type='css';min=''}
+if(module){var filename=parts.join('-');me.path=component+'/'+module+'/'+filename+min+'.'+me.type}else{me.path=component+'/'+component+'.'+me.type}};
+YUI_config = {"debug":false,"base":"https:\/\/zajuna.sena.edu.co\/zajuna\/lib\/yuilib\/3.18.1\/","comboBase":"https:\/\/zajuna.sena.edu.co\/zajuna\/theme\/yui_combo.php?","combine":true,"filter":null,"insertBefore":"firstthemesheet","groups":{"yui2":{"base":"https:\/\/zajuna.sena.edu.co\/zajuna\/lib\/yuilib\/2in3\/2.9.0\/build\/","comboBase":"https:\/\/zajuna.sena.edu.co\/zajuna\/theme\/yui_combo.php?","combine":true,"ext":false,"root":"2in3\/2.9.0\/build\/","patterns":{"yui2-":{"group":"yui2","configFn":yui1ConfigFn}}},"moodle":{"name":"moodle","base":"https:\/\/zajuna.sena.edu.co\/zajuna\/theme\/yui_combo.php?m\/1739042203\/","combine":true,"comboBase":"https:\/\/zajuna.sena.edu.co\/zajuna\/theme\/yui_combo.php?","ext":false,"root":"m\/1739042203\/","patterns":{"moodle-":{"group":"moodle","configFn":yui2ConfigFn}},"filter":null,"modules":{"moodle-core-notification":{"requires":["moodle-core-notification-dialogue","moodle-core-notification-alert","moodle-core-notification-confirm","moodle-core-notification-exception","moodle-core-notification-ajaxexception"]},"moodle-core-notification-dialogue":{"requires":["base","node","panel","escape","event-key","dd-plugin","moodle-core-widget-focusafterclose","moodle-core-lockscroll"]},"moodle-core-notification-alert":{"requires":["moodle-core-notification-dialogue"]},"moodle-core-notification-confirm":{"requires":["moodle-core-notification-dialogue"]},"moodle-core-notification-exception":{"requires":["moodle-core-notification-dialogue"]},"moodle-core-notification-ajaxexception":{"requires":["moodle-core-notification-dialogue"]},"moodle-core-maintenancemodetimer":{"requires":["base","node"]},"moodle-core-blocks":{"requires":["base","node","io","dom","dd","dd-scroll","moodle-core-dragdrop","moodle-core-notification"]},"moodle-core-actionmenu":{"requires":["base","event","node-event-simulate"]},"moodle-core-event":{"requires":["event-custom"]},"moodle-core-lockscroll":{"requires":["plugin","base-build"]},"moodle-core-chooserdialogue":{"requires":["base","panel","moodle-core-notification"]},"moodle-core-handlebars":{"condition":{"trigger":"handlebars","when":"after"}},"moodle-core-formchangechecker":{"requires":["base","event-focus","moodle-core-event"]},"moodle-core-dragdrop":{"requires":["base","node","io","dom","dd","event-key","event-focus","moodle-core-notification"]},"moodle-core_availability-form":{"requires":["base","node","event","event-delegate","panel","moodle-core-notification-dialogue","json"]},"moodle-backup-backupselectall":{"requires":["node","event","node-event-simulate","anim"]},"moodle-course-management":{"requires":["base","node","io-base","moodle-core-notification-exception","json-parse","dd-constrain","dd-proxy","dd-drop","dd-delegate","node-event-delegate"]},"moodle-course-dragdrop":{"requires":["base","node","io","dom","dd","dd-scroll","moodle-core-dragdrop","moodle-core-notification","moodle-course-coursebase","moodle-course-util"]},"moodle-course-util":{"requires":["node"],"use":["moodle-course-util-base"],"submodules":{"moodle-course-util-base":{},"moodle-course-util-section":{"requires":["node","moodle-course-util-base"]},"moodle-course-util-cm":{"requires":["node","moodle-course-util-base"]}}},"moodle-course-categoryexpander":{"requires":["node","event-key"]},"moodle-form-dateselector":{"requires":["base","node","overlay","calendar"]},"moodle-form-shortforms":{"requires":["node","base","selector-css3","moodle-core-event"]},"moodle-question-chooser":{"requires":["moodle-core-chooserdialogue"]},"moodle-question-searchform":{"requires":["base","node"]},"moodle-question-preview":{"requires":["base","dom","event-delegate","event-key","core_question_engine"]},"moodle-availability_completion-form":{"requires":["base","node","event","moodle-core_availability-form"]},"moodle-availability_date-form":{"requires":["base","node","event","io","moodle-core_availability-form"]},"moodle-availability_grade-form":{"requires":["base","node","event","moodle-core_availability-form"]},"moodle-availability_group-form":{"requires":["base","node","event","moodle-core_availability-form"]},"moodle-availability_grouping-form":{"requires":["base","node","event","moodle-core_availability-form"]},"moodle-availability_profile-form":{"requires":["base","node","event","moodle-core_availability-form"]},"moodle-mod_assign-history":{"requires":["node","transition"]},"moodle-mod_quiz-quizbase":{"requires":["base","node"]},"moodle-mod_quiz-autosave":{"requires":["base","node","event","event-valuechange","node-event-delegate","io-form"]},"moodle-mod_quiz-toolboxes":{"requires":["base","node","event","event-key","io","moodle-mod_quiz-quizbase","moodle-mod_quiz-util-slot","moodle-core-notification-ajaxexception"]},"moodle-mod_quiz-modform":{"requires":["base","node","event"]},"moodle-mod_quiz-questionchooser":{"requires":["moodle-core-chooserdialogue","moodle-mod_quiz-util","querystring-parse"]},"moodle-mod_quiz-dragdrop":{"requires":["base","node","io","dom","dd","dd-scroll","moodle-core-dragdrop","moodle-core-notification","moodle-mod_quiz-quizbase","moodle-mod_quiz-util-base","moodle-mod_quiz-util-page","moodle-mod_quiz-util-slot","moodle-course-util"]},"moodle-mod_quiz-util":{"requires":["node","moodle-core-actionmenu"],"use":["moodle-mod_quiz-util-base"],"submodules":{"moodle-mod_quiz-util-base":{},"moodle-mod_quiz-util-slot":{"requires":["node","moodle-mod_quiz-util-base"]},"moodle-mod_quiz-util-page":{"requires":["node","moodle-mod_quiz-util-base"]}}},"moodle-message_airnotifier-toolboxes":{"requires":["base","node","io"]},"moodle-filter_glossary-autolinker":{"requires":["base","node","io-base","json-parse","event-delegate","overlay","moodle-core-event","moodle-core-notification-alert","moodle-core-notification-exception","moodle-core-notification-ajaxexception"]},"moodle-editor_atto-editor":{"requires":["node","transition","io","overlay","escape","event","event-simulate","event-custom","node-event-html5","node-event-simulate","yui-throttle","moodle-core-notification-dialogue","moodle-editor_atto-rangy","handlebars","timers","querystring-stringify"]},"moodle-editor_atto-plugin":{"requires":["node","base","escape","event","event-outside","handlebars","event-custom","timers","moodle-editor_atto-menu"]},"moodle-editor_atto-menu":{"requires":["moodle-core-notification-dialogue","node","event","event-custom"]},"moodle-editor_atto-rangy":{"requires":[]},"moodle-report_eventlist-eventfilter":{"requires":["base","event","node","node-event-delegate","datatable","autocomplete","autocomplete-filters"]},"moodle-report_loglive-fetchlogs":{"requires":["base","event","node","io","node-event-delegate"]},"moodle-gradereport_history-userselector":{"requires":["escape","event-delegate","event-key","handlebars","io-base","json-parse","moodle-core-notification-dialogue"]},"moodle-qbank_editquestion-chooser":{"requires":["moodle-core-chooserdialogue"]},"moodle-tool_lp-dragdrop-reorder":{"requires":["moodle-core-dragdrop"]},"moodle-assignfeedback_editpdf-editor":{"requires":["base","event","node","io","graphics","json","event-move","event-resize","transition","querystring-stringify-simple","moodle-core-notification-dialog","moodle-core-notification-alert","moodle-core-notification-warning","moodle-core-notification-exception","moodle-core-notification-ajaxexception"]},"moodle-atto_accessibilitychecker-button":{"requires":["color-base","moodle-editor_atto-plugin"]},"moodle-atto_accessibilityhelper-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_align-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_bold-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_charmap-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_clear-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_collapse-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_emojipicker-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_emoticon-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_equation-button":{"requires":["moodle-editor_atto-plugin","moodle-core-event","io","event-valuechange","tabview","array-extras"]},"moodle-atto_h5p-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_html-button":{"requires":["promise","moodle-editor_atto-plugin","moodle-atto_html-beautify","moodle-atto_html-codemirror","event-valuechange"]},"moodle-atto_html-beautify":{},"moodle-atto_html-codemirror":{"requires":["moodle-atto_html-codemirror-skin"]},"moodle-atto_image-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_indent-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_italic-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_link-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_managefiles-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_managefiles-usedfiles":{"requires":["node","escape"]},"moodle-atto_media-button":{"requires":["moodle-editor_atto-plugin","moodle-form-shortforms"]},"moodle-atto_noautolink-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_orderedlist-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_recordrtc-button":{"requires":["moodle-editor_atto-plugin","moodle-atto_recordrtc-recording"]},"moodle-atto_recordrtc-recording":{"requires":["moodle-atto_recordrtc-button"]},"moodle-atto_rtl-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_strike-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_subscript-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_superscript-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_table-button":{"requires":["moodle-editor_atto-plugin","moodle-editor_atto-menu","event","event-valuechange"]},"moodle-atto_teamsmeeting-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_title-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_underline-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_undo-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_unorderedlist-button":{"requires":["moodle-editor_atto-plugin"]}}},"gallery":{"name":"gallery","base":"https:\/\/zajuna.sena.edu.co\/zajuna\/lib\/yuilib\/gallery\/","combine":true,"comboBase":"https:\/\/zajuna.sena.edu.co\/zajuna\/theme\/yui_combo.php?","ext":false,"root":"gallery\/1739042203\/","patterns":{"gallery-":{"group":"gallery"}}}},"modules":{"core_filepicker":{"name":"core_filepicker","fullpath":"https:\/\/zajuna.sena.edu.co\/zajuna\/lib\/javascript.php\/1739042203\/repository\/filepicker.js","requires":["base","node","node-event-simulate","json","async-queue","io-base","io-upload-iframe","io-form","yui2-treeview","panel","cookie","datatable","datatable-sort","resize-plugin","dd-plugin","escape","moodle-core_filepicker","moodle-core-notification-dialogue"]},"core_comment":{"name":"core_comment","fullpath":"https:\/\/zajuna.sena.edu.co\/zajuna\/lib\/javascript.php\/1739042203\/comment\/comment.js","requires":["base","io-base","node","json","yui2-animation","overlay","escape"]}},"logInclude":[],"logExclude":[],"logLevel":null};
+M.yui.loader = {modules: {}};
+
+//]]>
+</script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="core/first" src="./P_228118_V_2834922_R_19_C_9307_files/requirejs.php"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="jquery" src="./P_228118_V_2834922_R_19_C_9307_files/javascript(1).php"></script><script type="text/x-mathjax-config">MathJax.Hub.Config({
+    config: ["Accessible.js", "Safe.js"],
+    errorSettings: { message: ["!"] },
+    skipStartupTypeset: true,
+    messageStyle: "none"
+});
+</script></head>
+<body id="page-mod-assign-view" class="format-flexsections limitedwidth  path-mod path-mod-assign chrome dir-ltr lang-es yui-skin-sam yui3-skin-sam zajuna-sena-edu-co--zajuna pagelayout-incourse course-6127 context-747563 cmid-617517 cm-type-assign category-4 theme  jsenabled">
+<link rel="stylesheet" href="./P_228118_V_2834922_R_19_C_9307_files/zajuna">
+
+<div id="page-wrapper" class="d-print-block">
+
+    <div>
+    <a class="sr-only sr-only-focusable" href="https://zajuna.sena.edu.co/zajuna/mod/assign/view.php?id=617517&amp;forceview=1#maincontent">Salta al contenido principal</a>
+</div><script src="./P_228118_V_2834922_R_19_C_9307_files/javascript(2).php"></script>
+<script src="./P_228118_V_2834922_R_19_C_9307_files/combo(4)"></script><script src="./P_228118_V_2834922_R_19_C_9307_files/javascript(3).php"></script>
+<script>
+//<![CDATA[
+document.body.className += ' jsenabled';
+//]]>
+</script>
+
+
+
+    
+    <div class="d-flex justify-content-between px-4 py-3 align-items-center" id="inicio">
+        <img loading="lazy" src="./P_228118_V_2834922_R_19_C_9307_files/sena-zajuna-logo.svg" alt="Logo de zajuna" style="width: auto; height: 2.2rem;">
+        <img loading="lazy" src="./P_228118_V_2834922_R_19_C_9307_files/sena-logo.svg" alt="Logo del servicio nacional de aprendizaje (SENA)" style="width: auto; height: 4rem;">
+    </div>
+    <nav class="sticky-top navbar bg-alternate-background navbar-expand moodle-has-zindex">
+    
+        <!--<a href="https://zajuna.sena.edu.co/zajuna/my/courses.php" class="navbar-brand d-flex align-items-center m-1 p-0 aabtn">
+                <img src="" class="logo mr-1" alt="Zajuna" style ="width: auto; height:  20px;">
+        </a>-->
+        <ul class="navbar-nav d-none d-md-flex">
+            <!-- custom_menu -->
+            <li class="nav-item">
+    <a class="nav-link" href="https://oferta.senasofiaplus.edu.co/sofia-oferta/">Accede a SOFIA</a>
+</li><li class="nav-item">
+    <a class="nav-link" href="https://zajuna.sena.edu.co/zajuna/my/">Área Personal</a>
+</li>
+            <!-- page_heading_menu -->
+            
+        </ul>
+        <div id="usernavigation" class="navbar-nav my-1 ml-auto align-items-center">
+            <div class="divider border-left h-50 align-self-center mx-1"></div>
+            
+            <div class="popover-region collapsed popover-region-notifications" id="nav-notification-popover-container" data-userid="149495" data-region="popover-region">
+    <div class="popover-region-toggle nav-link icon-no-margin" data-region="popover-region-toggle" role="button" aria-controls="popover-region-container-67d04e88082c167d04e86e725929" aria-haspopup="true" aria-label=" Mostrar la ventana de notificaciones cuando no hay ninguna   " tabindex="0">
+                <i class="icon fa fa-bell-o fa-fw " title="Mostrar/ocultar menú de notificaciones" role="img" aria-label="Mostrar/ocultar menú de notificaciones"></i>
+        <div class="count-container hidden" data-region="count-container" aria-hidden="true">
+            0
+        </div>
+
+    </div>
+    <div id="popover-region-container-67d04e88082c167d04e86e725929" class="popover-region-container" data-region="popover-region-container" aria-expanded="false" aria-hidden="true" aria-label="Ventana de notificación" role="region">
+        <div class="popover-region-header-container">
+            <h3 class="popover-region-header-text" data-region="popover-region-header-text">Notificaciones</h3>
+            <div class="popover-region-header-actions" data-region="popover-region-header-actions">        <a class="mark-all-read-button" href="https://zajuna.sena.edu.co/zajuna/mod/assign/view.php?id=617517&amp;forceview=1#" title="Marcar como leído" data-action="mark-all-read" role="button" aria-label="Marcar como leído">
+            <span class="normal-icon"><i class="icon fa fa-check fa-fw " aria-hidden="true"></i></span>
+            <span class="loading-icon icon-no-margin"><i class="icon fa fa-circle-o-notch fa-spin fa-fw " title="Cargando" role="img" aria-label="Cargando"></i></span>
+        </a>
+            <a href="https://zajuna.sena.edu.co/zajuna/message/notificationpreferences.php" title="Preferencias de notificación" aria-label="Preferencias de notificación">
+                <i class="icon fa fa-cog fa-fw " aria-hidden="true"></i></a>
+</div>
+        </div>
+        <div class="popover-region-content-container" data-region="popover-region-content-container">
+            <div class="popover-region-content" data-region="popover-region-content">
+                        <div class="all-notifications" data-region="all-notifications" role="log" aria-busy="false" aria-atomic="false" aria-relevant="additions"></div>
+        <div class="empty-message" tabindex="0" data-region="empty-message">No tienes notificaciones</div>
+
+            </div>
+            <span class="loading-icon icon-no-margin"><i class="icon fa fa-circle-o-notch fa-spin fa-fw " title="Cargando" role="img" aria-label="Cargando"></i></span>
+        </div>
+                <a class="see-all-link" href="https://zajuna.sena.edu.co/zajuna/message/output/popup/notifications.php">
+                    <div class="popover-region-footer-container">
+                        <div class="popover-region-seeall-text">Ver todo</div>
+                    </div>
+                </a>
+    </div>
+</div><div class="popover-region collapsed" data-region="popover-region-messages">
+    <a id="message-drawer-toggle-67d04e880aa0067d04e86e725930" class="nav-link popover-region-toggle position-relative icon-no-margin" href="https://zajuna.sena.edu.co/zajuna/mod/assign/view.php?id=617517&amp;forceview=1#" role="button">
+        <i class="icon fa fa-comment-o fa-fw " title="Mostrar/ocultar cajón de mensajería" role="img" aria-label="Mostrar/ocultar cajón de mensajería"></i>
+        <div class="count-container hidden" data-region="count-container">
+            <span aria-hidden="true">0</span>
+            <span class="sr-only">Hay 0 conversaciones sin leer</span>
+        </div>
+    </a>
+    <span class="sr-only sr-only-focusable" data-region="jumpto" tabindex="-1"></span></div>
+            <div class="d-flex align-items-stretch usermenu-container" data-region="usermenu">
+                <div class="usermenu"><div class="action-menu moodle-actionmenu nowrap-items" id="action-menu-0" data-enhance="moodle-core-actionmenu">
+
+        <div class="menubar d-flex " id="action-menu-0-menubar">
+
+            
+
+
+                <div class="action-menu-trigger">
+                    <div class="dropdown">
+                        <a href="https://zajuna.sena.edu.co/zajuna/mod/assign/view.php?id=617517&amp;forceview=1#" tabindex="0" class="nav-link dropdown-toggle icon-no-margin" id="action-menu-toggle-0" aria-label="Menú de usuario" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" aria-controls="action-menu-0-menu">
+                            
+                            <span class="userbutton"><span class="usertext mr-1">JOSE ANGEL PEÑA BALLESTEROS </span><span class="avatars"><span class="avatar current"><span class="userinitials size-35">JP</span></span></span></span>
+                                
+                            <b class="caret"></b>
+                        </a>
+                            <div class="dropdown-menu menu dropdown-menu-right" id="action-menu-0-menu" data-rel="menu-content" aria-labelledby="action-menu-toggle-0" role="menu">
+                                                                <a href="https://zajuna.sena.edu.co/zajuna/user/profile.php" class="dropdown-item menu-action" role="menuitem" data-title="profile,moodle" tabindex="-1">
+                                <span class="menu-action-text">Perfil</span>
+                        </a>
+                    <div class="dropdown-divider" role="presentation"><span class="filler">&nbsp;</span></div>
+                                                                <a href="https://zajuna.sena.edu.co/zajuna/grade/report/overview/index.php" class="dropdown-item menu-action" role="menuitem" data-title="grades,grades" tabindex="-1">
+                                <span class="menu-action-text">Calificaciones</span>
+                        </a>
+                                                                <a href="https://zajuna.sena.edu.co/zajuna/calendar/view.php?view=month" class="dropdown-item menu-action" role="menuitem" data-title="calendar,core_calendar" tabindex="-1">
+                                <span class="menu-action-text">Calendario</span>
+                        </a>
+                                                                <a href="https://zajuna.sena.edu.co/zajuna/user/files.php" class="dropdown-item menu-action" role="menuitem" data-title="privatefiles,moodle" tabindex="-1">
+                                <span class="menu-action-text">Archivos privados</span>
+                        </a>
+                                                                <a href="https://zajuna.sena.edu.co/zajuna/reportbuilder/index.php" class="dropdown-item menu-action" role="menuitem" data-title="reports,core_reportbuilder" tabindex="-1">
+                                <span class="menu-action-text">Informes</span>
+                        </a>
+                    <div class="dropdown-divider" role="presentation"><span class="filler">&nbsp;</span></div>
+                                                                <a href="https://zajuna.sena.edu.co/zajuna/user/preferences.php" class="dropdown-item menu-action" role="menuitem" data-title="preferences,moodle" tabindex="-1">
+                                <span class="menu-action-text">Preferencias</span>
+                        </a>
+                    <div class="dropdown-divider" role="presentation"><span class="filler">&nbsp;</span></div>
+                                                                <a href="https://zajuna.sena.edu.co/zajuna/login/logout.php?sesskey=TlD8BwigxY" class="dropdown-item menu-action" role="menuitem" data-title="logout,moodle" tabindex="-1">
+                                <span class="menu-action-text">Cerrar sesión</span>
+                        </a>
+                            </div>
+                    </div>
+                </div>
+
+        </div>
+
+</div></div>
+            </div>
+            
+        </div>
+    </nav>    
+
+
+    <div id="page" class=" d-print-block">
+        <header id="page-header" class="d-flex flex-column">
+        <div class="page-context-header"><div class="page-header-headings"><h1>ANALISIS Y DESARROLLO DE SOFTWARE. (2834922)</h1></div></div>
+        <div class="d-flex justify-content-center p-3 flex-wrap">
+            <div id="page-navbar" class="font-weight-bold text-alternate-background">
+                <nav aria-label="Barra de navegación">
+    <ol class="breadcrumb justify-content-center flex-wrap">
+                <li class="breadcrumb-item">
+                    <a href="https://zajuna.sena.edu.co/zajuna/my/courses.php">Mis cursos</a>
+                </li>
+        
+                <li class="breadcrumb-item">
+                    <a href="https://zajuna.sena.edu.co/zajuna/course/view.php?id=6127" title="ANALISIS Y DESARROLLO DE SOFTWARE. (2834922)">P_228118_V_2834922_R_19_C_9307</a>
+                </li>
+        
+                <li class="breadcrumb-item">
+                    <a href="https://zajuna.sena.edu.co/zajuna/course/view.php?id=6127#section-68">FASE 3 EJECUCIÓN</a>
+                </li>
+        
+                <li class="breadcrumb-item">
+                    <a href="https://zajuna.sena.edu.co/zajuna/course/view.php?id=6127#section-81">Actividad de Proyecto 7</a>
+                </li>
+        
+                <li class="breadcrumb-item">
+                    <a href="https://zajuna.sena.edu.co/zajuna/course/view.php?id=6127#section-83">Guía de aprendizaje 07</a>
+                </li>
+        
+                <li class="breadcrumb-item">
+                    <a href="https://zajuna.sena.edu.co/zajuna/course/view.php?id=6127#section-88">.Actividad de aprendizaje GA7-220501096-AA5</a>
+                </li>
+        
+                <li class="breadcrumb-item">
+                    <a href="https://zajuna.sena.edu.co/zajuna/mod/assign/view.php?id=617517" aria-current="page">Diseño y Desarrollo de servicios web - proyecto GA...</a>
+                </li>
+        </ol>
+</nav>
+            </div>
+            <div class="d-flex">
+                
+            </div>
+            <div id="course-header">
+                
+            </div>
+        </div>
+</header>
+
+        <div id="page-content" style="border-top:1px solid #39a900;" class="d-flex flex-wrap  blocks-pre   d-print-block ">
+            <div id="region-main-box" class="region-main border-primary border-bottom">
+                <section id="region-main" class="region-main-content p-3" aria-label="Contenido">
+                    <span class="notifications" id="user-notifications"></span>
+                        <div class="flexsections-activity-page-navigate-back">
+        <div class="header backto">
+            <a href="https://zajuna.sena.edu.co/zajuna/course/view.php?id=6127#section-88">
+                <i class="icon fa fa-arrow-up fa-fw " aria-hidden="true"></i>
+                Volver a '.Actividad de aprendizaje GA7-220501096-AA5
+            </a>
+        </div>
+</div><span id="maincontent"></span>
+                            <h2>Diseño y Desarrollo de servicios web - proyecto GA7-220501096-AA5-EV03</h2>
+                        <div class="activity-header" data-for="page-activity-header" id="yui_3_18_1_1_1741704840479_38">
+                                <span class="sr-only">Requisitos de finalización</span>
+                                <div data-region="activity-information" data-activityname="Diseño y Desarrollo de servicios web - proyecto GA7-220501096-AA5-EV03" class="activity-information">
+
+
+    <div data-region="activity-dates" class="activity-dates">
+            <div>
+                <strong>Apertura:</strong> miércoles, 20 de marzo de 2024, 00:00
+            </div>
+            <div>
+                <strong>Cierre:</strong> martes, 2 de abril de 2024, 05:25
+            </div>
+    </div>
+</div>
+                                <div class="activity-description" id="intro">
+                                    <div class="box py-3 generalbox boxaligncenter" id="yui_3_18_1_1_1741704840479_41"><div class="no-overflow" id="yui_3_18_1_1_1741704840479_40"><div style="border-radius: 50px; background-image: url(&#39;/Repositorio/Titulada/institution/SENA/Tecnologia/228118/Audiovisuales/Imagenes/fondo.svg&#39;); background-position: center; background-repeat: no-repeat; background-size: cover; box-sizing: border-box;" id="yui_3_18_1_1_1741704840479_39">
+<div style="box-sizing: border-box; font-family: Arial, Helvetica, sans-serif; line-height: 1.25em; margin: 0px auto; max-width: 800px; padding: 35px;">
+<div style="--bs-gutter-x: 1.5rem; --bs-gutter-y: 0; box-sizing: border-box; display: flex; flex-wrap: wrap; line-height: 1.25em; margin-left: calc(var(--bs-gutter-x)/ -2); margin-right: calc(var(--bs-gutter-x)/ -2); margin-top: calc(var(--bs-gutter-y) * -1); align-items: center !important; justify-content: center !important;">
+<div style="box-sizing: border-box; flex: 0 0 auto; line-height: 1.25em; margin-top: var(--bs-gutter-y); max-width: 100%; min-width: 250px; padding-left: calc(var(--bs-gutter-x)/ 2); padding-right: calc(var(--bs-gutter-x)/ 2); width: 65%;">
+<div style="color: rgb(48, 48, 48); box-sizing: border-box; line-height: 1.25em; margin-bottom: 25px;">
+<h4 style="box-sizing: border-box; color: #ffffff; font-size: 14px; font-weight: 500; line-height: 1.25em; margin-bottom: .5rem; margin-top: 0;"><span style="color:#000000;"><strong>TECNOLOGÍA EN ANÁLISIS Y DESARROLLO DE SOFTWARE</strong></span></h4>
+
+<div style="background-color: #dd491b; box-sizing: border-box; color: #ffffff; height: 5px; line-height: 1.25em; width: 60%;">&nbsp;</div>
+</div>
+
+<div style="box-sizing: border-box; line-height: 1.25em; margin-bottom: 1rem !important;">
+<div style="box-sizing: border-box; line-height: 1.25em; margin-bottom: 1rem !important;"><span style="color:#000000;"><span style="font-size:14px;">Actividad de aprendizaje <strong>GA7-220501096-AA5</strong> - Crear servicios web</span></span></div>
+
+<ul>
+	<li style="box-sizing: border-box; line-height: 1.25em; margin-bottom: 1rem !important;"><span style="color:#000000;"><span style="font-size:14px;">Diseño y Desarrollo de servicios web – proyecto <strong>GA7-220501096-AA5-EV03</strong></span></span></li>
+</ul>
+
+<p><button onclick="window.open(&#39;/Repositorio/Titulada/institution/SENA/Tecnologia/228118/Contenido/DocArtic/GUI7/GA7-220501096-AA5-EV03.zip&#39;, &#39;_blank&#39;)" style="-webkit-appearance: button; background-color: #dd491b; border: none; border-radius: 5px; box-sizing: border-box; color: #ffffff; cursor: pointer; font-family: inherit; font-size: inherit; line-height: 1.2em; margin: 0; overflow: visible; padding: 5px 5px; text-transform: none;width:80%;">Clic aquí para acceder al instrumento de evaluación y/o anexo</button></p>
+</div>
+</div>
+
+<div style="color: rgb(48, 48, 48); box-sizing: border-box; flex: 0 0 auto; line-height: 1.25em; margin-top: var(--bs-gutter-y); max-width: 100%; min-width: 250px; padding-left: calc(var(--bs-gutter-x)/ 2); padding-right: calc(var(--bs-gutter-x)/ 2); width: 35%;"><img alt="" class="imgr2" height="70%" id="imgr21" src="./P_228118_V_2834922_R_19_C_9307_files/documento3.png" style="border-style: none; box-sizing: border-box; transform: translate(10px);  color: #ffffff; line-height: 1.25em; vertical-align: middle; width: 70%;"></div>
+</div>
+</div>
+</div></div></div>
+                                </div>
+                            </div>
+                    <div role="main"><div class="container-fluid mb-4">
+    <div class="row">
+    </div>
+</div><div class="submissionstatustable"><h3>Estado de la entrega</h3><div class="box py-3 boxaligncenter submissionsummarytable"><div class="table-responsive"><table class="generaltable table-bordered">
+<tbody><tr class="">
+<th class="cell c0" style="" scope="row">Grupo</th>
+<td class="cell c1 lastcol" style="">C</td>
+</tr>
+<tr class="">
+<th class="cell c0" style="" scope="row">Número del intento</th>
+<td class="cell c1 lastcol" style="">Este es el intento 1 ( 3 intentos permitidos ).</td>
+</tr>
+<tr class="">
+<th class="cell c0" style="" scope="row">Estado de la entrega</th>
+<td class="cell c1 lastcol" style="">No se ha enviado nada en esta Evidencia</td>
+</tr>
+<tr class="">
+<th class="cell c0" style="" scope="row">Estado de la calificación</th>
+<td class="submissionnotgraded cell c1 lastcol" style="">Sin calificar</td>
+</tr>
+<tr class="">
+<th class="cell c0" style="" scope="row">Tiempo restante</th>
+<td class="overdue cell c1 lastcol" style="">La Evidencia está retrasada por: 343 días 4 horas</td>
+</tr>
+<tr class="">
+<th class="cell c0" style="" scope="row">Última modificación</th>
+<td class="cell c1 lastcol" style="">-</td>
+</tr>
+<tr class="lastrow">
+<th class="cell c0" style="" scope="row">Comentarios de la entrega</th>
+<td class="cell c1 lastcol" style=""><div class="box py-3 boxaligncenter plugincontentsummary summary_assignsubmission_comments_8081471"><div class="commentscontainer"><div style="display:none" id="cmt-tmpl"><div class="comment-message"><div class="comment-message-meta mr-3"><span class="picture">___picture___</span><span class="user">___name___</span> - <span class="time">___time___</span></div><div class="text">___content___</div></div></div><div class="mdl-left"><a class="showcommentsnonjs" href="https://zajuna.sena.edu.co/zajuna/mod/assign/view.php?id=617517&amp;rownum=0&amp;useridlistid=67d04e86cd893614305606&amp;action&amp;nonjscomment=1&amp;comment_itemid=8081471&amp;comment_context=747563&amp;comment_component=assignsubmission_comments&amp;comment_area=submission_comments">Mostrar comentarios</a><a class="comment-link" id="comment-link-67d04e8840576" href="https://zajuna.sena.edu.co/zajuna/mod/assign/view.php?id=617517&amp;forceview=1#" role="button" aria-expanded="false"><i class="icon fa fa-caret-right fa-fw " title="Comentarios" role="img" aria-label="Comentarios"></i><span id="comment-link-text-67d04e8840576">Comentarios (0)</span></a><div id="comment-ctrl-67d04e8840576" class="comment-ctrl"><ul id="comment-list-67d04e8840576" class="comment-list"><li class="first"></li></ul><div id="comment-pagination-67d04e8840576" class="comment-pagination"></div><div class="comment-area"><div class="db"><label for="dlg-content-67d04e8840576" class="sr-only">Comentario</label><textarea name="content" rows="2" id="dlg-content-67d04e8840576" aria-label="Agregar un comentario..." cols="20" style="color: grey;"></textarea></div><div class="fd" id="comment-action-67d04e8840576"><a id="comment-action-post-67d04e8840576" href="https://zajuna.sena.edu.co/zajuna/mod/assign/view.php?id=617517&amp;forceview=1#">Guardar comentario</a><span> | </span><a id="comment-action-cancel-67d04e8840576" href="https://zajuna.sena.edu.co/zajuna/mod/assign/view.php?id=617517&amp;forceview=1#">Cancelar</a></div></div><div class="clearer"></div></div></div></div></div></td>
+</tr>
+</tbody>
+</table>
+</div></div></div></div>
+                    <div class="mt-5 mb-1 activity-navigation container-fluid">
+<div class="row">
+    <div class="col-md-4">        <div class="float-left">
+                <a href="https://zajuna.sena.edu.co/zajuna/mod/assign/view.php?id=617508&amp;forceview=1" id="prev-activity-link" class="btn btn-link">◄ Componente front-end del proyecto formativo y proyectos de clase (listas de chequeo) GA7-220501096-AA4-EV03</a>
+
+        </div>
+</div>
+    <div class="col-md-4">        <div class="mdl-align">
+            <div class="urlselect">
+    <form method="post" action="https://zajuna.sena.edu.co/zajuna/course/jumpto.php" class="form-inline" id="url_select_f67d04e86e725939">
+        <input type="hidden" name="sesskey" value="TlD8BwigxY">
+            <label for="jump-to-activity" class="sr-only">
+                Ir a...
+            </label>
+        <select id="jump-to-activity" class="custom-select urlselect" name="jump">
+                    <option value="" selected="">Ir a...</option>
+                    <option value="/mod/forum/view.php?id=616983&amp;forceview=1">ANUNCIOS</option>
+                    <option value="/mod/page/view.php?id=616985&amp;forceview=1">Diseño Curricular</option>
+                    <option value="/mod/page/view.php?id=616987&amp;forceview=1">Información del programa</option>
+                    <option value="/mod/page/view.php?id=616989&amp;forceview=1">Biblioteca SENA</option>
+                    <option value="/mod/page/view.php?id=616991&amp;forceview=1">Documentos de interés para el aprendiz</option>
+                    <option value="/mod/forum/view.php?id=616992&amp;forceview=1">Foro dudas e inquietudes</option>
+                    <option value="/mod/page/view.php?id=617003&amp;forceview=1">Cronograma</option>
+                    <option value="/mod/page/view.php?id=617010&amp;forceview=1">Caracterización de procesos</option>
+                    <option value="/mod/page/view.php?id=617012&amp;forceview=1">Ingeniería de requisitos</option>
+                    <option value="/mod/page/view.php?id=617013&amp;forceview=1">La fase de elicitación de requisitos</option>
+                    <option value="/mod/page/view.php?id=617014&amp;forceview=1">Análisis y especificación de requisitos</option>
+                    <option value="/mod/page/view.php?id=617015&amp;forceview=1">Validación de requisitos</option>
+                    <option value="/mod/page/view.php?id=617017&amp;forceview=1">Metodologías de desarrollo de software</option>
+                    <option value="/mod/page/view.php?id=617019&amp;forceview=1">Tecnologías de la información y la comunicación (TIC)</option>
+                    <option value="/mod/page/view.php?id=617021&amp;forceview=1">English Level 1 MCER A1.1</option>
+                    <option value="/mod/page/view.php?id=617022&amp;forceview=1">Guía de aprendizaje 01</option>
+                    <option value="/mod/assign/view.php?id=617024&amp;forceview=1">Infografía sobre la Teoría General de Sistemas. GA1-220501092-AA1-EV01</option>
+                    <option value="/mod/assign/view.php?id=617028&amp;forceview=1">Identificación de procesos organizacionales. GA1-220501092-AA1-EV02</option>
+                    <option value="/mod/assign/view.php?id=617030&amp;forceview=1">Mapa de procesos del software a construir. GA1-220501092-AA1-EV03</option>
+                    <option value="/mod/assign/view.php?id=617033&amp;forceview=1">Mapa mental sobre ingeniería de requisitos. GA1-220501092-AA2-EV01</option>
+                    <option value="/mod/forum/view.php?id=617037&amp;forceview=1">Foro temático. Fuentes de requisitos. GA1-220501092-AA2-EV02</option>
+                    <option value="/mod/assign/view.php?id=617040&amp;forceview=1">Diseño del instrumento de recolección de información. GA1-220501092-AA3-EV01</option>
+                    <option value="/mod/assign/view.php?id=617042&amp;forceview=1">Formulación del proyecto de software. GA1-220501092-AA3-EV02</option>
+                    <option value="/mod/assign/view.php?id=617045&amp;forceview=1">Formulario de recolección de información. GA1- 220501092-AA3-EV03</option>
+                    <option value="/mod/assign/view.php?id=617049&amp;forceview=1">Especificación de los requerimientos funcionales y no funcionales del software. GA1-220501092-AA4-EV01</option>
+                    <option value="/mod/assign/view.php?id=617052&amp;forceview=1">Documento con especificación de requerimientos. GA1-220501092-AA4-EV02</option>
+                    <option value="/mod/assign/view.php?id=617057&amp;forceview=1">Taller para la determinación de las especificaciones funcionales del software y metodología a utilizar. GA1-220501092-AA5-EV01</option>
+                    <option value="/mod/assign/view.php?id=617061&amp;forceview=1">Informe de evaluación de los requerimientos. GA1-220501092-AA5-EV02</option>
+                    <option value="/mod/assign/view.php?id=617063&amp;forceview=1">Taller sobre metodologías de desarrollo de software. GA1-220501093-AA1-EV01</option>
+                    <option value="/mod/assign/view.php?id=617066&amp;forceview=1">Infografía sobre metodologías de desarrollo de software. GA1-220501093-AA1-EV02</option>
+                    <option value="/mod/forum/view.php?id=617069&amp;forceview=1">Foro. Especificación de la metodología a aplicar. GA1-220501093-AA1-EV03</option>
+                    <option value="/mod/assign/view.php?id=617071&amp;forceview=1">Documento identificando la metodología para el proyecto de desarrollo de software. GA1-220501093-AA1-EV04</option>
+                    <option value="/mod/assign/view.php?id=617073&amp;forceview=1">Mapa conceptual - Software y servicios de internet. Relacionar correctamente los tipos de software y servicios de internet. GA1-220501046-AA1-EV01</option>
+                    <option value="/mod/assign/view.php?id=617077&amp;forceview=1">Taller. Utilización de las herramientas de Ofimática. Realizar un taller práctico con las herramientas ofimáticas. GA1-220501046-AA2-EV01</option>
+                    <option value="/mod/assign/view.php?id=617081&amp;forceview=1">Informe mejora de productos y procesos con la incorporación de TIC. GA1-220501046-AA3-EV01</option>
+                    <option value="/mod/quiz/view.php?id=617085&amp;forceview=1">Cuestionario. GA1-240202501-AA1-EV01.</option>
+                    <option value="/mod/assign/view.php?id=617090&amp;forceview=1">Video presentación. GA1-240202501-AA1-EV02</option>
+                    <option value="/mod/assign/view.php?id=617093&amp;forceview=1">Folleto. GA1-240202501-AA1-EV03</option>
+                    <option value="/mod/page/view.php?id=617096&amp;forceview=1">Diagramas para la especificación y análisis de requisitos</option>
+                    <option value="/mod/page/view.php?id=617097&amp;forceview=1">Diseño del modelo conceptual bajo el paradigma orientado a objetos</option>
+                    <option value="/mod/page/view.php?id=617099&amp;forceview=1">Validación de documentos</option>
+                    <option value="/mod/page/view.php?id=617101&amp;forceview=1">Especificaciones de software</option>
+                    <option value="/mod/page/view.php?id=617102&amp;forceview=1">Propuesta técnica</option>
+                    <option value="/mod/page/view.php?id=617103&amp;forceview=1">Matemáticas. Nivel básico</option>
+                    <option value="/mod/page/view.php?id=617105&amp;forceview=1">Matemáticas. Nivel medio</option>
+                    <option value="/mod/page/view.php?id=617107&amp;forceview=1">Matemáticas. Nivel intermedio</option>
+                    <option value="/mod/page/view.php?id=617108&amp;forceview=1">Matemáticas. Nivel avanzado</option>
+                    <option value="/mod/page/view.php?id=617110&amp;forceview=1">English Level 2 MCER A1.2</option>
+                    <option value="/mod/page/view.php?id=617111&amp;forceview=1">English Level 3 MCER A2.1</option>
+                    <option value="/mod/page/view.php?id=617113&amp;forceview=1">Guía de aprendizaje 02</option>
+                    <option value="/mod/forum/view.php?id=617114&amp;forceview=1">Foro temático. Lenguaje Unificado de Modelado (UML). GA2-220501093-AA1-EV01</option>
+                    <option value="/mod/assign/view.php?id=617116&amp;forceview=1">Elaboración de diagramas y plantillas para casos de uso del proyecto. GA2-220501093-AA1-EV02</option>
+                    <option value="/mod/assign/view.php?id=617119&amp;forceview=1">Elaboración de historias de usuario del proyecto. GA2-220501093-AA1-EV03</option>
+                    <option value="/mod/assign/view.php?id=617120&amp;forceview=1">Diagramas y documentación de actividades del proyecto. GA2-220501093-AA1-EV04</option>
+                    <option value="/mod/assign/view.php?id=617123&amp;forceview=1">Elaboración de los diagramas del Modelo de dominio del proyecto. GA2-220501093-AA2-EV01</option>
+                    <option value="/mod/assign/view.php?id=617126&amp;forceview=1">Mapa conceptual sobre validación de documentos. GA2-220501093-AA3-EV01</option>
+                    <option value="/mod/assign/view.php?id=617128&amp;forceview=1">Elaboración del informe de análisis con listas de chequeo para la validación de artefactos. GA2-220501093-AA3-EV02</option>
+                    <option value="/mod/forum/view.php?id=617130&amp;forceview=1">Foro temático. Licenciamiento de software. GA2-220501094-AA1-EV01</option>
+                    <option value="/mod/assign/view.php?id=617133&amp;forceview=1">Diseño de las fichas técnicas para la recolección de la información. GA2-220501094-AA1-EV02</option>
+                    <option value="/mod/assign/view.php?id=617135&amp;forceview=1">Especificación de los referentes técnicos del hardware - software y estimación de las condiciones económicas. GA2-220501094-AA1-EV03</option>
+                    <option value="/mod/assign/view.php?id=617137&amp;forceview=1">Ficha técnica de los productos requeridos, los términos de referencia para el contrato y lista de chequeo para evaluación de proveedores. GA2-220501094-AA2-EV01</option>
+                    <option value="/mod/assign/view.php?id=617140&amp;forceview=1">Diseño de tablas comparativas sobre presupuestos de hardware y software. GA2-220501094-AA3-EV01</option>
+                    <option value="/mod/assign/view.php?id=617142&amp;forceview=1">Propuesta técnica y económica para la implementación del proyecto. GA2-220501094-AA3-EV02</option>
+                    <option value="/mod/assign/view.php?id=617144&amp;forceview=1">Taller de especificación del modelo conceptual y estructurar la propuesta técnica del proyecto de software. GA2-220501094-AA4-EV01</option>
+                    <option value="/mod/assign/view.php?id=617146&amp;forceview=1">Propuestas técnica y económica con ajustes de acuerdo a la negociación tecnológica. GA2-220501094-AA4-EV02</option>
+                    <option value="/mod/quiz/view.php?id=617149&amp;forceview=1">Cuestionario procedimientos aritméticos. GA2-240201528-AA1-EV01</option>
+                    <option value="/mod/assign/view.php?id=617152&amp;forceview=1">Planteamiento de ecuación. GA2-240201528-AA2-EV01</option>
+                    <option value="/mod/assign/view.php?id=617153&amp;forceview=1">Video sustentación. GA2-240201528-AA3-EV01</option>
+                    <option value="/mod/assign/view.php?id=617156&amp;forceview=1">Algoritmo para el cálculo de áreas y volúmenes. GA2-240201528-AA4-EV01</option>
+                    <option value="/mod/quiz/view.php?id=617158&amp;forceview=1">Cuestionario. GA2-240202501-AA1-EV01</option>
+                    <option value="/mod/assign/view.php?id=617161&amp;forceview=1">Vídeo entrevista virtual. GA2-240202501-AA1-EV02</option>
+                    <option value="/mod/assign/view.php?id=617163&amp;forceview=1">Crónica. GA2-240202501-AA1-EV03</option>
+                    <option value="/mod/quiz/view.php?id=617165&amp;forceview=1">Cuestionario. GA2-240202501-AA2-EV01</option>
+                    <option value="/mod/assign/view.php?id=617168&amp;forceview=1">Presentación. GA2-240202501-AA2-EV02</option>
+                    <option value="/mod/assign/view.php?id=617170&amp;forceview=1">Documento escrito. GA2-240202501-AA2-EV03</option>
+                    <option value="/mod/page/view.php?id=617314&amp;forceview=1">Diseño de aplicaciones web</option>
+                    <option value="/mod/page/view.php?id=617315&amp;forceview=1">Diseño y construcción de frontend</option>
+                    <option value="/mod/page/view.php?id=617317&amp;forceview=1">Fundamentos de investigación</option>
+                    <option value="/mod/page/view.php?id=617319&amp;forceview=1">English Level 7 MCER B1.2</option>
+                    <option value="/mod/page/view.php?id=617320&amp;forceview=1">Guía de aprendizaje 05</option>
+                    <option value="/mod/assign/view.php?id=617327&amp;forceview=1">Elaboración de interfaz gráfica y mapa de navegación cumpliendo con reglas de usabilidad y accesibilidad GA5-220501095-AA1-EV03</option>
+                    <option value="/mod/assign/view.php?id=617341&amp;forceview=1">Mapa mental - características socioeconómicas, tecnológicas, políticas y culturales del contexto productivo inmediato GA5-240201064-AA1-EV01</option>
+                    <option value="/mod/assign/view.php?id=617347&amp;forceview=1">Diagrama de flujo sobre las instrucciones de un proceso relacionado con su quehacer laboral GA5-240202501-AA1-EV01</option>
+                    <option value="/mod/assign/view.php?id=617352&amp;forceview=1">Video sobre las etapas básicas del proceso de una empresa y las personas en un equipo de trabajo GA5-240202501-AA1-EV03</option>
+                    <option value="/mod/page/view.php?id=617355&amp;forceview=1">Modelo entidad relación</option>
+                    <option value="/mod/page/view.php?id=617356&amp;forceview=1">Bases de Datos NoSQL</option>
+                    <option value="/mod/page/view.php?id=617359&amp;forceview=1">Implementación y manipulación de bases de datos relacionales</option>
+                    <option value="/mod/page/view.php?id=617360&amp;forceview=1">Arquitectura aplicaciones móviles nativas</option>
+                    <option value="/mod/page/view.php?id=617361&amp;forceview=1">Herramientas para el diseño y desarrollo móvil híbrido</option>
+                    <option value="/mod/page/view.php?id=617362&amp;forceview=1">Diseño de interfaces web</option>
+                    <option value="/mod/page/view.php?id=617363&amp;forceview=1">Actividad física y hábitos de vida saludable</option>
+                    <option value="/mod/page/view.php?id=617366&amp;forceview=1">English Level 8 MCER B1.2</option>
+                    <option value="/mod/page/view.php?id=617367&amp;forceview=1">Guía de aprendizaje 06</option>
+                    <option value="/mod/assign/view.php?id=617377&amp;forceview=1">Destrezas y conocimientos en el manejo de sentencias DDL y DML de SQL GA6-220501096-AA2-EV01</option>
+                    <option value="/mod/assign/view.php?id=617379&amp;forceview=1">Creación de la estructura de la BD y aplicación de restricciones GA6-220501096-AA2-EV02</option>
+                    <option value="/mod/assign/view.php?id=617381&amp;forceview=1">Script Bases de Datos del Proyecto GA6-220501096-AA2-EV03</option>
+                    <option value="/mod/assign/view.php?id=617395&amp;forceview=1">Fundamentos en la implementación de componentes front-end, HTML, CSS, JS GA6-220501096-AA4-EV01</option>
+                    <option value="/mod/assign/view.php?id=617401&amp;forceview=1">Diseño front-end que cumpla con los requerimientos del proyecto GA6-220501096-AA4-EV03</option>
+                    <option value="/mod/forum/view.php?id=617404&amp;forceview=1">Foro temático Establecer las técnicas de coordinación motriz GA6-230101507-AA1-EV01</option>
+                    <option value="/mod/assign/view.php?id=617406&amp;forceview=1">Infografía - Plan de higiene y gasto calórico GA6-230101507-AA2-EV01</option>
+                    <option value="/mod/assign/view.php?id=617409&amp;forceview=1">Mapa mental - capacidades físicas condicionales GA6-230101507-AA3-EV01</option>
+                    <option value="/mod/assign/view.php?id=617411&amp;forceview=1">Ficha antropométrica de valoración de la condición física GA6-230101507-AA3-EV02</option>
+                    <option value="/mod/assign/view.php?id=617414&amp;forceview=1">Folleto de lesiones más comunes en el trabajo o vida cotidiana, y la importancia de las pausas activas GA6-230101507-AA4-EV01</option>
+                    <option value="/mod/assign/view.php?id=617419&amp;forceview=1">Video GA6-240202501-AA1-EV02</option>
+                    <option value="/mod/forum/view.php?id=617421&amp;forceview=1">Foro GA6-240202501-AA1-EV03</option>
+                    <option value="/mod/page/view.php?id=617425&amp;forceview=1">Aplicación del paradigma orientado a objetos</option>
+                    <option value="/mod/page/view.php?id=617427&amp;forceview=1">Integración continua</option>
+                    <option value="/mod/page/view.php?id=617428&amp;forceview=1">Construcción de aplicaciones con JAVA</option>
+                    <option value="/mod/page/view.php?id=617431&amp;forceview=1">Frameworks para construcción de aplicaciones con JAVA</option>
+                    <option value="/mod/page/view.php?id=617432&amp;forceview=1">Desarrollo de frontend con React JS</option>
+                    <option value="/mod/page/view.php?id=617434&amp;forceview=1">Construcción de API</option>
+                    <option value="/mod/page/view.php?id=617437&amp;forceview=1">Servicios web con PHP</option>
+                    <option value="/mod/page/view.php?id=617438&amp;forceview=1">Construcción aplicación web</option>
+                    <option value="/mod/page/view.php?id=617441&amp;forceview=1">Construir aplicativo según las características de la arquitectura Android</option>
+                    <option value="/mod/page/view.php?id=617442&amp;forceview=1">Tecnologías emergentes y disruptivas</option>
+                    <option value="/mod/page/view.php?id=617443&amp;forceview=1">Fundamentos de medio ambiente, seguridad y salud en el trabajo</option>
+                    <option value="/mod/page/view.php?id=617446&amp;forceview=1">Legislación en medio ambiente, seguridad y salud en el trabajo</option>
+                    <option value="/mod/page/view.php?id=617448&amp;forceview=1">Las pruebas de software</option>
+                    <option value="/mod/page/view.php?id=617450&amp;forceview=1">Ser - individuo</option>
+                    <option value="/mod/page/view.php?id=617451&amp;forceview=1">Soy un ser social</option>
+                    <option value="/mod/page/view.php?id=617453&amp;forceview=1">Entendiendo mi mundo</option>
+                    <option value="/mod/page/view.php?id=617455&amp;forceview=1">Ser agente de cambio</option>
+                    <option value="/mod/page/view.php?id=617458&amp;forceview=1">Guía de aprendizaje 07</option>
+                    <option value="/mod/assign/view.php?id=617474&amp;forceview=1">Herramientas de versionamiento (GIT) instalada y configurada GA7-220501096-AA1-EV05</option>
+                    <option value="/mod/assign/view.php?id=617486&amp;forceview=1">Módulos de software codificados y probados GA7-220501096-AA2-EV02</option>
+                    <option value="/mod/assign/view.php?id=617508&amp;forceview=1">Componente front-end del proyecto formativo y proyectos de clase (listas de chequeo) GA7-220501096-AA4-EV03</option>
+                    <option value="/mod/page/view.php?id=617523&amp;forceview=1">Guía de aprendizaje 08</option>
+                    <option value="/mod/quiz/view.php?id=617548&amp;forceview=1">Cuestionario sobre opciones de solución a situaciones que se presentan en el contexto ambiental y del SST GA8-220601501-AA1-EV01</option>
+                    <option value="/mod/assign/view.php?id=617551&amp;forceview=1">Presentación sobre las estrategias para la prevención y control de los impactos ambientales, accidentes y enfermedades laborales (ATEL) GA8-220601501-AA2-EV01</option>
+                    <option value="/mod/assign/view.php?id=617555&amp;forceview=1">Mapa mental respecto a los planes y acciones establecidos en medio ambiente y SST GA8-220601501-AA3-EV01</option>
+                    <option value="/mod/assign/view.php?id=617558&amp;forceview=1">Video expositivo sobre oportunidades de mejora en medio ambiente y SST GA8-220601501-AA4-EV01</option>
+                    <option value="/mod/page/view.php?id=617562&amp;forceview=1">Guía de aprendizaje 09</option>
+                    <option value="/mod/assign/view.php?id=617581&amp;forceview=1">Taller de reflexión escrita. Caso Malala GA9-240201526-AA1-EV01</option>
+                    <option value="/mod/assign/view.php?id=617584&amp;forceview=1">Video presentación. Proyecto de vida GA9-240201526-AA2-EV01</option>
+                    <option value="/mod/assign/view.php?id=617589&amp;forceview=1">Diagrama de sistemas. Relación del individuo con el entorno GA9-240201526-AA3-EV01</option>
+                    <option value="/mod/assign/view.php?id=617594&amp;forceview=1">Ejemplo de una marca sostenible que cumpla con TRIPLE BOTTOM LINE GA9-240201526-AA4-EV01</option>
+                    <option value="/mod/assign/view.php?id=617598&amp;forceview=1">Mapa mental. Hitos del conflicto armado en Colombia en los últimos 50 años GA9-240201526-AA5-EV01</option>
+                    <option value="/mod/assign/view.php?id=617603&amp;forceview=1">Documento colaborativo. Solución del caso GA9-240201526-AA6-EV01</option>
+                    <option value="/mod/page/view.php?id=617609&amp;forceview=1">Conceptos básicos de redes y networking</option>
+                    <option value="/mod/page/view.php?id=617611&amp;forceview=1">Sistemas operativos de red</option>
+                    <option value="/mod/page/view.php?id=617613&amp;forceview=1">Identificación de requerimientos</option>
+                    <option value="/mod/page/view.php?id=617615&amp;forceview=1">Gestión de redundancia y Alta disponibilidad</option>
+                    <option value="/mod/page/view.php?id=617618&amp;forceview=1">Virtualización</option>
+                    <option value="/mod/page/view.php?id=617619&amp;forceview=1">Contenedores</option>
+                    <option value="/mod/page/view.php?id=617623&amp;forceview=1">Publicación de aplicaciones tradicionales</option>
+                    <option value="/mod/page/view.php?id=617625&amp;forceview=1">Actividades de documentación y entrega de software en procesos de implantación</option>
+                    <option value="/mod/page/view.php?id=617627&amp;forceview=1">Ser emprendedor</option>
+                    <option value="/mod/page/view.php?id=617631&amp;forceview=1">Análisis de oportunidades para emprender</option>
+                    <option value="/mod/page/view.php?id=617632&amp;forceview=1">Entendiendo la empresa</option>
+                    <option value="/mod/page/view.php?id=617636&amp;forceview=1">Fundamentos financieros para emprender</option>
+                    <option value="/mod/page/view.php?id=617639&amp;forceview=1">Guía de aprendizaje 10</option>
+                    <option value="/mod/assign/view.php?id=617642&amp;forceview=1">Conceptos y principios de hardware e instalación de software GA10-220501097-AA1-EV01</option>
+                    <option value="/mod/assign/view.php?id=617648&amp;forceview=1">Elaborar plan de Validación de características mínimas de hardware para el software GA10-220501097-AA2-EV01</option>
+                    <option value="/mod/assign/view.php?id=617654&amp;forceview=1">Software instalado en la plataforma del cliente GA10-220501097-AA3-EV01</option>
+                    <option value="/mod/assign/view.php?id=617660&amp;forceview=1">Conceptos y principios acerca de configuración se servicios GA10-220501097-AA4-EV01</option>
+                    <option value="/mod/assign/view.php?id=617665&amp;forceview=1">Realiza la configuración de servicios, bases de datos y software en el equipo del cliente GA10-220501097-AA5-EV01</option>
+                    <option value="/mod/assign/view.php?id=617669&amp;forceview=1">Archivos cargados en la plataforma de producción GA10-220501097-AA6-EV01</option>
+                    <option value="/mod/assign/view.php?id=617673&amp;forceview=1">Realización de pruebas de funcionalidad del software GA10-220501097-AA7-EV01</option>
+                    <option value="/mod/assign/view.php?id=617676&amp;forceview=1">Diseñar plan de mantenimiento y soporte del software GA10-220501097-AA8-EV01</option>
+                    <option value="/mod/assign/view.php?id=617679&amp;forceview=1">Documentación de plan de migración y respaldo de los datos del software GA10-220501097-AA9-EV01</option>
+                    <option value="/mod/assign/view.php?id=617683&amp;forceview=1">Elabora documentos técnicos y de usuario del software GA10-220501097-AA10-EV01</option>
+                    <option value="/mod/assign/view.php?id=617686&amp;forceview=1">Elabora el manual de usuario de  acuerdo con  las funcionalidades del software GA10-220501097-AA11-EV01</option>
+                    <option value="/mod/assign/view.php?id=617690&amp;forceview=1">Elabora plan de capacitación y realización de pruebas de aceptación del cliente GA10-220501097-AA12-EV01</option>
+                    <option value="/mod/assign/view.php?id=617692&amp;forceview=1">Documentación plan de capacitación y Acta de entrega del proyecto de software GA10-220501097-AA13-EV01</option>
+                    <option value="/mod/assign/view.php?id=617696&amp;forceview=1">DOFA Personal. Identificar habilidades personales como emprendedor GA10-240201529-AA1-EV01</option>
+                    <option value="/mod/assign/view.php?id=617699&amp;forceview=1">Modelo CANVAS del emprendimiento. Crear modelo de negocio en el que se caracteriza el emprendimiento GA10-240201529-AA2-EV01</option>
+                    <option value="/mod/assign/view.php?id=617703&amp;forceview=1">Modelo financiero. Proyectar viabilidad financiera del emprendimiento GA10-240201529-AA3-EV01</option>
+                    <option value="/mod/page/view.php?id=617707&amp;forceview=1">Fundamentos de la calidad del software</option>
+                    <option value="/mod/page/view.php?id=617708&amp;forceview=1">Aplicación de pruebas de software</option>
+                    <option value="/mod/page/view.php?id=617710&amp;forceview=1">Derechos fundamentales del&nbsp;trabajo</option>
+                    <option value="/mod/page/view.php?id=617712&amp;forceview=1">Guía de aprendizaje 11</option>
+                    <option value="/mod/assign/view.php?id=617714&amp;forceview=1">Infografía procesos de desarrollo del software. GA11-220501098-AA1-EV01</option>
+                    <option value="/mod/assign/view.php?id=617718&amp;forceview=1">Aplicación de buenas prácticas de calidad documentadas en las disciplinas de calidad de software. GA11-220501098-AA1-EV02</option>
+                    <option value="/mod/assign/view.php?id=617720&amp;forceview=1">Diseño y diligenciamiento de instrumentos para documentar procesos de calidad del software. GA11-220501098-AA1-EV03</option>
+                    <option value="/mod/assign/view.php?id=617724&amp;forceview=1">Bitácoras con los procesos documentados. GA11-220501098-AA1-EV04</option>
+                    <option value="/mod/assign/view.php?id=617728&amp;forceview=1">Creación de informe con los resultados del comportamiento del software. GA11-220501098-AA2-EV01</option>
+                    <option value="/mod/assign/view.php?id=617730&amp;forceview=1">Realizar informe de las experiencias aprendidas en el proceso de verificación del software. GA11-220501098-AA2-EV02</option>
+                    <option value="/mod/assign/view.php?id=617733&amp;forceview=1">Realiza ajustes en los procesos de desarrollo. GA11-220501098-AA3-EV01</option>
+                    <option value="/mod/assign/view.php?id=617736&amp;forceview=1">Documento con las verificaciones de condiciones de calidad del producto de software ajustado. GA11-220501098-AA3-EV02</option>
+                    <option value="/mod/assign/view.php?id=617740&amp;forceview=1">Taller. GA11-210201501-AA1-EV01</option>
+                    <option value="/mod/forum/view.php?id=617743&amp;forceview=1">Foro sobre características del trabajo en contexto local. GA11-210201501-AA1-EV02</option>
+                    <option value="/mod/assign/view.php?id=617745&amp;forceview=1">Informe sobre trabajo decente, ciudadanía laboral, derechos individuales y colectivos en el trabajo. GA11-210201501-AA2-EV01</option>
+                    <option value="/mod/forum/view.php?id=617749&amp;forceview=1">Foro sobre el convenio colectivo del trabajo y la libertad sindical. GA11-210201501-AA2-EV02</option>
+                    <option value="/mod/assign/view.php?id=617751&amp;forceview=1">Gráfico sobre la negociación colectiva. GA11-210201501-AA2-EV03</option>
+                    <option value="/mod/assign/view.php?id=617754&amp;forceview=1">Infografía sobre la huelga. GA11-210201501-AA2-EV04</option>
+                    <option value="/mod/assign/view.php?id=617756&amp;forceview=1">Mapa mental violación de derechos del trabajo. GA11-210201501-AA3-EV01</option>
+                    <option value="/mod/forum/view.php?id=617760&amp;forceview=1">Foro estudio de caso. GA11-210201501-AA3-EV02</option>
+                    <option value="/mod/assign/view.php?id=617763&amp;forceview=1">Cuadro comparativo sobre el derecho de petición y la acción de tutela. GA11-210201501-AA3-EV03</option>
+                    <option value="/mod/assign/view.php?id=617765&amp;forceview=1">Texto argumentativo. GA11-210201501-AA3-EV04</option>
+                    <option value="/mod/forum/view.php?id=617769&amp;forceview=1">Foro Estado social de derecho. GA11-210201501-AA4-EV01</option>
+                    <option value="/mod/assign/view.php?id=617771&amp;forceview=1">Presentación. GA11-210201501-AA4-EV02</option>
+                    <option value="/mod/url/view.php?id=906949&amp;forceview=1">Grabación Fisica - 02 de abril 2024 - 7:00pm</option>
+                    <option value="/mod/url/view.php?id=1234651&amp;forceview=1">Grabación Sesion en linea - 09 de mayo 2024 7:00pm - Ingles (GA4-240202501-AA1)</option>
+                    <option value="/mod/url/view.php?id=1548418&amp;forceview=1">Grabación Sesion en linea - 16 de mayo 2024 7:00pm - Comunicaciones (GA4-240201524)</option>
+                    <option value="/mod/url/view.php?id=2018582&amp;forceview=1">Grabación Sesion en linea - 11 de julio 2024 8:00pm - Ingles (GA4-240201524)</option>
+                    <option value="/mod/url/view.php?id=2073650&amp;forceview=1">Grabación Sesion en linea - 13 de agosto  2024 7:00pm - Ingles (GA6-240202501-AA1)</option>
+                    <option value="/mod/url/view.php?id=2094424&amp;forceview=1">Grabación Sesion en linea - 26 de agosto  2024 7:00pm - Cultura Fisica (GA6-230101507)</option>
+                    <option value="/mod/url/view.php?id=2102356&amp;forceview=1">Grabación Sesion en linea - 2 de septiembre  2024 7:00pm - Cultura Fisica (GA6-230101507)</option>
+                    <option value="/mod/url/view.php?id=2556045&amp;forceview=1">Grabación Sesion en linea - 07 de octubre 2024 7:00pm - SST (GA8-220601501)</option>
+                    <option value="/mod/url/view.php?id=2698226&amp;forceview=1">Grabación Sesion en linea - 21 de octubre 2024 7:00pm - SST (GA8-220601501)</option>
+                    <option value="/mod/url/view.php?id=2719168&amp;forceview=1">Grabación Sesion en linea - 28 de octubre 2024 7:00pm - Etica (GA9-240201526)</option>
+                    <option value="/mod/url/view.php?id=2744683&amp;forceview=1">Grabación Sesion en linea - 05 de noviembre 2024 6:30pm - Etica (GA9-240201526)</option>
+        </select>
+            <noscript>
+                <input type="submit" class="btn btn-secondary ml-1" value="Ir">
+            </noscript>
+    </form>
+</div>
+
+        </div>
+</div>
+    <div class="col-md-4">        <div class="float-right">
+                <a href="https://zajuna.sena.edu.co/zajuna/mod/page/view.php?id=617523&amp;forceview=1" id="next-activity-link" class="btn btn-link">Guía de aprendizaje 08 ►</a>
+
+        </div>
+</div>
+</div>
+</div>
+                    
+                </section>
+            </div>
+
+            <div class="border-right border-primary p-3 border-bottom border-primary columnleft blockcolumn  has-blocks ">
+                <section data-region="blocks-column" class="d-print-none" aria-label="Bloques">
+                    <aside id="block-region-side-pre" class="block-region" data-blockregion="side-pre" data-droptarget="1"><h2 class="sr-only">Bloques</h2><a href="https://zajuna.sena.edu.co/zajuna/mod/assign/view.php?id=617517&amp;forceview=1#sb-1" class="sr-only sr-only-focusable">Salta Panel de Navegación</a>
+
+<section id="inst9" class=" block_navigation block  card mb-3" role="navigation" data-block="navigation" data-instance-id="9" aria-labelledby="instance-9-header">
+
+    <div class="card-body p-3 ">
+
+            <h6 id="instance-9-header" style="color: #39a900; border-radius:12px; box-shadow:0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);" h6="" class="card-title text-uppercase bg-white p-2 font-weight-bold  bg-white ">Panel de Navegación</h6>
+
+
+        <div class="card-text content mt-3">
+            <ul class="block_tree list" role="tree" data-ajax-loader="block_navigation/nav_loader"><li class="type_unknown depth_1 contains_branch" role="treeitem" aria-expanded="true" aria-owns="random67d04e86e72592_group" data-collapsible="false" aria-labelledby="random67d04e86e72591_label_1_1" tabindex="0" aria-selected="true"><p class="tree_item branch navigation_node" tabindex="-1"><a tabindex="-1" id="random67d04e86e72591_label_1_1" href="https://zajuna.sena.edu.co/zajuna/my/courses.php">Mis cursos</a></p><ul id="random67d04e86e72592_group" role="group" tabindex="-1"><li class="type_setting depth_2 item_with_icon" role="treeitem" aria-labelledby="random67d04e86e72593_label_2_2" tabindex="-1" aria-selected="false"><p class="tree_item hasicon" tabindex="-1"><a tabindex="-1" id="random67d04e86e72593_label_2_2" href="https://zajuna.sena.edu.co/zajuna/?redirect=0"><i class="icon fa fa-home fa-fw navicon" aria-hidden="true" tabindex="-1"></i><span class="item-content-wrap" tabindex="-1">Página principal del sitio</span></a></p></li><li class="type_course depth_2 contains_branch" role="treeitem" aria-expanded="false" aria-owns="random67d04e86e72595_group" aria-labelledby="random67d04e86e72593_label_2_3" tabindex="-1" aria-selected="false"><p class="tree_item branch" tabindex="-1"><span tabindex="-1" id="random67d04e86e72593_label_2_3" title="SENA - Zajuna">Secciones</span></p><ul id="random67d04e86e72595_group" role="group" aria-hidden="true" tabindex="-1"><li class="type_custom depth_3 item_with_icon" role="treeitem" aria-labelledby="random67d04e86e72596_label_3_5" tabindex="-1" aria-selected="false"><p class="tree_item hasicon" tabindex="-1"><a tabindex="-1" id="random67d04e86e72596_label_3_5" href="https://zajuna.sena.edu.co/zajuna/my/courses.php"><i class="icon fa fa-square fa-fw navicon" aria-hidden="true" tabindex="-1"></i><span class="item-content-wrap" tabindex="-1">Mis cursos</span></a></p></li><li class="type_activity depth_3 item_with_icon" role="treeitem" aria-labelledby="random67d04e86e72596_label_3_7" tabindex="-1" aria-selected="false"><p class="tree_item hasicon" tabindex="-1"><a tabindex="-1" id="random67d04e86e72596_label_3_7" title="Foro" href="https://zajuna.sena.edu.co/zajuna/mod/forum/view.php?id=26790"><img class="icon navicon" alt="Foro" title="Foro" src="./P_228118_V_2834922_R_19_C_9307_files/monologo.svg" tabindex="-1"><span class="item-content-wrap" tabindex="-1">Anuncios de la página</span></a></p></li></ul></li><li class="type_system depth_2 contains_branch" role="treeitem" aria-expanded="true" aria-owns="random67d04e86e72599_group" aria-labelledby="random67d04e86e72593_label_2_8" tabindex="-1" aria-selected="false"><p class="tree_item branch" tabindex="-1"><a tabindex="-1" id="random67d04e86e72593_label_2_8" href="https://zajuna.sena.edu.co/zajuna/my/courses.php">Mis cursos</a></p><ul id="random67d04e86e72599_group" role="group" tabindex="-1"><li class="type_course depth_3 contains_branch" role="treeitem" aria-expanded="true" aria-owns="random67d04e86e725911_group" aria-labelledby="random67d04e86e725910_label_3_9" tabindex="-1" aria-selected="false"><p class="tree_item branch canexpand" tabindex="-1"><a tabindex="-1" id="random67d04e86e725910_label_3_9" title="ANALISIS Y DESARROLLO DE SOFTWARE. (2834922)" href="https://zajuna.sena.edu.co/zajuna/course/view.php?id=6127">P_228118_V_2834922_R_19_C_9307</a></p><ul id="random67d04e86e725911_group" role="group" tabindex="-1"><li class="type_container depth_4 contains_branch" role="treeitem" aria-expanded="false" aria-owns="random67d04e86e725913_group" aria-labelledby="random67d04e86e725912_label_4_10" tabindex="-1" aria-selected="false"><p class="tree_item branch" tabindex="-1"><a tabindex="-1" id="random67d04e86e725912_label_4_10" href="https://zajuna.sena.edu.co/zajuna/user/index.php?id=6127">Participantes</a></p><ul id="random67d04e86e725913_group" role="group" aria-hidden="true" tabindex="-1"><li class="type_user depth_5 item_with_icon" role="treeitem" aria-labelledby="random67d04e86e725914_label_5_11" tabindex="-1" aria-selected="false"><p class="tree_item hasicon" tabindex="-1"><a tabindex="-1" id="random67d04e86e725914_label_5_11" href="https://zajuna.sena.edu.co/zajuna/user/view.php?id=149495&amp;course=6127"><i class="icon fa fa-square fa-fw navicon" aria-hidden="true" tabindex="-1"></i><span class="item-content-wrap" tabindex="-1">JOSE ANGEL PEÑA BALLESTEROS </span></a></p></li></ul></li><li class="type_setting depth_4 item_with_icon" role="treeitem" aria-labelledby="random67d04e86e725912_label_4_12" tabindex="-1" aria-selected="false"><p class="tree_item hasicon" tabindex="-1"><a tabindex="-1" id="random67d04e86e725912_label_4_12" href="https://zajuna.sena.edu.co/zajuna/grade/report/index.php?id=6127"><i class="icon fa fa-table fa-fw navicon" aria-hidden="true" tabindex="-1"></i><span class="item-content-wrap" tabindex="-1">Calificaciones</span></a></p></li><li class="type_activity depth_4 item_with_icon" role="treeitem" aria-labelledby="random67d04e86e725912_label_4_13" tabindex="-1" aria-selected="false"><p class="tree_item hasicon" tabindex="-1"><a tabindex="-1" id="random67d04e86e725912_label_4_13" href="https://zajuna.sena.edu.co/zajuna/mod/forum/view.php?id=616983"><img class="icon navicon" alt="Foro" title="Foro" src="./P_228118_V_2834922_R_19_C_9307_files/icon.svg" tabindex="-1"><span class="item-content-wrap" tabindex="-1">ANUNCIOS</span></a></p></li><li class="type_structure depth_4 contains_branch" role="treeitem" aria-expanded="false" data-requires-ajax="true" data-loaded="false" data-node-id="expandable_branch_30_388521" data-node-key="388521" data-node-type="30" aria-labelledby="random67d04e86e725912_label_4_14" tabindex="-1" aria-selected="false"><p class="tree_item branch" id="expandable_branch_30_388521" tabindex="-1"><a tabindex="-1" id="random67d04e86e725912_label_4_14" href="https://zajuna.sena.edu.co/zajuna/course/view.php?id=6127#section-1">INFORMACIÓN GENERAL</a></p></li><li class="type_structure depth_4 contains_branch" role="treeitem" aria-expanded="false" data-requires-ajax="true" data-loaded="false" data-node-id="expandable_branch_30_388529" data-node-key="388529" data-node-type="30" aria-labelledby="random67d04e86e725912_label_4_15" tabindex="-1" aria-selected="false"><p class="tree_item branch" id="expandable_branch_30_388529" tabindex="-1"><a tabindex="-1" id="random67d04e86e725912_label_4_15" href="https://zajuna.sena.edu.co/zajuna/course/view.php?id=6127#section-6">CRONOGRAMAS</a></p></li><li class="type_structure depth_4 contains_branch" role="treeitem" aria-expanded="true" aria-owns="random67d04e86e725918_group" aria-labelledby="random67d04e86e725912_label_4_16" tabindex="-1" aria-selected="false"><p class="tree_item branch canexpand" tabindex="-1"><a tabindex="-1" id="random67d04e86e725912_label_4_16" href="https://zajuna.sena.edu.co/zajuna/course/view.php?id=6127#section-68">FASE 3 EJECUCIÓN</a></p><ul id="random67d04e86e725918_group" role="group" tabindex="-1"><li class="type_structure depth_5 contains_branch" role="treeitem" aria-expanded="false" data-requires-ajax="true" data-loaded="false" data-node-id="expandable_branch_30_388691" data-node-key="388691" data-node-type="30" aria-labelledby="random67d04e86e725919_label_5_17" tabindex="-1" aria-selected="false"><p class="tree_item branch" id="expandable_branch_30_388691" tabindex="-1"><a tabindex="-1" id="random67d04e86e725919_label_5_17" href="https://zajuna.sena.edu.co/zajuna/course/view.php?id=6127#section-69">Actividad de proyecto 6</a></p></li><li class="type_structure depth_5 contains_branch" role="treeitem" aria-expanded="true" aria-owns="random67d04e86e725920_group" aria-labelledby="random67d04e86e725919_label_5_18" tabindex="-1" aria-selected="false"><p class="tree_item branch canexpand" tabindex="-1"><a tabindex="-1" id="random67d04e86e725919_label_5_18" href="https://zajuna.sena.edu.co/zajuna/course/view.php?id=6127#section-81">Actividad de Proyecto 7</a></p><ul id="random67d04e86e725920_group" role="group" tabindex="-1"><li class="type_structure depth_6 contains_branch" role="treeitem" aria-expanded="false" data-requires-ajax="true" data-loaded="false" data-node-id="expandable_branch_30_388720" data-node-key="388720" data-node-type="30" aria-labelledby="random67d04e86e725921_label_6_19" tabindex="-1" aria-selected="false"><p class="tree_item branch" id="expandable_branch_30_388720" tabindex="-1"><a tabindex="-1" id="random67d04e86e725921_label_6_19" href="https://zajuna.sena.edu.co/zajuna/course/view.php?id=6127#section-82">Material de formación</a></p></li><li class="type_structure depth_6 contains_branch" role="treeitem" aria-expanded="true" aria-owns="random67d04e86e725922_group" aria-labelledby="random67d04e86e725921_label_6_20" tabindex="-1" aria-selected="false"><p class="tree_item branch canexpand" tabindex="-1"><a tabindex="-1" id="random67d04e86e725921_label_6_20" href="https://zajuna.sena.edu.co/zajuna/course/view.php?id=6127#section-83">Guía de aprendizaje 07</a></p><ul id="random67d04e86e725922_group" role="group" tabindex="-1"><li class="type_activity depth_7 item_with_icon" role="treeitem" aria-labelledby="random67d04e86e725923_label_7_21" tabindex="-1" aria-selected="false"><p class="tree_item hasicon" tabindex="-1"><a tabindex="-1" id="random67d04e86e725923_label_7_21" href="https://zajuna.sena.edu.co/zajuna/mod/page/view.php?id=617458"><img class="icon navicon" alt="Página" title="Página" src="./P_228118_V_2834922_R_19_C_9307_files/icon(1).svg" tabindex="-1"><span class="item-content-wrap" tabindex="-1">Guía de aprendizaje 07</span></a></p></li><li class="type_structure depth_7 contains_branch" role="treeitem" aria-expanded="false" data-requires-ajax="true" data-loaded="false" data-node-id="expandable_branch_30_388730" data-node-key="388730" data-node-type="30" aria-labelledby="random67d04e86e725923_label_7_22" tabindex="-1" aria-selected="false"><p class="tree_item branch" id="expandable_branch_30_388730" tabindex="-1"><a tabindex="-1" id="random67d04e86e725923_label_7_22" href="https://zajuna.sena.edu.co/zajuna/course/view.php?id=6127#section-84">.Actividad de aprendizaje GA7-220501096-AA1</a></p></li><li class="type_structure depth_7 contains_branch" role="treeitem" aria-expanded="false" data-requires-ajax="true" data-loaded="false" data-node-id="expandable_branch_30_388744" data-node-key="388744" data-node-type="30" aria-labelledby="random67d04e86e725923_label_7_23" tabindex="-1" aria-selected="false"><p class="tree_item branch" id="expandable_branch_30_388744" tabindex="-1"><a tabindex="-1" id="random67d04e86e725923_label_7_23" href="https://zajuna.sena.edu.co/zajuna/course/view.php?id=6127#section-85">.Actividad de aprendizaje GA7-220501096-AA2</a></p></li><li class="type_structure depth_7 contains_branch" role="treeitem" aria-expanded="false" data-requires-ajax="true" data-loaded="false" data-node-id="expandable_branch_30_388749" data-node-key="388749" data-node-type="30" aria-labelledby="random67d04e86e725923_label_7_24" tabindex="-1" aria-selected="false"><p class="tree_item branch" id="expandable_branch_30_388749" tabindex="-1"><a tabindex="-1" id="random67d04e86e725923_label_7_24" href="https://zajuna.sena.edu.co/zajuna/course/view.php?id=6127#section-87">.Actividad de aprendizaje GA7-220501096-AA4</a></p></li><li class="type_structure depth_7 contains_branch" role="treeitem" aria-expanded="true" aria-owns="random67d04e86e725925_group" aria-labelledby="random67d04e86e725923_label_7_25" tabindex="-1" aria-selected="false"><p class="tree_item branch" tabindex="-1"><a tabindex="-1" id="random67d04e86e725923_label_7_25" href="https://zajuna.sena.edu.co/zajuna/course/view.php?id=6127#section-88">.Actividad de aprendizaje GA7-220501096-AA5</a></p><ul id="random67d04e86e725925_group" role="group" tabindex="-1"><li class="type_activity depth_8 item_with_icon current_branch" role="treeitem" aria-labelledby="random67d04e86e725926_label_8_26" tabindex="-1" aria-selected="false"><p class="tree_item hasicon active_tree_node" tabindex="-1"><a tabindex="-1" id="random67d04e86e725926_label_8_26" href="https://zajuna.sena.edu.co/zajuna/mod/assign/view.php?id=617517"><img class="icon navicon" alt="Evidencia" title="Evidencia" src="./P_228118_V_2834922_R_19_C_9307_files/icon(2).svg" tabindex="-1"><span class="item-content-wrap" tabindex="-1">Diseño y Desarrollo de servicios web - proyecto GA...</span></a></p></li></ul></li></ul></li><li class="type_structure depth_6 contains_branch" role="treeitem" aria-expanded="false" data-requires-ajax="true" data-loaded="false" data-node-id="expandable_branch_30_388758" data-node-key="388758" data-node-type="30" aria-labelledby="random67d04e86e725921_label_6_27" tabindex="-1" aria-selected="false"><p class="tree_item branch" id="expandable_branch_30_388758" tabindex="-1"><a tabindex="-1" id="random67d04e86e725921_label_6_27" href="https://zajuna.sena.edu.co/zajuna/course/view.php?id=6127#section-89">Guía de aprendizaje 08</a></p></li><li class="type_structure depth_6 contains_branch" role="treeitem" aria-expanded="false" data-requires-ajax="true" data-loaded="false" data-node-id="expandable_branch_30_388775" data-node-key="388775" data-node-type="30" aria-labelledby="random67d04e86e725921_label_6_28" tabindex="-1" aria-selected="false"><p class="tree_item branch" id="expandable_branch_30_388775" tabindex="-1"><a tabindex="-1" id="random67d04e86e725921_label_6_28" href="https://zajuna.sena.edu.co/zajuna/course/view.php?id=6127#section-96">Guía de aprendizaje 09</a></p></li></ul></li></ul></li><li class="type_structure depth_4 contains_branch" role="treeitem" aria-expanded="false" data-requires-ajax="true" data-loaded="false" data-node-id="expandable_branch_30_388870" data-node-key="388870" data-node-type="30" aria-labelledby="random67d04e86e725912_label_4_29" tabindex="-1" aria-selected="false"><p class="tree_item branch" id="expandable_branch_30_388870" tabindex="-1"><a tabindex="-1" id="random67d04e86e725912_label_4_29" href="https://zajuna.sena.edu.co/zajuna/course/view.php?id=6127#section-136">SESIONES EN LÍNEA</a></p></li></ul></li></ul></li></ul></li></ul>
+            <div class="footer"></div>
+            
+        </div>
+
+    </div>
+
+</section>
+
+  <span id="sb-1"></span></aside>
+                </section>
+            </div>
+            <div class="border-left border-primary p-3 border-bottom border-primary columnright blockcolumn ">
+                <section data-region="blocks-column" class="d-print-none" aria-label="Bloques">
+                    <aside id="block-region-side-post" class="block-region" data-blockregion="side-post" data-droptarget="1"><h2 class="sr-only">Bloques</h2></aside>
+                </section>
+            </div>
+        </div>
+    </div>
+    <div id="drawer-67d04e8818e9967d04e86e725940" class=" drawer bg-white hidden" aria-expanded="false" aria-hidden="true" data-region="right-hand-drawer" role="region" tabindex="0">
+            <div id="message-drawer-67d04e8818e9967d04e86e725940" class="message-app" data-region="message-drawer" role="region">
+            <div class="closewidget text-right pr-2">
+                <a class="text-dark btn-link" data-action="closedrawer" href="https://zajuna.sena.edu.co/zajuna/mod/assign/view.php?id=617517&amp;forceview=1#" title="Cerrar" aria-label="Cerrar">
+                    <i class="icon fa fa-window-close fa-fw " aria-hidden="true"></i>
+                </a>
+            </div>
+            <div class="header-container position-relative" data-region="header-container">
+                <div class="hidden border-bottom p-1 px-sm-2" aria-hidden="true" data-region="view-contacts">
+                    <div class="d-flex align-items-center">
+                        <div class="align-self-stretch">
+                            <a class="h-100 d-flex align-items-center mr-2" href="https://zajuna.sena.edu.co/zajuna/mod/assign/view.php?id=617517&amp;forceview=1#" data-route-back="" role="button">
+                                <div class="icon-back-in-drawer">
+                                    <span class="dir-rtl-hide"><i class="icon fa fa-chevron-left fa-fw " aria-hidden="true"></i></span>
+                                    <span class="dir-ltr-hide"><i class="icon fa fa-chevron-right fa-fw " aria-hidden="true"></i></span>
+                                </div>
+                                <div class="icon-back-in-app">
+                                    <span class="dir-rtl-hide"><i class="icon fa fa-times fa-fw " aria-hidden="true"></i></span>
+                                </div>                            </a>
+                        </div>
+                        <div>
+                            Contactos
+                        </div>
+                        <div class="ml-auto">
+                            <a href="https://zajuna.sena.edu.co/zajuna/mod/assign/view.php?id=617517&amp;forceview=1#" data-route="view-search" role="button" aria-label="Búsqueda">
+                                <i class="icon fa fa-search fa-fw " aria-hidden="true"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>                
+                <div class="hidden bg-white position-relative border-bottom p-1 px-sm-2" aria-hidden="true" data-region="view-conversation">
+                    <div class="hidden" data-region="header-content"></div>
+                    <div class="hidden" data-region="header-edit-mode">
+                        
+                        <div class="d-flex p-2 align-items-center">
+                            Mensajes seleccionados:
+                            <span class="ml-1" data-region="message-selected-court">1</span>
+                            <button type="button" class="ml-auto close" aria-label="Cancelar selección de mensaje" data-action="cancel-edit-mode">
+                                    <span aria-hidden="true">×</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div data-region="header-placeholder">
+                        <div class="d-flex">
+                            <div class="ml-2 rounded-circle bg-pulse-grey align-self-center" style="height: 38px; width: 38px">
+                            </div>
+                            <div class="ml-2 " style="flex: 1">
+                                <div class="mt-1 bg-pulse-grey w-75" style="height: 16px;">
+                                </div>
+                            </div>
+                            <div class="ml-2 bg-pulse-grey align-self-center" style="height: 16px; width: 20px">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hidden position-absolute z-index-1" data-region="confirm-dialogue-container" style="top: 0; bottom: -1px; right: 0; left: 0; background: rgba(0,0,0,0.3);"></div>
+                </div>                <div class="border-bottom p-1 px-sm-2" aria-hidden="false" data-region="view-overview">
+                    <div class="d-flex align-items-center">
+                        <div class="input-group simplesearchform">
+                            <input type="text" class="form-control" placeholder="Búsqueda" aria-label="Búsqueda" data-region="view-overview-search-input">
+                            <div class="input-group-append">
+                                <span class="icon-no-margin btn btn-submit">
+                                    <i class="icon fa fa-search fa-fw " aria-hidden="true"></i>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="ml-2">
+                            <a href="https://zajuna.sena.edu.co/zajuna/mod/assign/view.php?id=617517&amp;forceview=1#" data-route="view-settings" data-route-param="149495" aria-label="Ajustes" role="button">
+                                <i class="icon fa fa-cog fa-fw " aria-hidden="true"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="text-right mt-sm-3">
+                        <a href="https://zajuna.sena.edu.co/zajuna/mod/assign/view.php?id=617517&amp;forceview=1#" data-route="view-contacts" role="button">
+                            <i class="icon fa fa-user fa-fw " aria-hidden="true"></i>
+                            Contactos
+                            <span class="badge badge-primary bg-primary ml-2 hidden" data-region="contact-request-count">
+                                <span aria-hidden="true">0</span>
+                                <span class="sr-only">Hay 0 solicitudes de contacto pendientes</span>
+                            </span>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="hidden border-bottom p-1 px-sm-2 view-search" aria-hidden="true" data-region="view-search">
+                    <div class="d-flex align-items-center">
+                        <a class="mr-2 align-self-stretch d-flex align-items-center" href="https://zajuna.sena.edu.co/zajuna/mod/assign/view.php?id=617517&amp;forceview=1#" data-route-back="" data-action="cancel-search" role="button">
+                            <div class="icon-back-in-drawer">
+                                <span class="dir-rtl-hide"><i class="icon fa fa-chevron-left fa-fw " aria-hidden="true"></i></span>
+                                <span class="dir-ltr-hide"><i class="icon fa fa-chevron-right fa-fw " aria-hidden="true"></i></span>
+                            </div>
+                            <div class="icon-back-in-app">
+                                <span class="dir-rtl-hide"><i class="icon fa fa-times fa-fw " aria-hidden="true"></i></span>
+                            </div>                        </a>
+                        <div class="input-group simplesearchform">
+                            <input type="text" class="form-control" placeholder="Búsqueda" aria-label="Búsqueda" data-region="search-input">
+                            <div class="input-group-append">
+                                <button class="btn btn-submit icon-no-margin" type="button" data-action="search" aria-label="Búsqueda">
+                                    <span data-region="search-icon-container">
+                                        <i class="icon fa fa-search fa-fw " aria-hidden="true"></i>
+                                    </span>
+                                    <span class="hidden" data-region="loading-icon-container">
+                                        <span class="loading-icon icon-no-margin"><i class="icon fa fa-circle-o-notch fa-spin fa-fw " title="Cargando" role="img" aria-label="Cargando"></i></span>
+                                    </span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>                
+                <div class="hidden border-bottom p-1 px-sm-2 pb-sm-3" aria-hidden="true" data-region="view-settings">
+                    <div class="d-flex align-items-center">
+                        <div class="align-self-stretch">
+                            <a class="h-100 d-flex mr-2 align-items-center" href="https://zajuna.sena.edu.co/zajuna/mod/assign/view.php?id=617517&amp;forceview=1#" data-route-back="" role="button">
+                                <div class="icon-back-in-drawer">
+                                    <span class="dir-rtl-hide"><i class="icon fa fa-chevron-left fa-fw " aria-hidden="true"></i></span>
+                                    <span class="dir-ltr-hide"><i class="icon fa fa-chevron-right fa-fw " aria-hidden="true"></i></span>
+                                </div>
+                                <div class="icon-back-in-app">
+                                    <span class="dir-rtl-hide"><i class="icon fa fa-times fa-fw " aria-hidden="true"></i></span>
+                                </div>                            </a>
+                        </div>
+                        <div>
+                            Configuración
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="body-container position-relative" data-region="body-container">
+                
+                <div class="hidden" data-region="view-contact" aria-hidden="true">
+                    <div class="p-2 pt-3" data-region="content-container"></div>
+                </div>                <div class="hidden h-100" data-region="view-contacts" aria-hidden="true" data-user-id="149495">
+                    <div class="d-flex flex-column h-100">
+                        <div class="p-3 border-bottom">
+                            <ul class="nav nav-pills nav-fill" role="tablist">
+                                <li class="nav-item">
+                                    <a id="contacts-tab-67d04e8818e9967d04e86e725940" class="nav-link active" href="https://zajuna.sena.edu.co/zajuna/mod/assign/view.php?id=617517&amp;forceview=1#contacts-tab-panel-67d04e8818e9967d04e86e725940" data-toggle="tab" data-action="show-contacts-section" role="tab" aria-controls="contacts-tab-panel-67d04e8818e9967d04e86e725940" aria-selected="true">
+                                        Contactos
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a id="requests-tab-67d04e8818e9967d04e86e725940" class="nav-link" href="https://zajuna.sena.edu.co/zajuna/mod/assign/view.php?id=617517&amp;forceview=1#requests-tab-panel-67d04e8818e9967d04e86e725940" data-toggle="tab" data-action="show-requests-section" role="tab" aria-controls="requests-tab-panel-67d04e8818e9967d04e86e725940" aria-selected="false">
+                                        Peticiones
+                                        <span class="badge badge-primary bg-primary ml-2 hidden" data-region="contact-request-count">
+                                            <span aria-hidden="true">0</span>
+                                            <span class="sr-only">Hay 0 solicitudes de contacto pendientes</span>
+                                        </span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="tab-content d-flex flex-column h-100">
+                                            <div class="tab-pane fade show active h-100 lazy-load-list" aria-live="polite" data-region="lazy-load-list" data-user-id="149495" id="contacts-tab-panel-67d04e8818e9967d04e86e725940" data-section="contacts" role="tabpanel" aria-labelledby="contacts-tab-67d04e8818e9967d04e86e725940">
+                    
+                    <div class="hidden text-center p-2" data-region="empty-message-container">
+                        No hay contactos
+                    </div>
+                    <div class="hidden list-group" data-region="content-container">
+                        
+                    </div>
+                    <div class="list-group" data-region="placeholder-container">
+                        
+                    </div>
+                    <div class="w-100 text-center p-3 hidden" data-region="loading-icon-container">
+                        <span class="loading-icon icon-no-margin"><i class="icon fa fa-circle-o-notch fa-spin fa-fw " title="Cargando" role="img" aria-label="Cargando"></i></span>
+                    </div>
+                </div>
+                
+                                            <div class="tab-pane fade h-100 lazy-load-list" aria-live="polite" data-region="lazy-load-list" data-user-id="149495" id="requests-tab-panel-67d04e8818e9967d04e86e725940" data-section="requests" role="tabpanel" aria-labelledby="requests-tab-67d04e8818e9967d04e86e725940">
+                    
+                    <div class="hidden text-center p-2" data-region="empty-message-container">
+                        No hay solicitudes de contacto
+                    </div>
+                    <div class="hidden list-group" data-region="content-container">
+                        
+                    </div>
+                    <div class="list-group" data-region="placeholder-container">
+                        
+                    </div>
+                    <div class="w-100 text-center p-3 hidden" data-region="loading-icon-container">
+                        <span class="loading-icon icon-no-margin"><i class="icon fa fa-circle-o-notch fa-spin fa-fw " title="Cargando" role="img" aria-label="Cargando"></i></span>
+                    </div>
+                </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="view-conversation hidden h-100" aria-hidden="true" data-region="view-conversation" data-user-id="149495" data-midnight="1741669200" data-message-poll-min="10" data-message-poll-max="120" data-message-poll-after-max="300" style="overflow-y: auto; overflow-x: hidden">
+                    <div class="position-relative h-100" data-region="content-container" style="overflow-y: auto; overflow-x: hidden">
+                        <div class="content-message-container hidden h-100 px-2 pt-0" data-region="content-message-container" role="log" style="overflow-y: auto; overflow-x: hidden">
+                            <div class="py-3 sticky-top z-index-1 border-bottom text-center hidden" data-region="contact-request-sent-message-container">
+                                <p class="m-0">Solicitud de contacto enviada</p>
+                                <p class="font-italic font-weight-light" data-region="text"></p>
+                            </div>
+                            <div class="p-3 text-center hidden" data-region="self-conversation-message-container">
+                                <p class="m-0">Espacio personal</p>
+                                <p class="font-italic font-weight-light" data-region="text">Guardar borradores de mensajes, notas, etc, para acceder a ellos más tarde.</p>
+                           </div>
+                            <div class="hidden text-center p-3" data-region="more-messages-loading-icon-container"><span class="loading-icon icon-no-margin"><i class="icon fa fa-circle-o-notch fa-spin fa-fw " title="Cargando" role="img" aria-label="Cargando"></i></span>
+</div>
+                        </div>
+                        <div class="p-4 w-100 h-100 hidden position-absolute z-index-1" data-region="confirm-dialogue-container" style="top: 0; background: rgba(0,0,0,0.3);">
+                            
+                            <div class="p-3 bg-white" data-region="confirm-dialogue" role="alert">
+                                <p class="text-muted" data-region="dialogue-text"></p>
+                                <div class="mb-2 custom-control custom-checkbox hidden" data-region="delete-messages-for-all-users-toggle-container">
+                                    <input type="checkbox" class="custom-control-input" id="delete-messages-for-all-users" data-region="delete-messages-for-all-users-toggle">
+                                    <label class="custom-control-label text-muted" for="delete-messages-for-all-users">
+                                        Borrar para mí y para todos los demás
+                                    </label>
+                                </div>
+                                <button type="button" class="btn btn-primary btn-block hidden" data-action="confirm-block">
+                                    <span data-region="dialogue-button-text">Bloque</span>
+                                    <span class="hidden" data-region="loading-icon-container"><span class="loading-icon icon-no-margin"><i class="icon fa fa-circle-o-notch fa-spin fa-fw " title="Cargando" role="img" aria-label="Cargando"></i></span>
+</span>
+                                </button>
+                                <button type="button" class="btn btn-primary btn-block hidden" data-action="confirm-unblock">
+                                    <span data-region="dialogue-button-text">Desbloquear</span>
+                                    <span class="hidden" data-region="loading-icon-container"><span class="loading-icon icon-no-margin"><i class="icon fa fa-circle-o-notch fa-spin fa-fw " title="Cargando" role="img" aria-label="Cargando"></i></span>
+</span>
+                                </button>
+                                <button type="button" class="btn btn-primary btn-block hidden" data-action="confirm-remove-contact">
+                                    <span data-region="dialogue-button-text">Quitar</span>
+                                    <span class="hidden" data-region="loading-icon-container"><span class="loading-icon icon-no-margin"><i class="icon fa fa-circle-o-notch fa-spin fa-fw " title="Cargando" role="img" aria-label="Cargando"></i></span>
+</span>
+                                </button>
+                                <button type="button" class="btn btn-primary btn-block hidden" data-action="confirm-add-contact">
+                                    <span data-region="dialogue-button-text">Añadir</span>
+                                    <span class="hidden" data-region="loading-icon-container"><span class="loading-icon icon-no-margin"><i class="icon fa fa-circle-o-notch fa-spin fa-fw " title="Cargando" role="img" aria-label="Cargando"></i></span>
+</span>
+                                </button>
+                                <button type="button" class="btn btn-primary btn-block hidden" data-action="confirm-delete-selected-messages">
+                                    <span data-region="dialogue-button-text">Borrar</span>
+                                    <span class="hidden" data-region="loading-icon-container"><span class="loading-icon icon-no-margin"><i class="icon fa fa-circle-o-notch fa-spin fa-fw " title="Cargando" role="img" aria-label="Cargando"></i></span>
+</span>
+                                </button>
+                                <button type="button" class="btn btn-primary btn-block hidden" data-action="confirm-delete-conversation">
+                                    <span data-region="dialogue-button-text">Borrar</span>
+                                    <span class="hidden" data-region="loading-icon-container"><span class="loading-icon icon-no-margin"><i class="icon fa fa-circle-o-notch fa-spin fa-fw " title="Cargando" role="img" aria-label="Cargando"></i></span>
+</span>
+                                </button>
+                                <button type="button" class="btn btn-primary btn-block hidden" data-action="request-add-contact">
+                                    <span data-region="dialogue-button-text">Enviar solicitud de contacto</span>
+                                    <span class="hidden" data-region="loading-icon-container"><span class="loading-icon icon-no-margin"><i class="icon fa fa-circle-o-notch fa-spin fa-fw " title="Cargando" role="img" aria-label="Cargando"></i></span>
+</span>
+                                </button>
+                                <button type="button" class="btn btn-primary btn-block hidden" data-action="accept-contact-request">
+                                    <span data-region="dialogue-button-text">Aceptar y añadir a los contactos</span>
+                                    <span class="hidden" data-region="loading-icon-container"><span class="loading-icon icon-no-margin"><i class="icon fa fa-circle-o-notch fa-spin fa-fw " title="Cargando" role="img" aria-label="Cargando"></i></span>
+</span>
+                                </button>
+                                <button type="button" class="btn btn-secondary btn-block hidden" data-action="decline-contact-request">
+                                    <span data-region="dialogue-button-text">Rechazar</span>
+                                    <span class="hidden" data-region="loading-icon-container"><span class="loading-icon icon-no-margin"><i class="icon fa fa-circle-o-notch fa-spin fa-fw " title="Cargando" role="img" aria-label="Cargando"></i></span>
+</span>
+                                </button>
+                                <button type="button" class="btn btn-primary btn-block" data-action="okay-confirm">OK</button>
+                                <button type="button" class="btn btn-secondary btn-block" data-action="cancel-confirm">Cancelar</button>
+                            </div>
+                        </div>
+                        <div class="px-2 pb-2 pt-0" data-region="content-placeholder">
+                            <div class="h-100 d-flex flex-column">
+                                <div class="px-2 pb-2 pt-0 bg-light h-100" style="overflow-y: auto">
+                                    <div class="mt-4">
+                                        <div class="mb-4">
+                                            <div class="mx-auto bg-white" style="height: 25px; width: 100px"></div>
+                                        </div>
+                                        <div class="d-flex flex-column p-2 bg-white rounded mb-2">
+                                            <div class="d-flex align-items-center mb-2">
+                                                <div class="mr-2">
+                                                    <div class="rounded-circle bg-pulse-grey" style="height: 35px; width: 35px"></div>
+                                                </div>
+                                                <div class="mr-4 w-75 bg-pulse-grey" style="height: 16px"></div>
+                                                <div class="ml-auto bg-pulse-grey" style="width: 35px; height: 16px"></div>
+                                            </div>
+                                            <div class="bg-pulse-grey w-100" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-75 mt-2" style="height: 16px"></div>
+                                        </div>
+                                        <div class="d-flex flex-column p-2 bg-white rounded mb-2">
+                                            <div class="d-flex align-items-center mb-2">
+                                                <div class="mr-2">
+                                                    <div class="rounded-circle bg-pulse-grey" style="height: 35px; width: 35px"></div>
+                                                </div>
+                                                <div class="mr-4 w-75 bg-pulse-grey" style="height: 16px"></div>
+                                                <div class="ml-auto bg-pulse-grey" style="width: 35px; height: 16px"></div>
+                                            </div>
+                                            <div class="bg-pulse-grey w-100" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-75 mt-2" style="height: 16px"></div>
+                                        </div>
+                                        <div class="d-flex flex-column p-2 bg-white rounded mb-2">
+                                            <div class="d-flex align-items-center mb-2">
+                                                <div class="mr-2">
+                                                    <div class="rounded-circle bg-pulse-grey" style="height: 35px; width: 35px"></div>
+                                                </div>
+                                                <div class="mr-4 w-75 bg-pulse-grey" style="height: 16px"></div>
+                                                <div class="ml-auto bg-pulse-grey" style="width: 35px; height: 16px"></div>
+                                            </div>
+                                            <div class="bg-pulse-grey w-100" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-75 mt-2" style="height: 16px"></div>
+                                        </div>
+                                    </div>                                    <div class="mt-4">
+                                        <div class="mb-4">
+                                            <div class="mx-auto bg-white" style="height: 25px; width: 100px"></div>
+                                        </div>
+                                        <div class="d-flex flex-column p-2 bg-white rounded mb-2">
+                                            <div class="d-flex align-items-center mb-2">
+                                                <div class="mr-2">
+                                                    <div class="rounded-circle bg-pulse-grey" style="height: 35px; width: 35px"></div>
+                                                </div>
+                                                <div class="mr-4 w-75 bg-pulse-grey" style="height: 16px"></div>
+                                                <div class="ml-auto bg-pulse-grey" style="width: 35px; height: 16px"></div>
+                                            </div>
+                                            <div class="bg-pulse-grey w-100" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-75 mt-2" style="height: 16px"></div>
+                                        </div>
+                                        <div class="d-flex flex-column p-2 bg-white rounded mb-2">
+                                            <div class="d-flex align-items-center mb-2">
+                                                <div class="mr-2">
+                                                    <div class="rounded-circle bg-pulse-grey" style="height: 35px; width: 35px"></div>
+                                                </div>
+                                                <div class="mr-4 w-75 bg-pulse-grey" style="height: 16px"></div>
+                                                <div class="ml-auto bg-pulse-grey" style="width: 35px; height: 16px"></div>
+                                            </div>
+                                            <div class="bg-pulse-grey w-100" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-75 mt-2" style="height: 16px"></div>
+                                        </div>
+                                        <div class="d-flex flex-column p-2 bg-white rounded mb-2">
+                                            <div class="d-flex align-items-center mb-2">
+                                                <div class="mr-2">
+                                                    <div class="rounded-circle bg-pulse-grey" style="height: 35px; width: 35px"></div>
+                                                </div>
+                                                <div class="mr-4 w-75 bg-pulse-grey" style="height: 16px"></div>
+                                                <div class="ml-auto bg-pulse-grey" style="width: 35px; height: 16px"></div>
+                                            </div>
+                                            <div class="bg-pulse-grey w-100" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-75 mt-2" style="height: 16px"></div>
+                                        </div>
+                                    </div>                                    <div class="mt-4">
+                                        <div class="mb-4">
+                                            <div class="mx-auto bg-white" style="height: 25px; width: 100px"></div>
+                                        </div>
+                                        <div class="d-flex flex-column p-2 bg-white rounded mb-2">
+                                            <div class="d-flex align-items-center mb-2">
+                                                <div class="mr-2">
+                                                    <div class="rounded-circle bg-pulse-grey" style="height: 35px; width: 35px"></div>
+                                                </div>
+                                                <div class="mr-4 w-75 bg-pulse-grey" style="height: 16px"></div>
+                                                <div class="ml-auto bg-pulse-grey" style="width: 35px; height: 16px"></div>
+                                            </div>
+                                            <div class="bg-pulse-grey w-100" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-75 mt-2" style="height: 16px"></div>
+                                        </div>
+                                        <div class="d-flex flex-column p-2 bg-white rounded mb-2">
+                                            <div class="d-flex align-items-center mb-2">
+                                                <div class="mr-2">
+                                                    <div class="rounded-circle bg-pulse-grey" style="height: 35px; width: 35px"></div>
+                                                </div>
+                                                <div class="mr-4 w-75 bg-pulse-grey" style="height: 16px"></div>
+                                                <div class="ml-auto bg-pulse-grey" style="width: 35px; height: 16px"></div>
+                                            </div>
+                                            <div class="bg-pulse-grey w-100" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-75 mt-2" style="height: 16px"></div>
+                                        </div>
+                                        <div class="d-flex flex-column p-2 bg-white rounded mb-2">
+                                            <div class="d-flex align-items-center mb-2">
+                                                <div class="mr-2">
+                                                    <div class="rounded-circle bg-pulse-grey" style="height: 35px; width: 35px"></div>
+                                                </div>
+                                                <div class="mr-4 w-75 bg-pulse-grey" style="height: 16px"></div>
+                                                <div class="ml-auto bg-pulse-grey" style="width: 35px; height: 16px"></div>
+                                            </div>
+                                            <div class="bg-pulse-grey w-100" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-75 mt-2" style="height: 16px"></div>
+                                        </div>
+                                    </div>                                    <div class="mt-4">
+                                        <div class="mb-4">
+                                            <div class="mx-auto bg-white" style="height: 25px; width: 100px"></div>
+                                        </div>
+                                        <div class="d-flex flex-column p-2 bg-white rounded mb-2">
+                                            <div class="d-flex align-items-center mb-2">
+                                                <div class="mr-2">
+                                                    <div class="rounded-circle bg-pulse-grey" style="height: 35px; width: 35px"></div>
+                                                </div>
+                                                <div class="mr-4 w-75 bg-pulse-grey" style="height: 16px"></div>
+                                                <div class="ml-auto bg-pulse-grey" style="width: 35px; height: 16px"></div>
+                                            </div>
+                                            <div class="bg-pulse-grey w-100" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-75 mt-2" style="height: 16px"></div>
+                                        </div>
+                                        <div class="d-flex flex-column p-2 bg-white rounded mb-2">
+                                            <div class="d-flex align-items-center mb-2">
+                                                <div class="mr-2">
+                                                    <div class="rounded-circle bg-pulse-grey" style="height: 35px; width: 35px"></div>
+                                                </div>
+                                                <div class="mr-4 w-75 bg-pulse-grey" style="height: 16px"></div>
+                                                <div class="ml-auto bg-pulse-grey" style="width: 35px; height: 16px"></div>
+                                            </div>
+                                            <div class="bg-pulse-grey w-100" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-75 mt-2" style="height: 16px"></div>
+                                        </div>
+                                        <div class="d-flex flex-column p-2 bg-white rounded mb-2">
+                                            <div class="d-flex align-items-center mb-2">
+                                                <div class="mr-2">
+                                                    <div class="rounded-circle bg-pulse-grey" style="height: 35px; width: 35px"></div>
+                                                </div>
+                                                <div class="mr-4 w-75 bg-pulse-grey" style="height: 16px"></div>
+                                                <div class="ml-auto bg-pulse-grey" style="width: 35px; height: 16px"></div>
+                                            </div>
+                                            <div class="bg-pulse-grey w-100" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-75 mt-2" style="height: 16px"></div>
+                                        </div>
+                                    </div>                                    <div class="mt-4">
+                                        <div class="mb-4">
+                                            <div class="mx-auto bg-white" style="height: 25px; width: 100px"></div>
+                                        </div>
+                                        <div class="d-flex flex-column p-2 bg-white rounded mb-2">
+                                            <div class="d-flex align-items-center mb-2">
+                                                <div class="mr-2">
+                                                    <div class="rounded-circle bg-pulse-grey" style="height: 35px; width: 35px"></div>
+                                                </div>
+                                                <div class="mr-4 w-75 bg-pulse-grey" style="height: 16px"></div>
+                                                <div class="ml-auto bg-pulse-grey" style="width: 35px; height: 16px"></div>
+                                            </div>
+                                            <div class="bg-pulse-grey w-100" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-75 mt-2" style="height: 16px"></div>
+                                        </div>
+                                        <div class="d-flex flex-column p-2 bg-white rounded mb-2">
+                                            <div class="d-flex align-items-center mb-2">
+                                                <div class="mr-2">
+                                                    <div class="rounded-circle bg-pulse-grey" style="height: 35px; width: 35px"></div>
+                                                </div>
+                                                <div class="mr-4 w-75 bg-pulse-grey" style="height: 16px"></div>
+                                                <div class="ml-auto bg-pulse-grey" style="width: 35px; height: 16px"></div>
+                                            </div>
+                                            <div class="bg-pulse-grey w-100" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-75 mt-2" style="height: 16px"></div>
+                                        </div>
+                                        <div class="d-flex flex-column p-2 bg-white rounded mb-2">
+                                            <div class="d-flex align-items-center mb-2">
+                                                <div class="mr-2">
+                                                    <div class="rounded-circle bg-pulse-grey" style="height: 35px; width: 35px"></div>
+                                                </div>
+                                                <div class="mr-4 w-75 bg-pulse-grey" style="height: 16px"></div>
+                                                <div class="ml-auto bg-pulse-grey" style="width: 35px; height: 16px"></div>
+                                            </div>
+                                            <div class="bg-pulse-grey w-100" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-75 mt-2" style="height: 16px"></div>
+                                        </div>
+                                    </div>                                </div>
+                            </div>                        </div>
+                    </div>
+                </div>
+                
+                <div class="hidden" aria-hidden="true" data-region="view-group-info">
+                    <div class="pt-3 h-100 d-flex flex-column" data-region="group-info-content-container" style="overflow-y: auto"></div>
+                </div>                <div class="h-100 view-overview-body" aria-hidden="false" data-region="view-overview" data-user-id="149495">
+                    <div id="message-drawer-view-overview-container-67d04e8818e9967d04e86e725940" class="d-flex flex-column h-100" style="overflow-y: auto">
+                            
+                            
+                            <div class="section border-0 card rounded-0" data-region="view-overview-favourites">
+                                <div id="view-overview-favourites-toggle" class="card-header rounded-0" data-region="toggle">
+                                    <button class="btn btn-link w-100 text-left p-1 p-sm-2 d-flex rounded-0 align-items-center overview-section-toggle collapsed" data-toggle="collapse" data-target="#view-overview-favourites-target-67d04e8818e9967d04e86e725940" aria-expanded="false" aria-controls="view-overview-favourites-target-67d04e8818e9967d04e86e725940">
+                                        <span class="collapsed-icon-container">
+                                            <i class="icon fa fa-caret-right fa-fw " aria-hidden="true"></i>
+                                        </span>
+                                        <span class="expanded-icon-container">
+                                            <i class="icon fa fa-caret-down fa-fw " aria-hidden="true"></i>
+                                        </span>
+                                        <span class="font-weight-bold">Destacados</span>
+                                        <small class="hidden ml-1" data-region="section-total-count-container" aria-labelledby="view-overview-favourites-total-count-label">
+                                            (<span aria-hidden="true" data-region="section-total-count"></span>)
+                                            <span class="sr-only" id="view-overview-favourites-total-count-label">
+                                                 conversaciones en total
+                                            </span>
+                                        </small>
+                                        <span class="hidden ml-2" data-region="loading-icon-container">
+                                            <span class="loading-icon icon-no-margin"><i class="icon fa fa-circle-o-notch fa-spin fa-fw " title="Cargando" role="img" aria-label="Cargando"></i></span>
+                                        </span>
+                                        <span class="hidden badge badge-pill badge-primary ml-auto bg-primary" data-region="section-unread-count-container" aria-labelledby="view-overview-favourites-unread-count-label">
+                                            <span aria-hidden="true" data-region="section-unread-count"></span>
+                                            <span class="sr-only" id="view-overview-favourites-unread-count-label">
+                                                Hay  conversaciones sin leer
+                                            </span>
+                                        </span>
+                                    </button>
+                                </div>
+                                                            <div class="collapse border-bottom  lazy-load-list" aria-live="polite" data-region="lazy-load-list" data-user-id="149495" id="view-overview-favourites-target-67d04e8818e9967d04e86e725940" aria-labelledby="view-overview-favourites-toggle" data-parent="#message-drawer-view-overview-container-67d04e8818e9967d04e86e725940">
+                                
+                                <div class="hidden text-center p-2" data-region="empty-message-container">
+                                            <p class="text-muted mt-2">Sin conversaciones destacadas</p>
+
+                                </div>
+                                <div class="hidden list-group" data-region="content-container">
+                                    
+                                </div>
+                                <div class="list-group" data-region="placeholder-container">
+                                            <div class="text-center py-2"><span class="loading-icon icon-no-margin"><i class="icon fa fa-circle-o-notch fa-spin fa-fw " title="Cargando" role="img" aria-label="Cargando"></i></span>
+</div>
+
+                                </div>
+                                <div class="w-100 text-center p-3 hidden" data-region="loading-icon-container">
+                                    <span class="loading-icon icon-no-margin"><i class="icon fa fa-circle-o-notch fa-spin fa-fw " title="Cargando" role="img" aria-label="Cargando"></i></span>
+                                </div>
+                            </div>
+                            </div>
+                            
+                            
+                            <div class="section border-0 card rounded-0" data-region="view-overview-group-messages">
+                                <div id="view-overview-group-messages-toggle" class="card-header rounded-0" data-region="toggle">
+                                    <button class="btn btn-link w-100 text-left p-1 p-sm-2 d-flex rounded-0 align-items-center overview-section-toggle collapsed" data-toggle="collapse" data-target="#view-overview-group-messages-target-67d04e8818e9967d04e86e725940" aria-expanded="false" aria-controls="view-overview-group-messages-target-67d04e8818e9967d04e86e725940">
+                                        <span class="collapsed-icon-container">
+                                            <i class="icon fa fa-caret-right fa-fw " aria-hidden="true"></i>
+                                        </span>
+                                        <span class="expanded-icon-container">
+                                            <i class="icon fa fa-caret-down fa-fw " aria-hidden="true"></i>
+                                        </span>
+                                        <span class="font-weight-bold">Grupo</span>
+                                        <small class="hidden ml-1" data-region="section-total-count-container" aria-labelledby="view-overview-group-messages-total-count-label">
+                                            (<span aria-hidden="true" data-region="section-total-count"></span>)
+                                            <span class="sr-only" id="view-overview-group-messages-total-count-label">
+                                                 conversaciones en total
+                                            </span>
+                                        </small>
+                                        <span class="hidden ml-2" data-region="loading-icon-container">
+                                            <span class="loading-icon icon-no-margin"><i class="icon fa fa-circle-o-notch fa-spin fa-fw " title="Cargando" role="img" aria-label="Cargando"></i></span>
+                                        </span>
+                                        <span class="hidden badge badge-pill badge-primary ml-auto bg-primary" data-region="section-unread-count-container" aria-labelledby="view-overview-group-messages-unread-count-label">
+                                            <span aria-hidden="true" data-region="section-unread-count"></span>
+                                            <span class="sr-only" id="view-overview-group-messages-unread-count-label">
+                                                Hay  conversaciones sin leer
+                                            </span>
+                                        </span>
+                                    </button>
+                                </div>
+                                                            <div class="collapse border-bottom  lazy-load-list" aria-live="polite" data-region="lazy-load-list" data-user-id="149495" id="view-overview-group-messages-target-67d04e8818e9967d04e86e725940" aria-labelledby="view-overview-group-messages-toggle" data-parent="#message-drawer-view-overview-container-67d04e8818e9967d04e86e725940">
+                                
+                                <div class="hidden text-center p-2" data-region="empty-message-container">
+                                            <p class="text-muted mt-2">No hay conversaciónes de grupo</p>
+
+                                </div>
+                                <div class="hidden list-group" data-region="content-container">
+                                    
+                                </div>
+                                <div class="list-group" data-region="placeholder-container">
+                                            <div class="text-center py-2"><span class="loading-icon icon-no-margin"><i class="icon fa fa-circle-o-notch fa-spin fa-fw " title="Cargando" role="img" aria-label="Cargando"></i></span>
+</div>
+
+                                </div>
+                                <div class="w-100 text-center p-3 hidden" data-region="loading-icon-container">
+                                    <span class="loading-icon icon-no-margin"><i class="icon fa fa-circle-o-notch fa-spin fa-fw " title="Cargando" role="img" aria-label="Cargando"></i></span>
+                                </div>
+                            </div>
+                            </div>
+                            
+                            
+                            <div class="section border-0 card rounded-0" data-region="view-overview-messages">
+                                <div id="view-overview-messages-toggle" class="card-header rounded-0" data-region="toggle">
+                                    <button class="btn btn-link w-100 text-left p-1 p-sm-2 d-flex rounded-0 align-items-center overview-section-toggle collapsed" data-toggle="collapse" data-target="#view-overview-messages-target-67d04e8818e9967d04e86e725940" aria-expanded="false" aria-controls="view-overview-messages-target-67d04e8818e9967d04e86e725940">
+                                        <span class="collapsed-icon-container">
+                                            <i class="icon fa fa-caret-right fa-fw " aria-hidden="true"></i>
+                                        </span>
+                                        <span class="expanded-icon-container">
+                                            <i class="icon fa fa-caret-down fa-fw " aria-hidden="true"></i>
+                                        </span>
+                                        <span class="font-weight-bold">Privado</span>
+                                        <small class="hidden ml-1" data-region="section-total-count-container" aria-labelledby="view-overview-messages-total-count-label">
+                                            (<span aria-hidden="true" data-region="section-total-count"></span>)
+                                            <span class="sr-only" id="view-overview-messages-total-count-label">
+                                                 conversaciones en total
+                                            </span>
+                                        </small>
+                                        <span class="hidden ml-2" data-region="loading-icon-container">
+                                            <span class="loading-icon icon-no-margin"><i class="icon fa fa-circle-o-notch fa-spin fa-fw " title="Cargando" role="img" aria-label="Cargando"></i></span>
+                                        </span>
+                                        <span class="hidden badge badge-pill badge-primary ml-auto bg-primary" data-region="section-unread-count-container" aria-labelledby="view-overview-messages-unread-count-label">
+                                            <span aria-hidden="true" data-region="section-unread-count"></span>
+                                            <span class="sr-only" id="view-overview-messages-unread-count-label">
+                                                Hay  conversaciones sin leer
+                                            </span>
+                                        </span>
+                                    </button>
+                                </div>
+                                                            <div class="collapse border-bottom  lazy-load-list" aria-live="polite" data-region="lazy-load-list" data-user-id="149495" id="view-overview-messages-target-67d04e8818e9967d04e86e725940" aria-labelledby="view-overview-messages-toggle" data-parent="#message-drawer-view-overview-container-67d04e8818e9967d04e86e725940">
+                                
+                                <div class="hidden text-center p-2" data-region="empty-message-container">
+                                            <p class="text-muted mt-2">No hay conversaciones privadas</p>
+
+                                </div>
+                                <div class="hidden list-group" data-region="content-container">
+                                    
+                                </div>
+                                <div class="list-group" data-region="placeholder-container">
+                                            <div class="text-center py-2"><span class="loading-icon icon-no-margin"><i class="icon fa fa-circle-o-notch fa-spin fa-fw " title="Cargando" role="img" aria-label="Cargando"></i></span>
+</div>
+
+                                </div>
+                                <div class="w-100 text-center p-3 hidden" data-region="loading-icon-container">
+                                    <span class="loading-icon icon-no-margin"><i class="icon fa fa-circle-o-notch fa-spin fa-fw " title="Cargando" role="img" aria-label="Cargando"></i></span>
+                                </div>
+                            </div>
+                            </div>
+                    </div>
+                </div>
+                
+                <div data-region="view-search" aria-hidden="true" class="h-100 hidden" data-user-id="149495" data-users-offset="0" data-messages-offset="0" style="overflow-y: auto">
+                    <div class="hidden" data-region="search-results-container" style="overflow-y: auto">
+                        
+                        <div class="d-flex flex-column">
+                            <div class="mb-3 bg-white" data-region="all-contacts-container">
+                                <div data-region="contacts-container" class="pt-2">
+                                    <h4 class="h6 px-2">Contactos</h4>
+                                    <div class="list-group" data-region="list"></div>
+                                </div>
+                                <div data-region="non-contacts-container" class="pt-2 border-top">
+                                    <h4 class="h6 px-2">No contactos</h4>
+                                    <div class="list-group" data-region="list"></div>
+                                </div>
+                                <div class="text-right">
+                                    <button class="btn btn-link text-primary" data-action="load-more-users">
+                                        <span data-region="button-text">Cargar más</span>
+                                        <span data-region="loading-icon-container" class="hidden"><span class="loading-icon icon-no-margin"><i class="icon fa fa-circle-o-notch fa-spin fa-fw " title="Cargando" role="img" aria-label="Cargando"></i></span>
+</span>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="bg-white" data-region="messages-container">
+                                <h4 class="h6 px-2 pt-2">Mensajes</h4>
+                                <div class="list-group" data-region="list"></div>
+                                <div class="text-right">
+                                    <button class="btn btn-link text-primary" data-action="load-more-messages">
+                                        <span data-region="button-text">Cargar más</span>
+                                        <span data-region="loading-icon-container" class="hidden"><span class="loading-icon icon-no-margin"><i class="icon fa fa-circle-o-notch fa-spin fa-fw " title="Cargando" role="img" aria-label="Cargando"></i></span>
+</span>
+                                    </button>
+                                </div>
+                            </div>
+                            <p class="hidden p-3 text-center" data-region="no-results-container">No hay resultados</p>
+                        </div>                    </div>
+                    <div class="hidden" data-region="loading-placeholder">
+                        <div class="text-center pt-3 icon-size-4"><span class="loading-icon icon-no-margin"><i class="icon fa fa-circle-o-notch fa-spin fa-fw " title="Cargando" role="img" aria-label="Cargando"></i></span>
+</div>
+                    </div>
+                    <div class="p-3 text-center" data-region="empty-message-container">
+                        <p>Buscar personas y mensajes</p>
+                    </div>
+                </div>                
+                <div class="h-100 hidden bg-white" aria-hidden="true" data-region="view-settings">
+                    <div class="hidden" data-region="content-container">
+                        
+                        <div data-region="settings" class="p-3">
+                            <h3 class="h6 font-weight-bold">Privacidad</h3>
+                            <p>Puedes restringir quién puede enviarte mensajes</p>
+                            <div data-preference="blocknoncontacts" class="mb-3">
+                                <fieldset>
+                                    <legend class="sr-only">Aceptar mensajes desde:</legend>
+                                        <div class="custom-control custom-radio mb-2">
+                                            <input type="radio" name="message_blocknoncontacts" class="custom-control-input" id="block-noncontacts-67d04e8818e9967d04e86e725940-1" value="1">
+                                            <label class="custom-control-label ml-2" for="block-noncontacts-67d04e8818e9967d04e86e725940-1">
+                                                Únicamente mis contactos
+                                            </label>
+                                        </div>
+                                        <div class="custom-control custom-radio mb-2">
+                                            <input type="radio" name="message_blocknoncontacts" class="custom-control-input" id="block-noncontacts-67d04e8818e9967d04e86e725940-0" value="0">
+                                            <label class="custom-control-label ml-2" for="block-noncontacts-67d04e8818e9967d04e86e725940-0">
+                                                Mis contactos y cualquier persona de mis cursos
+                                            </label>
+                                        </div>
+                                </fieldset>
+                            </div>
+                        
+                            <div class="hidden" data-region="notification-preference-container">
+                                <h3 class="mb-2 mt-4 h6 font-weight-bold">Preferencias de notificación</h3>
+                            </div>
+                        
+                            <h3 class="mb-2 mt-4 h6 font-weight-bold">Información general</h3>
+                            <div data-preference="entertosend">
+                                <div class="custom-control custom-switch">
+                                    <input type="checkbox" class="custom-control-input" id="enter-to-send-67d04e8818e9967d04e86e725940" checked="">
+                                    <label class="custom-control-label" for="enter-to-send-67d04e8818e9967d04e86e725940">
+                                        Usar "intro" para enviar
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div data-region="placeholder-container">
+                        
+                        <div class="d-flex flex-column p-3">
+                            <div class="w-25 bg-pulse-grey h6" style="height: 18px"></div>
+                            <div class="w-75 bg-pulse-grey mb-4" style="height: 18px"></div>
+                            <div class="mb-3">
+                                <div class="w-100 d-flex mb-3">
+                                    <div class="bg-pulse-grey rounded-circle" style="width: 18px; height: 18px"></div>
+                                    <div class="bg-pulse-grey w-50 ml-2" style="height: 18px"></div>
+                                </div>
+                                <div class="w-100 d-flex mb-3">
+                                    <div class="bg-pulse-grey rounded-circle" style="width: 18px; height: 18px"></div>
+                                    <div class="bg-pulse-grey w-50 ml-2" style="height: 18px"></div>
+                                </div>
+                                <div class="w-100 d-flex mb-3">
+                                    <div class="bg-pulse-grey rounded-circle" style="width: 18px; height: 18px"></div>
+                                    <div class="bg-pulse-grey w-50 ml-2" style="height: 18px"></div>
+                                </div>
+                            </div>
+                            <div class="w-50 bg-pulse-grey h6 mb-3 mt-2" style="height: 18px"></div>
+                            <div class="mb-4">
+                                <div class="w-100 d-flex mb-2 align-items-center">
+                                    <div class="bg-pulse-grey w-25" style="width: 18px; height: 27px"></div>
+                                    <div class="bg-pulse-grey w-25 ml-2" style="height: 18px"></div>
+                                </div>
+                                <div class="w-100 d-flex mb-2 align-items-center">
+                                    <div class="bg-pulse-grey w-25" style="width: 18px; height: 27px"></div>
+                                    <div class="bg-pulse-grey w-25 ml-2" style="height: 18px"></div>
+                                </div>
+                            </div>
+                            <div class="w-25 bg-pulse-grey h6 mb-3 mt-2" style="height: 18px"></div>
+                            <div class="mb-3">
+                                <div class="w-100 d-flex mb-2 align-items-center">
+                                    <div class="bg-pulse-grey w-25" style="width: 18px; height: 27px"></div>
+                                    <div class="bg-pulse-grey w-50 ml-2" style="height: 18px"></div>
+                                </div>
+                            </div>
+                        </div>                    </div>
+                </div>            </div>
+            <div class="footer-container position-relative" data-region="footer-container">
+                
+                <div class="hidden border-top bg-white position-relative" aria-hidden="true" data-region="view-conversation" data-enter-to-send="1">
+                    <div class="hidden p-sm-2" data-region="content-messages-footer-container">
+                        
+                            <div class="emoji-auto-complete-container w-100 hidden" data-region="emoji-auto-complete-container" aria-live="polite" aria-hidden="true">
+                            </div>
+                        <div class="d-flex mt-sm-1">
+                            <textarea dir="auto" data-region="send-message-txt" class="form-control bg-light" rows="3" data-auto-rows="" data-min-rows="3" data-max-rows="5" aria-label="Escribe un mensaje..." placeholder="Escribe un mensaje..." style="resize: none" maxlength="4096"></textarea>
+                        
+                            <div class="position-relative d-flex flex-column">
+                                    <div data-region="emoji-picker-container" class="emoji-picker-container hidden" aria-hidden="true">
+                                        
+                                        <div data-region="emoji-picker" class="card shadow emoji-picker">
+                                            <div class="card-header px-1 pt-1 pb-0 d-flex justify-content-between flex-shrink-0">
+                                                <button class="btn btn-outline-secondary icon-no-margin category-button rounded-0 selected" data-action="show-category" data-category="Recent" title="Reciente">
+                                                    <i class="icon fa fa-clock-o fa-fw " aria-hidden="true"></i>
+                                                </button>
+                                                <button class="btn btn-outline-secondary icon-no-margin category-button rounded-0" data-action="show-category" data-category="Smileys &amp; Emotion" title="Caritas sonrientes y emociones">
+                                                    <i class="icon fa fa-smile-o fa-fw " aria-hidden="true"></i>
+                                                </button>
+                                                <button class="btn btn-outline-secondary icon-no-margin category-button rounded-0" data-action="show-category" data-category="People &amp; Body" title="Personas y cuerpo">
+                                                    <i class="icon fa fa-male fa-fw " aria-hidden="true"></i>
+                                                </button>
+                                                <button class="btn btn-outline-secondary icon-no-margin category-button rounded-0" data-action="show-category" data-category="Animals &amp; Nature" title="Animales y naturaleza">
+                                                    <i class="icon fa fa-leaf fa-fw " aria-hidden="true"></i>
+                                                </button>
+                                                <button class="btn btn-outline-secondary icon-no-margin category-button rounded-0" data-action="show-category" data-category="Food &amp; Drink" title="Comida y bebida">
+                                                    <i class="icon fa fa-cutlery fa-fw " aria-hidden="true"></i>
+                                                </button>
+                                                <button class="btn btn-outline-secondary icon-no-margin category-button rounded-0" data-action="show-category" data-category="Travel &amp; Places" title="Viaje y lugares">
+                                                    <i class="icon fa fa-plane fa-fw " aria-hidden="true"></i>
+                                                </button>
+                                                <button class="btn btn-outline-secondary icon-no-margin category-button rounded-0" data-action="show-category" data-category="Activities" title="Actividades">
+                                                    <i class="icon fa fa-futbol-o fa-fw " aria-hidden="true"></i>
+                                                </button>
+                                                <button class="btn btn-outline-secondary icon-no-margin category-button rounded-0" data-action="show-category" data-category="Objects" title="Objetos">
+                                                    <i class="icon fa fa-lightbulb-o fa-fw " aria-hidden="true"></i>
+                                                </button>
+                                                <button class="btn btn-outline-secondary icon-no-margin category-button rounded-0" data-action="show-category" data-category="Symbols" title="Símbolos">
+                                                    <i class="icon fa fa-heart fa-fw " aria-hidden="true"></i>
+                                                </button>
+                                                <button class="btn btn-outline-secondary icon-no-margin category-button rounded-0" data-action="show-category" data-category="Flags" title="Banderas">
+                                                    <i class="icon fa fa-flag fa-fw " aria-hidden="true"></i>
+                                                </button>
+                                            </div>
+                                            <div class="card-body p-2 d-flex flex-column overflow-hidden">
+                                                <div class="input-group mb-1 flex-shrink-0">
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text pr-0 bg-white text-muted">
+                                                            <i class="icon fa fa-search fa-fw " aria-hidden="true"></i>
+                                                        </span>
+                                                    </div>
+                                                    <input type="text" class="form-control border-left-0" placeholder="Buscar" aria-label="Buscar" data-region="search-input">
+                                                </div>
+                                                <div class="flex-grow-1 overflow-auto emojis-container h-100" data-region="emojis-container">
+                                                    <div class="position-relative" data-region="row-container"></div>
+                                                </div>
+                                                <div class="flex-grow-1 overflow-auto search-results-container h-100 hidden" data-region="search-results-container">
+                                                    <div class="position-relative" data-region="row-container"></div>
+                                                </div>
+                                            </div>
+                                            <div class="card-footer d-flex flex-shrink-0" data-region="footer">
+                                                <div class="emoji-preview" data-region="emoji-preview"></div>
+                                                <div data-region="emoji-short-name" class="emoji-short-name text-muted text-wrap ml-2"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <button class="btn btn-link btn-icon icon-size-3 ml-1" aria-label="Selector de emoticono" data-action="toggle-emoji-picker">
+                                        <i class="icon fa fa-smile-o fa-fw " aria-hidden="true"></i>
+                                    </button>
+                                <button class="btn btn-link btn-icon icon-size-3 ml-1 mt-auto" aria-label="Enviar mensaje" data-action="send-message">
+                                    <span data-region="send-icon-container"><i class="icon fa fa-paper-plane fa-fw " aria-hidden="true"></i></span>
+                                    <span class="hidden" data-region="loading-icon-container"><span class="loading-icon icon-no-margin"><i class="icon fa fa-circle-o-notch fa-spin fa-fw " title="Cargando" role="img" aria-label="Cargando"></i></span>
+</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hidden p-sm-2" data-region="content-messages-footer-edit-mode-container">
+                        
+                        <div class="d-flex p-3 justify-content-end">
+                            <button class="btn btn-link btn-icon my-1 icon-size-4" data-action="delete-selected-messages" data-toggle="tooltip" data-placement="top" title="Eliminar mensajes seleccionados">
+                                <span data-region="icon-container"><i class="icon fa fa-trash fa-fw " aria-hidden="true"></i></span>
+                                <span class="hidden" data-region="loading-icon-container"><span class="loading-icon icon-no-margin"><i class="icon fa fa-circle-o-notch fa-spin fa-fw " title="Cargando" role="img" aria-label="Cargando"></i></span>
+</span>
+                                <span class="sr-only">Eliminar mensajes seleccionados</span>
+                            </button>
+                        </div>                    </div>
+                    <div class="hidden bg-secondary p-sm-3" data-region="content-messages-footer-require-contact-container">
+                        
+                        <div class="p-3 bg-white">
+                            <p data-region="title"></p>
+                            <p class="text-muted" data-region="text"></p>
+                            <button type="button" class="btn btn-primary btn-block" data-action="request-add-contact">
+                                <span data-region="dialogue-button-text">Enviar solicitud de contacto</span>
+                                <span class="hidden" data-region="loading-icon-container"><span class="loading-icon icon-no-margin"><i class="icon fa fa-circle-o-notch fa-spin fa-fw " title="Cargando" role="img" aria-label="Cargando"></i></span>
+</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="hidden bg-secondary p-sm-3" data-region="content-messages-footer-require-unblock-container">
+                        
+                        <div class="p-3 bg-white">
+                            <p class="text-muted" data-region="text">Ha bloqueado a este usuario.</p>
+                            <button type="button" class="btn btn-primary btn-block" data-action="request-unblock">
+                                <span data-region="dialogue-button-text">Desbloquear usuario</span>
+                                <span class="hidden" data-region="loading-icon-container"><span class="loading-icon icon-no-margin"><i class="icon fa fa-circle-o-notch fa-spin fa-fw " title="Cargando" role="img" aria-label="Cargando"></i></span>
+</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="hidden bg-secondary p-sm-3" data-region="content-messages-footer-unable-to-message">
+                        
+                        <div class="p-3 bg-white">
+                            <p class="text-muted" data-region="text">No puedes enviar mensajes a este usuario</p>
+                        </div>
+                    </div>
+                    <div class="p-sm-2" data-region="placeholder-container">
+                        <div class="d-flex">
+                            <div class="bg-pulse-grey w-100" style="height: 80px"></div>
+                            <div class="mx-2 mb-2 align-self-end bg-pulse-grey" style="height: 20px; width: 20px"></div>
+                        </div>                    </div>
+                    <div class="hidden position-absolute z-index-1" data-region="confirm-dialogue-container" style="top: -1px; bottom: 0; right: 0; left: 0; background: rgba(0,0,0,0.3);"></div>
+                </div>                    <div data-region="view-overview" class="text-center">
+                        <a href="https://zajuna.sena.edu.co/zajuna/message/index.php">
+                            Ver todo
+                        </a>
+                    </div>
+            </div>
+        </div>
+
+</div>
+    <div class="d-flex align-items-center justify-content-center bg-alternate-background px-3 pt-3" id="final">
+        <img loading="lazy" src="./P_228118_V_2834922_R_19_C_9307_files/sena-zajuna-logo.svg" alt="Logo de Colombia Potencia de la Vida" style="width: auto; height: 20px;">
+    </div>
+    <footer id="page-footer" class=" footer-dark bg-alternate-background text-light">
+        <div style="display:grid !important; justify-items:center; gap:12px; padding:12px;" class="d-flex justify-content-center m-auto container footer-dark-inner">
+            <div id="course-footer"></div>
+            <div class="logininfo">Usted se ha identificado como <a href="https://zajuna.sena.edu.co/zajuna/user/profile.php?id=149495" title="Ver perfil">JOSE ANGEL PEÑA BALLESTEROS </a> (<a href="https://zajuna.sena.edu.co/zajuna/login/logout.php?sesskey=TlD8BwigxY">Cerrar sesión</a>)</div>
+    
+            <nav class="nav navbar-nav d-md-none" aria-label="Menú personalizado">
+                    <ul class="list-unstyled pt-3">
+                                        <li><a href="https://oferta.senasofiaplus.edu.co/sofia-oferta/" title="">Accede a SOFIA</a></li>
+                                        <li><a href="https://zajuna.sena.edu.co/zajuna/my/" title="">Área Personal</a></li>
+                    </ul>
+            </nav>
+            <div class="tool_dataprivacy"><a href="https://zajuna.sena.edu.co/zajuna/admin/tool/dataprivacy/summary.php">Resumen de retención de datos</a></div>
+            
+            <script>
+//<![CDATA[
+var require = {
+    baseUrl : 'https://zajuna.sena.edu.co/zajuna/lib/requirejs.php/1739042203/',
+    // We only support AMD modules with an explicit define() statement.
+    enforceDefine: true,
+    skipDataMain: true,
+    waitSeconds : 0,
+
+    paths: {
+        jquery: 'https://zajuna.sena.edu.co/zajuna/lib/javascript.php/1739042203/lib/jquery/jquery-3.7.1.min',
+        jqueryui: 'https://zajuna.sena.edu.co/zajuna/lib/javascript.php/1739042203/lib/jquery/ui-1.13.2/jquery-ui.min',
+        jqueryprivate: 'https://zajuna.sena.edu.co/zajuna/lib/javascript.php/1739042203/lib/requirejs/jquery-private'
+    },
+
+    // Custom jquery config map.
+    map: {
+      // '*' means all modules will get 'jqueryprivate'
+      // for their 'jquery' dependency.
+      '*': { jquery: 'jqueryprivate' },
+      // Stub module for 'process'. This is a workaround for a bug in MathJax (see MDL-60458).
+      '*': { process: 'core/first' },
+
+      // 'jquery-private' wants the real jQuery module
+      // though. If this line was not here, there would
+      // be an unresolvable cyclic dependency.
+      jqueryprivate: { jquery: 'jquery' }
+    }
+};
+
+//]]>
+</script>
+<script src="./P_228118_V_2834922_R_19_C_9307_files/javascript(4).php"></script>
+<script>
+//<![CDATA[
+M.util.js_pending("core/first");
+require(['core/first'], function() {
+require(['core/prefetch'])
+;
+M.util.js_pending('filter_mathjaxloader/loader'); require(['filter_mathjaxloader/loader'], function(amd) {amd.configure({"mathjaxconfig":"MathJax.Hub.Config({\r\n    config: [\"Accessible.js\", \"Safe.js\"],\r\n    errorSettings: { message: [\"!\"] },\r\n    skipStartupTypeset: true,\r\n    messageStyle: \"none\"\r\n});\r\n","lang":"es"}); M.util.js_complete('filter_mathjaxloader/loader');});;
+require(["media_videojs/loader"], function(loader) {
+    loader.setUp('es');
+});;
+M.util.js_pending('block_navigation/navblock'); require(['block_navigation/navblock'], function(amd) {amd.init("9"); M.util.js_complete('block_navigation/navblock');});;
+M.util.js_pending('block_settings/settingsblock'); require(['block_settings/settingsblock'], function(amd) {amd.init("10", null); M.util.js_complete('block_settings/settingsblock');});;
+M.util.js_pending('core_courseformat/local/content/activity_header'); require(['core_courseformat/local/content/activity_header'], function(amd) {amd.init(); M.util.js_complete('core_courseformat/local/content/activity_header');});;
+
+require(['jquery', 'message_popup/notification_popover_controller'], function($, Controller) {
+    var container = $('#nav-notification-popover-container');
+    var controller = new Controller(container);
+    controller.registerEventListeners();
+    controller.registerListNavigationEventListeners();
+});
+;
+
+require(
+[
+    'jquery',
+    'core_message/message_popover'
+],
+function(
+    $,
+    Popover
+) {
+    var toggle = $('#message-drawer-toggle-67d04e880aa0067d04e86e725930');
+    Popover.init(toggle);
+});
+;
+
+        require(['jquery', 'core/custom_interaction_events'], function($, CustomEvents) {
+            CustomEvents.define('#jump-to-activity', [CustomEvents.events.accessibleChange]);
+            $('#jump-to-activity').on(CustomEvents.events.accessibleChange, function() {
+                if ($(this).val()) {
+                    $('#url_select_f67d04e86e725939').submit();
+                }
+            });
+        });
+    ;
+
+require(['jquery', 'core_message/message_drawer'], function($, MessageDrawer) {
+    var root = $('#message-drawer-67d04e8818e9967d04e86e725940');
+    MessageDrawer.init(root, '67d04e8818e9967d04e86e725940', false);
+});
+;
+
+M.util.js_pending('theme_boost/loader');
+require(['theme_boost/loader'], function() {
+    M.util.js_complete('theme_boost/loader');
+});
+;
+
+    /* Move the widget to the header area */
+    const widget = document.querySelector(".flexsections-activity-page-navigate-back");
+    const maincontent = document.getElementById('maincontent');
+    if (maincontent) {
+        maincontent.parentElement.insertBefore(widget, maincontent);
+    }
+;
+M.util.js_pending('core/notification'); require(['core/notification'], function(amd) {amd.init(747563, []); M.util.js_complete('core/notification');});;
+M.util.js_pending('core/log'); require(['core/log'], function(amd) {amd.setConfig({"level":"warn"}); M.util.js_complete('core/log');});;
+M.util.js_pending('core/page_global'); require(['core/page_global'], function(amd) {amd.init(); M.util.js_complete('core/page_global');});;
+M.util.js_pending('core/utility'); require(['core/utility'], function(amd) {M.util.js_complete('core/utility');});
+    M.util.js_complete("core/first");
+});
+//]]>
+</script>
+<script>
+//<![CDATA[
+M.yui.add_module({"core_comment":{"name":"core_comment","fullpath":"https:\/\/zajuna.sena.edu.co\/zajuna\/lib\/javascript.php\/1739042203\/comment\/comment.js","requires":["base","io-base","node","json","yui2-animation","overlay","escape"]}});
+
+//]]>
+</script>
+<script src="./P_228118_V_2834922_R_19_C_9307_files/MathJax.js.descarga"></script>
+<script>
+//<![CDATA[
+M.str = {"moodle":{"lastmodified":"\u00daltima modificaci\u00f3n","name":"Nombre","error":"Error","info":"Informaci\u00f3n","yes":"S\u00ed","no":"No","viewallcourses":"Ver todos los cursos","cancel":"Cancelar","addcomment":"Agregar un comentario...","comments":"Comentarios","commentscount":"Comentarios ({$a})","commentsrequirelogin":"Necesita identificarse para ver los comentarios.","deletecommentbyon":"Borrar el comentario publicado por  {$a->user} el {$a->time}","confirm":"Confirmar","areyousure":"\u00bfEst\u00e1 seguro?","closebuttontitle":"Cerrar","unknownerror":"Error desconocido","file":"Archivo","url":"URL","collapseall":"Colapsar todo","expandall":"Expandir todo"},"repository":{"type":"Tipo","size":"Tama\u00f1o","invalidjson":"Cadena JSON no v\u00e1lida","nofilesattached":"No se han adjuntado archivos","filepicker":"Selector de archivos","logout":"Salir","nofilesavailable":"No hay archivos disponibles","norepositoriesavailable":"Lo sentimos, ninguno de sus repositorios actuales puede devolver archivos en el formato solicitado.","fileexistsdialogheader":"El archivo existe","fileexistsdialog_editor":"Un archivo con ese nombre ha sido anexado al texto que Usted est\u00e1 editando","fileexistsdialog_filemanager":"Ya ha sido anexado un archivo con ese nombre","renameto":"Cambiar el nombre a \"{$a}\"","referencesexist":"Existen {$a} enlaces a este archivo","select":"Seleccionar"},"admin":{"confirmdeletecomments":"\u00bfSeguro que quiere eliminar el\/los comentario(s) seleccionados?","confirmation":"Confirmaci\u00f3n"},"debug":{"debuginfo":"Informaci\u00f3n de depuraci\u00f3n","line":"L\u00ednea","stacktrace":"Trazado de la pila (stack)"},"langconfig":{"labelsep":":"}};
+//]]>
+</script>
+<script>
+//<![CDATA[
+(function() {M.util.help_popups.setup(Y);
+ M.util.js_pending('random67d04e86e725941'); Y.on('domready', function() {  M.util.js_pending('random67d04e86e725941'); Y.use('core_comment', function(Y) { M.core_comment.init(Y, {"client_id":"67d04e8840576","commentarea":"submission_comments","itemid":"8081471","page":0,"courseid":"6127","contextid":747563,"component":"assignsubmission_comments","notoggle":false,"autostart":false});  M.util.js_complete('random67d04e86e725941'); });  M.util.js_complete('random67d04e86e725941'); });
+ M.util.js_pending('random67d04e86e725942'); Y.on('domready', function() { M.util.js_complete("init");  M.util.js_complete('random67d04e86e725942'); });
+})();
+//]]>
+</script>
+
+        </div>
+    </footer>
+    
+    
+    
+</div><div id="yui3-css-stamp" style="position: absolute !important; visibility: hidden !important" class=""></div>
+
+ <link rel="stylesheet" href="./P_228118_V_2834922_R_19_C_9307_files/accesibilidad.css">
+  <link rel="stylesheet" href="./P_228118_V_2834922_R_19_C_9307_files/style.css">
+    <div class="accesibilidad">
+        <button class="accesibilidad__inicio" id="toggle-inicio">
+           <i class="zicon-relation-1" style="font-size: 35px"></i>
+        </button>
+
+        <div class="accesibilidad__buttons" id="toggle-buttons">
+            <div class="accesibilidad__inicio-1">
+                <i class="zicon-relation-1" style="font-size: 35px;color: white"></i>
+            </div>
+
+            <div class="accesibilidad__container">
+                <button class="accesibilidad__boton" id="toggle-zoom-in">
+                    <i class="zicon-a" style="background: white;font-size: 35px;color: #04324d;padding: 5px;border-radius: 13px;"></i>
+                    <div class="accesibilidad__boton--text">Aumentar<br>Letra</div>
+                </button>
+            </div>
+            <div class="accesibilidad__container">
+                <button class="accesibilidad__boton" id="toggle-zoom-out">
+                    <i class="zicon-a-" style="background: white;font-size: 35px;color: #04324d;padding: 5px;border-radius: 13px;"></i>
+                    <div class="accesibilidad__boton--text">Disminuir<br>Letra</div>
+                </button>
+            </div>
+            <div class="accesibilidad__container">
+                <button class="accesibilidad__boton" id="toggle-contrast-propio">
+                    <i class="zicon-contrast" style="background: white;font-size: 35px;color: #04324d;padding: 5px;border-radius: 13px;"></i>
+                    <div class="accesibilidad__boton--text">Contraste</div>
+                </button>
+            </div>
+            <div class="accesibilidad__container">
+                <button class="accesibilidad__boton" id="toggle-dislexia">
+                    <i class="zicon-dislexia" style="background: white;font-size: 35px;color: #04324d;padding: 5px;border-radius: 13px;"></i>
+                    <div class="accesibilidad__boton--text">Dislexia</div>
+                </button>
+            </div>
+            <div class="accesibilidad__container">
+                <button class="accesibilidad__boton" id="toggle-lector">
+                    <i class="zicon-voice-assistant" style="background: white;font-size: 35px;color: #04324d;padding: 5px;border-radius: 13px;"></i>
+                    <div class="accesibilidad__boton--text">Lector</div>
+                </button>
+                <div id="mensaje-voz" class="mensaje-voz" style="display: none;">
+                    <div class="mensaje-text">Este es un lector de pantalla para personas con discapacidad visual.</div>
+                    <div class="list_false-color">&nbsp;</div>
+                </div>
+            </div>
+            <div class="accesibilidad__container">
+                <div class="contraste_buttons" id="toggle-contraste-buttons">
+                    <button class="contrast_types">
+                        <p class="contrast_types-text">A</p>
+                    </button>
+                    <button class="contrast_types">
+                        <p class="contrast_types-text">B</p>
+                    </button>
+                    <button class="contrast_types">
+                        <p class="contrast_types-text">C</p>
+                    </button>
+                </div>
+                <button class="accesibilidad__boton" id="toggle-contrast">
+                    <i class="zicon-open-eye-2" style="background: white;font-size: 35px;color: #04324d;padding: 5px;border-radius: 13px;"></i>
+                    <div class="accesibilidad__boton--text">Daltonismo</div>
+                </button>
+            </div>
+            <div class="accesibilidad__container-rest">
+                <button class="accesibilidad__boton" id="toggle-restore">
+                   <i class="zicon-resotore" style="font-size: 28px;color: white"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+<script src="./P_228118_V_2834922_R_19_C_9307_files/accesibilidad.js.descarga"></script>
+
+
+</body></html>

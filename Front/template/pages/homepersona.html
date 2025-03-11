@@ -1,75 +1,69 @@
 <div id="main-content">
     <form id="frm1">
-        <h3>Formulario de usuarios</h3>
+        <h3>Igresar nueva persona</h3>
 
         <input type="hidden" id="usuario-id" />
 
         <div class="row">
             <div class="col-3">
                 <div class="mb-4">
-                    <label for="txtNombre" class="form-label">Nombre</label>
+                    <label for="txtNombre" class="form-label">Primer Nombre</label>
+                    <input type="text" class="form-control" id="txtNombre" placeholder="Ingrese nombre de usuario">
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="mb-4">
+                    <label for="txtNombre" class="form-label">Segundo Nombre(opcional)</label>
                     <input type="text" class="form-control" id="txtNombre" placeholder="Ingrese nombre de usuario">
                 </div>
             </div>
 
             <div class="col-3">
                 <div class="mb-4">
-                    <label for="txtApellido" class="form-label">Apellido</label>
+                    <label for="txtApellido" class="form-label">Primer Apellido</label>
                     <input type="text" class="form-control" id="txtApellido" placeholder="Ingrese apellido de usuario">
                 </div>
             </div>
-
             <div class="col-3">
                 <div class="mb-4">
-                    <label for="txtCorreo" class="form-label">Correo</label>
-                    <input type="email" class="form-control" id="txtCorreo" placeholder="Ingrese correo de usuario">
+                    <label for="txtApellido" class="form-label">Segundo Apellido(opcional)</label>
+                    <input type="text" class="form-control" id="txtApellido" placeholder="Ingrese apellido de usuario">
                 </div>
             </div>
-
-            <div class="col-3">
-                <div class="mb-4">
-                    <label for="txtTelefono" class="form-label">Telefono</label>
-                    <input type="tel" class="form-control" id="txtTelefono" placeholder="Ingrese telefono de usuario">
-                </div>
-            </div>
-
-        </div>
-        
-        <div class="row">
-
             <div class="col-3">
                 <div class="mb-4">
                     <label for="slcTipoIdentificacion" class="form-label">Tipo de identificacion</label>
-                    <select class="form-select" id="slcTipoIdentificacion" >
+                    <select class="form-select" id="slcTipoIdentificacion">
                         <option selected value="">Seleccione un tipo</option>
                         <option value="1">CC</option>
                         <option value="2">Pasaporte</option>
-                      </select>
+                    </select>
                 </div>
             </div>
 
             <div class="col-3">
                 <div class="mb-4">
                     <label for="txtIdentificacion" class="form-label">Identificacion</label>
-                    <input type="text" class="form-control" id="txtIdentificacion" placeholder="Ingrese tipo de identificacion de usuario">
+                    <input type="text" class="form-control" id="txtIdentificacion"
+                        placeholder="Ingrese tipo de identificacion de usuario">
                 </div>
             </div>
-
             <div class="col-3">
                 <div class="mb-4">
                     <label for="dateFechaNacimiento" class="form-label">Fecha nacimiento</label>
                     <input type="date" class="form-control" id="dateFechaNacimiento">
                 </div>
             </div>
-            
-
             <div class="col-3">
                 <div class="mb-4">
-                    <label for="rangeCantidadVehiculos" class="form-label">Cantidad de vehiculos</label>
-                    <input type="range" class="form-control" id="rangeCantidadVehiculos" min="0" max="5" step="1">
+                    <label for="txtTelefono" class="form-label">N° de Celular</label>
+                    <input type="tel" class="form-control" id="txtTelefono" placeholder="Ingrese telefono de usuario">
                 </div>
             </div>
+        </div>
 
+        <div class="row">
+            
             <div class="col-3">
                 <div class="mb-4">
                     <label for="slcDepartamento" class="form-label">Departamento residencia</label>
@@ -77,58 +71,49 @@
                     </select>
                 </div>
             </div>
-
             <div class="col-3">
                 <div class="mb-4">
-                    <label for="slcCiudad" class="form-label">Ciudad residencia</label>
+                    <label for="slcCiudad" class="form-label">Municipio de residencia</label>
                     <select class="form-select" id="slcCiudad">
                     </select>
                 </div>
             </div>
-
             <div class="col-3">
                 <div class="mb-4">
                     <label for="txtDireccion" class="form-label">Direccion</label>
-                    <input type="text" class="form-control" id="txtDireccion" placeholder="Ingrese direccion de usuario">
+                    <input type="text" class="form-control" id="txtDireccion"
+                        placeholder="Ingrese direccion de usuario">
                 </div>
             </div>
-
-            <div class="col-3">
-                <div class="mb-4">
-                    <label for="colorFavorito" class="form-label">Color favorito</label>
-                    <input type="color" class="form-control" id="colorFavorito">
-                </div>
-            </div>
-
-
             <div class="col-3">
                 <label class="form-label">Indique su genero</label>
                 <div class="form-check">
                     <input class="form-check-input" type="radio" name="rdGenero" id="rdGenero1" value="F">
                     <label class="form-check-label" for="rdGenero1">
-                      Femenino
+                        Femenino
                     </label>
-                  </div>
-                  <div class="form-check">
-                    <input class="form-check-input" type="radio" name="rdGenero" id="rdGenero2" value="M">
-                    <label class="form-check-label" for="rdGenero2">
-                      Masculino 
-                    </label>
-                  </div>
-                  <div class="form-check">
-                    <input class="form-check-input" type="radio" name="rdGenero" id="rdGenero3" value="O">
-                    <label class="form-check-label" for="rdGenero3">
-                      Otro 
-                    </label>
-                  </div>
-            </div>
-
-            <div class="col-1">
-                <div class="mb-3 form-check">
-                    <input type="checkbox" class="form-check-input" id="ckbEsPropietario" value="si">
-                    <label class="form-check-label" for="ckbEsPropietario">Es propietario</label>
                 </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="rdGenero" id="rdGenero2" value="M">
+                     <label class="form-check-label" for="rdGenero2">
+                            Masculino
+                     </label>
+                 </div>
+                 <div class="form-check">
+                     <input class="form-check-input" type="radio" name="rdGenero" id="rdGenero3" value="O">
+                     <label class="form-check-label" for="rdGenero3">
+                            Otro
+                     </label>
+                </div>
+              
             </div>
+        </div>
+            <div class="col-3">
+                <div class="mb-4">
+                    <label for="txtCorreo" class="form-label">Correo</label>
+                    <input type="email" class="form-control" id="txtCorreo" placeholder="Ingrese correo de usuario">
+                </div>
+           
 
         </div>
         <br>
@@ -140,4 +125,3 @@
         </div>
     </form>
 </div>
-
