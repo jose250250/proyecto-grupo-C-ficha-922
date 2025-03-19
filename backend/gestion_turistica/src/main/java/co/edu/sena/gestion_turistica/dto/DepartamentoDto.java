@@ -13,17 +13,9 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Builder
 @JsonInclude(Include.NON_NULL)
+public class DepartamentoDto {
 
-public class UsuarioDto {
+       private Long Id;
 
-
-     private long id;
-
-     private String password;
-     
-     private String login;
-    
-     private Long idRol;
-
-     private Long idPersona;
+       private String departamento;
 }

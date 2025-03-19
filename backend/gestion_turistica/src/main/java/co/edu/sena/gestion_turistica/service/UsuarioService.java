@@ -7,7 +7,11 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import co.edu.sena.gestion_turistica.dto.LoginRequestDto;
+import co.edu.sena.gestion_turistica.dto.LoginResponseDto;
+import co.edu.sena.gestion_turistica.dto.PersonaDto;
 import co.edu.sena.gestion_turistica.dto.UsuarioDto;
+import co.edu.sena.gestion_turistica.entity.PersonaEntity;
 import co.edu.sena.gestion_turistica.entity.UsuarioEntity;
 import co.edu.sena.gestion_turistica.repository.UsuarioRepository;
 
@@ -18,7 +22,7 @@ public class UsuarioService {
     @Autowired
     public UsuarioRepository repository;
 
-    public void save(UsuarioDto dto){
+    public void save(UsuarioDto dto) {
 
         UsuarioEntity entity = new UsuarioEntity();
 
@@ -29,19 +33,15 @@ public class UsuarioService {
         entity.setIdPersona(dto.getIdPersona());
 
         repository.save(entity);
-        
-
-
 
     }
 
-    
-    public List<UsuarioDto> getAll(){
+    public List<UsuarioDto> getAll() {
 
         List<UsuarioDto> dtos = new ArrayList<>();
         List<UsuarioEntity> entities = repository.findAll();
 
-        for(UsuarioEntity entity : entities){
+        for (UsuarioEntity entity : entities) {
 
             UsuarioDto dto = new UsuarioDto();
 
@@ -50,21 +50,17 @@ public class UsuarioService {
             dto.setPassword(entity.getPassword());
             dto.setIdRol(entity.getIdRol());
             dto.setIdPersona(entity.getIdPersona());
-           
-      
+
             dtos.add(dto);
-
-
-        
 
         }
 
         return dtos;
-        
+
     }
 
     public UsuarioDto getById(Long id) {
-      
+
         Optional<UsuarioEntity> optionalUsuario = this.repository.findById(id);
         if (optionalUsuario.isPresent()) {
             UsuarioEntity entity = optionalUsuario.get();
@@ -75,45 +71,85 @@ public class UsuarioService {
             dto.setIdRol(entity.getIdRol());
             dto.setIdPersona(entity.getIdPersona());
 
-          
             return dto;
 
+        }
+        return null;
 
-  }
-  return null;
+    }
 
-}
+    public void delete(Long id) {
+        this.repository.deleteById(id);
 
-public void delete(Long id) {
-    this.repository.deleteById(id);
-    
-}
+    }
 
-public UsuarioDto update(UsuarioDto newdata){
+    public UsuarioDto update(UsuarioDto newdata) {
 
-    Optional<UsuarioEntity> optionalUsuario = this.repository.findById(newdata.getId());
-    if (optionalUsuario.isPresent()) {
-        UsuarioEntity entity = optionalUsuario.get();
+        Optional<UsuarioEntity> optionalUsuario = this.repository.findById(newdata.getId());
+        if (optionalUsuario.isPresent()) {
+            UsuarioEntity entity = optionalUsuario.get();
 
-        entity.setLogin(newdata.getLogin());
-        entity.setPassword(newdata.getPassword());
-        entity.setIdRol(newdata.getIdRol());
-        entity.setIdPersona(newdata.getIdPersona());       
+            entity.setLogin(newdata.getLogin());
+            entity.setPassword(newdata.getPassword());
+            entity.setIdRol(newdata.getIdRol());
+            entity.setIdPersona(newdata.getIdPersona());
+
+            this.repository.save(entity);
+
+            return newdata;
+        }
+
+        return null;
+
+    }
+
+   
+    @Autowired
+    public PersonaService pService;
+
+
+    public LoginResponseDto login(LoginRequestDto request) {
+
+
+      
         
-             
-        this.repository.save(entity);
+        LoginResponseDto response;
 
-        return newdata;
-}
+        Optional<UsuarioEntity> optResponse = this.repository
+                .findByLoginAndPassword(request.getUsername(), request.getPassword());
 
-return null;
+        if (optResponse.isPresent()) {
+
+            
+
+            
+            UsuarioEntity entity = optResponse.get();
+
+               PersonaDto perDto = this.pService.getById(entity.getIdPersona());
+               PersonaEntity perEntity = new PersonaEntity();
+              perEntity.setPrimerNombre(perDto.getPrimerNombre());
+              perEntity.setPrimerApellido(perDto.getPrimerApellido());
 
 
-}
+                 
+         
+            response = LoginResponseDto.builder()
+          
 
+                    .id(entity.getId())
+                    .rol(entity.getIdRol())
+                    .persona(entity.getIdPersona())
+                    .PrimerNombre(perEntity.getPrimerNombre())
+                    .PrimerApellido(perEntity.getPrimerApellido())                                    
+                    .isActive(true)
+                    .build();
+        } else {
+            response = LoginResponseDto.builder()
+                    .isActive(false)
+                    .build();
+        }
 
-
-
-
+        return response;
+    }
 
 }
