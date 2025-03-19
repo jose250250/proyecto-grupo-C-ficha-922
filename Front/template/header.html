@@ -4,14 +4,23 @@
             class="rounded mx-auto d-block" alt="gestion turistica">
 
     </div>
-    <div class="col-9">
+    <div class="col-6">
         <h1 class="jumbotron-heading">Gestion Turistica</h1>
 
-
+    </div>
+    <div id="infoLogin" style="display: none;" class="col-3">
+        <div class="card mb-3 box-shadow" style="width: 6rem;">
+            <img src="Assets/recursos/logo-sena-negro.jpg" class="card-img-top" alt="foto">
+            <div class="card-body">
+                <h5 id="nUsuario" class="card-title">Jose</h5>
+                <p id="rolUsuario" class="card-text">addd</p>
+                <a href="#" class="btn btn-primary">Perfil</a>
+            </div>
+        </div>
     </div>
 </div>
 <div class="row" id="main-nav">
-    <div class="col-12">
+    <div id="containerLi" class="col-12">
         <ul class="nav nav-pills">
             <li class="nav-item">
                 <a class="nav-link page" id='btn-home' aria-current="home" href="#" data-tag="home">inicio</a>
@@ -24,23 +33,28 @@
             </li>
             <li class="nav-item">
                 <a class="nav-link page" id='btn-vision' aria-current="vision" href="#" data-tag="vision"href="#">Vision</a>
-            </li>
-            <li class="nav-item">
-            <a class="nav-link page" id='btn-admin' aria-current="admin" href="#" data-tag="homeAdmin"href="#">prueba</a>
-            </li>
+            </li>          
             <li class="nav-item">
                 <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#loginModal">Ingreso</a>
             </li>
             <li class="nav-item">
-
         </ul>
     </div>
-    <br>
-    <br>
 </div>
+    <br>
+    <div id="barraAdmin" style="display: none;" class="row">
+        <div class="text-bg-primary p-3 col-10">Gestion por Modulos</div>
+        <div class="col-2">
+            <button id="btnsalir" class="btn btn-outline-secondary">Salir</button>
+            <button id="btnatras" class="btn btn-outline-info">Atras</button>
+    
+        </div>
+    </div>
+    <br>
+
 
 <!-- Modal -->
-<div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+<div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -62,12 +76,12 @@
                         <input type="checkbox" class="form-check-input" id="remember-user" name="remember-user">
                         <label class="form-check-label" for="remember-user">Recordar datos</label>
                     </div>
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <button type="submit" class="btn btn-primary" style="display: none;">Submit</button>
                 </form>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Login</button>
+                <button type="button" class="btn btn-secondary" id="btnClose" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" id="btnLogin">Login</button>
             </div>
         </div>
     </div>

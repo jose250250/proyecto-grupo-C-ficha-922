@@ -19,16 +19,16 @@ public class UsuarioEntity {
      private long Id;
 
      @Column(name ="password")
-     private String Password;
+     private String password;
 
      @Column(name="login") 
-     private String Login;
+     private String login;
 
      @Column(name = "id_rol")
-     private Long IdRol;
+     private Long idRol;
 
      @Column(name = "id_persona")
-     private Long IdPersona;
+     private Long idPersona;
 
 
 

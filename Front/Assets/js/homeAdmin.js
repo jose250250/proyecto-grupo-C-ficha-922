@@ -1,68 +1,32 @@
-$(function(){
+$(function(){  
 
    
 
-    loadHeader();
-    {
-        var url = 'template/headerAdmin.html';
-        var idContent = 'content-header';
-        loadZone(url, idContent);       
-    };  
-
     $("#entrarPersona").click(function(){
-        var url = 'template/pages/homepersona.html';
-        var idContent = 'content-main';
-        loadZone(url, idContent);
+      loadPage("homepersona");
 
     });  
     $("#entrarHotel").click(function(){
-        var url = 'template/pages/homeHotel.html';
-        var idContent = 'content-main';
-        loadZone(url, idContent);
-
+        loadPage("homeHotel");
     });
     $("#entrarRestaurante").click(function(){
-        var url = 'template/pages/homeRestaurante.html';
-        var idContent = 'content-main';
-        loadZone(url, idContent);
-
+        loadPage("homeRestaurante");
     });   
     $("#entrarATuristica").click(function(){
-        var url = 'template/pages/homeATuristica.html';
-        var idContent = 'content-main';
-        loadZone(url, idContent);
-
+        loadPage("homeATuristica");
+    
     });   
     $("#entrarPaquete").click(function(){
-        var url = 'template/pages/homePaquete.html';
-        var idContent = 'content-main';
-        loadZone(url, idContent);
+        loadPage("homePaquete");
+
+    });   
+    $("#entrarTransporte").click(function(){
+        loadPage("homeTransporte");
 
     });   
 
-
-
-
-    $("#bntAtras").click(function(){
-        var url = 'template/pages/homeAdmin.html';
-        var idContent = 'content-main';
-        loadZone(url, idContent); 
-        loadHeader(); {
-            var url = 'template/headerAdmin.html';
-            var idContent = 'content-header';
-            loadZone(url, idContent);       
-        };  
-
-       }); 
-   
-     
-
-    });
-
-
-
-
-
+  
+});
 
 
 
