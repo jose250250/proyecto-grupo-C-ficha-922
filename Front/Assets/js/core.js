@@ -118,3 +118,16 @@ function getRandomInt(min, max) {
     max = Math.floor(max);
     return Math.floor(Math.random() * (max - min + 1)) + min; // Inclusive of min and max
   }
+
+  function cargarMunicipios(idDepartamento){
+    var html = "<option value=''> Seleccione ciudad </option>";
+
+    for(var i = 0; i < municipios.length; i++) {
+        var mun = municipios[i];
+        if(parseInt(idDepartamento) === parseInt(mun.idDepartamento)) {
+            html += "<option value='" + mun.id + "'>" + mun.name + "</option>";
+        }
+    }
+
+    $("#slcMunicipio").html(html);
+}

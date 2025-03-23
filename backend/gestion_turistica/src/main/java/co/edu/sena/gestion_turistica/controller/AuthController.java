@@ -24,7 +24,7 @@ public class AuthController {
     public ServerResponseDataDto login(@RequestBody LoginRequestDto request){
 
         try {
-            Thread.sleep(2000);
+            Thread.sleep(1500);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }

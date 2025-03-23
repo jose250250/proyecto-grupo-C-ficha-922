@@ -32,11 +32,11 @@ input.error, select.error {
 }
 
 .btns.editar {
-    background-image: url(../src/images/editar.png);
+    background-image: url(Assets/recursos/editar.png);
 }
 
 .btns.eliminar {
-    background-image: url(../src/images/eliminar.png);
+    background-image: url(Assets/recursos/eliminar.png);
 }
 #xmask {
     position: fixed;

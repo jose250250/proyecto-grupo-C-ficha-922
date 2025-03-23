@@ -87,7 +87,7 @@ $(function () {
                                 $("#nUsuario").text(apiResponse.data.primerNombre +" " +apiResponse.data.primerApellido);
                                 $("#rolUsuario").text("Administrador");
 
-                            }, 4000);
+                            }, 2000);
                             break;
                             
                         default:
@@ -136,6 +136,8 @@ $(function () {
        });  
        $("#btnatras").click(function(){
         loadPage("homeAdmin");
+
+        
 
    
      
