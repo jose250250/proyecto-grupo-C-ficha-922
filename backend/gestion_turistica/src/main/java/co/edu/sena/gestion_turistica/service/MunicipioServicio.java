@@ -2,6 +2,7 @@ package co.edu.sena.gestion_turistica.service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -43,6 +44,26 @@ public class MunicipioServicio {
         return dtos;
         
     }
+
+    
+     public MunicipioDto getById(Long id) {
+      
+        Optional<MunicipioEntity> optionalmunicipio = this.repository.findById(id);
+        if (optionalmunicipio.isPresent()) {
+            MunicipioEntity entity = optionalmunicipio.get();
+            MunicipioDto dto = new MunicipioDto();
+            dto.setId(entity.getId());
+            dto.setMunicipio(entity.getMunicipio());
+            dto.setIdDepartamento(entity.getIdDepartamento());
+            dto.setEstado(entity.getEstado());
+           
+            return dto;
+
+
+  }
+  return null;
+
+}
 
 
 

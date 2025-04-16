@@ -14,16 +14,12 @@ import lombok.NoArgsConstructor;
 @Builder
 @JsonInclude(Include.NON_NULL)
 
-public class UsuarioDto {
+public class RolDto {
+
+private long id;
+
+private String nombre;
 
 
-     private Long id;
 
-     private String password;
-     
-     private String login;  
-    
-     private Long idPersona;
-
-     private Long idrol;
 }

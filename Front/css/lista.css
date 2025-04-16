@@ -1,0 +1,25 @@
+.btns-editar{
+    width: 20px;
+    height: 20px;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    cursor: pointer;
+    display: inline-block;
+    vertical-align: top;
+    margin: 5px;
+    background-image: url("../Assets/recursos/editar.png");
+}
+
+
+
+.btns-eliminar{
+    width: 20px;
+    height: 20px;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    cursor: pointer;
+    display: inline-block;
+    vertical-align: top;
+    margin: 5px;
+    background-image: url("http://localhost/Front/Assets/recursos/eliminar.png");
+}

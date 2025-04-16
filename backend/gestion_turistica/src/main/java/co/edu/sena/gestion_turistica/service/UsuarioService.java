@@ -12,6 +12,7 @@ import co.edu.sena.gestion_turistica.dto.LoginResponseDto;
 import co.edu.sena.gestion_turistica.dto.PersonaDto;
 import co.edu.sena.gestion_turistica.dto.UsuarioDto;
 import co.edu.sena.gestion_turistica.entity.PersonaEntity;
+import co.edu.sena.gestion_turistica.entity.RolEntity;
 import co.edu.sena.gestion_turistica.entity.UsuarioEntity;
 import co.edu.sena.gestion_turistica.repository.UsuarioRepository;
 
@@ -19,17 +20,26 @@ import co.edu.sena.gestion_turistica.repository.UsuarioRepository;
 
 public class UsuarioService {
 
+   
+
     @Autowired
     public UsuarioRepository repository;
+
+    @Autowired
+    public RolService rolService;
+
+     
+     
 
     public void save(UsuarioDto dto) {
 
         UsuarioEntity entity = new UsuarioEntity();
-
+       
         entity.setId(dto.getId());
         entity.setPassword(dto.getPassword());
         entity.setLogin(dto.getLogin());
-        entity.setIdRol(dto.getIdRol());
+        RolEntity rolentity = this.rolService.GetById(dto.getIdrol());
+        entity.setRol(rolentity);
         entity.setIdPersona(dto.getIdPersona());
 
         repository.save(entity);
@@ -48,7 +58,7 @@ public class UsuarioService {
             dto.setId(entity.getId());
             dto.setLogin(entity.getLogin());
             dto.setPassword(entity.getPassword());
-            dto.setIdRol(entity.getIdRol());
+            dto.setIdrol(entity.getRol().getId());
             dto.setIdPersona(entity.getIdPersona());
 
             dtos.add(dto);
@@ -68,7 +78,7 @@ public class UsuarioService {
             dto.setId(entity.getId());
             dto.setLogin(entity.getLogin());
             dto.setPassword(entity.getPassword());
-            dto.setIdRol(entity.getIdRol());
+            dto.setIdrol(entity.getRol().getId());
             dto.setIdPersona(entity.getIdPersona());
 
             return dto;
@@ -91,7 +101,8 @@ public class UsuarioService {
 
             entity.setLogin(newdata.getLogin());
             entity.setPassword(newdata.getPassword());
-            entity.setIdRol(newdata.getIdRol());
+            
+            
             entity.setIdPersona(newdata.getIdPersona());
 
             this.repository.save(entity);
@@ -107,6 +118,7 @@ public class UsuarioService {
     @Autowired
     public PersonaService pService;
 
+ 
 
     public LoginResponseDto login(LoginRequestDto request) {
 
@@ -130,14 +142,15 @@ public class UsuarioService {
               perEntity.setPrimerNombre(perDto.getPrimerNombre());
               perEntity.setPrimerApellido(perDto.getPrimerApellido());
 
-
+           
                  
          
             response = LoginResponseDto.builder()
           
 
                     .id(entity.getId())
-                    .rol(entity.getIdRol())
+                    .rol(entity.getRol().getNombre())  
+                    .idrol(entity.getRol().getId())                  
                     .persona(entity.getIdPersona())
                     .PrimerNombre(perEntity.getPrimerNombre())
                     .PrimerApellido(perEntity.getPrimerApellido())                                    

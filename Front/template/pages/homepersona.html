@@ -1,6 +1,6 @@
 <div class="col-12" id="main-content-header">
-    <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
-        <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked>
+    <div class="btn-group" id="cab-form" role="group" aria-label="Basic radio toggle button group">
+        <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" >
         <label class="btn btn-outline-primary" for="btnradio1">Ingresar Nuevo Registro</label>
 
         <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off">
@@ -15,7 +15,7 @@
 
 <div id="main-content-persona" style="display: none;">
 
-    <h3 class="bg-info text-center">Ingresar nueva persona</h3>
+    <h3 id="textcabecera" class="bg-info text-center">Ingresar nueva persona</h3>
 
 
     <form id="form-persona">
@@ -62,7 +62,7 @@
                 <div class="mb-4">
                     <label for="txtIdentificacion" class="form-label">Identificacion</label>
                     <input type="text" class="form-control" id="txtIdentificacion"
-                        placeholder="Ingrese tipo de identificacion de usuario">
+                        placeholder="Ingrese numero identificacion de usuario">
                 </div>
             </div>
             <div class="col-3">
@@ -92,7 +92,7 @@
             <div class="col-3">
                 <div class="mb-4">
                     <label for="slcMunicipio" class="form-label">Municipio de residencia</label>
-                    <select class="form-select" id="slcMunicipio">
+                    <select class="form-select" id="slcMunicipio">                        
                     </select>
                 </div>
             </div>
@@ -138,7 +138,7 @@
             <br>
             <div class="row">
                 <div class="col-12">
-                    <button type="submit" class="btn btn-success">Enviar</button>
+                    <button type="submit" class="btn btn-success" id="submitpersona">Enviar</button>
                     <button type="reset" class="btn btn-info">Limpiar</button>
 
                 </div>
@@ -146,8 +146,5 @@
         </div>
     </form>
 </div>
-<script src="Assets/js/core.js"></script>
-
-<script src="Assets/js/homeAdmin.js"></script>
 
 <script src="Assets/js/homepersona.js"></script>

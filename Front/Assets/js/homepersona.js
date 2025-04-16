@@ -1,38 +1,22 @@
+var index = localStorage.getItem('idpersona');
 $(function () {
+    cargardepartamentos();  
+    cargarmunicipiosbacken();  
+  
+});
+$("#btnradio1").click(function () {
+      
+       var html = "<option value=''> Seleccione departamento </option>";
+        for (var i = 0; i < departamentos.length; i++) {
+           var dep = departamentos[i];
+           html += "<option value='" + dep.id + "'>" + dep.departamento + "</option>";
+          };
+        $("#slcDepartamento").html(html);
+        $("#main-content-persona").show();
 
-    $("#btnradio1").click(function () {
-        var url = "http://localhost:8080/departamento";
-        var method = "GET";
-        var request = "";
-        var ifSuccessLogin = function (apiResponse) {
-            console.log("departamento:response " + JSON.stringify(apiResponse));
-            var departamentos = (apiResponse.data);
-            console.log("departamos" + JSON.stringify(departamentos));
+        closeLoader();
 
-
-            var html = "<option value=''> Seleccione departamento </option>";
-
-            for (var i = 0; i < departamentos.length; i++) {
-                var dep = departamentos[i];
-                html += "<option value='" + dep.id + "'>" + dep.departamento + "</option>";
-            }
-
-            $("#slcDepartamento").html(html);
-            $("#main-content-persona").show();
-
-            closeLoader();
-
-        }
-
-        var ifErrorLogin = function (data) {
-            addAlert("Se presento un error en el servidor", "danger", 8);
-            closeLoader();
-        };
-
-        openLoader();
-        callApi(url, method, request, ifSuccessLogin, ifErrorLogin);
-
-    });
+});
 
     $("#btnradio2").click(function () {
         loadPage("listaPersonas");
@@ -44,7 +28,6 @@ $(function () {
             var listaPersonas = (apiResponse.data);
             console.log("lista persona" + JSON.stringify(listaPersonas));
 
-
             var html = "";
 
             for (var i = 0; i < listaPersonas.length; i++) {
@@ -54,9 +37,8 @@ $(function () {
                 html += "<td>" + per.primerNombre + "</td>";
                 html += "<td>" + per.primerApellido + "</td>";
                 html += "<td>" + per.celular + "</td>";
-                html += "<td><div class='btns editar' data-id='" + i + "' ></div> <div class='btns eliminar' data-id='" + i + "'></div></td>";
+                html += "<td><div class='btns-editar'  data-id='" + per.id + "' ></div> <div class='btns-eliminar' data-id='" + per.id + "'data-bs-toggle='modal' data-bs-target='#eliminarmodal' ></div></td>";
                 html += "</tr>";
-
             };
 
             $("#table-persona tbody").html(html);
@@ -66,126 +48,133 @@ $(function () {
 
         }
 
-        var ifErrorLogin = function (data) {
-            addAlert("Se presento un error en el servidor", "danger", 8);
-            closeLoader();
-        };
-
+    
+      
         openLoader();
-        callApi(url, method, request, ifSuccesspersona, ifErrorLogin);
+        callApi(url, method, request, ifSuccesspersona, ifError);
 
     });
 
-    $("#slcDepartamento").on("change", function(){ 
-        console.log($(this).val());
-        var idDepartamento= ($(this).val());  
-   
-        var url = "http://localhost:8080/municipio";
-        var method = "GET";
-        var request = "";
-        var ifSuccessLogin = function (apiResponse) {          
-            var municipios = (apiResponse.data);          
-            console.log("municipios" + JSON.stringify(municipios));
-            closeLoader();  
-            
+    $("#slcDepartamento").on("change", function () {
+        console.log("index:::" + index);
+
+        var idDepartamento = ($(this).val());
+        if (municipios === "") {
+            cargarmunicipiosbacken();
                 var html = "<option value=''> Seleccione ciudad </option>";
-               
-            
-                for(var i = 0; i < municipios.length; i++) {
+                for (var i = 0; i < municipios.length; i++) {
                     var mun = municipios[i];
-                    if(parseInt(idDepartamento) === parseInt(mun.idDepartamento)) {
+                    if (parseInt(idDepartamento) === parseInt(mun.idDepartamento)) {
                         html += "<option value='" + mun.id + "'>" + mun.municipio + "</option>";
                     }
-                            
-                $("#slcMunicipio").html(html);
-            } 
-        }
-        var ifErrorLogin = function (data) {
-            addAlert("Se presento un error en el servidor", "danger", 8);
-            closeLoader();
-        };
+                    $("#slcMunicipio").html(html);
+                }
+            }          
+        else {
+            var html = "<option value=''> Seleccione ciudad </option>";
 
-        openLoader();
-        callApi(url, method, request, ifSuccessLogin, ifErrorLogin);      
-  
+            for (var i = 0; i < municipios.length; i++) {
+                var mun = municipios[i];
+                if (parseInt(idDepartamento) === parseInt(mun.idDepartamento)) {
+                    html += "<option value='" + mun.id + "'>" + mun.municipio + "</option>";
+                }
+                $("#slcMunicipio").html(html);
+            }
+
+        }
     });
+
     $("#form-persona").submit(function (event) {
         event.preventDefault();
         var cantidadErrores = 0
-        $("#form-persona input, #form-persona select").each(function(index){
-            if($(this).val()==='') {
-            cantidadErrores++
-            };      
-         
+        $("#form-persona input, #form-persona select").each(function (i) {
+            if ($(this).val() === '') {
+                cantidadErrores++
+            };
+
         });
         console.log("cant errores" + cantidadErrores);
-       
-        if(((cantidadErrores == 2)&&($("#txtSNombre").val()==="")&&($("#txtSApellido").val()===""))
-            ||((cantidadErrores == 1)&&($("#txtSNombre").val()===""))||((cantidadErrores == 1)&&($("#txtSApellido").val()===""))
-             ||(cantidadErrores==0)){           
-                
-        var persona = {
-            "primerNombre": $("#txtPNombre").val(),
-            "segundoNombre": $("#txtSNombre").val(),
-            "primerApellido": $("#txtPApellido").val(),
-            "segundoApellido": $("#txtSApellido").val(),
-            "tipoIdentificacion": $("#slcTipoIdentificacion").val(),
-            "identificacion": $("#txtIdentificacion").val(),          
-            "fechaNacimiento": $("#dateFechaNacimiento").val(),
-            "celular": $("#txtCelular").val(),         
-            "idMunicipio": $("#slcMunicipio").val(),
-            "direccion": $("#txtDireccion").val(),
-            "genero": $("#slcGenero").val(),
-            "correo": $("#txtCorreo").val()   
-           
-         };
-         console.log("persona" + JSON.stringify(persona));
-         var url = "http://localhost:8080/persona";
-         var method = "POST";
-         var request = persona;
-         var ifSuccess = function (apiResponse) {  
-                               
-            addAlert(apiResponse.message, "success" , 3);              
-         
-             closeLoader();  
-            };                     
-                
-         var ifErrorLogin = function (data) {
-             addAlert("Se presento un error en el servidor", "danger", 8);
-             closeLoader();
-         };
- 
-         openLoader();
-         callApi(url, method, request, ifSuccess, ifErrorLogin);  
-         
-         $('#form-persona')[0].reset();
-             }
+        console.log("index:::" + index);
         
-        else
-        {
-            $("#form-persona input, #form-persona select").each(function(){
-                if($(this).val()==='') {
-                    $(this).addClass("is-invalid");}      
+
+        if (((cantidadErrores == 2) && ($("#txtSNombre").val() === "") && ($("#txtSApellido").val() === ""))
+            || ((cantidadErrores == 1) && ($("#txtSNombre").val() === "")) || ((cantidadErrores == 1) && ($("#txtSApellido").val() === ""))
+            || (cantidadErrores == 0)) {
+
+            var persona = {
+                "primerNombre": $("#txtPNombre").val(),
+                "segundoNombre": $("#txtSNombre").val(),
+                "primerApellido": $("#txtPApellido").val(),
+                "segundoApellido": $("#txtSApellido").val(),
+                "tipoIdentificacion": $("#slcTipoIdentificacion").val(),
+                "identificacion": $("#txtIdentificacion").val(),
+                "fechaNacimiento": $("#dateFechaNacimiento").val(),
+                "celular": $("#txtCelular").val(),
+                "idMunicipio": $("#slcMunicipio").val(),
+                "direccion": $("#txtDireccion").val(),
+                "genero": $("#slcGenero").val(),
+                "correo": $("#txtCorreo").val()
+
+            };
+            console.log("persona" + JSON.stringify(persona));
+           
+            var method="";
+            var url = "";
+            if(index != ''){
+                method ="PUT";
+                url = "http://localhost:8080/persona/"+index;
+                localStorage.setItem('idpersona', '');
+                 }
+                else {
+                    method = "POST";
+                    url = "http://localhost:8080/persona/";
+                }
+
             
+            
+            var request = persona;
+            var ifSuccess = function (apiResponse) {
+
+                addAlert(apiResponse.message, "success", 3);
+
+                closeLoader();
+            };
+
+            var ifErrorLogin = function (data) {
+                addAlert("Se presento un error en el servidor", "danger", 8);
+                closeLoader();
+            };
+
+            openLoader();
+            callApi(url, method, request, ifSuccess, ifErrorLogin);
+
+            $('#form-persona')[0].reset();
+        }
+
+        else {
+            $("#form-persona input, #form-persona select").each(function () {
+                if ($(this).val() === '') {
+                    $(this).addClass("is-invalid");
+                }
+
             });
             addAlert("valide los datos ingresados", "info", 2);
-   
-    };
-       
-    });
-    $("#form-persona input, #form-persona select").on('change keyup click', function(){
-       
-     $(this).removeClass("is-invalid");
+
+        };
 
     });
-});
+    $("#form-persona input, #form-persona select").on('change keyup click', function () {
+
+        $(this).removeClass("is-invalid");
+
+    });
+
+  
 
 
 
 
 
-        
-    
 
 
 
