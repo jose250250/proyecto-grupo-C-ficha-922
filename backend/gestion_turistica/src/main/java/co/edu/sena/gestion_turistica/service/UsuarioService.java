@@ -9,8 +9,8 @@ import org.springframework.stereotype.Service;
 
 import co.edu.sena.gestion_turistica.dto.LoginRequestDto;
 import co.edu.sena.gestion_turistica.dto.LoginResponseDto;
-import co.edu.sena.gestion_turistica.dto.PersonaDto;
 import co.edu.sena.gestion_turistica.dto.UsuarioDto;
+import co.edu.sena.gestion_turistica.dto.UsuarioResponseDto;
 import co.edu.sena.gestion_turistica.entity.PersonaEntity;
 import co.edu.sena.gestion_turistica.entity.RolEntity;
 import co.edu.sena.gestion_turistica.entity.UsuarioEntity;
@@ -26,40 +26,40 @@ public class UsuarioService {
     public UsuarioRepository repository;
 
     @Autowired
-    public RolService rolService;
-
-     
+    public RolService rolService;   
      
 
     public void save(UsuarioDto dto) {
 
-        UsuarioEntity entity = new UsuarioEntity();
-       
-        entity.setId(dto.getId());
-        entity.setPassword(dto.getPassword());
+        UsuarioEntity entity = new UsuarioEntity(); 
+
         entity.setLogin(dto.getLogin());
-        RolEntity rolentity = this.rolService.GetById(dto.getIdrol());
-        entity.setRol(rolentity);
-        entity.setIdPersona(dto.getIdPersona());
+        entity.setPassword(dto.getPassword());
+        RolEntity rolEntity = new RolEntity();
+        rolEntity.setId(dto.getIdrol());
+        entity.setRol(rolEntity);
+        PersonaEntity personaEntity = new PersonaEntity();
+        personaEntity.setId(dto.getIdPersona());
+        entity.setPersona(personaEntity);
 
         repository.save(entity);
 
     }
 
-    public List<UsuarioDto> getAll() {
+    public List<UsuarioResponseDto> getAll() {
 
-        List<UsuarioDto> dtos = new ArrayList<>();
+        List<UsuarioResponseDto> dtos = new ArrayList<>();
         List<UsuarioEntity> entities = repository.findAll();
 
         for (UsuarioEntity entity : entities) {
 
-            UsuarioDto dto = new UsuarioDto();
+            UsuarioResponseDto dto = new UsuarioResponseDto();
 
             dto.setId(entity.getId());
             dto.setLogin(entity.getLogin());
             dto.setPassword(entity.getPassword());
-            dto.setIdrol(entity.getRol().getId());
-            dto.setIdPersona(entity.getIdPersona());
+            dto.setPersona(entity.getPersona().getPrimerNombre()+" "+ entity.getPersona().getPrimerApellido());
+            dto.setRol(entity.getRol().getNombre());
 
             dtos.add(dto);
 
@@ -79,7 +79,7 @@ public class UsuarioService {
             dto.setLogin(entity.getLogin());
             dto.setPassword(entity.getPassword());
             dto.setIdrol(entity.getRol().getId());
-            dto.setIdPersona(entity.getIdPersona());
+            dto.setIdPersona(entity.getPersona().getId());
 
             return dto;
 
@@ -100,10 +100,13 @@ public class UsuarioService {
             UsuarioEntity entity = optionalUsuario.get();
 
             entity.setLogin(newdata.getLogin());
-            entity.setPassword(newdata.getPassword());
-            
-            
-            entity.setIdPersona(newdata.getIdPersona());
+            entity.setPassword(newdata.getPassword());  
+            PersonaEntity personaEntity = new PersonaEntity();
+            personaEntity.setId(newdata.getIdPersona());        
+            entity.setPersona(personaEntity);
+            RolEntity rolEntity = new RolEntity();
+            rolEntity.setId(newdata.getIdrol());
+            entity.setRol(rolEntity);
 
             this.repository.save(entity);
 
@@ -112,57 +115,35 @@ public class UsuarioService {
 
         return null;
 
-    }
-
+    }   
    
-    @Autowired
-    public PersonaService pService;
 
- 
-
-    public LoginResponseDto login(LoginRequestDto request) {
-
-
-      
+    public LoginResponseDto login(LoginRequestDto request) {      
         
         LoginResponseDto response;
 
         Optional<UsuarioEntity> optResponse = this.repository
-                .findByLoginAndPassword(request.getUsername(), request.getPassword());
+                .findByLoginAndPassword(request.getUsername(), request.getPassword());            
+            if(optResponse.isPresent()) {
+                UsuarioEntity entity =  optResponse.get();        
 
-        if (optResponse.isPresent()) {
-
-            
-
-            
-            UsuarioEntity entity = optResponse.get();
-
-               PersonaDto perDto = this.pService.getById(entity.getIdPersona());
-               PersonaEntity perEntity = new PersonaEntity();
-              perEntity.setPrimerNombre(perDto.getPrimerNombre());
-              perEntity.setPrimerApellido(perDto.getPrimerApellido());
-
-           
-                 
-         
-            response = LoginResponseDto.builder()
-          
-
-                    .id(entity.getId())
-                    .rol(entity.getRol().getNombre())  
-                    .idrol(entity.getRol().getId())                  
-                    .persona(entity.getIdPersona())
-                    .PrimerNombre(perEntity.getPrimerNombre())
-                    .PrimerApellido(perEntity.getPrimerApellido())                                    
-                    .isActive(true)
-                    .build();
-        } else {
-            response = LoginResponseDto.builder()
-                    .isActive(false)
-                    .build();
-        }
-
-        return response;
+                response = LoginResponseDto.builder()
+                        .id(entity.getId())
+                        .rol(entity.getRol().getNombre())
+                        .idrol(entity.getRol().getId())
+                        .persona(entity.getPersona().getId())
+                        .PrimerNombre(entity.getPersona().getPrimerNombre())
+                        .PrimerApellido(entity.getPersona().getPrimerApellido())
+                        .isActive(true)
+                        .build();    
+              
+            } else {
+                response = LoginResponseDto.builder()
+                        .isActive(false)
+                        .build();           
+            }  
+            return response;
     }
+
 
 }

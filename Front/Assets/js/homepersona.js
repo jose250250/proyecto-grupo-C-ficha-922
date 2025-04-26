@@ -1,10 +1,11 @@
 var index = localStorage.getItem('idpersona');
+admin= "admin/"
 $(function () {
     cargardepartamentos();  
     cargarmunicipiosbacken();  
   
 });
-$("#btnradio1").click(function () {
+$("#ingresarPersona").click(function () {
       
        var html = "<option value=''> Seleccione departamento </option>";
         for (var i = 0; i < departamentos.length; i++) {
@@ -13,13 +14,15 @@ $("#btnradio1").click(function () {
           };
         $("#slcDepartamento").html(html);
         $("#main-content-persona").show();
+        $("#main-content-header").hide();
 
         closeLoader();
 
 });
 
-    $("#btnradio2").click(function () {
-        loadPage("listaPersonas");
+    $("#verlistaPersona").click(function () {
+
+        loadPage("listaPersonas",admin);
         var url = "http://localhost:8080/persona";
         var method = "GET";
         var request = "";
@@ -120,23 +123,21 @@ $("#btnradio1").click(function () {
            
             var method="";
             var url = "";
-            if(index != ''){
-                method ="PUT";
-                url = "http://localhost:8080/persona/"+index;
-                localStorage.setItem('idpersona', '');
+            if((index == '')||(index == null)){
+                method = "POST";
+                url = "http://localhost:8080/persona";              
                  }
                 else {
-                    method = "POST";
-                    url = "http://localhost:8080/persona/";
-                }
-
-            
+                    method ="PUT";
+                    url = "http://localhost:8080/persona/"+index;
+                    localStorage.setItem('idpersona', '');                 
+                }           
             
             var request = persona;
             var ifSuccess = function (apiResponse) {
-
+                $("#main-content-persona").hide();
+                $("#main-content-header").show();
                 addAlert(apiResponse.message, "success", 3);
-
                 closeLoader();
             };
 
@@ -168,6 +169,13 @@ $("#btnradio1").click(function () {
         $(this).removeClass("is-invalid");
 
     });
+    $("#atrasPersona").click(function(){        
+        $("#main-content-persona").hide();
+        $("#main-content-header").show();
+    });
+    $("#homeAdmin").click(function(){
+        loadPage("homeAdmin",admin);
+    })
 
   
 

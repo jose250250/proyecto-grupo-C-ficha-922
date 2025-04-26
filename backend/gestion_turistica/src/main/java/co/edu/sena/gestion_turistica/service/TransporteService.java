@@ -23,6 +23,7 @@ public class TransporteService {
         entity.setNombre(dto.getNombre());
         entity.setIdMunicipio(dto.getIdMunicipio());
         entity.setCelular(dto.getCelular());
+        entity.setPrecio(dto.getPrecio());
 
         repository.save(entity);
 
@@ -38,6 +39,7 @@ public class TransporteService {
             dto.setNombre(entity.getNombre());
             dto.setIdMunicipio(entity.getIdMunicipio());
             dto.setCelular(entity.getCelular());
+            dto.setPrecio(entity.getPrecio());
 
             dtos.add(dto);
 
@@ -57,6 +59,7 @@ public class TransporteService {
             dto.setNombre(entity.getNombre());
             dto.setIdMunicipio(entity.getIdMunicipio());
             dto.setCelular(entity.getCelular());
+            dto.setPrecio(entity.getPrecio());
             return dto;
             
         }
@@ -76,6 +79,7 @@ public class TransporteService {
            entity.setNombre(newdata.getNombre());
            entity.setIdMunicipio(newdata.getIdMunicipio());
            entity.setCelular(newdata.getCelular());
+           entity.setPrecio(newdata.getPrecio());
 
            this.repository.save(entity);
 

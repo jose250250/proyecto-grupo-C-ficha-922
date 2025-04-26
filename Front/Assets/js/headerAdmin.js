@@ -1,6 +1,9 @@
 $(function(){
 
     var objUser = redirectByLoginUser(true);
+    loadPage('homeAdmin',"admin/");
+    closeLoader();
+ 
    
   
     
@@ -9,11 +12,8 @@ $(function(){
        redirectByLoginUser(true);
     });  
     
-    $("#barraAdmin").show();
-    $("#infoLogin").show();
-    loadPage('homeAdmin');
-    closeLoader();
- 
+   
+  
     $("#main-nav").hide();
     $("#nUsuario").text(objUser.primerNombre +" " +objUser.primerApellido);
     $("#rolUsuario").text(objUser.rol);

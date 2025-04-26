@@ -25,6 +25,8 @@ public class TransporteDto {
 
     private String celular;
 
+    private Long precio;
+
 
 
 

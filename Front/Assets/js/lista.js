@@ -2,6 +2,7 @@ var emunicipio = "";
 var personaEdit = "";
 var municipioid = "";
 var iddep = "";
+var admin = "admin/";
 
 
 
@@ -36,7 +37,8 @@ $("#confeliminar").click(function () {
 $(document).on("click", ".btns-editar", function () {
     index = $(this).data('id');
     console.log("INDEX:: " + index);  
-    loadPage("homepersona");
+    page = "homepersona";
+    loadPage(page, admin);   
     cargarmunicipiosbacken();          
     cargardepartamentos();  
     localStorage.setItem("idpersona", index); 
@@ -109,6 +111,11 @@ $(document).on("click", ".btns-editar", function () {
           
             closeLoader();
         });  
-
+        $("#Atras").click(function(){
+            page = "homepersona";
+            loadPage(page, admin); 
+            $("#main-content-persona").hide();
+            $("#main-content-header").show();
+        });
      
 

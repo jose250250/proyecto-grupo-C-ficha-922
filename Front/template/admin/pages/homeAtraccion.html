@@ -1,0 +1,62 @@
+<div class="col-12" id="main-content-header">
+    <button type="button" class="btn btn-info" id="ingresarAtraccion">Ingresar Nueva atraccion turistica</button>
+    <button type="button" class="btn btn-info" id="verlistaAtraccion">Ver lista</button>
+    <button type="button" class="btn btn-info" id="buscarAtraccion">Buscar</button>
+    <button type="homeadmin" class="btn btn-info" id="homeAdmin">Atras</button>
+</div>
+<div id="main-content-atraccion" style="display: none;">
+    <h3 class="bg-info text-center">Ingresar nueva Atraccion Turistica</h3>
+    <br>
+    <form id="frmAtraccion">     
+
+        <div class="row">
+            <div class="col-3">
+                <div class="mb-4">
+                    <label for="txtNombre" class="form-label">Nombre</label>
+                    <input type="text" class="form-control" id="txtNombre" placeholder="Ingrese nombre de atraccion">
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="mb-4">
+                    <label for="slcDepartamento" class="form-label">Departamento residencia</label>
+                    <select class="form-select" id="slcDepartamento">
+                    </select>
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="mb-4">
+                    <label for="slcMunicipio" class="form-label">Municipio</label>
+                    <select class="form-select" id="slcMunicipio">
+                    </select>
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="mb-4">
+                    <label for="txtCelular" class="form-label">N° de Celular</label>
+                    <input type="tel" class="form-control" id="txtCelular" placeholder="Ingrese telefono de usuario">
+                </div>
+            </div>
+        </div>    
+        <div class="row">  
+            <div class="col-3">
+                <div class="mb-4">
+                    <label for="precio" class="form-label">Precio por Dia</label>
+                    <input type="moneda" class="form-control" id="precio" placeholder="Ingrese el valor por dia">
+                </div>
+            </div>    
+            </div>  
+            <br>
+            <div class="row">
+                <div class="col-12">
+                    <button type="submit" class="btn btn-success" id="submitAtraccion">Enviar</button>
+                    <button type="reset" class="btn btn-info">Limpiar</button>
+                 
+                </div>
+            </div>
+        
+    </form>
+    <div class="col-12" style="margin-left: 80%;">
+        <button type="atras" class="btn btn-info" id="atras" style="display: inline;">Atras</button>
+    </div>
+</div>
+<script src="Assets/js/gestionAtraccion.js"></script>

@@ -22,13 +22,12 @@ public class HotelService {
 
         HotelEntity entity = new HotelEntity();
 
-        entity.setNombre(dto.getNombre());
+      entity.setNombre(dto.getNombre());
       entity.setIdMunicipio(dto.getIdMunicipio());
       entity.setCelular(dto.getCelular());
       entity.setDireccion(dto.getDireccion());
-
+      entity.setPrecio(dto.getPrecio());
       repository.save(entity);
-
 
     }
 
@@ -46,16 +45,12 @@ public class HotelService {
             dto.setIdMunicipio(entity.getIdMunicipio());
             dto.setCelular(entity.getCelular());
             dto.setDireccion(entity.getDireccion());
-      
-            dtos.add(dto);
-
-
-        
+            dto.setPrecio(entity.getPrecio());
+                  
+            dtos.add(dto);       
 
         }
-
-        return dtos;
-        
+        return dtos;        
     }
 
      public HotelDto getById(Long id) {
@@ -69,6 +64,7 @@ public class HotelService {
             dto.setIdMunicipio(entity.getIdMunicipio());
             dto.setCelular(entity.getCelular());
             dto.setDireccion(entity.getDireccion());
+            dto.setPrecio(entity.getPrecio());
             return dto;
 
 
@@ -92,6 +88,7 @@ public HotelDto update(HotelDto newdata){
         entity.setIdMunicipio(newdata.getIdMunicipio());
         entity.setCelular(newdata.getCelular());
         entity.setDireccion(newdata.getDireccion());
+        entity.setPrecio(newdata.getPrecio());
        
         this.repository.save(entity);
 

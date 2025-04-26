@@ -1,0 +1,120 @@
+<div class="col-12" id="main-content-header">
+    <button type="button" class="btn btn-info" id="ingresarPaquete">Ingresar Nuevo Paquete</button>
+    <button type="button" class="btn btn-info" id="verlistaPaquete">Ver lista de Paquetes</button>
+    <button type="button" class="btn btn-info" id="buscarPaquete">Buscar</button>
+    <button type="homeadmin" class="btn btn-info" id="homeAdmin">Atras</button>
+</div>
+<div id="main-content-paquete" style="display: none;">
+    <h3 class="bg-info text-center">Ingresar nuevo Paquete Turistico</h3>
+    <form id="frmPaquete">
+        <div class="row">
+            <div class="col-3">
+                <div class="mb-4">
+                    <label for="txtNombre" class="form-label">Nombre</label>
+                    <input type="text" class="form-control" id="txtNombre" placeholder="Ingrese nombre de paquete">
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="mb-4">
+                    <label for="slcClasePaquete" class="form-label">Clase de Paquete</label>
+                    <select class="form-select" id="slcClasePaquete">
+                        <option selected value="">Seleccione un tipo</option>
+                        <option value="1">Premium</option>
+                        <option value="2">Basico</option>
+                        <option value="3">lite</option>
+                        <option value="4">Promocional</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="mb-4">
+                    <label for="txtDescripcion" class="form-label">Descripcion</label>
+                    <input type="text" class="form-control" id="txtDescripcion"> >
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="mb-4">
+                    <label for="dateFechaInicio" class="form-label">Fecha de Inicio</label>
+                    <input type="date" class="form-select" id="dateFechaInicio"> >
+                </div>
+            </div>
+        </div>
+        <div class="row"> 
+            <div class="col-3">
+                <div class="mb-4">
+                    <label for="dateFechaFinal" class="form-label">Fecha final</label>
+                    <input type="date" class="form-select" id="dateFechaFinal"> >
+                </div>
+            </div>
+
+            <div class="col-3">
+                <div class="mb-4">
+                    <label for="slcDepartamento" class="form-label">Departamento residencia</label>
+                    <select class="form-select" id="slcDepartamento">
+                    </select>
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="mb-4">
+                    <label for="slcMunicipio" class="form-label">Municipio</label>
+                    <select class="form-select" id="slcMunicipio">
+                    </select>
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="mb-4">
+                    <label for="slcHotel" class="form-label">Hotel</label>
+                    <select class="form-select" id="slcHotel">
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="row">             
+            <div class="col-3">
+                <div class="mb-4">
+                    <label for="slcRestaurante" class="form-label">Restaurante</label>
+                    <select class="form-select" id="slcRestaurante">
+                    </select>
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="mb-4">
+                    <label for="slcAtraccion" class="form-label">Atraccion Turistica</label>
+                    <select class="form-select" id="slcAtraccion">
+                    </select>
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="mb-4">
+                    <label for="slcTransporte" class="form-label">Transporte</label>
+                    <select class="form-select" id="slcTransporte">
+                    </select>
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="mb-4">
+                    <label for="precio" class="form-label">precio por dia</label>
+                    <input type="moneda" class="form-control" id="precio" value="precio" readonly>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-3">
+                <div class="mb-4">
+                    <label for="descuento" class="form-label">Descuento</label>
+                    <select class="form-select" id="descuento">
+                    </select>
+                </div>
+            </div>
+        </div>         
+        <div class="row">
+            <div class="col-12">
+                <button type="submit" class="btn btn-success" id="submitPaquete">Enviar</button>
+                <button type="reset" class="btn btn-info">Limpiar</button>
+            
+            </div>
+        </div>
+    
+    </form>
+</div>
+<script src="Assets/js/gestionPaquete.js"></script>

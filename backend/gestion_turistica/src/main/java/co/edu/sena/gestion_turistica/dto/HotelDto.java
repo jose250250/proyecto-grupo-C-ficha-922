@@ -27,5 +27,7 @@ public class HotelDto {
 
     private String direccion;
 
+    private Long precio;
+
 
 }
