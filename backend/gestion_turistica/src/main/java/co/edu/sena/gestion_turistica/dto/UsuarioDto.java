@@ -17,13 +17,13 @@ import lombok.NoArgsConstructor;
 public class UsuarioDto {
 
 
-     private long id;
+     private Long id;
 
      private String password;
      
-     private String login;
+     private String login;  
     
-     private Long idRol;
-
      private Long idPersona;
+
+     private Long idrol;
 }

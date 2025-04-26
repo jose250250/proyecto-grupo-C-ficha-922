@@ -28,5 +28,7 @@ private String celular;
 
 private String direccion;
 
+private Long precio;
+
 
 }

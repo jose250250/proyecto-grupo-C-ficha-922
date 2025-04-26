@@ -1,0 +1,46 @@
+package co.edu.sena.gestion_turistica.dto;
+
+import java.sql.Date;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
+
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
+@JsonInclude(Include.NON_NULL)
+public class PaqueteTuristicoResponseDto {
+
+
+    private Long id;
+
+    private String nombre;
+
+    private String clase;
+
+    private String descripcion;
+
+    private Long idMunicipio;
+
+    private String Hotel;
+
+    private Date fechaInicio;
+
+    private Date fechaFinal;
+
+    private String Restaurante;
+
+    private String Atraccion;
+
+    private String Transporte;
+
+    private Long precioDia;
+
+    private Long Descuento;
+}

@@ -1,0 +1,70 @@
+<div class="col-12" id="main-content-header">
+    <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+        <input type="radio" class="btn-check" name="btningreso" id="btnradio1" autocomplete="off" checked>
+        <label class="btn btn-outline-primary" for="ingreso">ingreso</label>
+
+        <input type="radio" class="btn-check" name="btnbuscar" id="btnbuscar" autocomplete="off">
+        <label class="btn btn-outline-primary" for="buscar">Buscar</label>
+
+        <input type="radio" class="btn-check" name="btnedicion" id="btnedicion" autocomplete="off">
+        <label class="btn btn-outline-primary" for="edicion">Edicion</label>
+    </div>
+    <br>
+
+</div>
+<br>
+<div id="main-content">
+
+    <h3 class="bg-info text-center">Ingresar nuevo Atraccion Turistica</h3>
+    <br>
+
+    <form id="frm1">
+
+
+        <input type="hidden" id="usuario-id" />
+
+        <div class="row">
+            <div class="col-3">
+                <div class="mb-4">
+                    <label for="txtNombre" class="form-label">Nombre</label>
+                    <input type="text" class="form-control" id="txtNombre" placeholder="Ingrese nombre de usuario">
+                </div>
+            </div>
+
+
+
+
+            <div class="col-3">
+                <div class="mb-4">
+                    <label for="slcDepartamento" class="form-label">Departamento residencia</label>
+                    <select class="form-select" id="slcDepartamento">
+                    </select>
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="mb-4">
+                    <label for="slcmunicipio" class="form-label">Municipio</label>
+                    <select class="form-select" id="slcmunicipio">
+                    </select>
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="mb-4">
+                    <label for="txtCelular" class="form-label">N° de Celular</label>
+                    <input type="tel" class="form-control" id="txtCelular" placeholder="Ingrese telefono de usuario">
+                </div>
+            </div>
+         
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-12">
+                    <button type="submit" class="btn btn-success">Enviar</button>
+                    <button type="reset" class="btn btn-info">Limpiar</button>
+                 
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+<script src="Assets/js/homeAdmin.js"></script>

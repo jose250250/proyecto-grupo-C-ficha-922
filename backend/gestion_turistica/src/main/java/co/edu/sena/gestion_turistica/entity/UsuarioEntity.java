@@ -5,6 +5,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import lombok.Data;
 @Data
@@ -13,10 +15,10 @@ import lombok.Data;
 
 
 public class UsuarioEntity {
-      @Id
+     @Id
      @GeneratedValue(strategy = GenerationType.IDENTITY)
      @Column(name = "id")
-     private long Id;
+     private long id;
 
      @Column(name ="password")
      private String password;
@@ -24,12 +26,13 @@ public class UsuarioEntity {
      @Column(name="login") 
      private String login;
 
-     @Column(name = "id_rol")
-     private Long idRol;
-
-     @Column(name = "id_persona")
-     private Long idPersona;
-
+     @ManyToOne
+     @JoinColumn(name = "id_persona", nullable = false, updatable = true)
+     private PersonaEntity persona;   
+    
+    @ManyToOne
+    @JoinColumn(name = "id_rol", nullable = false, updatable = true)
+    private RolEntity rol;
 
 
 

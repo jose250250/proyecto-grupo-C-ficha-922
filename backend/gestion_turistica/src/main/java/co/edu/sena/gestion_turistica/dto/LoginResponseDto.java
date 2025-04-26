@@ -16,7 +16,8 @@ import lombok.NoArgsConstructor;
 public class LoginResponseDto {
 
     private Long id;
-    private Long rol;
+    private String rol;
+    private Long idrol;
     private long persona;
     private String PrimerNombre;
     private String PrimerApellido;  

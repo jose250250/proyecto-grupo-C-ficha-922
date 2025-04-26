@@ -71,23 +71,18 @@ $(function () {
                 if (apiResponse.data.active) {
                     addAlert("Usuario logueado con exito", "success", 2);
 
-                    rolIngreso = apiResponse.data.rol;
+                    rolIngreso = apiResponse.data.idrol;
                     switch (rolIngreso) {
                         case 1:
 
                             window.setTimeout(function () {
+                                var dataUser = JSON.stringify(apiResponse.data);
+                                localStorage.setItem("data-user", dataUser);
+                                window.location.replace("adminhome.html?");
 
-                                $("#barraAdmin").show();
-                                $("#infoLogin").show();
-                                loadPage('homeAdmin');
-                                closeLoader();
-                                resetModal();
-                               $("#btnClose").click();
-                                $("#main-nav").hide();
-                                $("#nUsuario").text(apiResponse.data.primerNombre +" " +apiResponse.data.primerApellido);
-                                $("#rolUsuario").text("Administrador");
+                           
 
-                            }, 4000);
+                            }, 2000);
                             break;
                             
                         default:
@@ -136,6 +131,8 @@ $(function () {
        });  
        $("#btnatras").click(function(){
         loadPage("homeAdmin");
+
+        
 
    
      

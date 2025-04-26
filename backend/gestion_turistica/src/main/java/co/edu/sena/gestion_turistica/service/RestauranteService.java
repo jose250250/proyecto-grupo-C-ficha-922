@@ -24,6 +24,7 @@ public class RestauranteService {
       entity.setIdMunicipio(dto.getIdMunicipio());
       entity.setCelular(dto.getCelular());
       entity.setDireccion(dto.getDireccion());
+      entity.setPrecio(dto.getPrecio());
 
       repository.save(entity);
 
@@ -44,6 +45,7 @@ public class RestauranteService {
       dto.setIdMunicipio(entity.getIdMunicipio());
       dto.setCelular(entity.getCelular());
       dto.setDireccion(entity.getDireccion());
+      dto.setPrecio(entity.getPrecio());
 
       dtos.add(dto);
 
@@ -63,6 +65,7 @@ public class RestauranteService {
             dto.setIdMunicipio(entity.getIdMunicipio());
             dto.setCelular(entity.getCelular());
             dto.setDireccion(entity.getDireccion());
+            dto.setPrecio(entity.getPrecio());
             return dto;
 
 
@@ -86,7 +89,8 @@ public RestauranteDto update(RestauranteDto newdata){
         entity.setIdMunicipio(newdata.getIdMunicipio());
         entity.setCelular(newdata.getCelular());
         entity.setDireccion(newdata.getDireccion());
-       
+        entity.setPrecio(newdata.getPrecio());
+        
         this.repository.save(entity);
 
         return newdata;

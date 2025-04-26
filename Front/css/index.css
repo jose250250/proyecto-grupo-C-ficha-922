@@ -1,3 +1,13 @@
+body {
+    border: 10px solid #a8d5e2; /* Azul suave */
+    padding: 20px;
+    background: linear-gradient(to bottom, #c2e4f6, #f9f3df); /* Celeste y arena */
+}
+
+.container {
+    background-color: rgba(255, 255, 255, 0.9); /* Fondo semitransparente */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Sombra para profundidad */
+}
 #main-container {
     margin-top: 20px;
     margin-bottom: 20px;
@@ -20,23 +30,30 @@ input.error, select.error {
     color: red !important;
 }
 
-.btns {
-    width: 20px;
-    height: 20px;
+.btns-editar{
+    width: 60px;
+    height: 60px;
     background-repeat: no-repeat;
     background-size: 100%;
     cursor: pointer;
     display: inline-block;
     vertical-align: top;
-    margin: 5px;
+    margin: 2px;
+    background-image: url("http://localhost/Front/Assets/recursos/editar.png");
 }
 
-.btns.editar {
-    background-image: url(../src/images/editar.png);
-}
 
-.btns.eliminar {
-    background-image: url(../src/images/eliminar.png);
+
+.btns-eliminar{
+    width: 60px;
+    height: 60px;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    cursor: pointer;
+    display: inline-block;
+    vertical-align: top;
+    margin: 2px;
+    background-image: url("http://localhost/Front/Assets/recursos/eliminar.png");
 }
 #xmask {
     position: fixed;

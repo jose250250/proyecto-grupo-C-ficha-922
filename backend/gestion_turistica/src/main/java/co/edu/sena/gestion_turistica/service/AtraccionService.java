@@ -22,6 +22,7 @@ public class AtraccionService {
         entity.setNombre(dto.getNombre());
         entity.setIdMunicipio(dto.getIdMunicipio());
         entity.setCelular(dto.getCelular());
+        entity.setPrecio(dto.getPrecio());
 
         repository.save(entity);
 
@@ -40,6 +41,7 @@ public class AtraccionService {
             dto.setNombre(entity.getNombre());
             dto.setIdMunicipio(entity.getIdMunicipio());
             dto.setCelular(entity.getCelular());
+            dto.setPrecio(entity.getPrecio());
             
       
             dtos.add(dto);
@@ -63,10 +65,8 @@ public class AtraccionService {
             dto.setNombre(entity.getNombre());
             dto.setIdMunicipio(entity.getIdMunicipio());
             dto.setCelular(entity.getCelular());
-            
+            dto.setPrecio(entity.getPrecio());            
             return dto;
-
-
   }
   return null;
 
@@ -86,7 +86,7 @@ public AtraccionDto update(AtraccionDto newdata){
         entity.setNombre(newdata.getNombre());
         entity.setIdMunicipio(newdata.getIdMunicipio());
         entity.setCelular(newdata.getCelular());
-            
+        entity.setPrecio(newdata.getPrecio());            
         this.repository.save(entity);
 
         return newdata;

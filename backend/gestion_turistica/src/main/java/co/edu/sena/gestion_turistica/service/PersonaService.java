@@ -33,8 +33,8 @@ public class PersonaService {
     entity.setIdMunicipio(dto.getIdMunicipio());
     entity.setDireccion(dto.getDireccion());
     entity.setGenero(dto.getGenero());
-    entity.setCorreo(dto.getCorreo());    
-
+    entity.setCorreo(dto.getCorreo());
+   
     repository.save(entity);
 }
 

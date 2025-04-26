@@ -1,27 +1,37 @@
 $(function(){  
-
-   
+    rootPath= "admin/";
+    var page = "";   
 
     $("#entrarPersona").click(function(){
-      loadPage("homepersona");
-
-    });  
+        page = "homepersona";
+        loadPage(page, rootPath);   
+     });  
+     $("#entrarUsuario").click(function(){
+        page = "homeUsuario";
+        loadPage(page, rootPath);   
+     });
     $("#entrarHotel").click(function(){
-        loadPage("homeHotel");
+        page = "homeHotel";
+        loadPage(page, rootPath);
     });
     $("#entrarRestaurante").click(function(){
-        loadPage("homeRestaurante");
+        page = "homeRestaurante";
+        loadPage(page, rootPath);
+        
     });   
-    $("#entrarATuristica").click(function(){
-        loadPage("homeATuristica");
+    $("#entrarAtraccion").click(function(){
+        page = "homeAtraccion";
+        loadPage(page, rootPath);
     
     });   
     $("#entrarPaquete").click(function(){
-        loadPage("homePaquete");
+        page = "homePaquete";
+        loadPage(page, rootPath);
 
     });   
     $("#entrarTransporte").click(function(){
-        loadPage("homeTransporte");
+        page = "homeTransporte";
+        loadPage(page, rootPath);
 
     });   
 

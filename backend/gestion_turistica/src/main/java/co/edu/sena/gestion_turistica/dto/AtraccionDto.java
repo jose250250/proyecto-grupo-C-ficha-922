@@ -19,13 +19,15 @@ import lombok.NoArgsConstructor;
 public class AtraccionDto {
 
     
-     private long Id;
+     private long id;
      
-     private String Nombre;
+     private String nombre;
 
      private long IdMunicipio;
 
-     private String Celular;
+     private String celular;
+
+     private Long precio;
 
 
 }
