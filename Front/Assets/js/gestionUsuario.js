@@ -1,4 +1,5 @@
 var index = localStorage.getItem('idusuario');
+var validPassword= false;
 $(function () {
    cargarlistapersonas();
    cargarrol();
@@ -45,11 +46,21 @@ $("#slcPersona").on("change", function () {
             };
 
         });
+        $("#txtPassword, #txtPasswordconf").on("keyup keydow click", function(){
+            if(($("#txtPassword").val())===($("#txtPasswordconf").val())){
+                 validPassword = true;
+                 $(this).removeClass("is-invalid");
+            }
+            else{
+                validPassword = false;
+                $(this).addClass("is-invalid");
+            }
+        })
         console.log("cant errores" + cantidadErrores);
         console.log("index:::" + index);
         
 
-        if (cantidadErrores == 0)  {
+        if ((cantidadErrores == 0)&(validPassword==true))  {
 
             var usuario = {              
                 "login":$("#txtCorreo").val(),
@@ -69,12 +80,7 @@ $("#slcPersona").on("change", function () {
                     method ="PUT";
                     url = "http://localhost:8080/usuario/"+index;
                     localStorage.setItem('idusuario', '');
-                   
-
                 }
-
-            
-            
             var request = usuario;
             var ifSuccess = function (apiResponse) {
 
@@ -82,15 +88,12 @@ $("#slcPersona").on("change", function () {
               
                 closeLoader();
             };
-
             var ifErrorLogin = function (data) {
                 addAlert("Se presento un error en el servidor", "danger", 8);
                 closeLoader();
             };
-
             openLoader();
             callApi(url, method, request, ifSuccess, ifErrorLogin);
-
             $('#frmUsuario')[0].reset();
             $("#main-content-usuario").hide();
             $("#main-content-header").show();
@@ -153,6 +156,5 @@ $("#homeAdmin").click(function(){
         openLoader();
         callApi(url, method, request, ifSuccessusuario, ifError);
 
-    });    
-
+    });  
 

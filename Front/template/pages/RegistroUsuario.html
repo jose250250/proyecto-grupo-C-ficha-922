@@ -1,12 +1,11 @@
 <div class="col-12" id="main-content-header">
     <button type="button" class="btn btn-info" id="ingresarUsuario">Asignacion de Usuarios</button>
-    <button type="button" class="btn btn-info" id="verlistaUsuario">Ver lista</button>
-    <button type="button" class="btn btn-info" id="buscarUsuario">Buscar</button>
+    <button type="llamarpersona" class="btn btn-info" id="llamarpersona" style="display: none;">llamarApi</button>
     <button type="homeadmin" class="btn btn-info" id="homeAdmin">Atras</button>
-</div>
 
-<div id="main-content-usuario" style="display: none;">
-    <h3 class="bg-info text-center" id="text-cabecera">Ingresar nuevo Usuario</h3>
+</div>
+<div id="main-content-usuario">
+    <h3 class="bg-info text-center" id="text-cabecera">Asignar Usuario</h3>
     <form id="frmUsuario">
         <div class="row">
             <div class="col-3">
@@ -20,6 +19,7 @@
                 <div class="mb-4">
                     <label for="slcRol" class="form-label">Rol de usuario</label>
                     <select class="form-select" id="slcRol">
+                     <option value="3" readonly>TURISTA</option>   
                     </select>
                 </div>
             </div>
@@ -34,18 +34,14 @@
                     <div class="mb-4">
                         <label for="txtPassword" class="form-label">Password</label>
                         <input type="password" class="form-control" id="txtPassword">
-                            
                     </div>
                 </div>
                 <div class="col-3">
                     <div class="mb-4">
                         <label for="txtPasswordconf" class="form-label">Repita Password</label>
                         <input type="password" class="form-control" id="txtPasswordconf">
-                            
                     </div>
                 </div>
-
-
             </div>
             <br>
             <div class="row">
@@ -61,5 +57,4 @@
         <button type="atras" class="btn btn-info" id="Atras" style="display: inline;">Atras</button>
     </div>
 </div>
-<script src="Assets/js/gestionUsuario.js"></script>
-<script src="Assets/js/listaUsuario.js"></script>
+<script src="Assets/js/registroUsuario.js"></script>

@@ -65,7 +65,7 @@ public class PaqueteTuristicoService {
     entity.setFechaFinal(dto.getFechaFinal());
     HotelEntity hotelEntity = new HotelEntity();
     hotelEntity.setId(dto.getIdHotel());
-    entity.setHotel(hotelEntity);
+    entity.setHotel(hotelEntity);   
     RestauranteEntity restauranteEntity = new RestauranteEntity();
     restauranteEntity.setId(dto.getIdRestaurante());
     entity.setRestaurante(restauranteEntity);
@@ -96,9 +96,13 @@ public class PaqueteTuristicoService {
             dto.setFechaInicio(entity.getFechaInicio());
             dto.setFechaFinal(entity.getFechaFinal());           
             dto.setHotel(entity.getHotel().getNombre());
+            dto.setIdHotel(entity.getHotel().getId());
             dto.setAtraccion(entity.getAtraccion().getNombre());
+            dto.setIdAtraccion(entity.getAtraccion().getId());
             dto.setRestaurante(entity.getRestaurante().getNombre());
+            dto.setIdRestaurante(entity.getRestaurante().getId());
             dto.setTransporte(entity.getTransporte().getNombre());
+            dto.setIdTransporte(entity.getTransporte().getId());
             dto.setPrecioDia(entity.getPrecioDia());
             dto.setDescuento(entity.getDescuento());          
           
@@ -151,11 +155,29 @@ return null;
 
 }
 
+//*public PaqueteTuristicoRequestDto getById(Long id) {
+      
+ //  Optional<paqueteTuristicoEntity> optionalpaquete = this.repository.findById(id);
+ /*   if (optionalpaquete.isPresent()) {
+        paqueteTuristicoEntity entity = optionalpaquete.get();
+        PaqueteTuristicoRequestDto dto = new PaqueteTuristicoRequestDto();
+        dto.setId(entity.getId());
+        dto.setNombre(entity.getNombre());
+        dto.setClase(entity.getClase());
+        dto.setDescripcion(entity.getDescripcion());
+        dto.setIdMunicipio(entity.getIdMunicipio());
+        dto.setFechaInicio(entity.getFechaInicio());
+        dto.setFechaFinal(entity.getFechaFinal()); 
+        dto.setIdHotel(entity.getHotel().getId()); 
+        dto.setIdRestaurante(entity.getRestaurante().getId());
+        dto.setIdTransporte(entity.getTransporte().getId());
+        dto.setIdAtraccion(entity.getAtraccion().getId());
+        dto.setPrecioDia(entity.getPrecioDia());
+        dto.setDescuento(entity.getDescuento());
+        
+        return dto;
+    }
+    return null;
 
-
-
-
-
-
-
+ */
 }

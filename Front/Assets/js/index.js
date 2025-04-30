@@ -4,9 +4,11 @@ var defaultPage = "home";
 $(function(){
     loadHeader();
     loadFooter();
-    getPage();
-});
+  
+    cargarPaquetesPromocionales();
+    
 
+});
 function getPage(){
     currentPage = currentPage === null ? defaultPage : currentPage;
     loadPage(currentPage);

@@ -1,0 +1,129 @@
+<div id="main-content-persona" >
+    <div class="col-12" id="main-content-header">
+        <button type="button" class="btn btn-info" id="ingresarPersona">Ingresar Nuevo Registro</button>
+      
+    </div>
+        <br>
+    <h3 id="textcabecera" class="bg-info text-center">Registro </h3>
+
+
+    <form id="form-persona">
+
+        <div class="row">
+            <div class="col-3">
+                <div class="mb-4">
+                    <label for="txtPNombre" class="form-label">Primer Nombre</label>
+                    <input type="text" class="form-control" id="txtPNombre"
+                        placeholder="Ingrese primer nombre de usuario">
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="mb-4">
+                    <label for="txtSNombre" class="form-label">Segundo Nombre(opcional)</label>
+                    <input type="text" class="form-control" id="txtSNombre" placeholder="opcional">
+                </div>
+            </div>
+
+            <div class="col-3">
+                <div class="mb-4">
+                    <label for="txtPApellido" class="form-label">Primer Apellido</label>
+                    <input type="text" class="form-control" id="txtPApellido" placeholder="Ingrese apellido de usuario">
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="mb-4">
+                    <label for="txtApellido" class="form-label">Segundo Apellido(opcional)</label>
+                    <input type="text" class="form-control" id="txtSApellido" placeholder="opcional">
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="mb-4">
+                    <label for="slcTipoIdentificacion" class="form-label">Tipo de identificacion</label>
+                    <select class="form-select" id="slcTipoIdentificacion">
+                        <option selected value="">Seleccione un tipo</option>
+                        <option value="1">CC</option>
+                        <option value="2">Pasaporte</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="col-3">
+                <div class="mb-4">
+                    <label for="txtIdentificacion" class="form-label">Identificacion</label>
+                    <input type="text" class="form-control" id="txtIdentificacion"
+                        placeholder="Ingrese numero identificacion de usuario">
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="mb-4">
+                    <label for="dateFechaNacimiento" class="form-label">Fecha nacimiento</label>
+                    <input type="date" class="form-control" id="dateFechaNacimiento">
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="mb-4">
+                    <label for="txtCelular" class="form-label">N° de Celular</label>
+                    <input type="tel" class="form-control" id="txtCelular" placeholder="Ingrese celular de la persona">
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+
+            <div class="col-3">
+                <div class="mb-4">
+                    <label for="slcDepartamento" class="form-label">Departamento residencia</label>
+                    <select class="form-select" id="slcDepartamento">
+
+                    </select>
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="mb-4">
+                    <label for="slcMunicipio" class="form-label">Municipio de residencia</label>
+                    <select class="form-select" id="slcMunicipio">                        
+                    </select>
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="mb-4">
+                    <label for="txtDireccion" class="form-label">Direccion</label>
+                    <input type="text" class="form-control" id="txtDireccion"
+                        placeholder="Ingrese direccion de la persona">
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="mb-4">
+                    <label for="slcGenero" class="form-label">Genero</label>
+                    <select class="form-select" id="slcGenero">
+                        <option selected value="">Seleccione Genero</option>
+                        <option value="f">Femenino</option>
+                        <option value="m">Masculino</option>
+                        <option value="o">Otro</option>
+                    </select>
+                </div>
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col-3">
+                <div class="mb-4">
+                    <label for="txtCorreo" class="form-label">Correo</label>
+                    <input type="email" class="form-control" id="txtCorreo" placeholder="Ingrese correo de usuario">
+                </div>
+            </div>          
+            <br>
+            <div class="row">
+                <div class="col-12">
+                    <button type="submit" class="btn btn-success" id="submitpersona">Enviar</button>
+                    <button type="reset" class="btn btn-info">Limpiar</button>
+                </div>
+            </div>
+        </div>
+    </form>
+    <br>
+    <div class="col-12" style="margin-left: 80%;">
+        <button type="atras" class="btn btn-info" id="salir" style="display: inline;">Salir</button>
+    </div>
+</div>
+<script src="Assets/js/homepersona.js"></script>

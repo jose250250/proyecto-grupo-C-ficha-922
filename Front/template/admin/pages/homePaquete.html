@@ -5,7 +5,7 @@
     <button type="homeadmin" class="btn btn-info" id="homeAdmin">Atras</button>
 </div>
 <div id="main-content-paquete" style="display: none;">
-    <h3 class="bg-info text-center">Ingresar nuevo Paquete Turistico</h3>
+    <h3 class="bg-info text-center" id="textcabecera">Ingresar nuevo Paquete Turistico</h3>
     <form id="frmPaquete">
         <div class="row">
             <div class="col-3">
@@ -19,10 +19,10 @@
                     <label for="slcClasePaquete" class="form-label">Clase de Paquete</label>
                     <select class="form-select" id="slcClasePaquete">
                         <option selected value="">Seleccione un tipo</option>
-                        <option value="1">Premium</option>
-                        <option value="2">Basico</option>
-                        <option value="3">lite</option>
-                        <option value="4">Promocional</option>
+                        <option value="PREMIUN">PREMIUN</option>
+                        <option value= "BASICO">BASICO</option>
+                        <option value="LITE">LITE</option>
+                        <option value="PROMOCIONAL">PROMOCIONAL</option>
                     </select>
                 </div>
             </div>
@@ -102,8 +102,7 @@
             <div class="col-3">
                 <div class="mb-4">
                     <label for="descuento" class="form-label">Descuento</label>
-                    <select class="form-select" id="descuento">
-                    </select>
+                    <input type="text" class="form-control" id="descuento" value = "0">
                 </div>
             </div>
         </div>         
@@ -116,5 +115,8 @@
         </div>
     
     </form>
+    <div class="col-12" style="margin-left: 80%;">
+        <button type="atras" class="btn btn-info" id="atraspaquete" style="display: inline;">Atras</button>
+    </div>
 </div>
 <script src="Assets/js/gestionPaquete.js"></script>

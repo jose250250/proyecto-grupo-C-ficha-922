@@ -124,7 +124,9 @@ public PersonaDto update(PersonaDto newdata){
 return null;
 
 
+}  
+public PersonaEntity buscarPersonaPorCedula(String identificacion) {
+    return repository.findByIdentificacion(identificacion);
 }
-
 
 }

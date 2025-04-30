@@ -21,7 +21,7 @@ import lombok.Builder;
 
 @CrossOrigin(origins = "*")
 @RestController
-@RequestMapping("/Paquete")
+@RequestMapping("/paquete")
 @Builder
 
 public class PaqueteTuristicoController {

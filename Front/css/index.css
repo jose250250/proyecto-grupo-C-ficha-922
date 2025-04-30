@@ -8,6 +8,13 @@ body {
     background-color: rgba(255, 255, 255, 0.9); /* Fondo semitransparente */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Sombra para profundidad */
 }
+#card-paquete{
+    background-color: aquamarine;
+    border-color: cornsilk;
+
+
+ }
+
 #main-container {
     margin-top: 20px;
     margin-bottom: 20px;
@@ -103,4 +110,36 @@ input.error, select.error {
     z-index: 10000;
     width: 450px;
     margin: 30px;
+    
 }
+.deltatur-card {
+    background-color: #F5F5DC; /* Beige de Deltatur */
+    border: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.deltatur-card-header {
+    background-color: #6da9e6; /* Azul fuerte de Deltatur */
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+.deltatur-card-footer {
+    background-color: #f3c272; /* Marrón claro de Deltatur */
+    text-align: center;
+    padding: 10px;
+}
+/* Estilos del encabezado principal */
+.deltatur-header {
+    background-color: #1874CD; /* Azul fuerte */
+    padding: 15px;
+}
+
+/* Estilos de las tarjetas de usuario */
+.deltatur-card {
+    background-color: #F5F5DC; /* Beige */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
