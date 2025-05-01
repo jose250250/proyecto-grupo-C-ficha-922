@@ -154,11 +154,11 @@ $(function () {
             $("#ingresarPersona").click();
            })        
     });
-     
-
-   
-     
 });
-
-
+$(document).on("click", ".btn-paquete", function () {
+    if((localStorage.getItem("data-user")=="")||(localStorage.getItem("data-user")==null)){
+        addAlert("Debes iniciar Secion o registrarte para poder reservar", "success", 3);
+        $("#loginModal").modal('show');
+    }
+})
 

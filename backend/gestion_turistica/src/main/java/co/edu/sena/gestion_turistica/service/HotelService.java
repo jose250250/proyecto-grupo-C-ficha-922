@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import co.edu.sena.gestion_turistica.dto.HotelDto;
 import co.edu.sena.gestion_turistica.entity.HotelEntity;
+import co.edu.sena.gestion_turistica.entity.MunicipioEntity;
 import co.edu.sena.gestion_turistica.repository.HotelRepository;
 
 @Service
@@ -23,7 +24,9 @@ public class HotelService {
         HotelEntity entity = new HotelEntity();
 
       entity.setNombre(dto.getNombre());
-      entity.setIdMunicipio(dto.getIdMunicipio());
+      MunicipioEntity municipioEntity = new MunicipioEntity();
+      municipioEntity.setId(dto.getIdMunicipio());
+      entity.setMunicipios(municipioEntity);  
       entity.setCelular(dto.getCelular());
       entity.setDireccion(dto.getDireccion());
       entity.setPrecio(dto.getPrecio());
@@ -42,7 +45,8 @@ public class HotelService {
 
             dto.setId(entity.getId());
             dto.setNombre(entity.getNombre());
-            dto.setIdMunicipio(entity.getIdMunicipio());
+            dto.setIdMunicipio(entity.getMunicipios().getId());
+            dto.setMunicipio(entity.getMunicipios().getMunicipio());
             dto.setCelular(entity.getCelular());
             dto.setDireccion(entity.getDireccion());
             dto.setPrecio(entity.getPrecio());
@@ -61,7 +65,8 @@ public class HotelService {
             HotelDto dto = new HotelDto();
             dto.setId(entity.getId());
             dto.setNombre(entity.getNombre());
-            dto.setIdMunicipio(entity.getIdMunicipio());
+            dto.setIdMunicipio(entity.getMunicipios().getId());
+            dto.setMunicipio(entity.getMunicipios().getMunicipio());
             dto.setCelular(entity.getCelular());
             dto.setDireccion(entity.getDireccion());
             dto.setPrecio(entity.getPrecio());
@@ -85,7 +90,9 @@ public HotelDto update(HotelDto newdata){
         HotelEntity entity = optionalHotel.get();        
         
         entity.setNombre(newdata.getNombre());
-        entity.setIdMunicipio(newdata.getIdMunicipio());
+        MunicipioEntity municipioEntity = new MunicipioEntity();
+        municipioEntity.setId(newdata.getIdMunicipio());
+        entity.setMunicipios(municipioEntity);
         entity.setCelular(newdata.getCelular());
         entity.setDireccion(newdata.getDireccion());
         entity.setPrecio(newdata.getPrecio());

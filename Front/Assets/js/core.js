@@ -7,6 +7,7 @@ var listahoteles = "";
 var listaTransportes = "";
 var listaatracciones = "";
 var listarestaurantes = "";
+var paquetes = "";
 
 
 var validMethods = ["GET", "POST", "PUT", "DELETE"];
@@ -152,11 +153,11 @@ function redirectByLoginUser(logged) {
     return;
   }
 
-  if ((dataUser !== null) && !logged &&((dataUser.idRol)==1)) {
+  if ((dataUser !== null) && !logged &&((dataUser.idrol)==1)) {
     window.location.replace("adminhome.html");
     return;
   }
-  if ((dataUser !== null) && !logged &&((dataUser.idRol)==3)) {
+  if ((dataUser !== null) && !logged &&((dataUser.idrol)==3)) {
     window.location.replace("indexTurista.html");
     return;
   }
@@ -245,7 +246,7 @@ function cargarhotel() {
       html += "<tr>";
       html += "<th scope='col'>" + (i + 1) + "</th>";
       html += "<td>" + hot.nombre + "</td>";
-      html += "<td>" + hot.idMunicipio + "</td>";
+      html += "<td>" + hot.municipio + "</td>";
       html += "<td>" + hot.celular + "</td>";
       html += "<td>" + hot.direccion + "</td>";
       html += "<td>" + hot.precio + "</td>";
@@ -281,7 +282,7 @@ function cargarrestaurante() {
       html += "<tr>";
       html += "<th scope='col'>" + (i + 1) + "</th>";
       html += "<td>" + rest.nombre + "</td>";
-      html += "<td>" + rest.idMunicipio + "</td>";
+      html += "<td>" + rest.municipio + "</td>";
       html += "<td>" + rest.celular + "</td>";
       html += "<td>" + rest.direccion + "</td>";
       html += "<td>" + rest.precio + "</td>";
@@ -314,7 +315,7 @@ function cargartransporte() {
       html += "<tr>";
       html += "<th scope='col'>" + (i + 1) + "</th>";
       html += "<td>" + rest.nombre + "</td>";
-      html += "<td>" + rest.idMunicipio + "</td>";
+      html += "<td>" + rest.municipio + "</td>";
       html += "<td>" + rest.celular + "</td>";
       html += "<td>" + rest.precio + "</td>";
       html +=
@@ -670,11 +671,10 @@ function cargarPaquetesPromocionales() {
   var method = "GET";
   var request = "";
   var ifSuccesspaquete = function (apiResponse) {
-    console.log("paquete:response " + JSON.stringify(apiResponse));
     paquetes = apiResponse.data;
-    console.log("lista persona" + JSON.stringify(paquetes));
+    console.log("paquete:response " + JSON.stringify(apiResponse));
     $("#content-main").empty();
-    localStorage.setItem("paquetes", paquetes);
+   
     let row = $("<div class='row g-4 rounded-3'></div>"); // Contenedor de filas
     paquetes.forEach((paquete, index) => {
         let card = `
@@ -689,7 +689,7 @@ function cargarPaquetesPromocionales() {
                         <p class="card-text"><strong>Descuento:</strong> ${paquete.descuento}%</p>
                     </div>
                     <div class="deltatur-card-footer rounded-2">
-                        <button class="btn btn-primary">Reservar ahora</button>
+                        <button class="btn btn-primary btn-paquete" data-id = '${paquete.id}'>Reservar ahora</button>
                     </div>
                 </div>
             </div>`;
@@ -715,6 +715,8 @@ $("#content-main").append(botonAgregar);
   openLoader();
   callApi(url, method, request, ifSuccesspaquete, ifError);
 }
+
+
 
   
 

@@ -171,7 +171,11 @@ $("#ingresarPersona").click(function () {
     $("#homeAdmin").click(function(){
         loadPage("homeAdmin",admin);
     })
-
+     
+    $("#btnSalir").click(function(){
+        loadPage("home");
+    })
+    
   
 
 

@@ -23,6 +23,8 @@ public class TransporteDto {
 
     private Long IdMunicipio;
 
+    private String municipio;
+
     private String celular;
 
     private Long precio;

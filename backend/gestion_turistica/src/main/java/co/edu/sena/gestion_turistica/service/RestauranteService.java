@@ -7,6 +7,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import co.edu.sena.gestion_turistica.dto.RestauranteDto;
+import co.edu.sena.gestion_turistica.entity.MunicipioEntity;
 import co.edu.sena.gestion_turistica.entity.RestauranteEntity;
 import co.edu.sena.gestion_turistica.repository.RestauranteRepository;
 
@@ -21,7 +22,9 @@ public class RestauranteService {
     public void save(RestauranteDto dto) {
       RestauranteEntity entity = new RestauranteEntity();
       entity.setNombre(dto.getNombre());
-      entity.setIdMunicipio(dto.getIdMunicipio());
+      MunicipioEntity municipioEntity = new MunicipioEntity();
+      municipioEntity.setId(dto.getIdMunicipio());
+      entity.setMunicipios(municipioEntity);
       entity.setCelular(dto.getCelular());
       entity.setDireccion(dto.getDireccion());
       entity.setPrecio(dto.getPrecio());
@@ -42,7 +45,8 @@ public class RestauranteService {
       RestauranteDto dto = new RestauranteDto();
       dto.setId(entity.getId());
       dto.setNombre(entity.getNombre());
-      dto.setIdMunicipio(entity.getIdMunicipio());
+      dto.setIdMunicipio(entity.getMunicipios().getId());
+      dto.setMunicipio(entity.getMunicipios().getMunicipio());
       dto.setCelular(entity.getCelular());
       dto.setDireccion(entity.getDireccion());
       dto.setPrecio(entity.getPrecio());
@@ -62,7 +66,8 @@ public class RestauranteService {
             RestauranteDto dto = new RestauranteDto();
             dto.setId(entity.getId());
             dto.setNombre(entity.getNombre());
-            dto.setIdMunicipio(entity.getIdMunicipio());
+            dto.setIdMunicipio(entity.getMunicipios().getId());
+            dto.setMunicipio(entity.getMunicipios().getMunicipio());
             dto.setCelular(entity.getCelular());
             dto.setDireccion(entity.getDireccion());
             dto.setPrecio(entity.getPrecio());
@@ -86,7 +91,9 @@ public RestauranteDto update(RestauranteDto newdata){
         RestauranteEntity entity = optionalRestaurante.get();        
         
         entity.setNombre(newdata.getNombre());
-        entity.setIdMunicipio(newdata.getIdMunicipio());
+        MunicipioEntity municipioEntity = new MunicipioEntity();
+        municipioEntity.setId(newdata.getIdMunicipio());
+        entity.setMunicipios(municipioEntity);
         entity.setCelular(newdata.getCelular());
         entity.setDireccion(newdata.getDireccion());
         entity.setPrecio(newdata.getPrecio());

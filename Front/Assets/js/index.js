@@ -14,3 +14,4 @@ function getPage(){
     loadPage(currentPage);
     $("#btn-"+currentPage).addClass('active');
 }
+

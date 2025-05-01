@@ -24,6 +24,8 @@ private String nombre;
 
 private long idMunicipio;
 
+private String municipio;
+
 private String celular;
 
 private String direccion;

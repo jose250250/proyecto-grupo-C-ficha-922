@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import co.edu.sena.gestion_turistica.dto.TransporteDto;
+import co.edu.sena.gestion_turistica.entity.MunicipioEntity;
 import co.edu.sena.gestion_turistica.entity.TransporteEntity;
 import co.edu.sena.gestion_turistica.repository.TransporteRepository;
 
@@ -21,7 +22,9 @@ public class TransporteService {
     public void save(TransporteDto dto){
         TransporteEntity entity = new TransporteEntity();
         entity.setNombre(dto.getNombre());
-        entity.setIdMunicipio(dto.getIdMunicipio());
+        MunicipioEntity municipioEntity = new MunicipioEntity();
+        municipioEntity.setId(dto.getIdMunicipio());
+        entity.setMunicipios(municipioEntity);  
         entity.setCelular(dto.getCelular());
         entity.setPrecio(dto.getPrecio());
 
@@ -37,7 +40,8 @@ public class TransporteService {
            TransporteDto dto = new TransporteDto();
             dto.setId(entity.getId());
             dto.setNombre(entity.getNombre());
-            dto.setIdMunicipio(entity.getIdMunicipio());
+            dto.setMunicipio(entity.getMunicipios().getMunicipio());
+            dto.setIdMunicipio(entity.getMunicipios().getId());
             dto.setCelular(entity.getCelular());
             dto.setPrecio(entity.getPrecio());
 
@@ -57,7 +61,8 @@ public class TransporteService {
             TransporteDto dto = new TransporteDto();
             dto.setId(entity.getId());
             dto.setNombre(entity.getNombre());
-            dto.setIdMunicipio(entity.getIdMunicipio());
+            dto.setIdMunicipio(entity.getMunicipios().getId());
+            dto.setMunicipio(entity.getMunicipios().getMunicipio());
             dto.setCelular(entity.getCelular());
             dto.setPrecio(entity.getPrecio());
             return dto;
@@ -77,7 +82,9 @@ public class TransporteService {
        if (optionalTransporte.isPresent()) {
            TransporteEntity entity = optionalTransporte.get();
            entity.setNombre(newdata.getNombre());
-           entity.setIdMunicipio(newdata.getIdMunicipio());
+           MunicipioEntity municipioEntity = new MunicipioEntity();
+           municipioEntity.setId(newdata.getIdMunicipio());
+           entity.setMunicipios(municipioEntity);
            entity.setCelular(newdata.getCelular());
            entity.setPrecio(newdata.getPrecio());
 

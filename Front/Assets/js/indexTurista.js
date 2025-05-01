@@ -1,13 +1,12 @@
 var currentPage = null;
 var defaultPage = "home";
-var rootPath = "admin/";
+var turPath = "turista/";
 
 $(function(){
 
     redirectByLoginUser(true);
-    var url = 'template/headerTurista.html';
-    var idContent = 'content-header';
-    loadZone(url, idContent);
-    loadFooter(rootPath);
+    loadHeader(turPath);
+    loadFooter(turPath);
+ 
    
 });
