@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import co.edu.sena.gestion_turistica.dto.AtraccionDto;
 import co.edu.sena.gestion_turistica.entity.AtraccionEntity;
+import co.edu.sena.gestion_turistica.entity.MunicipioEntity;
 import co.edu.sena.gestion_turistica.repository.AtraccionRepository;
 
 @Service
@@ -20,7 +21,9 @@ public class AtraccionService {
     public void save(AtraccionDto dto){
         AtraccionEntity entity = new AtraccionEntity();
         entity.setNombre(dto.getNombre());
-        entity.setIdMunicipio(dto.getIdMunicipio());
+        MunicipioEntity municipioEntity = new MunicipioEntity();
+        municipioEntity.setId(dto.getIdMunicipio());
+        entity.setMunicipios(municipioEntity);
         entity.setCelular(dto.getCelular());
         entity.setPrecio(dto.getPrecio());
 
@@ -39,7 +42,8 @@ public class AtraccionService {
 
             dto.setId(entity.getId());
             dto.setNombre(entity.getNombre());
-            dto.setIdMunicipio(entity.getIdMunicipio());
+            dto.setIdMunicipio(entity.getMunicipios().getId());
+            dto.setMunicipio(entity.getMunicipios().getMunicipio());
             dto.setCelular(entity.getCelular());
             dto.setPrecio(entity.getPrecio());
             
@@ -63,7 +67,8 @@ public class AtraccionService {
             AtraccionDto dto = new AtraccionDto();
             dto.setId(entity.getId());
             dto.setNombre(entity.getNombre());
-            dto.setIdMunicipio(entity.getIdMunicipio());
+            dto.setIdMunicipio(entity.getMunicipios().getId());
+            dto.setMunicipio(entity.getMunicipios().getMunicipio());
             dto.setCelular(entity.getCelular());
             dto.setPrecio(entity.getPrecio());            
             return dto;
@@ -84,7 +89,9 @@ public AtraccionDto update(AtraccionDto newdata){
         AtraccionEntity entity = optionalAt.get();        
         
         entity.setNombre(newdata.getNombre());
-        entity.setIdMunicipio(newdata.getIdMunicipio());
+        MunicipioEntity municipioEntity = new MunicipioEntity();
+        municipioEntity.setId(newdata.getIdMunicipio());
+        entity.setMunicipios(municipioEntity);
         entity.setCelular(newdata.getCelular());
         entity.setPrecio(newdata.getPrecio());            
         this.repository.save(entity);

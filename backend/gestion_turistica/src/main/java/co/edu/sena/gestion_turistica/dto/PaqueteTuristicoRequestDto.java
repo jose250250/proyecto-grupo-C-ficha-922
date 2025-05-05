@@ -27,6 +27,8 @@ public class PaqueteTuristicoRequestDto {
 
     private Long idMunicipio;
 
+    private String municipio;
+
     private Date fechaInicio;
 
     private Date fechaFinal;

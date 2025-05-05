@@ -11,13 +11,30 @@
             integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
             crossorigin="anonymous"></script>
     <script src="Assets/js/core.js"></script>
-    <script src="Assets/js/indexTurista.js"></script>
+   
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/lista.css">
     <title>Gestion Turistica</title>
 </head>
 <body>
+    <div id="resumen-seleccion" class="resumen-flotante" style="display: none;">
+        <div class="header-flotante">
+            <h4>Tu Paquete</h4>
+            <button id="minimizar-resumen" class="btn btn-sm btn-outline-secondary">–</button>
+        </div>
+        <hr>
+        <div id="contenido-resumen">
+            <p><strong>Municipio:</strong> <span id="resumen-municipio">No seleccionado</span></p>
+            <p><strong>Hotel:</strong> <span id="resumen-hotel">No seleccionado</span></p>
+            <p><strong>Restaurante:</strong> <span id="resumen-restaurante">No seleccionada</span></p>
+            <p><strong>Transporte:</strong> <span id="resumen-transporte">No seleccionado</span></p>
+            <p><strong>Atracción:</strong> <span id="resumen-atraccion">No seleccionada</span></p>
+            <button id="confirmar-seleccion" class="btn btn-success">Confirmar</button>
+        </div>
+    </div>
+    
+
     <div class="container rounded-4" id="main-container">
 
         <div id="content-header"> header </div>
@@ -26,8 +43,10 @@
         <div id="content-main"> main 
             
         </div>
-       
-
+      
+        <div class="text-center mt-4" id="divBntAgragar" style="display: none;">
+            <button id="AgPaqueteBtn" class="btn btn-success">Crear Paquete Personalizado</button>
+        </div>
         <div id="content-footer"> footer </div>
     </div>
     <div id="alerts">
@@ -43,4 +62,5 @@
         </div>
     </div>
 </body>
+<script src="Assets/js/indexTurista.js"></script>
 </html>

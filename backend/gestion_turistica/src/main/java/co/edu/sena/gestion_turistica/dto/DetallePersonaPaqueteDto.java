@@ -1,5 +1,7 @@
 package co.edu.sena.gestion_turistica.dto;
 
+import java.sql.Date;
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 
@@ -14,22 +16,23 @@ import lombok.NoArgsConstructor;
 @Builder
 @JsonInclude(Include.NON_NULL)
 
+public class DetallePersonaPaqueteDto {
+    private long id; 
 
+    private Long idPersona;
 
-public class AtraccionDto {
+    private String persona;
 
-    
-     private long id;
-     
-     private String nombre;
+    private Long idPaquete;
 
-     private long IdMunicipio;
+    private String paquete;
 
-     private String municipio;
+    private String estado;
 
-     private String celular;
+    private Date registro;
 
-     private Long precio;
+    private String motivo;
+   
 
 
 }

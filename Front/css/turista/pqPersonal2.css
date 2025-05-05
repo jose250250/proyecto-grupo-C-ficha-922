@@ -1,0 +1,49 @@
+.serv-card {
+    border: 1px solid #ccc; /* Borde del cuadro */
+    border-radius: 10px; /* Bordes redondeados */
+    overflow: hidden; /* Asegura que nada sobresalga */
+    background-color: #f8f9fa; /* Color de fondo sutil */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para resaltar */
+    transition: transform 0.3s ease-in-out; /* Efecto al pasar el mouse */
+}
+
+.serv-card:hover {
+    transform: scale(1.05); /* Efecto de agrandar al pasar el mouse */
+}
+
+.serv-card img {
+    width: 100%; /* Imagen ocupa todo el ancho */
+    height: 150px; /* Altura fija para uniformidad */
+    object-fit: cover; /* Ajustar imagen sin distorsión */
+    border-bottom: 1px solid #ccc; /* Línea separadora */
+}
+
+.serv-card h5 {
+    margin-top: 10px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.serv-card p {
+    font-size: 16px;
+    color: #555;
+}
+
+.serv-card button {
+    margin-top: 10px;
+    background-color: #007bff; /* Azul estilo Bootstrap */
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.serv-card button:hover {
+    background-color: #0056b3; /* Azul más oscuro al pasar el mouse */
+}
+.elementoSel{
+    background-color: green !important;
+    border-color: greenyellow !important;
+    border: 2px rgba(0, 0, 0, 0.2) !important;
+
+}

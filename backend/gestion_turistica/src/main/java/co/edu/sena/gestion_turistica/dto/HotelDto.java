@@ -31,5 +31,7 @@ public class HotelDto {
 
     private Long precio;
 
+    private String urlfoto;
+
 
 }

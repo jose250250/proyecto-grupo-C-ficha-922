@@ -28,6 +28,8 @@ public class PaqueteTuristicoResponseDto {
 
     private Long idMunicipio;
 
+    private String municipio;
+
     private Long idHotel;
 
     private String Hotel;

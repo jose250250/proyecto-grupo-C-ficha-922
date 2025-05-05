@@ -34,6 +34,9 @@ public class HotelEntity {
 
     @Column(name = "direccion")
     private String direccion;
+
+    @Column(name="foto")
+    private String urlfoto;
     
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "hotel")
     private List<paqueteTuristicoEntity> PQTuristico;

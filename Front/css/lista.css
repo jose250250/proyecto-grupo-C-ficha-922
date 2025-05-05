@@ -23,3 +23,53 @@
     margin: 5px;
     background-image: url("http://localhost/Front/Assets/recursos/eliminar.png");
 }
+
+.resumen-flotante h4 {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.resumen-flotante button {
+    display: block;
+    width: 100%;
+    margin-top: 10px;
+}
+.resumen-flotante {
+    position: fixed;
+    right: 20px;
+    top: 50px;
+    width: 250px;
+    background: white;
+    padding: 15px;
+    border: 2px solid #007bff;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    transition: all 0.3s ease-in-out;
+}
+
+.header-flotante {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#minimizar-resumen {
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    font-size: 16px;
+    text-align: center;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    border-radius: 50%;
+}
+
+hr {
+    margin: 10px 0;
+}
+
+.oculto {
+    display: none;
+}

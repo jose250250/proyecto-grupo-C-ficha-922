@@ -1,0 +1,43 @@
+<div class="container mt-5">
+    <h2 class="text-center">Elige tu Municipio de Destino</h2>
+    <form id="frm-pqpersonal">
+     <div class="row">
+        <div class="mb-3 col-4">
+            <label for="slcDepartamento" class="form-label">Departamento</label>
+            <select id="slcDepartamento" class="form-select">
+                <option selected>Selecciona un departamento...</option>
+                <!-- Aquí se cargan  los departamentos dinámicamente -->
+            </select>
+        </div>
+
+        <div class="mb-3 col-4">
+            <label for="slcMunicipio" class="form-label">Municipio</label>
+            <select id="slcMunicipio" class="form-select">
+                <option selected>Selecciona un municipio...</option>
+                <!-- Aquí se cargan los municipios dinámicamente -->
+            </select>
+        </div>
+    </div>    
+    <div class="row">
+        <div class="mb-3 col-4">
+            <label for="fecha-inicio" class="form-label">Fecha de Inicio</label>
+            <input type="date" id="fechaInicio" class="form-control">
+        </div>
+
+        <div class="mb-3 col-4">
+            <label for="fecha-fin" class="form-label">Fecha Final</label>
+            <input type="date" id="fechaFinal" class="form-control">
+        </div>
+    </div>
+        <div class="mb-3 col-4">
+            <label class="form-label">Cantidad de Dias</label>
+            <input type="text" class="form-control" id="CantDias" readonly>
+        </div>
+
+        <div class="text-center col-10">
+            <button type="submit" class="btn btn-primary">Continuar</button>
+            <button type="back" class="btn btn-secondary" id="atras" >Atras</button>
+        </div>
+    </form>
+</div>
+<script src="Assets/js/turista/pqPersonal.js"></script>

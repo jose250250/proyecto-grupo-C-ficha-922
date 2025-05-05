@@ -30,6 +30,7 @@ public class HotelService {
       entity.setCelular(dto.getCelular());
       entity.setDireccion(dto.getDireccion());
       entity.setPrecio(dto.getPrecio());
+      entity.setUrlfoto(dto.getUrlfoto());
       repository.save(entity);
 
     }
@@ -50,6 +51,7 @@ public class HotelService {
             dto.setCelular(entity.getCelular());
             dto.setDireccion(entity.getDireccion());
             dto.setPrecio(entity.getPrecio());
+            dto.setUrlfoto(entity.getUrlfoto());
                   
             dtos.add(dto);       
 
@@ -70,6 +72,7 @@ public class HotelService {
             dto.setCelular(entity.getCelular());
             dto.setDireccion(entity.getDireccion());
             dto.setPrecio(entity.getPrecio());
+            dto.setUrlfoto(entity.getUrlfoto());
             return dto;
 
 
@@ -96,6 +99,7 @@ public HotelDto update(HotelDto newdata){
         entity.setCelular(newdata.getCelular());
         entity.setDireccion(newdata.getDireccion());
         entity.setPrecio(newdata.getPrecio());
+        entity.setUrlfoto(newdata.getUrlfoto());
        
         this.repository.save(entity);
 

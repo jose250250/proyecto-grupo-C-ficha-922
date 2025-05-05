@@ -464,7 +464,7 @@ function cargarpaquetes() {
       html += "<td>" + paq.nombre + "</td>";
       html += "<td>" + paq.clase + "</td>";
       html += "<td>" + paq.descripcion + "</td>";
-      html += "<td>" + paq.idMunicipio + "</td>";
+      html += "<td>" + paq.municipio + "</td>";
       html += "<td>" + paq.hotel + "</td>";
       html += "<td>" + paq.restaurante + "</td>";
       html += "<td>" + paq.transporte + "</td>";
@@ -705,15 +705,20 @@ function cargarPaquetesPromocionales() {
     if (row.children().length > 0) {
         $("#content-main").append(row);
     }
-    let botonAgregar = `
-    <div class="text-center mt-4">
-        <button id="agregarPaqueteBtn" class="btn btn-success">Crear Paquete</button>
-    </div>`;
-$("#content-main").append(botonAgregar);
+    $("#divBntAgragar").show();
     closeLoader();
   }
   openLoader();
   callApi(url, method, request, ifSuccesspaquete, ifError);
+}
+function filtrarHotelesPorMunicipio(listaHoteles, idMunicipio) {
+  return $.grep(listaHoteles, function(hotel) {
+      return hotel.idMunicipio === idMunicipio;
+  });
+}
+function actualizarResumen(tipo, valor) {
+  $("#resumen-" + tipo).text(valor);
+  $("#resumen-seleccion").show();
 }
 
 

@@ -23,7 +23,7 @@ $("#main-nav .nav-link.page").click(function () {
   $("#main-nav .nav-link.page").removeClass("active");
   getPage(pag);
 });
-$(document).on("click", ".btn-primary", function () {
+$(document).on("click", ".btn-paquete", function () {
     index = $(this).data('id');
     console.log("INDEX:: " + index);
     if(redirectByLoginUser){
@@ -31,6 +31,7 @@ $(document).on("click", ".btn-primary", function () {
         console.log("paquetesss:::", paquetes);
         const paq = paquetes.find(paquete => parseInt(paquete.id) === parseInt(index));
         dUser=JSON.parse(datoUsuario);
+        $("#divBntAgragar").hide();
         console.log("paqqq:::"+ dUser);
        
         window.setTimeout(function(){
@@ -61,3 +62,4 @@ $(document).on("click", ".btn-primary", function () {
         $("#totalpaq").val(total);
     
 });
+
