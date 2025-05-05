@@ -8,6 +8,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import lombok.Data;
@@ -27,20 +29,24 @@ public class HotelEntity {
     @Column( name= "nombre")
     private String nombre;
 
-    @Column(name = "id_municipio")
-    private long idMunicipio;
-
     @Column(name= "celular")
     private String celular;
 
     @Column(name = "direccion")
     private String direccion;
+
+    @Column(name="foto")
+    private String urlfoto;
     
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "hotel")
     private List<paqueteTuristicoEntity> PQTuristico;
    
     @Column(name = "precio")
     private Long precio;
+
+    @ManyToOne
+    @JoinColumn(name = "id_municipio", nullable = false, updatable = true)
+    private MunicipioEntity municipios;
 
 
 }

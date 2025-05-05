@@ -4,7 +4,7 @@ function resetModal() {
         $(this).val('');
     });
 
-    $('#login-form')[0].reset();
+   
 }
 $(function () {
 
@@ -74,17 +74,32 @@ $(function () {
                     rolIngreso = apiResponse.data.idrol;
                     switch (rolIngreso) {
                         case 1:
-
                             window.setTimeout(function () {
                                 var dataUser = JSON.stringify(apiResponse.data);
                                 localStorage.setItem("data-user", dataUser);
                                 window.location.replace("adminhome.html?");
-
-                           
-
+                                $('#login-form')[0].reset();
                             }, 2000);
                             break;
-                            
+                        case 2:
+                                window.setTimeout(function () {
+                                    var dataUser = JSON.stringify(apiResponse.data);
+                                    localStorage.setItem("data-user", dataUser);
+                                    window.location.replace("adminhome.html?");
+                                    $('#login-form')[0].reset();
+                                  
+                                }, 2000);
+                                break;    
+                        case 3:
+                            window.setTimeout(function () {
+                                var dataUser = JSON.stringify(apiResponse.data);
+                                localStorage.setItem("data-user", dataUser);
+                                window.location.replace("indexTurista.html?");
+                              
+                                closeLoader();
+                            }, 2000);
+                            break;
+
                         default:
                             window.setTimeout(function () {
                                 loadHeader(); {
@@ -116,12 +131,7 @@ $(function () {
             openLoader();
             callApi(url, method, request, ifSuccessLogin, ifErrorLogin);
         }
-
-
     });
-
-
-
     $("#btnsalir").click(function(){
         $("#barraAdmin").hide();
         $("#infoLogin").hide();
@@ -131,17 +141,24 @@ $(function () {
        });  
        $("#btnatras").click(function(){
         loadPage("homeAdmin");
-
-        
-
-   
-     
-
     });
-
-   
-     
+    $("#btnRegistro").click(function(){
+        localStorage.setItem("registro", 1);
+        page = "registroPersona";
+            loadPage(page);
+            
+           window.setTimeout(function(){
+            $("#btnClose").click();
+           },400);
+           $("#loginModal").hide(function(){
+            $("#ingresarPersona").click();
+           })        
+    });
 });
-
-
+$(document).on("click", ".btn-paquete", function () {
+    if((localStorage.getItem("data-user")=="")||(localStorage.getItem("data-user")==null)){
+        addAlert("Debes iniciar Secion o registrarte para poder reservar", "success", 3);
+        $("#loginModal").modal('show');
+    }
+})
 

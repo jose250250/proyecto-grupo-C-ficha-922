@@ -8,6 +8,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import lombok.Data;
@@ -26,8 +28,9 @@ public class TransporteEntity {
      @Column(name ="nombre")
      private String nombre;
 
-     @Column(name="id_municipio") 
-     private long IdMunicipio;
+    @ManyToOne
+    @JoinColumn(name = "id_municipio", nullable = false, updatable = true)
+    private MunicipioEntity municipios;
 
      @Column(name="celular")
      private String celular;

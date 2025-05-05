@@ -25,6 +25,8 @@ public class AtraccionDto {
 
      private long IdMunicipio;
 
+     private String municipio;
+
      private String celular;
 
      private Long precio;

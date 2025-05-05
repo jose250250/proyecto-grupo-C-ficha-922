@@ -1,7 +1,22 @@
 var index = localStorage.getItem('idusuario');
+var validPassword= false;
 $(function () {
    cargarlistapersonas();
    cargarrol();
+
+    $("#txtPassword, #txtPasswordconf").on("input", function () {
+      let pass1 = $("#txtPassword").val();
+      let pass2 = $("#txtPasswordconf").val();
+
+      if (pass1 !== pass2) {
+        $("#txtPassword, #txtPasswordconf").addClass("is-invalid");
+      } 
+      if(pass1===pass2) {
+        validPassword = true;
+        $("#txtPassword, #txtPasswordconf").removeClass("is-invalid");
+      }
+    });
+
    
 });
 $("#ingresarUsuario").click(function(){
@@ -26,15 +41,12 @@ $("#main-content-header").hide();
 closeLoader();
 });
 $("#slcPersona").on("change", function () {
-      var idpersona = ($(this).val());  
+      var idpersona = ($(this).val()); 
+      $("#txtPassword").val(""); 
       console.log("idpersona:::" + idpersona);
-      let personaActual = $.grep(listadopersonas, function (elemento) {
-        return elemento.idPersona === idpersona;        
-    });
-    console.log("persona actual:::"+ personaActual);
+      let personaActual = listadopersonas.find(persona => persona.id == idpersona);
+    console.log("persona actual:::",personaActual);
     $("#txtCorreo").val(personaActual.correo);
-    
-      
     });
     $("#frmUsuario").submit(function (event) {
         event.preventDefault();
@@ -45,11 +57,12 @@ $("#slcPersona").on("change", function () {
             };
 
         });
+        
         console.log("cant errores" + cantidadErrores);
         console.log("index:::" + index);
         
 
-        if (cantidadErrores == 0)  {
+        if ((cantidadErrores == 0)&(validPassword==true))  {
 
             var usuario = {              
                 "login":$("#txtCorreo").val(),
@@ -69,12 +82,7 @@ $("#slcPersona").on("change", function () {
                     method ="PUT";
                     url = "http://localhost:8080/usuario/"+index;
                     localStorage.setItem('idusuario', '');
-                   
-
                 }
-
-            
-            
             var request = usuario;
             var ifSuccess = function (apiResponse) {
 
@@ -82,15 +90,12 @@ $("#slcPersona").on("change", function () {
               
                 closeLoader();
             };
-
             var ifErrorLogin = function (data) {
                 addAlert("Se presento un error en el servidor", "danger", 8);
                 closeLoader();
             };
-
             openLoader();
             callApi(url, method, request, ifSuccess, ifErrorLogin);
-
             $('#frmUsuario')[0].reset();
             $("#main-content-usuario").hide();
             $("#main-content-header").show();
@@ -108,7 +113,7 @@ $("#slcPersona").on("change", function () {
         };
 
     });
-    $("#frmUsuario input, #frmUsuario select").on('change keyup click', function () {
+    $("#txtCorreo, #frmUsuario select").on('change keyup click', function () {
 
         $(this).removeClass("is-invalid");
 
@@ -153,6 +158,5 @@ $("#homeAdmin").click(function(){
         openLoader();
         callApi(url, method, request, ifSuccessusuario, ifError);
 
-    });    
-
+    });  
 

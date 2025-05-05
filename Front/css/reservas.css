@@ -1,0 +1,50 @@
+body {
+    background-color: #a39beb; /* Ajusta con los colores de Deltatur */
+}
+.container {
+    max-width: 90%;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(49, 209, 17, 0.2);
+}
+.btn-primary .btn-paquete {
+    background-color: #0056b3; /* Ajusta con el color de Deltatur */
+    border-color: #0056b3;
+}
+:root {
+    --deltatur-azul: #0056b3; /* Ajusta al azul corporativo */
+    --deltatur-verde: #2E8B57; /* Verde turístico */
+    --deltatur-amarillo: #FFC107; /* Amarillo vibrante */
+    --deltatur-fondo: #F4F4F4; /* Fondo suave */
+}
+
+body {
+    background-color: var(--deltatur-fondo);
+}
+
+h2 {
+    color: var(--deltatur-azul);
+}
+
+.form-label {
+    font-weight: bold;
+    color: var(--deltatur-azul);
+}
+
+.form-control {
+    border: 1px solid var(--deltatur-verde);
+    border-radius: 6px;
+}
+
+.btn-primary {
+    background-color: var(--deltatur-amarillo);
+    border-color: var(--deltatur-amarillo);
+    color: black;
+    font-weight: bold;
+}
+
+.btn-primary:hover {
+    background-color: var(--deltatur-verde);
+    border-color: var(--deltatur-verde);
+}

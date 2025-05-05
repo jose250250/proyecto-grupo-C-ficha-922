@@ -11,6 +11,7 @@ import co.edu.sena.gestion_turistica.dto.PaqueteTuristicoRequestDto;
 import co.edu.sena.gestion_turistica.dto.PaqueteTuristicoResponseDto;
 import co.edu.sena.gestion_turistica.entity.AtraccionEntity;
 import co.edu.sena.gestion_turistica.entity.HotelEntity;
+import co.edu.sena.gestion_turistica.entity.MunicipioEntity;
 import co.edu.sena.gestion_turistica.entity.RestauranteEntity;
 import co.edu.sena.gestion_turistica.entity.TransporteEntity;
 import co.edu.sena.gestion_turistica.entity.paqueteTuristicoEntity;
@@ -34,7 +35,8 @@ public class PaqueteTuristicoService {
                      .nombre(entity.getNombre())
                      .clase(entity.getClase())
                      .descripcion(entity.getDescripcion())
-                     .idMunicipio(entity.getIdMunicipio())
+                     .idMunicipio(entity.getMunicipios().getId())
+                     .municipio(entity.getMunicipios().getMunicipio())
                      .fechaInicio(entity.getFechaInicio())
                      .fechaFinal(entity.getFechaFinal())
                      .Hotel(entity.getHotel().getNombre())
@@ -60,12 +62,14 @@ public class PaqueteTuristicoService {
     entity.setNombre(dto.getNombre());
     entity.setClase(dto.getClase());
     entity.setDescripcion(dto.getDescripcion());
-    entity.setIdMunicipio(dto.getIdMunicipio());
+    MunicipioEntity municipioEntity = new MunicipioEntity();
+    municipioEntity.setId(dto.getIdMunicipio());
+    entity.setMunicipios(municipioEntity);  
     entity.setFechaInicio(dto.getFechaInicio());
     entity.setFechaFinal(dto.getFechaFinal());
     HotelEntity hotelEntity = new HotelEntity();
     hotelEntity.setId(dto.getIdHotel());
-    entity.setHotel(hotelEntity);
+    entity.setHotel(hotelEntity);   
     RestauranteEntity restauranteEntity = new RestauranteEntity();
     restauranteEntity.setId(dto.getIdRestaurante());
     entity.setRestaurante(restauranteEntity);
@@ -92,13 +96,18 @@ public class PaqueteTuristicoService {
             dto.setNombre(entity.getNombre());
             dto.setClase(entity.getClase());
             dto.setDescripcion(entity.getDescripcion());
-            dto.setIdMunicipio(entity.getIdMunicipio());
+            dto.setIdMunicipio(entity.getMunicipios().getId());
+            dto.setMunicipio(entity.getMunicipios().getMunicipio());
             dto.setFechaInicio(entity.getFechaInicio());
             dto.setFechaFinal(entity.getFechaFinal());           
             dto.setHotel(entity.getHotel().getNombre());
+            dto.setIdHotel(entity.getHotel().getId());
             dto.setAtraccion(entity.getAtraccion().getNombre());
+            dto.setIdAtraccion(entity.getAtraccion().getId());
             dto.setRestaurante(entity.getRestaurante().getNombre());
+            dto.setIdRestaurante(entity.getRestaurante().getId());
             dto.setTransporte(entity.getTransporte().getNombre());
+            dto.setIdTransporte(entity.getTransporte().getId());
             dto.setPrecioDia(entity.getPrecioDia());
             dto.setDescuento(entity.getDescuento());          
           
@@ -123,7 +132,9 @@ public PaqueteTuristicoRequestDto update(PaqueteTuristicoRequestDto newdata){
         entity.setNombre(newdata.getNombre());
         entity.setClase(newdata.getClase());
         entity.setDescripcion(newdata.getDescripcion());
-        entity.setIdMunicipio(newdata.getIdMunicipio());
+        MunicipioEntity municipioEntity = new MunicipioEntity();
+        municipioEntity.setId(newdata.getIdMunicipio());
+        entity.setMunicipios(municipioEntity);
         entity.setFechaInicio(newdata.getFechaInicio());
         entity.setFechaFinal(newdata.getFechaFinal());
         HotelEntity hotelEntity = new HotelEntity();
@@ -150,12 +161,5 @@ return null;
 
 
 }
-
-
-
-
-
-
-
 
 }

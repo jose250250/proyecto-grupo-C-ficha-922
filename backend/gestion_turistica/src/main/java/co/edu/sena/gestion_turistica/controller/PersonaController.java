@@ -14,9 +14,10 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-
+import co.edu.sena.gestion_turistica.dto.CustomResponseDto;
 import co.edu.sena.gestion_turistica.dto.PersonaDto;
 import co.edu.sena.gestion_turistica.dto.ServerResponseDataDto;
+import co.edu.sena.gestion_turistica.entity.PersonaEntity;
 import co.edu.sena.gestion_turistica.service.PersonaService;
 import lombok.Builder;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -64,7 +65,7 @@ public ServerResponseDataDto getById(@PathVariable("id") Long id){
 
     PersonaDto dto = this.service.getById(id);
     return ServerResponseDataDto.builder()
-    .message(dto != null ? "Reistro encontrado" : "reistro  no encontrado")
+    .message(dto != null ? "Registro encontrado" : "registro  no encontrado")
     .status(dto != null ? HttpStatus.OK.value() : HttpStatus.NOT_FOUND.value())
     .data(dto)
     .build();
@@ -98,5 +99,16 @@ return ServerResponseDataDto
 
 }
 
+
+@GetMapping("/buscar/{identificacion}")
+public CustomResponseDto obtenerPersonaPorCedula(@PathVariable String identificacion) {
+    PersonaEntity persona = service.buscarPersonaPorCedula(identificacion);
+
+    return new CustomResponseDto(
+        persona,
+        persona != null ? HttpStatus.OK.value() : HttpStatus.NOT_FOUND.value(),
+        persona != null ? "Persona encontrada" : "Persona no encontrada"
+    );
+}
 
 }

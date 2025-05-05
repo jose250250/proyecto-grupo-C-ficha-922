@@ -1,3 +1,31 @@
 .tex-center{
     text-decoration-color: blue;
 }
+  /* Estilo personalizado para el spinner */
+  .spinner-border {
+    border-left-color: #FFA500; /* Naranja */
+    border-bottom-color: #1874CD; /* Azul */
+}
+/* Estilos del botón de cierre de sesión */
+#cerrarsesion {
+  background-color: #FFEFD5; /* Marrón claro */
+  color: black;
+  border: 1px solid #1874CD; /* Azul fuerte */
+}
+
+/* Menú de navegación con estilo Deltatur */
+.deltatur-nav .nav-link {
+  background-color: #1874CD; /* Azul */
+  color: white;
+  border-radius: 5px;
+  margin-right: 5px;
+}
+
+.deltatur-nav .nav-link:hover {
+  background-color: #104E8B; /* Azul más oscuro */
+}
+
+/* Espaciado y distribución */
+.row {
+  margin: 10px 0;
+}

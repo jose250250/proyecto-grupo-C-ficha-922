@@ -11,5 +11,7 @@ public interface PersonaRepository extends
 JpaRepository<PersonaEntity, Long>,
 JpaSpecificationExecutor<PersonaEntity> {
 
+    PersonaEntity findByIdentificacion(String identificacion);
+
 
 }

@@ -7,7 +7,17 @@ body {
 .container {
     background-color: rgba(255, 255, 255, 0.9); /* Fondo semitransparente */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Sombra para profundidad */
+    max-width: 600px;
+    padding: 20px;
+    border-radius: 8px;
 }
+#card-paquete{
+    background-color: aquamarine;
+    border-color: cornsilk;
+
+
+ }
+
 #main-container {
     margin-top: 20px;
     margin-bottom: 20px;
@@ -103,4 +113,79 @@ input.error, select.error {
     z-index: 10000;
     width: 450px;
     margin: 30px;
+    
+}
+.deltatur-card {
+    background-color: #F5F5DC; /* Beige de Deltatur */
+    border: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.deltatur-card-header {
+    background-color: #6da9e6; /* Azul fuerte de Deltatur */
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+.deltatur-card-footer {
+    background-color: #f3c272; /* Marrón claro de Deltatur */
+    text-align: center;
+    padding: 10px;
+}
+/* Estilos del encabezado principal */
+.deltatur-header {
+    background-color: #1874CD; /* Azul fuerte */
+    padding: 15px;
+}
+
+/* Estilos de las tarjetas de usuario */
+.deltatur-card {
+    background-color: #F5F5DC; /* Beige */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+:root {
+    --deltatur-azul: #0056b3; /* Ajusta al azul corporativo */
+    --deltatur-verde: #2E8B57; /* Verde turístico */
+    --deltatur-amarillo: #FFC107; /* Amarillo vibrante */
+    --deltatur-fondo: #F4F4F4; /* Fondo suave */
+}
+
+body {
+    background-color: var(--deltatur-fondo);
+}
+
+.container {
+    max-width: 90%;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    color: var(--deltatur-azul);
+}
+
+.form-label {
+    font-weight: bold;
+    color: var(--deltatur-azul);
+}
+
+.form-control {
+    border: 1px solid var(--deltatur-verde);
+    border-radius: 6px;
+}
+
+.btn-primary {
+    background-color: var(--deltatur-amarillo);
+    border-color: var(--deltatur-amarillo);
+    color: black;
+    font-weight: bold;
+}
+
+.btn-primary:hover {
+    background-color: var(--deltatur-verde);
+    border-color: var(--deltatur-verde);
 }

@@ -1,4 +1,6 @@
 var index = localStorage.getItem('idpersona');
+var identificacion = "";
+var registro= localStorage.getItem("registro");
 admin= "admin/"
 $(function () {
     cargardepartamentos();  
@@ -6,7 +8,6 @@ $(function () {
   
 });
 $("#ingresarPersona").click(function () {
-      
        var html = "<option value=''> Seleccione departamento </option>";
         for (var i = 0; i < departamentos.length; i++) {
            var dep = departamentos[i];
@@ -15,13 +16,9 @@ $("#ingresarPersona").click(function () {
         $("#slcDepartamento").html(html);
         $("#main-content-persona").show();
         $("#main-content-header").hide();
-
         closeLoader();
-
 });
-
     $("#verlistaPersona").click(function () {
-
         loadPage("listaPersonas",admin);
         var url = "http://localhost:8080/persona";
         var method = "GET";
@@ -50,12 +47,8 @@ $("#ingresarPersona").click(function () {
             closeLoader();
 
         }
-
-    
-      
         openLoader();
         callApi(url, method, request, ifSuccesspersona, ifError);
-
     });
 
     $("#slcDepartamento").on("change", function () {
@@ -94,16 +87,14 @@ $("#ingresarPersona").click(function () {
             if ($(this).val() === '') {
                 cantidadErrores++
             };
-
         });
         console.log("cant errores" + cantidadErrores);
         console.log("index:::" + index);
-        
-
         if (((cantidadErrores == 2) && ($("#txtSNombre").val() === "") && ($("#txtSApellido").val() === ""))
             || ((cantidadErrores == 1) && ($("#txtSNombre").val() === "")) || ((cantidadErrores == 1) && ($("#txtSApellido").val() === ""))
             || (cantidadErrores == 0)) {
-
+             identificacion = $("#txtIdentificacion").val();
+             localStorage.setItem("identificacion", identificacion);
             var persona = {
                 "primerNombre": $("#txtPNombre").val(),
                 "segundoNombre": $("#txtSNombre").val(),
@@ -117,7 +108,6 @@ $("#ingresarPersona").click(function () {
                 "direccion": $("#txtDireccion").val(),
                 "genero": $("#slcGenero").val(),
                 "correo": $("#txtCorreo").val()
-
             };
             console.log("persona" + JSON.stringify(persona));
            
@@ -132,20 +122,25 @@ $("#ingresarPersona").click(function () {
                     url = "http://localhost:8080/persona/"+index;
                     localStorage.setItem('idpersona', '');                 
                 }           
-            
             var request = persona;
             var ifSuccess = function (apiResponse) {
+                if (parseInt(registro) === 1){
+                    console.log("registro:::"+registro);
+                    loadPage("RegistroUsuario");
+                    $("#ingresarUsuario").click();                    
+                }else{
                 $("#main-content-persona").hide();
                 $("#main-content-header").show();
+                localStorage.setItem("identificacion", "");
+
+                }
                 addAlert(apiResponse.message, "success", 3);
                 closeLoader();
             };
-
             var ifErrorLogin = function (data) {
                 addAlert("Se presento un error en el servidor", "danger", 8);
                 closeLoader();
             };
-
             openLoader();
             callApi(url, method, request, ifSuccess, ifErrorLogin);
 
@@ -176,7 +171,11 @@ $("#ingresarPersona").click(function () {
     $("#homeAdmin").click(function(){
         loadPage("homeAdmin",admin);
     })
-
+     
+    $("#btnSalir").click(function(){
+        loadPage("home");
+    })
+    
   
 
 

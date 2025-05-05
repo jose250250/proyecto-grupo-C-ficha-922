@@ -41,9 +41,7 @@ public class UsuarioService {
         PersonaEntity personaEntity = new PersonaEntity();
         personaEntity.setId(dto.getIdPersona());
         entity.setPersona(personaEntity);
-
         repository.save(entity);
-
     }
 
     public List<UsuarioResponseDto> getAll() {

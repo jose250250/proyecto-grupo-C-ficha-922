@@ -52,7 +52,8 @@ $("#slcDepartamento").on("change", function () {
                 "idMunicipio": $("#slcMunicipio").val(),           
                 "celular": $("#txtCelular").val(),               
                 "direccion": $("#txtDireccion").val(),
-                "precio":$("#precio").val()              
+                "precio":$("#precio").val(),
+                "urlfoto":$("#urlFoto").val()              
             };
             console.log("hotel" + JSON.stringify(hotel));
            

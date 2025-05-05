@@ -1,0 +1,60 @@
+<div class="col-12" id="main-content-header">
+    <button type="button" class="btn btn-info" id="ingresarUsuario">Asignacion de Usuarios</button>
+    <button type="llamarpersona" class="btn btn-info" id="llamarpersona" style="display: none;">llamarApi</button>
+    <button type="homeadmin" class="btn btn-info" id="homeAdmin">Atras</button>
+
+</div>
+<div id="main-content-usuario">
+    <h3 class="bg-info text-center" id="text-cabecera">Asignar Usuario</h3>
+    <form id="frmUsuario">
+        <div class="row">
+            <div class="col-3">
+                <div class="mb-4">
+                    <label for="slcPersona" class="form-label">Persona</label>
+                    <select class="form-select" id="slcPersona">
+                    </select>
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="mb-4">
+                    <label for="slcRol" class="form-label">Rol de usuario</label>
+                    <select class="form-select" id="slcRol">
+                     <option value="3" readonly>TURISTA</option>   
+                    </select>
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="mb-4">
+                    <label for="txtCorreo" class="form-label">Correo</label>
+                    <input type="email" class="form-label" id="txtCorreo">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-3">
+                    <div class="mb-4">
+                        <label for="txtPassword" class="form-label">Password</label>
+                        <input type="password" class="form-control" id="txtPassword">
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="mb-4">
+                        <label for="txtPasswordconf" class="form-label">Repita Password</label>
+                        <input type="password" class="form-control" id="txtPasswordconf">
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-10">
+                    <button type="submit" class="btn btn-success" id="submitUsuario">Enviar</button>
+                    <button type="reset" class="btn btn-info">Limpiar</button>
+
+                </div>
+            </div>
+        </div>
+    </form>
+    <div class="col-12" style="margin-left: 80%;">
+        <button type="atras" class="btn btn-info" id="Atras" style="display: inline;">Atras</button>
+    </div>
+</div>
+<script src="Assets/js/registroUsuario.js"></script>

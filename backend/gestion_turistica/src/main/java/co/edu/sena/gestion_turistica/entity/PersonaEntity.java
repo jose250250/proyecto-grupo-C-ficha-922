@@ -62,6 +62,9 @@ public class PersonaEntity {
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "persona")
     private List<UsuarioEntity> usuario;
+
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "persona")
+    private List<DetallePersonaPaqueteEntity> detPerPaquete;
     
 
 

@@ -21,13 +21,17 @@ public class HotelDto {
 
     private String nombre;
 
-    private Long idMunicipio;
+    private long idMunicipio;
+
+    private String municipio;
 
     private String celular;
 
     private String direccion;
 
     private Long precio;
+
+    private String urlfoto;
 
 
 }

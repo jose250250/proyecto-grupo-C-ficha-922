@@ -28,6 +28,10 @@ public class PaqueteTuristicoResponseDto {
 
     private Long idMunicipio;
 
+    private String municipio;
+
+    private Long idHotel;
+
     private String Hotel;
 
     private Date fechaInicio;
@@ -36,9 +40,15 @@ public class PaqueteTuristicoResponseDto {
 
     private String Restaurante;
 
+    private Long idRestaurante;
+
     private String Atraccion;
 
+    private Long idAtraccion;
+
     private String Transporte;
+
+    private Long idTransporte;
 
     private Long precioDia;
 
