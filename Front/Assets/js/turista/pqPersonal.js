@@ -38,6 +38,7 @@ $("#frm-pqpersonal").submit(function (event) {
     console.log("cant errores" + cantidadErrores);
     if (cantidadErrores == 0)  {
         reserva = {
+            "idPersona": parseInt(localStorage.getItem("turista")),
             "idMunicipio": $("#slcMunicipio").val(),
             "municipio": $("#slcMunicipio option:selected").text(),          
             "fechaInicio": $("#fechaInicio").val(),               

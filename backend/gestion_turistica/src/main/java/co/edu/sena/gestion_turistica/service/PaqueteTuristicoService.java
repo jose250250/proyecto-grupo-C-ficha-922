@@ -7,6 +7,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import co.edu.sena.gestion_turistica.dto.PaqueteResponseIDdto;
 import co.edu.sena.gestion_turistica.dto.PaqueteTuristicoRequestDto;
 import co.edu.sena.gestion_turistica.dto.PaqueteTuristicoResponseDto;
 import co.edu.sena.gestion_turistica.entity.AtraccionEntity;
@@ -56,7 +57,8 @@ public class PaqueteTuristicoService {
     }
 
  
-    public void save(PaqueteTuristicoRequestDto dto){ 
+    public PaqueteResponseIDdto save(PaqueteTuristicoRequestDto dto){
+
     paqueteTuristicoEntity entity = new paqueteTuristicoEntity();
 
     entity.setNombre(dto.getNombre());
@@ -82,7 +84,16 @@ public class PaqueteTuristicoService {
     entity.setPrecioDia(dto.getPrecioDia());
     entity.setDescuento(dto.getDescuento());
 
-    repository.save(entity);
+    entity = repository.save(entity);
+
+    PaqueteResponseIDdto responseDto = new PaqueteResponseIDdto();
+    responseDto.setId(entity.getId());
+    responseDto.setNombre(entity.getNombre());
+   
+
+    return responseDto;
+    
+   
 
     }
 

@@ -8,24 +8,19 @@
 }
 /* Estilos del botón de cierre de sesión */
 #cerrarsesion {
-  background-color: #FFEFD5; /* Marrón claro */
+  background-color: #629ee2; /* Marrón claro */
   color: black;
   border: 1px solid #1874CD; /* Azul fuerte */
 }
-
-/* Menú de navegación con estilo Deltatur */
-.deltatur-nav .nav-link {
-  background-color: #1874CD; /* Azul */
+#cerrarsesion:hover {
+  background-color: #1874CD; /* Azul fuerte al pasar el mouse */
   color: white;
-  border-radius: 5px;
-  margin-right: 5px;
+  border-color: #0f5ba0; /* Un azul más oscuro*/
 }
+/* Menú de navegación con estilo Deltatur */
 
-.deltatur-nav .nav-link:hover {
-  background-color: #104E8B; /* Azul más oscuro */
-}
-
-/* Espaciado y distribución */
-.row {
-  margin: 10px 0;
+#main-nav{
+  background-color: cornsilk;
+  text-decoration-color: aqua;
+  
 }

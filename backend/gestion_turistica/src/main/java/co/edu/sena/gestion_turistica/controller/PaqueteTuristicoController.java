@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import co.edu.sena.gestion_turistica.dto.PaqueteResponseIDdto;
 import co.edu.sena.gestion_turistica.dto.PaqueteTuristicoRequestDto;
 import co.edu.sena.gestion_turistica.dto.PaqueteTuristicoResponseDto;
 import co.edu.sena.gestion_turistica.dto.ServerResponseAll;
@@ -31,13 +32,13 @@ public class PaqueteTuristicoController {
 
      @PostMapping()
     public ServerResponseAll create(@RequestBody PaqueteTuristicoRequestDto request){
-
-    service.save(request);
+        PaqueteResponseIDdto guardado = service.save(request);
+  
     
     return ServerResponseAll.builder()
     .message("Registro exitoso")
     .status(HttpStatus.OK.value())
-    .data(null)
+    .data(guardado)
     .build();
 
    }

@@ -1,0 +1,66 @@
+<div class="col-12" id="main-content-header">
+    <button type="button" class="btn btn-info" id="ingresarReserva">Ingresar Nueva Reserva</button>
+    <button type="button" class="btn btn-info" id="verlistaReserva">Ver lista</button>
+    <button type="button" class="btn btn-info" id="buscarReserva">Buscar</button>
+    <button type="homeadmin" class="btn btn-info" id="homeAdmin">Atras</button>
+</div>
+<div id="main-content-reserva" style="display: none;">
+    <h3 class="bg-info text-center" id="txtcabecera">Ingresar nueva Reserva</h3>
+    <form id="frmReserva">
+        <div class="row">
+            <div class="col-3">
+                <div class="mb-4">
+                    <label for="slcNombre" class="form-label">Nombre de Usuario</label>
+                    <select class="form-select" id="slcNombre"></select>
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="mb-4">
+                    <label for="txtNidentificacion" class="form-label">N° de Identificacion</label>
+                    <input type="text" class="form-control" id="txtNidentificacion" readonly >
+                </div>
+            </div>
+
+            <div class="col-3">
+                <div class="mb-4">
+                    <label for="slcPaquete" class="form-label">Paquete</label>
+                    <select class="form-select" id="slcPaquete">
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="row">   
+            <div class="col-4">
+                <div class="mb-4">
+                    <label for="slcEstado" class="form-label">Estado</label>
+                    <select class="form-select" id="slcEstado">
+                    <option value="1">activo</option>
+                    <option value="2">reservado</option>
+                    <option value="3">terminado</option>
+                    <option value="4">cancelado</option>
+                    <option value="5">en-proceso</option>
+                    <option value="6">vencido</option>
+                    <option value="7">pendiente</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-5">
+                <div class="mb-4">
+                    <label for="txtMotivo" class="form-label">Motivo de Registro</label>
+                    <input type="tel" class="form-control" id="txtMotivo" placeholder="Ingrese el motivo de este registro">
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-10">
+                <button type="submit" class="btn btn-success" id="submithotel">Enviar</button>
+                <button type="reset" class="btn btn-info">Limpiar</button>
+            </div>
+        </div>
+    </form>
+    <div class="col-12" style="margin-left: 80%;">
+        <button type="atras" class="btn btn-info" id="atras" style="display: inline;">Atras</button>
+    </div>
+</div>
+<script src="Assets/js/gestionReserva.js"></script>

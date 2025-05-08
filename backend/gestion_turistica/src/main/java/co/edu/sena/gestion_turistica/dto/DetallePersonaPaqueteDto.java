@@ -1,6 +1,6 @@
 package co.edu.sena.gestion_turistica.dto;
 
-import java.sql.Date;
+import java.time.LocalDateTime;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
@@ -29,9 +29,14 @@ public class DetallePersonaPaqueteDto {
 
     private String estado;
 
-    private Date registro;
+    private LocalDateTime registro;
 
     private String motivo;
+
+    public DetallePersonaPaqueteDto(Long id, String motivo) {
+        this.id = id;
+        this.motivo = motivo;
+    }
    
 
 
