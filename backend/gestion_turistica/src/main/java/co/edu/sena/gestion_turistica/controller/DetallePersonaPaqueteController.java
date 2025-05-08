@@ -26,18 +26,18 @@ public class DetallePersonaPaqueteController {
     @Autowired
     private DetallePersonaPaqueteService service;
 
-    @PostMapping()
-    public ServerResponseAll create(@RequestBody DetallePersonaPaqueteDto request){
-
-    service.save(request);
+    @PostMapping
+    public ServerResponseAll create(@RequestBody DetallePersonaPaqueteDto request) {
+        DetallePersonaPaqueteDto guardado = service.save(request);
     
-    return ServerResponseAll.builder()
-    .message("Registro exitoso")
-    .status(HttpStatus.OK.value())
-    .data(null)
-    .build();
-
-   }
+        return ServerResponseAll.builder()
+            .message("Registro exitoso")
+            .status(HttpStatus.OK.value())
+            .data(guardado)
+            .build();
+    }
+    
+  
 
    @GetMapping()
 public ServerResponseAll ListAll(){

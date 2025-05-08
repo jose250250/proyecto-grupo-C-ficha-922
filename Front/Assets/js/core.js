@@ -418,6 +418,38 @@ function cargapersonayrol() {
 
   closeLoader();
 }
+function cargarreservas(){
+  var url = "http://localhost:8080/dperpaquete";
+  var method = "GET";
+  var request = "";
+  var ifSuccesspersona = function (apiResponse) {
+    console.log("reservas:response " + JSON.stringify(apiResponse));
+    var listareservas = apiResponse.data;
+    var html = "";
+    for (var i = 0; i < listareservas.length; i++) {
+      var lisres = listareservas[i];
+      html += "<tr>";
+      html += "<th scope='col'>" + (i + 1) + "</th>";
+      html += "<td>" + lisres.idPersona + "</td>";
+      html += "<td>" + lisres.idPaquete + "</td>";
+      html += "<td>" + lisres.estado + "</td>";
+      html += "<td>" + lisres.motivo + "</td>";
+      html += "<td>" + lisres.registro + "</td>";
+      html +=
+        "<td><div class='btns-editar'  data-id='" +
+        lisres.id +
+        "' ></div> <div class='btns-eliminar' data-id='" +
+        lisres.id +
+        "'data-bs-toggle='modal' data-bs-target='#eliminarmodal' ></div></td>";
+      html += "</tr>";
+    }
+    $("#table-reserva tbody").html(html);
+    closeLoader();
+  };
+  openLoader();
+  callApi(url, method, request, ifSuccesspersona, ifError);
+}
+
 function cargaratracciones() {
   var url = "http://localhost:8080/atraccion";
   var method = "GET";
@@ -485,6 +517,18 @@ function cargarpaquetes() {
   };
   openLoader();
   callApi(url, method, request, ifSuccesspersona, ifError);
+}
+function obtenerlistapaquetes(){
+var url = "http://localhost:8080/paquete";
+var method = "GET";
+var request = "";
+var ifSuccess = function (apiResponse) {
+  console.log("paquete:response " + JSON.stringify(apiResponse.data));
+  listapaquetes = apiResponse.data;
+  closeLoader();
+};
+openLoader();
+callApi(url, method, request, ifSuccess, ifError);
 }
 function obtenerlistahoteles() {
   var url = "http://localhost:8080/hotel";

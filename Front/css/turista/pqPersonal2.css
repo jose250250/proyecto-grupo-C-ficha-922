@@ -17,8 +17,21 @@
     object-fit: cover; /* Ajustar imagen sin distorsión */
     border-bottom: 1px solid #ccc; /* Línea separadora */
 }
+.serv-card2  {
+    width: 20%; /* Imagen ocupa todo el ancho */
+    height: 80%; /* Altura fija para uniformidad */
+    object-fit: cover; /* Ajustar imagen sin distorsión */
+    border: 1px solid #1b0707e5; /* Línea separadora */
+    border-radius: 10%;
+}
+.serv-card2 img{
+    width: 80px; /* Imagen  */
+    height: 80px;
 
-.serv-card h5 {
+}
+
+
+.serv-card h5 .serv-card2 h5{
     margin-top: 10px;
     font-size: 18px;
     font-weight: bold;

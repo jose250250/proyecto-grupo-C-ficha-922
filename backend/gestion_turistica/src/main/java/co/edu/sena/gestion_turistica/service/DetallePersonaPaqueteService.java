@@ -20,23 +20,36 @@ public class DetallePersonaPaqueteService {
     @Autowired
     private DetallePersonaPaqueteRepository repository;
 
-    public void save(DetallePersonaPaqueteDto dto){
-
-        DetallePersonaPaqueteEntity entity = new DetallePersonaPaqueteEntity();
-
-      
+    public DetallePersonaPaqueteDto save(DetallePersonaPaqueteDto dto) {
+      DetallePersonaPaqueteEntity entity = new DetallePersonaPaqueteEntity();
+  
       PersonaEntity personaEntity = new PersonaEntity();
       personaEntity.setId(dto.getIdPersona());
       entity.setPersona(personaEntity);
+  
       paqueteTuristicoEntity paqueteEntity = new paqueteTuristicoEntity();
       paqueteEntity.setId(dto.getIdPaquete());
-      entity.setPaquete(paqueteEntity); 
+      entity.setPaquete(paqueteEntity);
+  
       entity.setEstado(dto.getEstado());
       entity.setRegistro(dto.getRegistro());
       entity.setMotivo(dto.getMotivo());
-      repository.save(entity);
-
-    }
+  
+      // Guarda y recupera entidad con ID generado
+      entity = repository.save(entity);
+  
+      // Construir DTO de respuesta
+      DetallePersonaPaqueteDto responseDto = new DetallePersonaPaqueteDto();
+      responseDto.setId(entity.getId());
+      responseDto.setIdPersona(entity.getPersona().getId());
+      responseDto.setIdPaquete(entity.getPaquete().getId());
+      responseDto.setEstado(entity.getEstado());
+      responseDto.setRegistro(entity.getRegistro());
+      responseDto.setMotivo(entity.getMotivo());
+  
+      return responseDto;
+  }
+  
 
       public List<DetallePersonaPaqueteDto> getAll(){
 

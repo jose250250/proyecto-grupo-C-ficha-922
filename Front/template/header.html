@@ -1,6 +1,6 @@
 <div class="row">
     <div class="col-3">
-        <img src="http://localhost/Front/Assets/recursos/deltatur_logo.png" width="150px" height="150px"
+        <img src="http://localhost/Front/Assets/recursos/deltatur-luna2.png" width="150px" height="150px"
             class="rounded mx-auto d-block" alt="gestion turistica">
 
     </div>
@@ -46,42 +46,48 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <!-- Encabezado del Modal -->
-            <div class="modal-header" style="background-color: #1874CD; color: white;">
+            <div class="modal-header custom-modal-header">
                 <h1 class="modal-title fs-5" id="loginModalLabel">Inicio de Sesión</h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar" style="filter: invert(1);"></button>
+                <button type="button" class="btn-close custom-close-button" data-bs-dismiss="modal" aria-label="Cerrar"></button>
             </div>
 
             <!-- Cuerpo del Modal -->
-            <div class="modal-body" style="background-color: #F5F5DC;">
+            <div class="modal-body custom-modal-body">
                 <form id="login-form" action="#">
                     <div class="mb-3">
-                        <label for="email" class="form-label" style="color: #1874CD;">Correo de Ingreso</label>
+                        <label for="email" class="form-label custom-label">Correo de Ingreso</label>
                         <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp">
-                        <div id="emailHelp" class="form-text" style="color: #FFA500;">No se compartirá su correo con nadie más.</div>
+                        <div id="emailHelp" class="form-text custom-help-text">No se compartirá su correo con nadie más.</div>
                     </div>
                     <div class="mb-3">
-                        <label for="password" class="form-label" style="color: #1874CD;">Contraseña</label>
+                        <label for="password" class="form-label custom-label">Contraseña</label>
                         <input type="password" class="form-control" id="password" name="password">
                     </div>
                     <div class="mb-3 form-check">
                         <input type="checkbox" class="form-check-input" id="remember-user" name="remember-user">
-                        <label class="form-check-label" for="remember-user" style="color: #1874CD;">Recordar datos</label>
+                        <label class="form-check-label custom-label" for="remember-user">Recordar datos</label>
                     </div>
                     <button type="submit" class="btn btn-primary d-none">Submit</button>
                 </form>
             </div>
+        
+  
+
+
 
             <!-- Pie de página del Modal -->
-            <div class="modal-footer" style="background-color: #FFEFD5;">
-                <button type="button" class="btn btn-secondary" id="btnRegistro" style="background-color: #7cc00f; border-color: #0d914f; color: white;">Registrarse</button>
-                <button type="button" class="btn btn-secondary" id="btnClose" data-bs-dismiss="modal" style="background-color: #1874CD; border-color: #1874CD; color: white;">Cerrar</button>
-                <button type="button" class="btn btn-primary" id="btnLogin" style="background-color: #FFD700; border-color: #FFD700; color: black;">Iniciar Sesión</button>
+            <div class="modal-footer custom-modal-footer">
+                <button type="button" class="btn btn-info btn-registro" id="btnRegistro">Registrarse</button>
+                <button type="button" class="btn btn-secondary btn-cerrar" id="btnClose" data-bs-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-primary btn-login" id="btnLogin">Iniciar Sesión</button>
             </div>
+            
         </div>
-    </div>
+    </div>    
+    
 </div>
 <div class="col-12 rounded-4 bg-primary text-center text-white p-3">
     <h4 class="bg-transparent text-white">Disfruta de nuestros paquetes disponibles para ti</h4>
-  </div>
+</div>
   
 <script src="Assets/js/header.js"></script>

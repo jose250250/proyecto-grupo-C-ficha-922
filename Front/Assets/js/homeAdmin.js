@@ -34,6 +34,11 @@ $(function(){
         loadPage(page, rootPath);
 
     });   
+    $("#entrarReserva").click(function(){
+        page = "homeReserva";
+        loadPage(page, rootPath);
+
+    });   
 
   
 });

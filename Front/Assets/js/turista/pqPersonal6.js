@@ -2,6 +2,7 @@ var hotelSel=[];
 var restauranteSel=[];
 var transporteSel=[];
 var atraccionSel=[];
+var paqueteresponse=[];
 
 $(function () {
   hotelSel = listahoteles.find(hotel => hotel.id === parseInt(reserva.idHotel));
@@ -21,29 +22,17 @@ $(function () {
   + (parseFloat(transporteSel.precio) || 0) 
   + (parseFloat(atraccionSel.precio) || 0);
   $("#precio").val(precio*Number(reserva.CantDias));
-});
-$("#atras6").click(function(){
-  loadPage("paquetePersonal5",turPath);
-})
 
-$("#frmPaquete").submit(function (event) {
+$("#frmDetallePaquete").submit(function (event) {
+  console.log("Interceptado submit");
   event.preventDefault();
-  var cantidadErrores = 0;
-  $("#frmPaquete input, #frmPaquete select").each(function (i) {
-    if ($(this).val() === "") {
-      cantidadErrores++;
-    }
-  });
-  console.log("cant errores" + cantidadErrores);
-  console.log("index:::" + indexpaquete);
-  if (cantidadErrores == 0) {
     var paquete = {
       nombre: "mi paquete",
       clase: "PERSONALIZADO",
       descripcion: "Paquete creado por el usuario",
-      idMunicipio: $("#slcMunicipio").val(),
-      fechaInicio: $("#fechaInicio").val(),
-      fechaFinal: $("#fechaFinal").val(),
+      idMunicipio: reserva.idMunicipio,
+      fechaInicio: reserva.fechaInicio,
+      fechaFinal: reserva.fechaFinal,
       idHotel: reserva.idHotel || "",
       idRestaurante: reserva.idRestaurante || "",
       idTransporte: reserva.idTransporte || "",
@@ -52,29 +41,34 @@ $("#frmPaquete").submit(function (event) {
       descuento: "0"
     };
     console.log("paquete" + JSON.stringify(paquete));
-    var method = "";
-    var url = "";
-    if (indexpaquete == "" || indexpaquete == null) {
-      method = "POST";
-      url = "http://localhost:8080/paquete";
-    } else {
-      method = "PUT";
-      url = "http://localhost:8080/paquete/" + indexpaquete;
-      localStorage.setItem("idpaquete", "");
-    }
+    var method = "POST";
+    var url = "http://localhost:8080/paquete";
+   
     var request = paquete;
     var ifSuccess = function (apiResponse) {
-      addAlert(apiResponse.message, "success", 3);
+      paqueteresponse=apiResponse.data;
+      var urlp = "http://localhost:8080/dperpaquete"
+      var detallepaquete= {
+        idPersona: reserva.idPersona,
+        idPaquete: paqueteresponse.id,
+        estado: "pendiente",
+        registro: new Date().toISOString(),
+        motivo: "fecha de creacion por el usuario"       
+      }
+      var requestp = detallepaquete;
+      console.log("dpper" + JSON.stringify(detallepaquete));
+      var ifSuccessdetalle = function (apiResponse) {
+        addAlert(apiResponse.message, "success", 3);
+        alert("registro exitoso");
+        loadPage("paquetePersonal7",turPath);
+      }
       closeLoader();
-      
-    };
-    var ifErrorLogin = function (data) {
-      addAlert("Se presento un error en el servidor", "danger", 8);
-      closeLoader();
+      callApi(urlp, "POST", requestp, ifSuccessdetalle, ifError);
     };
     openLoader();
-    callApi(url, method, request, ifSuccess, ifErrorLogin);
-
-
-}
+    callApi(url, method, request, ifSuccess, ifError);
+});
+$("#atras6").click(function(){
+  loadPage("paquetePersonal5",turPath);
+})
 });

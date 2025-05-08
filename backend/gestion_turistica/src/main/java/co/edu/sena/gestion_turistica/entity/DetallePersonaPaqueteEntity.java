@@ -1,6 +1,6 @@
 package co.edu.sena.gestion_turistica.entity;
 
-import java.sql.Date;
+import java.time.LocalDateTime;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -34,7 +34,7 @@ public class DetallePersonaPaqueteEntity {
     private String estado;
 
     @Column (name="registro")
-    private Date registro;
+    private LocalDateTime registro;
 
     @Column (name="motivo_registro")
     private String motivo;
