@@ -1,6 +1,7 @@
 package co.edu.sena.gestion_turistica.controller;
 
 
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -53,6 +54,16 @@ public class PaqueteTuristicoController {
                 .build();
     }
 
+    @GetMapping("/filtrados")
+    public ServerResponseDataDto paquetesFiltrados(){
+      return ServerResponseDataDto.builder()
+              .status(200)
+              .message("Consulta exitosa!")
+              .data(this.service.paquetesFiltrados())
+              .build();
+  }
+
+
     @GetMapping("/{id}")
 public ServerResponseAll getById(@PathVariable("id") Long id){
 
@@ -91,6 +102,9 @@ return ServerResponseAll
 .build();
 
 }
+ 
 
+
+   
 
 }

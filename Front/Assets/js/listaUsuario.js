@@ -73,9 +73,9 @@ $(document).on("click", ".btns-editar", function () {
             
             window.setTimeout(function () {
                              
-                $("#text-cabecera").text("Actualizar Registro"); 
+                $("#txtcabecera").text("Actualizar Registro"); 
                 $("#submitUsuario").text("Actualizar");                 
-                $("#main-content-header").hide();             
+                $("#main-content-header").attr("style", "display: none !important");              
             }, 500);
           
             closeLoader();

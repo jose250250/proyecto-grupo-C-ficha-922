@@ -1,15 +1,19 @@
 var datoUsuario = localStorage.getItem("data-user")
 var reservaProm = [];
 var dUser = [];
-$(function () {
-  var objUser = redirectByLoginUser(true);
 
+$(function () {
   closeLoader();
+  var objUser = redirectByLoginUser(true);
   $("#nUsuario").text(objUser.primerNombre + " " + objUser.primerApellido);
   $("#rolUsuario").text(objUser.rol);
   localStorage.setItem("turista",objUser.persona);
-  cargarPaquetesPromocionales();
-
+  if (!paquetes) {
+      cargarPaquetesPromocionales(); 
+    }
+   else {
+    recargarpaquetes(); 
+  }
   $("#btnsalir, #cerrarsesion").on("click", function () {
     localStorage.clear();
     redirectByLoginUser(true);
@@ -36,7 +40,9 @@ $(document).on("click", ".btn-paquete", function () {
       const paq = paquetes.find(paquete => parseInt(paquete.id) === parseInt(index));
       dUser=JSON.parse(datoUsuario);
       $("#divBntAgragar").hide();
+      $("#txtTitulo").hide();
       console.log("paqqq:::"+ dUser);
+
      
       window.setTimeout(function(){
           $("#txtDescripcion").val(paq.descripcion);

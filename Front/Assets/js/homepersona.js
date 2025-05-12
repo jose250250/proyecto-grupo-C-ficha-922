@@ -1,6 +1,6 @@
 var index = localStorage.getItem('idpersona');
-var identificacion = "";
-var registro= localStorage.getItem("registro");
+
+
 admin= "admin/"
 $(function () {
     cargardepartamentos();  
@@ -14,8 +14,12 @@ $("#ingresarPersona").click(function () {
            html += "<option value='" + dep.id + "'>" + dep.departamento + "</option>";
           };
         $("#slcDepartamento").html(html);
+        $("#form-persona")[0].reset();
+        $("#txtcabecera").text("Ingresar Nuevo Registro de Persona"); 
         $("#main-content-persona").show();
-        $("#main-content-header").hide();
+        $("#submitpersona").text("Enviar");
+        $("#main-content-header").attr("style", "display: none !important");
+
         closeLoader();
 });
     $("#verlistaPersona").click(function () {
@@ -93,8 +97,7 @@ $("#ingresarPersona").click(function () {
         if (((cantidadErrores == 2) && ($("#txtSNombre").val() === "") && ($("#txtSApellido").val() === ""))
             || ((cantidadErrores == 1) && ($("#txtSNombre").val() === "")) || ((cantidadErrores == 1) && ($("#txtSApellido").val() === ""))
             || (cantidadErrores == 0)) {
-             identificacion = $("#txtIdentificacion").val();
-             localStorage.setItem("identificacion", identificacion);
+           
             var persona = {
                 "primerNombre": $("#txtPNombre").val(),
                 "segundoNombre": $("#txtSNombre").val(),
@@ -124,16 +127,8 @@ $("#ingresarPersona").click(function () {
                 }           
             var request = persona;
             var ifSuccess = function (apiResponse) {
-                if (parseInt(registro) === 1){
-                    console.log("registro:::"+registro);
-                    loadPage("RegistroUsuario");
-                    $("#ingresarUsuario").click();                    
-                }else{
                 $("#main-content-persona").hide();
                 $("#main-content-header").show();
-                localStorage.setItem("identificacion", "");
-
-                }
                 addAlert(apiResponse.message, "success", 3);
                 closeLoader();
             };

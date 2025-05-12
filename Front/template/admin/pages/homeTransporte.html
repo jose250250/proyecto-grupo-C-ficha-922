@@ -1,4 +1,4 @@
-<div class="col-12" id="main-content-header">
+<div class="col-12 w-90 mx-auto d-flex justify-content-center gap-3 p-3" id="main-content-header">
     <button type="button" class="btn btn-info" id="ingresarTransporte">Ingresar Nuevo Transporte</button>
     <button type="button" class="btn btn-info" id="verlistaTransporte">Ver lista</button>
     <button type="button" class="btn btn-info" id="buscarTransporte">Buscar</button>
@@ -7,7 +7,7 @@
 
 <div id="main-content-transporte" style="display: none;">
 
-    <h3 class="bg-info text-center">Ingresar nuevo Transporte</h3>
+    <h3 class="bg-info text-center" id="txtcabecera">Ingresar nuevo Transporte</h3>
     <br>
 
     <form id="frmTransporte">     
@@ -16,21 +16,21 @@
             <div class="col-3">
                 <div class="mb-4">
                     <label for="txtNombre" class="form-label">Nombre</label>
-                    <input type="text" class="form-control" id="txtNombre" placeholder="Ingrese nombre de usuario">
+                    <input type="text" class="form-control text-capitalize" id="txtNombre" placeholder="Ingrese nombre de usuario">
                 </div>
             </div>
 
             <div class="col-3">
                 <div class="mb-4">
                     <label for="slcDepartamento" class="form-label">Departamento</label>
-                    <select class="form-select" id="slcDepartamento">
+                    <select class="form-select text-capitalize" id="slcDepartamento">
                     </select>
                 </div>
             </div>
             <div class="col-3">
                 <div class="mb-4">
                     <label for="slcMunicipio" class="form-label">Municipio</label>
-                    <select class="form-select" id="slcMunicipio">
+                    <select class="form-select text-capitalize" id="slcMunicipio">
                     </select>
                 </div>
             </div>

@@ -5,6 +5,8 @@ $(function () {
 });
 $("#ingresarAtraccion").click(function(){
     localStorage.setItem("idatraccion", "");
+    $("#txtcabecera").text("Ingresar Nuevo Registro de Atracciones"); 
+    $("#frmAtraccion")[0].reset();
 
 var html = "<option value=''> Seleccione departamento </option>";
 for (var i = 0; i < departamentos.length; i++) {
@@ -13,7 +15,7 @@ for (var i = 0; i < departamentos.length; i++) {
   };
 $("#slcDepartamento").html(html);
 $("#main-content-atraccion").show();
-$("#main-content-header").hide();
+$("#main-content-header").attr("style", "display: none !important");
 
 closeLoader();
 });

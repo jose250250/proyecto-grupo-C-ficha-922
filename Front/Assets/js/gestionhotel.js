@@ -6,6 +6,9 @@ $(function () {
 $("#ingresarhotel").click(function(){
     localStorage.setItem("idhotel", "");
     $("#submithotel").text("Enviar");
+    $("#txtcabecera").text("Ingresar Nuevo Registro de Hoteles"); 
+    $("#frmhotel")[0].reset();
+
 
 var html = "<option value=''> Seleccione departamento </option>";
 for (var i = 0; i < departamentos.length; i++) {
@@ -14,8 +17,8 @@ for (var i = 0; i < departamentos.length; i++) {
   };
 $("#slcDepartamento").html(html);
 $("#main-content-hotel").show();
-$("#main-content-header").hide();
-
+$("#main-content-header").attr("style", "display: none !important");
+  
 closeLoader();
 });
 $("#slcDepartamento").on("change", function () {

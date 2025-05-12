@@ -61,8 +61,9 @@ public class DetallePersonaPaqueteService {
             DetallePersonaPaqueteDto dto = new DetallePersonaPaqueteDto();
             dto.setId(entity.getId());
             dto.setIdPaquete(entity.getPaquete().getId());
-            dto.setPaquete(entity.getPaquete().getNombre()+" "+ entity.getPersona().getPrimerApellido());
+            dto.setPaquete(entity.getPaquete().getNombre());
             dto.setIdPersona(entity.getPersona().getId());
+            dto.setPersona(entity.getPersona().getPrimerNombre()+" "+entity.getPersona().getPrimerApellido());
             dto.setEstado(entity.getEstado());
             dto.setRegistro(entity.getRegistro());
             dto.setMotivo(entity.getMotivo());

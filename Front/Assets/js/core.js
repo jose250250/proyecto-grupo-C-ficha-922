@@ -430,8 +430,8 @@ function cargarreservas(){
       var lisres = listareservas[i];
       html += "<tr>";
       html += "<th scope='col'>" + (i + 1) + "</th>";
-      html += "<td>" + lisres.idPersona + "</td>";
-      html += "<td>" + lisres.idPaquete + "</td>";
+      html += "<td>" + lisres.persona + "</td>";
+      html += "<td>" + lisres.paquete + "</td>";
       html += "<td>" + lisres.estado + "</td>";
       html += "<td>" + lisres.motivo + "</td>";
       html += "<td>" + lisres.registro + "</td>";
@@ -710,51 +710,59 @@ function cargarutilidadestodo() {
   console.log("estado cargarutilidades esxitoso");
 
 }
+function recargarpaquetes(){
+  $("#content-main").empty();
+  let row = $("<div class='row g-4 rounded-3'></div>"); // Contenedor de filas
+  paquetes.forEach((paquete, index) => {
+      let card = `
+          <div class="col-md-3 rounded-3"> <!-- 4 tarjetas por fila -->
+              <div class="card deltatur-card rounded-3">
+                  <div class="deltatur-card-header rounded-2">
+                      <h5 class="card-title rounded-2">${paquete.nombre}</h5>
+                  </div>
+                  <div class="card-body text-center rounded-1">
+                      <p class="card-text"><strong>Descripción:</strong> ${paquete.descripcion}</p>
+                      <p class="card-text"><strong>Precio:</strong> $${paquete.precioDia}</p>
+                      <p class="card-text"><strong>Descuento:</strong> ${paquete.descuento}%</p>
+                  </div>
+                  <div class="deltatur-card-footer rounded-2">
+                      <button class="btn btn-primary btn-paquete" data-id = '${paquete.id}'>Reservar ahora</button>
+                  </div>
+              </div>
+          </div>`;
+      row.append(card); // Agrega tarjeta a la fila
+
+      // Cada 4 tarjetas, se cierra la fila y se inicia una nueva
+      if ((index + 1) % 4 === 0) {
+          $("#content-main").append(row); // Agregar la fila al contenedor
+          row = $("<br><div class='row g-4 rounded-3'></div>"); // Nueva fila
+      }
+  });
+  // Agregar la última fila si tiene menos de 4 elementos
+  if (row.children().length > 0) {
+      $("#content-main").append(row);
+  }
+  $("#divBntAgragar").show();
+ 
+  closeLoader();
+}
 function cargarPaquetesPromocionales() {  
-  var url = "http://localhost:8080/paquete";
+  $("#txtTitulo").show();
+  var url = "http://localhost:8080/paquete/filtrados";
   var method = "GET";
   var request = "";
   var ifSuccesspaquete = function (apiResponse) {
     paquetes = apiResponse.data;
-    console.log("paquete:response " + JSON.stringify(apiResponse));
-    $("#content-main").empty();
+     recargarpaquetes();
    
-    let row = $("<div class='row g-4 rounded-3'></div>"); // Contenedor de filas
-    paquetes.forEach((paquete, index) => {
-        let card = `
-            <div class="col-md-3 rounded-3"> <!-- 4 tarjetas por fila -->
-                <div class="card deltatur-card rounded-3">
-                    <div class="deltatur-card-header rounded-2">
-                        <h5 class="card-title rounded-2">${paquete.nombre}</h5>
-                    </div>
-                    <div class="card-body text-center rounded-1">
-                        <p class="card-text"><strong>Descripción:</strong> ${paquete.descripcion}</p>
-                        <p class="card-text"><strong>Precio:</strong> $${paquete.precioDia}</p>
-                        <p class="card-text"><strong>Descuento:</strong> ${paquete.descuento}%</p>
-                    </div>
-                    <div class="deltatur-card-footer rounded-2">
-                        <button class="btn btn-primary btn-paquete" data-id = '${paquete.id}'>Reservar ahora</button>
-                    </div>
-                </div>
-            </div>`;
-        row.append(card); // Agrega tarjeta a la fila
-
-        // Cada 4 tarjetas, se cierra la fila y se inicia una nueva
-        if ((index + 1) % 4 === 0) {
-            $("#content-main").append(row); // Agregar la fila al contenedor
-            row = $("<br><div class='row g-4 rounded-3'></div>"); // Nueva fila
-        }
-    });
-    // Agregar la última fila si tiene menos de 4 elementos
-    if (row.children().length > 0) {
-        $("#content-main").append(row);
-    }
-    $("#divBntAgragar").show();
+    console.log("paquete:response " + JSON.stringify(apiResponse));
     closeLoader();
   }
   openLoader();
   callApi(url, method, request, ifSuccesspaquete, ifError);
 }
+
+
 function filtrarHotelesPorMunicipio(listaHoteles, idMunicipio) {
   return $.grep(listaHoteles, function(hotel) {
       return hotel.idMunicipio === idMunicipio;
@@ -765,6 +773,7 @@ function actualizarResumen(tipo, valor) {
   $("#resumen-seleccion").show();
 }
 
+ 
 
 
   
