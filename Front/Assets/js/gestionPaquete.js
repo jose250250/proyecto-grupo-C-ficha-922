@@ -40,9 +40,10 @@ $("#ingresarPaquete").click(function () {
   }
   $("#slcDepartamento").html(html);
   $("#main-content-paquete").show();
-  $("#main-content-header").hide();
-  $("#textcabecera").text("Ingresar Nuevo Paquete"); 
-  $("#submitPaquete").text("Enviar");   
+  $("#main-content-header").attr("style", "display: none !important");
+  $("#txtcabecera").text("Ingresar Nuevo Registro de Paquetes"); 
+  $("#submitPaquete").text("Enviar"); 
+  $("#frmPaquete")[0].reset();  
   closeLoader();
 });
 $("#verlistaPaquete").click(function () {

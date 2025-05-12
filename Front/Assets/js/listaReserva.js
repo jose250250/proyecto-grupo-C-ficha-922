@@ -31,7 +31,7 @@ $("#confeliminar").click(function () {
         addAlert(apiResponse.message, "success", 3);
         closeLoader();
         $("#cerrarmodal").click();
-        cargarhotel();
+        cargarreservas();
     };   
     openLoader();
     callApi(url, method, request, ifSuccess, ifError);
@@ -71,11 +71,10 @@ $(document).on("click", ".btns-editar", function () {
              },500);
             
             window.setTimeout(function () {
-                          
-                $("#textcabecera").text("Actualizar Registro"); 
-               
+                $("#txtcabecera").text("Actualizar Registro"); 
                 $("#submitreserva").text("Actualizar");                 
-                $("#main-content-header").hide();             
+                $("#main-content-header").hide();  
+                $("#main-content-header").attr("style", "display: none !important");             
             }, 500);
           
             closeLoader();

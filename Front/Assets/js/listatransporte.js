@@ -89,9 +89,9 @@ $(document).on("click", ".btns-editar", function () {
             window.setTimeout(function () {
                 $("#slcMunicipio").val(transporteEdit.idMunicipio);
                 $("#slcDepartamento").val(iddep);               
-                $("#textcabecera").text("Actualizar Registro"); 
-               
-                $("#submittransporte").text("Actualizar");                
+                $("#txtcabecera").text("Actualizar Registro"); 
+                $("#submittransporte").text("Actualizar"); 
+                $("#main-content-header").attr("style", "display: none !important");                 
             }, 500);
           
             closeLoader();

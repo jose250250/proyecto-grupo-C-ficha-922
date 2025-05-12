@@ -89,8 +89,8 @@ $(document).on("click", ".btns-editar", function () {
             window.setTimeout(function () {
                 $("#slcMunicipio").val(atraccionEdit.idMunicipio);
                 $("#slcDepartamento").val(iddep);               
-                $("#textcabecera").text("Actualizar Registro"); 
-               
+                $("#txtcabecera").text("Actualizar Registro"); 
+                $("#main-content-header").attr("style", "display: none !important");  
                 $("#submitAtraccion").text("Actualizar");                
             }, 500);
           

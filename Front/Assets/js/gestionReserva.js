@@ -13,6 +13,8 @@ $(function () {
 $("#ingresarReserva").click(function(){
     localStorage.setItem("idReserva", "");
     $("#submitReserva").text("Enviar");
+    $("#txtcabecera").text("Ingresar Nuevo Registro de Reservas"); 
+    $("#frmReserva")[0].reset();
 
 var html = "<option value=''> Seleccione Usuario </option>";
 for (var i = 0; i < listadopersonas.length; i++) {
@@ -29,7 +31,7 @@ for (var i = 0; i < listapaquetes.length; i++) {
 $("#slcPaquete").html(html2);
 
 $("#main-content-reserva").show();
-$("#main-content-header").hide();
+$("#main-content-header").attr("style", "display: none !important");
 
 closeLoader();
 });

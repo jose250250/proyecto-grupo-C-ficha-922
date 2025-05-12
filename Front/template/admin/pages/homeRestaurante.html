@@ -1,4 +1,4 @@
-<div class="col-12" id="main-content-header">
+<div class="col-12 w-90 mx-auto d-flex justify-content-center gap-3 p-3" id="main-content-header">
     <button type="button" class="btn btn-info" id="ingresarRestaurante">Ingresar Nuevo Restaurante</button>
     <button type="button" class="btn btn-info" id="verlistaRestaurante">Ver lista</button>
     <button type="button" class="btn btn-info" id="buscarRestaurante">Buscar</button>
@@ -7,7 +7,7 @@
 
 <div id="main-content-restaurante" style="display: none;">
 
-    <h3 class="bg-info text-center">Ingresar nuevo Restaurante</h3>
+    <h3 class="bg-info text-center" id="txtcabecera">Ingresar nuevo Restaurante</h3>
     <br>
 
     <form id="frmRestaurante">
@@ -15,20 +15,20 @@
             <div class="col-3">
                 <div class="mb-4">
                     <label for="txtNombre" class="form-label">Nombre</label>
-                    <input type="text" class="form-control" id="txtNombre" placeholder="Ingrese nombre del Restaurante">
+                    <input type="text" class="form-control text-capitalize" id="txtNombre" placeholder="Ingrese nombre del Restaurante">
                 </div>
             </div>
             <div class="col-3">
                 <div class="mb-4">
                     <label for="slcDepartamento" class="form-label">Departamento</label>
-                    <select class="form-select" id="slcDepartamento">
+                    <select class="form-select text-capitalize" id="slcDepartamento">
                     </select>
                 </div>
             </div>
             <div class="col-3">
                 <div class="mb-4">
                     <label for="slcMunicipio" class="form-label">Municipio</label>
-                    <select class="form-select" id="slcMunicipio">
+                    <select class="form-select text-capitalize" id="slcMunicipio">
                     </select>
                 </div>
             </div>
@@ -42,7 +42,7 @@
                 <div class="col-3">
                     <div class="mb-4">
                         <label for="txtDireccion" class="form-label">Direccion</label>
-                        <input type="text" class="form-control" id="txtDireccion"
+                        <input type="text" class="form-control text-capitalize" id="txtDireccion"
                             placeholder="Ingrese direccion">
                     </div>
                 </div>
@@ -55,7 +55,7 @@
             </div>
             <br>
             <div class="row">
-                <div class="col-12">
+                <div class="col-12 w-90 mx-auto d-flex justify-content-center gap-3 p-3">
                     <button type="submit" class="btn btn-success" id="submitRestaurante">Enviar</button>
                     <button type="reset" class="btn btn-info">Limpiar</button>
                   

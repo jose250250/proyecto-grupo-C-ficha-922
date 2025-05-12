@@ -7,19 +7,41 @@
   <label><input type="radio" name="formaPago" value="efectivo"> Efectivo</label>
 </div>
 
-<div class="payment-methods text-center" >
-  <div class="serv-card2 text-center" data-metodo="nequi" onclick="seleccionarMetodo(this)">
-    <img src="https://images.seeklogo.com/logo-png/40/1/nequi-logo-png_seeklogo-404357.png" alt="Nequi">
-    <h5>Nequi</h5>
-    <p>Paga con tu cuenta Nequi fácil y rápido.</p>
+<div class="row justify-content-center g-4 p-4">
+  <!-- Tarjeta Nequi -->
+  <div class="col-12 col-sm-6 col-md-4 d-flex justify-content-center">
+    <div class="card text-center shadow-sm serv-card2"  data-metodo="nequi" onclick="seleccionarMetodo(this)">
+      <div class="card-body">
+        <img src="https://images.seeklogo.com/logo-png/40/1/nequi-logo-png_seeklogo-404357.png" alt="Nequi" class="img-fluid mb-3" style="max-height: 80px;">
+        <h5 class="card-title">Nequi</h5>
+        <p class="card-text">Paga con tu cuenta Nequi fácil y rápido.</p>
+      </div>
+    </div>
   </div>
-  <br>
 
-  <div class="serv-card2 text-center" data-metodo="pse" onclick="seleccionarMetodo(this)">
-    <img src="https://www.sifer.com.co/wp-content/uploads/2021/02/pse-forma.jpg" alt="PSE">
-    <h5>PSE</h5>
-    <p>Realiza pagos seguros desde tu banco.</p>
+  <!-- Tarjeta PSE -->
+  <div class="col-12 col-sm-6 col-md-4 d-flex justify-content-center">
+    <div class="card text-center shadow-sm serv-card2" data-metodo="pse" onclick="seleccionarMetodo(this)">
+      <div class="card-body">
+        <img src="https://inmobiliarialamansion.com/wp-content/uploads/2019/01/logo-pse.png" alt="PSE" class="img-fluid mb-3" style="max-height: 80px;">
+        <h5 class="card-title">PSE</h5>
+        <p class="card-text">Realiza pagos seguros desde tu banco.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tarjeta Efectivo -->
+  <div class="col-12 col-sm-6 col-md-4 d-flex justify-content-center">
+    <div class="card text-center shadow-sm serv-card2"  data-metodo="efectivo" onclick="seleccionarMetodo(this)">
+      <div class="card-body">
+        <img src="https://cdn-icons-png.flaticon.com/512/2331/2331876.png" alt="Efectivo" class="img-fluid mb-3" style="max-height: 80px;">
+        <h5 class="card-title">Efectivo</h5>
+        <p class="card-text">Realiza pagos en efectivo desde efecty.</p>
+      </div>
+    </div>
   </div>
 </div>
+
+
        
 <script src="Assets/js/turista/pqPersonal7.js"></script>

@@ -1,17 +1,17 @@
-<div class="col-12" id="main-content-header">
+<div class="col-12 w-90 mx-auto d-flex justify-content-center gap-3 p-3" id="main-content-header">
     <button type="button" class="btn btn-info" id="ingresarPaquete">Ingresar Nuevo Paquete</button>
     <button type="button" class="btn btn-info" id="verlistaPaquete">Ver lista de Paquetes</button>
     <button type="button" class="btn btn-info" id="buscarPaquete">Buscar</button>
     <button type="homeadmin" class="btn btn-info" id="homeAdmin">Atras</button>
 </div>
 <div id="main-content-paquete" style="display: none;">
-    <h3 class="bg-info text-center" id="textcabecera">Ingresar nuevo Paquete Turistico</h3>
+    <h3 class="bg-info text-center" id="txtcabecera">Ingresar nuevo Paquete Turistico</h3>
     <form id="frmPaquete">
         <div class="row">
             <div class="col-3">
                 <div class="mb-4">
                     <label for="txtNombre" class="form-label">Nombre</label>
-                    <input type="text" class="form-control" id="txtNombre" placeholder="Ingrese nombre de paquete">
+                    <input type="text" class="form-control text-capitalize" id="txtNombre" placeholder="Ingrese nombre de paquete">
                 </div>
             </div>
             <div class="col-3">
@@ -29,13 +29,13 @@
             <div class="col-3">
                 <div class="mb-4">
                     <label for="txtDescripcion" class="form-label">Descripcion</label>
-                    <input type="text" class="form-control" id="txtDescripcion"> >
+                    <input type="text" class="form-control text-capitalize" id="txtDescripcion"> >
                 </div>
             </div>
             <div class="col-3">
                 <div class="mb-4">
                     <label for="dateFechaInicio" class="form-label">Fecha de Inicio</label>
-                    <input type="date" class="form-select" id="dateFechaInicio"> >
+                    <input type="date" class="form-select text-capitalize" id="dateFechaInicio"> >
                 </div>
             </div>
         </div>
@@ -43,28 +43,28 @@
             <div class="col-3">
                 <div class="mb-4">
                     <label for="dateFechaFinal" class="form-label">Fecha final</label>
-                    <input type="date" class="form-select" id="dateFechaFinal"> >
+                    <input type="date" class="form-select text-capitalize" id="dateFechaFinal"> >
                 </div>
             </div>
 
             <div class="col-3">
                 <div class="mb-4">
                     <label for="slcDepartamento" class="form-label">Departamento residencia</label>
-                    <select class="form-select" id="slcDepartamento">
+                    <select class="form-select text-capitalize" id="slcDepartamento">
                     </select>
                 </div>
             </div>
             <div class="col-3">
                 <div class="mb-4">
                     <label for="slcMunicipio" class="form-label">Municipio</label>
-                    <select class="form-select" id="slcMunicipio">
+                    <select class="form-select text-capitalize" id="slcMunicipio">
                     </select>
                 </div>
             </div>
             <div class="col-3">
                 <div class="mb-4">
                     <label for="slcHotel" class="form-label">Hotel</label>
-                    <select class="form-select" id="slcHotel">
+                    <select class="form-select text-capitalize" id="slcHotel">
                     </select>
                 </div>
             </div>
@@ -73,28 +73,28 @@
             <div class="col-3">
                 <div class="mb-4">
                     <label for="slcRestaurante" class="form-label">Restaurante</label>
-                    <select class="form-select" id="slcRestaurante">
+                    <select class="form-select text-capitalize" id="slcRestaurante">
                     </select>
                 </div>
             </div>
             <div class="col-3">
                 <div class="mb-4">
                     <label for="slcAtraccion" class="form-label">Atraccion Turistica</label>
-                    <select class="form-select" id="slcAtraccion">
+                    <select class="form-select text-capitalize" id="slcAtraccion">
                     </select>
                 </div>
             </div>
             <div class="col-3">
                 <div class="mb-4">
                     <label for="slcTransporte" class="form-label">Transporte</label>
-                    <select class="form-select" id="slcTransporte">
+                    <select class="form-select text-capitalize" id="slcTransporte">
                     </select>
                 </div>
             </div>
             <div class="col-3">
                 <div class="mb-4">
                     <label for="precio" class="form-label">precio por dia</label>
-                    <input type="moneda" class="form-control" id="precio" value="precio" readonly>
+                    <input type="number" class="form-control" id="precio" value="precio" readonly>
                 </div>
             </div>
         </div>

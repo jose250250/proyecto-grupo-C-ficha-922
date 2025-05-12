@@ -8,18 +8,7 @@ $("#fechaFinal").attr("min", hoy);
 
 })
 
-$(document).on("change", "#fechaInicio, #fechaFinal", function () {
-    let inicio = new Date($("#fechaInicio").val());
-    let final = new Date($("#fechaFinal").val());
-    if (inicio && final && !isNaN(inicio) && !isNaN(final)) {
-        let diferencia = Math.abs(final - inicio); // Diferencia en milisegundos
-        let dias = Math.ceil(diferencia / (1000 * 60 * 60 * 24)); // Convertir a días
-        $("#CantDias").val(dias); // Asignar resultado al input
-    }
-        var total = ($("#precio").val())*($("#CantDias").val())
-        $("#totalpaq").val(total);
-    
-});
+
 
 $("#reservaProm").submit(function (event) {
     event.preventDefault();
@@ -42,5 +31,9 @@ $("#reservaProm").submit(function (event) {
     callApi(urlp, "POST", requestp, ifSuccessdetalle, ifError);
 
 
+})
+$("#atrasReserva").click(function(){
+  loadPage("home",turPath);
+  $("#txtTitulo").show();
 })
 })

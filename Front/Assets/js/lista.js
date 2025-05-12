@@ -99,14 +99,15 @@ $(document).on("click", ".btns-editar", function () {
             window.setTimeout(function () {
                 $("#slcMunicipio").val(personaEdit.idMunicipio);
                 $("#slcDepartamento").val(iddep);               
-                $("#textcabecera").text("Actualizar Registro"); 
+                $("#txtcabecera").text("Actualizar Registro"); 
                 if (personaEdit.tipoIdentificacion === "pasaporte") {
                     $("#slcTipoIdentificacion").val(2);
                 }
                 else {
                     $("#slcTipoIdentificacion").val(1);
                 }   
-                $("#submitpersona").text("Actualizar");                
+                $("#submitpersona").text("Actualizar");  
+                $("#main-content-header").attr("style", "display: none !important");               
             }, 500);
           
             closeLoader();

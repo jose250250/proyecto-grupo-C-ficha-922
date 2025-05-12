@@ -89,8 +89,8 @@ $(document).on("click", ".btns-editar", function () {
             window.setTimeout(function () {
                 $("#slcMunicipio").val(restauranteEdit.idMunicipio);
                 $("#slcDepartamento").val(iddep);               
-                $("#textcabecera").text("Actualizar Registro"); 
-               
+                $("#txtcabecera").text("Actualizar Registro");
+                $("#main-content-header").attr("style", "display: none !important");   
                 $("#submitRestaurante").text("Actualizar");                
             }, 500);
           

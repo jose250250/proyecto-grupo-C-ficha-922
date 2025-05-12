@@ -5,6 +5,9 @@ $(function () {
 });
 $("#ingresarRestaurante").click(function(){
     localStorage.setItem("idrestaurante", "");
+    $("#txtcabecera").text("Ingresar Nuevo Registro de Restaurantes"); 
+    $("#submitRestaurante").text("Enviar");
+    $("#frmRestaurante")[0].reset();
 
 var html = "<option value=''> Seleccione departamento </option>";
 for (var i = 0; i < departamentos.length; i++) {
@@ -13,7 +16,7 @@ for (var i = 0; i < departamentos.length; i++) {
   };
 $("#slcDepartamento").html(html);
 $("#main-content-restaurante").show();
-$("#main-content-header").hide();
+$("#main-content-header").attr("style", "display: none !important");
 
 closeLoader();
 });

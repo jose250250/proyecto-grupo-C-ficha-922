@@ -12,8 +12,9 @@ $(function(){
              html += "<option value='" + (apiResponse.data.id) + "'readonly>" + (apiResponse.data.primerNombre) + " "+ (apiResponse.data.primerApellido) + "</option>";
             $("#slcPersona").html(html); 
             $("#txtCorreo").val(correo);
+            $("#main-content-header").hide();
+            $("#txtCorreo").prop("readonly", true);
             console.log("var html:::"+ html+ "correo:::" + correo);
-
         addAlert(apiResponse.message, "success", 3);
         closeLoader();
         };
@@ -56,11 +57,13 @@ $(function(){
             var request = usuario;
             var ifSuccess = function (apiResponse) {
                 addAlert(apiResponse.message, "success", 3);
-                closeLoader();
-                loadPage("home");
                 $("#login-form")[0].reset();
+                loadPage("mnosotros");
+                closeLoader();
+                
                 window.setTimeout(function(){
-                $("#abrirLogin").click();
+                   
+                $("#loginModal").show();
                 }, 1000);
                 
             };

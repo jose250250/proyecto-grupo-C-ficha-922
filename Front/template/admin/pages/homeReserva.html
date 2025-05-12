@@ -1,8 +1,8 @@
-<div class="col-12" id="main-content-header">
+<div class="col-12 w-90 mx-auto d-flex justify-content-center gap-3 p-3" id="main-content-header">
     <button type="button" class="btn btn-info" id="ingresarReserva">Ingresar Nueva Reserva</button>
     <button type="button" class="btn btn-info" id="verlistaReserva">Ver lista</button>
     <button type="button" class="btn btn-info" id="buscarReserva">Buscar</button>
-    <button type="homeadmin" class="btn btn-info" id="homeAdmin">Atras</button>
+    <button type="button" class="btn btn-info" id="homeAdmin">Atras</button>
 </div>
 <div id="main-content-reserva" style="display: none;">
     <h3 class="bg-info text-center" id="txtcabecera">Ingresar nueva Reserva</h3>
@@ -11,7 +11,7 @@
             <div class="col-3">
                 <div class="mb-4">
                     <label for="slcNombre" class="form-label">Nombre de Usuario</label>
-                    <select class="form-select" id="slcNombre"></select>
+                    <select class="form-select text-capitalize" id="slcNombre"></select>
                 </div>
             </div>
             <div class="col-3">
@@ -24,7 +24,7 @@
             <div class="col-3">
                 <div class="mb-4">
                     <label for="slcPaquete" class="form-label">Paquete</label>
-                    <select class="form-select" id="slcPaquete">
+                    <select class="form-select text-capitalize" id="slcPaquete">
                     </select>
                 </div>
             </div>
@@ -33,7 +33,7 @@
             <div class="col-4">
                 <div class="mb-4">
                     <label for="slcEstado" class="form-label">Estado</label>
-                    <select class="form-select" id="slcEstado">
+                    <select class="form-select text-capitalize" id="slcEstado">
                     <option value="1">activo</option>
                     <option value="2">reservado</option>
                     <option value="3">terminado</option>
@@ -47,7 +47,7 @@
             <div class="col-5">
                 <div class="mb-4">
                     <label for="txtMotivo" class="form-label">Motivo de Registro</label>
-                    <input type="tel" class="form-control" id="txtMotivo" placeholder="Ingrese el motivo de este registro">
+                    <input type="tel" class="form-control text-capitalize" id="txtMotivo" placeholder="Ingrese el motivo de este registro">
                 </div>
             </div>
         </div>
@@ -60,7 +60,7 @@
         </div>
     </form>
     <div class="col-12" style="margin-left: 80%;">
-        <button type="atras" class="btn btn-info" id="atras" style="display: inline;">Atras</button>
+        <button type="button" class="btn btn-info" id="atras" style="display: inline;">Atras</button>
     </div>
 </div>
 <script src="Assets/js/gestionReserva.js"></script>

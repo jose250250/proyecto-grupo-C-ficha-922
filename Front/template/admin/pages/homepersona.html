@@ -1,6 +1,6 @@
 
    
-    <div class="col-12" id="main-content-header">
+    <div class="col-12 w-90 mx-auto d-flex justify-content-center gap-3 p-3" id="main-content-header">
         <button type="button" class="btn btn-info" id="ingresarPersona">Ingresar Nuevo Registro</button>
         <button type="button" class="btn btn-info" id="verlistaPersona">Ver lista</button>
         <button type="button" class="btn btn-info" id="buscarPersona">Buscar</button>
@@ -13,7 +13,7 @@
 
 <div id="main-content-persona" style="display: none;">
 
-    <h3 id="textcabecera" class="bg-info text-center">Ingresar nueva persona</h3>
+    <h3 id="txtcabecera" class="bg-info text-center">Ingresar nueva persona</h3>
 
 
     <form id="form-persona">
@@ -22,33 +22,33 @@
             <div class="col-3">
                 <div class="mb-4">
                     <label for="txtPNombre" class="form-label">Primer Nombre</label>
-                    <input type="text" class="form-control" id="txtPNombre"
+                    <input type="text" class="form-control text-capitalize" id="txtPNombre"
                         placeholder="Ingrese primer nombre de usuario">
                 </div>
             </div>
             <div class="col-3">
                 <div class="mb-4">
                     <label for="txtSNombre" class="form-label">Segundo Nombre(opcional)</label>
-                    <input type="text" class="form-control" id="txtSNombre" placeholder="opcional">
+                    <input type="text" class="form-control text-capitalize" id="txtSNombre" placeholder="opcional">
                 </div>
             </div>
 
             <div class="col-3">
                 <div class="mb-4">
                     <label for="txtPApellido" class="form-label">Primer Apellido</label>
-                    <input type="text" class="form-control" id="txtPApellido" placeholder="Ingrese apellido de usuario">
+                    <input type="text" class="form-control text-capitalize" id="txtPApellido" placeholder="Ingrese apellido de usuario">
                 </div>
             </div>
             <div class="col-3">
                 <div class="mb-4">
                     <label for="txtApellido" class="form-label">Segundo Apellido(opcional)</label>
-                    <input type="text" class="form-control" id="txtSApellido" placeholder="opcional">
+                    <input type="text" class="form-control text-capitalize" id="txtSApellido" placeholder="opcional">
                 </div>
             </div>
             <div class="col-3">
                 <div class="mb-4">
                     <label for="slcTipoIdentificacion" class="form-label">Tipo de identificacion</label>
-                    <select class="form-select" id="slcTipoIdentificacion">
+                    <select class="form-select text-capitalize" id="slcTipoIdentificacion">
                         <option selected value="">Seleccione un tipo</option>
                         <option value="1">CC</option>
                         <option value="2">Pasaporte</option>
@@ -66,7 +66,7 @@
             <div class="col-3">
                 <div class="mb-4">
                     <label for="dateFechaNacimiento" class="form-label">Fecha nacimiento</label>
-                    <input type="date" class="form-control" id="dateFechaNacimiento">
+                    <input type="date" class="form-control text-capitalize" id="dateFechaNacimiento">
                 </div>
             </div>
             <div class="col-3">
@@ -82,7 +82,7 @@
             <div class="col-3">
                 <div class="mb-4">
                     <label for="slcDepartamento" class="form-label">Departamento residencia</label>
-                    <select class="form-select" id="slcDepartamento">
+                    <select class="form-select text-capitalize" id="slcDepartamento">
 
                     </select>
                 </div>
@@ -90,21 +90,21 @@
             <div class="col-3">
                 <div class="mb-4">
                     <label for="slcMunicipio" class="form-label">Municipio de residencia</label>
-                    <select class="form-select" id="slcMunicipio">                        
+                    <select class="form-select text-capitalize" id="slcMunicipio">                        
                     </select>
                 </div>
             </div>
             <div class="col-3">
                 <div class="mb-4">
                     <label for="txtDireccion" class="form-label">Direccion</label>
-                    <input type="text" class="form-control" id="txtDireccion"
+                    <input type="text" class="form-control text-capitalize" id="txtDireccion"
                         placeholder="Ingrese direccion de la persona">
                 </div>
             </div>
             <div class="col-3">
                 <div class="mb-4">
                     <label for="slcGenero" class="form-label">Genero</label>
-                    <select class="form-select" id="slcGenero">
+                    <select class="form-select text-capitalize" id="slcGenero">
                         <option selected value="">Seleccione Genero</option>
                         <option value="f">Femenino</option>
                         <option value="m">Masculino</option>

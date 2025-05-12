@@ -93,10 +93,10 @@ $(document).on("click", ".btns-editar", function () {
             window.setTimeout(function () {
                 $("#slcMunicipio").val(hotelEdit.idMunicipio);
                 $("#slcDepartamento").val(iddep);               
-                $("#textcabecera").text("Actualizar Registro"); 
+                $("#txtcabecera").text("Actualizar Registro");  
                
                 $("#submithotel").text("Actualizar");                 
-                $("#main-content-header").hide();             
+                $("#main-content-header").attr("style", "display: none !important");           
             }, 500);
           
             closeLoader();

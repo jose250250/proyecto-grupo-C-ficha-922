@@ -1,4 +1,4 @@
-<div class="col-12" id="main-content-header">
+<div class="col-12 w-90 mx-auto d-flex justify-content-center gap-3 p-3" id="main-content-header">
     <button type="button" class="btn btn-info" id="ingresarUsuario">Asignacion de Usuarios</button>
     <button type="button" class="btn btn-info" id="verlistaUsuario">Ver lista</button>
     <button type="button" class="btn btn-info" id="buscarUsuario">Buscar</button>
@@ -6,20 +6,20 @@
 </div>
 
 <div id="main-content-usuario" style="display: none;">
-    <h3 class="bg-info text-center" id="text-cabecera">Ingresar nuevo Usuario</h3>
+    <h3 class="bg-info text-center" id="txtcabecera">Ingresar nuevo Usuario</h3>
     <form id="frmUsuario">
         <div class="row">
             <div class="col-3">
                 <div class="mb-4">
                     <label for="slcPersona" class="form-label">Persona</label>
-                    <select class="form-select" id="slcPersona">
+                    <select class="form-select text-capitalize" id="slcPersona">
                     </select>
                 </div>
             </div>
             <div class="col-3">
                 <div class="mb-4">
                     <label for="slcRol" class="form-label">Rol de usuario</label>
-                    <select class="form-select" id="slcRol">
+                    <select class="form-select text-capitalize" id="slcRol">
                     </select>
                 </div>
             </div>
@@ -62,4 +62,3 @@
     </div>
 </div>
 <script src="Assets/js/gestionUsuario.js"></script>
-<script src="Assets/js/listaUsuario.js"></script>

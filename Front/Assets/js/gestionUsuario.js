@@ -22,6 +22,8 @@ $(function () {
 $("#ingresarUsuario").click(function(){
     localStorage.setItem("idusuario", "");
     $("#submitUsuario").text("Enviar");
+    $("#frmUsuario")[0].reset();
+    $("#txtcabecera").text("Ingresar Nuevo Registro de Usuario"); 
     var html2 = "<option value=''> Seleccione Rol </option>";
 for (var i = 0; i < listaRol.length; i++) {
    var lisrol = listaRol[i];
@@ -36,9 +38,7 @@ for (var i = 0; i < listadopersonas.length; i++) {
   };
 $("#slcPersona").html(html);
 $("#main-content-usuario").show();
-$("#main-content-header").hide();
-
-closeLoader();
+$("#main-content-header").attr("style", "display: none !important");
 });
 $("#slcPersona").on("change", function () {
       var idpersona = ($(this).val()); 
@@ -55,15 +55,11 @@ $("#slcPersona").on("change", function () {
             if ($(this).val() === '') {
                 cantidadErrores++
             };
-
         });
         
         console.log("cant errores" + cantidadErrores);
         console.log("index:::" + index);
-        
-
         if ((cantidadErrores == 0)&(validPassword==true))  {
-
             var usuario = {              
                 "login":$("#txtCorreo").val(),
                 "password":$("#txtPassword").val(),
@@ -87,8 +83,9 @@ $("#slcPersona").on("change", function () {
             var ifSuccess = function (apiResponse) {
 
                 addAlert(apiResponse.message, "success", 3);
-              
+                $("#main-content-header").show();
                 closeLoader();
+
             };
             var ifErrorLogin = function (data) {
                 addAlert("Se presento un error en el servidor", "danger", 8);
@@ -98,7 +95,7 @@ $("#slcPersona").on("change", function () {
             callApi(url, method, request, ifSuccess, ifErrorLogin);
             $('#frmUsuario')[0].reset();
             $("#main-content-usuario").hide();
-            $("#main-content-header").show();
+           
         }
 
         else {

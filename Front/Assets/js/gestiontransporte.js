@@ -5,6 +5,9 @@ $(function () {
 });
 $("#ingresarTransporte").click(function(){
     localStorage.setItem("idtransporte", "");
+    $("#txtcabecera").text("Ingresar Nuevo Registro de Transportes"); 
+    $("#submittransporte").text("Enviar");
+    $("#frmTransporte")[0].reset();
 
 var html = "<option value=''> Seleccione departamento </option>";
 for (var i = 0; i < departamentos.length; i++) {
@@ -13,7 +16,7 @@ for (var i = 0; i < departamentos.length; i++) {
   };
 $("#slcDepartamento").html(html);
 $("#main-content-transporte").show();
-$("#main-content-header").hide();
+$("#main-content-header").attr("style", "display: none !important");
 
 closeLoader();
 });

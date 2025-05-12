@@ -13,7 +13,7 @@ $(function () {
 <div class="col-md-3 mb-4">
     <div class="serv-card p-3 text-center" id="restaurante-">
         <h5>No requiero Restaurante</h5>
-        <button class="btn btn-primary btnResElegir" data-id="">Seleccionar</button>
+        <button class="btn btn-primary btnResElegir" data-id="">Elegir</button>
     </div>
 </div>
 `;

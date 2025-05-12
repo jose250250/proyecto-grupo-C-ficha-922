@@ -88,8 +88,9 @@ $(document).on("click", ".btns-editar", function () {
                 $("#slcRestaurante").val(paqueteEdit.idRestaurante); 
                 $("#slcTransporte").val(paqueteEdit.idTransporte);
                 $("#slcAtraccion").val(paqueteEdit.idAtraccion);             
-                $("#textcabecera").text("Actualizar Registro"); 
-                $("#submitPaquete").text("Actualizar");                
+                $("#txtcabecera").text("Actualizar Registro"); 
+                $("#submitPaquete").text("Actualizar");  
+                $("#main-content-header").attr("style", "display: none !important");                
             }, 500);
             closeLoader();
         });  
