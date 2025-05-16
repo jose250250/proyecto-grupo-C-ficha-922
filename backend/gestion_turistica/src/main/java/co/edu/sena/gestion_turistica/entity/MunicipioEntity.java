@@ -21,7 +21,7 @@ public class MunicipioEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
-    private long Id;    
+    private Long Id;    
  
     @Column( name= "municipio")
     private String municipio;

@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -52,11 +53,21 @@ public ServerResponseAll ListAll(){
     .build();
     
 }
- public ServerResponseAll getById(Long id) {
+  @GetMapping("/detalle/{idPersona}")
+  public ServerResponseAll findPaquetesByPersonaId(@PathVariable("idPersona") Long idPersona){
+     return ServerResponseAll.builder()
+     .status(200)
+     .message("historial de paquetes")
+     .data(service.historicoPaquetes(idPersona))
+     .build();
+  }
+
+   @GetMapping("/{id}")
+public ServerResponseAll getById(@PathVariable("id") Long id){
       
     DetallePersonaPaqueteDto dto = this.service.getById(id);
     return ServerResponseAll.builder()
-    .message(dto != null ? "Reistro encontrado" : "reistro  no encontrado")
+    .message(dto != null ? "Registro encontrado" : "registro  no encontrado")
     .status(dto != null ? HttpStatus.OK.value() : HttpStatus.NOT_FOUND.value())
     .data(dto)
     .build();
@@ -71,6 +82,19 @@ public ServerResponseAll deleteById(@PathVariable("id") Long id){
     .message("reistro  eliminado")
     .status(HttpStatus.OK.value())   
     .build();
+
+}
+@PutMapping("/{id}")
+public ServerResponseAll update(@PathVariable("id") Long id, @RequestBody DetallePersonaPaqueteDto request) {
+request.setId(id);
+request = this.service.update(request);
+
+return ServerResponseAll
+.builder()
+.message(request != null ? "Reistro actualizado" : "reistro  no actualizado")
+.status(request != null ? HttpStatus.OK.value() : HttpStatus.BAD_REQUEST.value())
+.data(request)
+.build();
 
 }
 

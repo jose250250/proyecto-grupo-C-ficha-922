@@ -7,6 +7,7 @@ var listahoteles = "";
 var listaTransportes = "";
 var listaatracciones = "";
 var listarestaurantes = "";
+var listapaquetes="";
 var paquetes = "";
 
 
@@ -449,7 +450,6 @@ function cargarreservas(){
   openLoader();
   callApi(url, method, request, ifSuccesspersona, ifError);
 }
-
 function cargaratracciones() {
   var url = "http://localhost:8080/atraccion";
   var method = "GET";
@@ -747,7 +747,7 @@ function recargarpaquetes(){
   closeLoader();
 }
 function cargarPaquetesPromocionales() {  
-  $("#txtTitulo").show();
+  $("#txtTitulo").attr("style", "display: block !important");
   var url = "http://localhost:8080/paquete/filtrados";
   var method = "GET";
   var request = "";
@@ -761,8 +761,6 @@ function cargarPaquetesPromocionales() {
   openLoader();
   callApi(url, method, request, ifSuccesspaquete, ifError);
 }
-
-
 function filtrarHotelesPorMunicipio(listaHoteles, idMunicipio) {
   return $.grep(listaHoteles, function(hotel) {
       return hotel.idMunicipio === idMunicipio;
@@ -771,6 +769,80 @@ function filtrarHotelesPorMunicipio(listaHoteles, idMunicipio) {
 function actualizarResumen(tipo, valor) {
   $("#resumen-" + tipo).text(valor);
   $("#resumen-seleccion").show();
+}
+function cargarHistorialPaquetes(idPersona){
+  var url = "http://localhost:8080/dperpaquete/detalle/"+idPersona;
+  var method = "GET";
+  var request = "";
+  var ifSuccesspersona = function (apiResponse) {
+    console.log("historial:response " + JSON.stringify(apiResponse));
+    var historial = apiResponse.data;
+    var html = "";
+    for (var i = 0; i < historial.length; i++) {
+      var hist = historial[i];
+      html += "'<tr class = '"+hist.estado+"'>";
+      html += "<th scope='col'>" + (i + 1) + "</th>";
+      html += "<td>" + hist.persona + "</td>";
+      html += "<td>" + hist.paquete + "</td>";
+      html += "<td>" + hist.estado + "</td>";
+      html += "<td>" + hist.motivo + "</td>";
+      html += "<td>" + hist.registro + "</td>";
+      html +=
+        "<td><div class='btns-editar'  data-id='" +
+        hist.id +
+        "' ></div> <div class='btns-eliminar' data-id='" +
+        hist.id +
+        "'data-bs-toggle='modal' data-bs-target='#eliminarmodal' ></div></td>";
+      html += "</tr>";
+    }
+    $("#table-historial tbody").html(html);
+    closeLoader();
+  };
+  openLoader();
+  callApi(url, method, request, ifSuccesspersona, ifError);
+}
+function cargarhistorialcard(idpersona){
+  var url = "http://localhost:8080/dperpaquete/detalle/"+idpersona;
+  var method = "GET";
+  var request = "";
+  var ifSuccesspersona = function (apiResponse) {
+    console.log("historial:response " + JSON.stringify(apiResponse));
+   var historial = apiResponse.data;
+
+// Asegúrate de que #container-historial tenga una sola fila
+$('#container-historial').html('<div class="row" id="fila-historial"></div>');
+
+historial.forEach(function(item) {
+  const fecha = new Date(item.registro).toLocaleDateString();
+
+  const tarjeta = $(`
+    <div class="col-md-3 ">
+      <div class="card deltatur-card rounded-3 shadow-sm mb-4">
+        <div class="card-body ${item.estado} rounded-4">
+          <h5 class="card-title">Nombre: ${item.paquete}</h5>
+          <p class="card-text"><strong>Estado:</strong> ${item.estado}</p>
+          <p class="card-text"><strong>Fecha:</strong> ${fecha}</p>
+          <p class="card-text"><strong>Motivo:</strong> ${item.motivo}</p>
+          <div class="d-flex justify-content-between mt-3">
+            <button class="btn btn-success completar-btn" data-id="${item.id}">Completar</button>
+          </div>  
+           <div class="d-flex justify-content-between mt-3">  
+            <button class="btn btn-danger cancelar-btn" data-id="${item.id}">Cancelar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  `);
+
+  $('#fila-historial').append(tarjeta);
+});
+
+   
+   
+    closeLoader();
+  };
+  openLoader();
+  callApi(url, method, request, ifSuccesspersona, ifError);
 }
 
  

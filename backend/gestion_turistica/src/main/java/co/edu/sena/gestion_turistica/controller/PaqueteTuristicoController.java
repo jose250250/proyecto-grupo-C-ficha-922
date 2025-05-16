@@ -21,6 +21,7 @@ import co.edu.sena.gestion_turistica.dto.ServerResponseDataDto;
 import co.edu.sena.gestion_turistica.service.PaqueteTuristicoService;
 import lombok.Builder;
 
+
 @CrossOrigin(origins = "*")
 @RestController
 @RequestMapping("/paquete")
@@ -62,6 +63,9 @@ public class PaqueteTuristicoController {
               .data(this.service.paquetesFiltrados())
               .build();
   }
+
+  
+  
 
 
     @GetMapping("/{id}")

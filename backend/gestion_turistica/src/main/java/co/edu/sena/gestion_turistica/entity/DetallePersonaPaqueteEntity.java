@@ -20,7 +20,7 @@ public class DetallePersonaPaqueteEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
-    private long id; 
+    private Long id; 
 
     @ManyToOne
     @JoinColumn(name = "id_persona", nullable = false, updatable = true)

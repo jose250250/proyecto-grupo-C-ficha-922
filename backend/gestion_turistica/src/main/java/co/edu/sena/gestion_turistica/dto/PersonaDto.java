@@ -37,7 +37,7 @@ public class PersonaDto {
 
     private String celular;
 
-    private long idMunicipio;
+    private Long idMunicipio;
 
     private String direccion;
 

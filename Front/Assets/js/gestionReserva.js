@@ -1,6 +1,7 @@
 var index = localStorage.getItem('idreserva');
 var idper ="";
 $(function () {
+    if(!index){
     cargardepartamentos();  
     cargarmunicipiosbacken(); 
     obtenerlistaatracciones();
@@ -9,6 +10,26 @@ $(function () {
     obtenerlistatransportes(); 
     obtenerlistapaquetes();
     cargarlistapersonas();
+    }
+    else{
+        cargarlistapersonas();
+        obtenerlistapaquetes();
+        var html = "<option value=''> Seleccione Usuario </option>";
+for (var i = 0; i < listadopersonas.length; i++) {
+   var per = listadopersonas[i];
+   html += "<option value='" + per.id + "'>" + per.primerNombre + " "+ per.primerApellido +"</option>";
+  };
+$("#slcNombre").html(html);
+var html2 = "<option value=''> Seleccione paquete </option>";
+for (var i = 0; i < listapaquetes.length; i++) {
+   var paq = listapaquetes[i];
+   html2 += "<option value='" + paq.id + "'>" + paq.nombre + " </option>";
+  };
+  $("#slcPaquete").html(html2);
+
+    }
+
+ 
 });
 $("#ingresarReserva").click(function(){
     localStorage.setItem("idReserva", "");
@@ -35,13 +56,7 @@ $("#main-content-header").attr("style", "display: none !important");
 
 closeLoader();
 });
-$("#slcNombre").on("change", function () {
-      idper = ($(this).val());
-      let perSel = $.grep(listadopersonas, function (elemento) {
-        return elemento.idper === parseInt(listadopersonas.id);
-    });
-    $("#txtNidentificacion").val(perSel.identificacion);
-})
+
    
      
     /*$(document).on("change", "#slcPaquete", function () {
@@ -52,6 +67,14 @@ $("#slcNombre").on("change", function () {
 
     })*/
 
+  $(document).on("change", "#slcNombre", function () {
+  let idper = parseInt($(this).val());
+  let perSel = $.grep(listadopersonas, function (elemento) {
+    return elemento.id === idper;
+  });
+     console.log("personasel:::",perSel);
+    $("#txtNidentificacion").val(perSel[0].identificacion);
+})
 
 
     $("#frmReserva").submit(function (event) {
@@ -68,15 +91,15 @@ $("#slcNombre").on("change", function () {
             var reserva = {
                 "idPersona": $("#slcNombre").val(),  
                 "idPaquete": $("#slcPaquete").val(), 
-                "estado": $("#sclEstado").val(),               
+                "estado": $('#slcEstado option:selected').text(),              
                 "registro": new Date().toISOString(),
-                "motivo":$("#motivo").val()
+                "motivo":$("#txtMotivo").val()
             };
-            console.log("reserva" + JSON.stringify(hotel));
+            console.log("reserva" + JSON.stringify(reserva));
            
             var method="";
             var url = "";
-            if((index == '')||(index== null)){
+            if(!index){
                 method = "POST";
                     url = "http://localhost:8080/dperpaquete";
                  }

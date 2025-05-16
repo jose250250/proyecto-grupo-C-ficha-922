@@ -51,6 +51,9 @@ input.error, select.error {
     margin: 2px;
     background-image: url("http://localhost/Front/Assets/recursos/editar.png");
 }
+.pendiente{
+    background-color: #FFC107;
+}
 
 
 

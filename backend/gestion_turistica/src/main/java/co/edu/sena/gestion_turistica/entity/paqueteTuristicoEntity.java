@@ -24,7 +24,7 @@ public class paqueteTuristicoEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
-    private long id;
+    private Long id;
 
     @Column( name = "nombre")
     private String nombre;
@@ -45,20 +45,20 @@ public class paqueteTuristicoEntity {
     @Column( name = "fecha_final")
     private Date fechaFinal;
 
-    @ManyToOne
-    @JoinColumn(name = "id_hotel", nullable = false, updatable = true)
+    @ManyToOne(optional = true)
+    @JoinColumn(name = "id_hotel", nullable = true, updatable = true)
     private HotelEntity hotel;
 
-    @ManyToOne
-    @JoinColumn(name = "id_restaurante", nullable = false, updatable = true)
+    @ManyToOne(optional = true)
+    @JoinColumn(name = "id_restaurante", nullable = true, updatable = true)
     private RestauranteEntity restaurante;
 
-    @ManyToOne
-    @JoinColumn(name = "id_atraccion_turistica", nullable = false, updatable = true)
+    @ManyToOne(optional = true)
+    @JoinColumn(name = "id_atraccion_turistica", nullable = true, updatable = true)
     private AtraccionEntity Atraccion;
 
-    @ManyToOne
-    @JoinColumn(name = "id_transporte", nullable = false, updatable = true)
+    @ManyToOne(optional = true)
+    @JoinColumn(name = "id_transporte", nullable = true, updatable = true)
     private TransporteEntity transporte;
 
     @Column( name = "precio_dia")

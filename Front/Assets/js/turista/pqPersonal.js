@@ -1,5 +1,6 @@
 var reserva ="";
 $(function(){
+    $("#txtTitulo").hide();
     if(departamentos===""){
         cargardepartamentos();
     }

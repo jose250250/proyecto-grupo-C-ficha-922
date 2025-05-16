@@ -9,19 +9,28 @@ $(function () {
   restauranteSel = listarestaurantes.find(rest => rest.id === parseInt(reserva.idRestaurante));
   transporteSel = listaTransportes.find(transp => transp.id === parseInt(reserva.idTransporte));
   atraccionSel = listaatracciones.find(atrac => atrac.id === parseInt(reserva.idAtraccion));
+
   $("#dateFechaInicio").val(reserva.fechaInicio);
   $("#dateFechaFinal").val(reserva.fechaFinal);
   $("#cantDias").val(reserva.CantDias);
   $("#txtMunicipio").val(reserva.municipio);
-  $("#slcHotel").val(hotelSel.nombre);
-  $("#slcRestaurante").val(restauranteSel.nombre);
-  $("#slcTransporte").val(transporteSel.nombre);
-  $("#slcAtraccion").val(atraccionSel.nombre);
-  var precio = (parseFloat(hotelSel.precio) || 0) 
-  + (parseFloat(restauranteSel.precio) || 0) 
-  + (parseFloat(transporteSel.precio) || 0) 
-  + (parseFloat(atraccionSel.precio) || 0);
-  $("#precio").val(precio*Number(reserva.CantDias));
+
+  // Validaciones seguras con operador &&
+  $("#slcHotel").val((hotelSel && hotelSel.nombre) || "No Requiere");
+  $("#slcRestaurante").val((restauranteSel && restauranteSel.nombre) || "No Requiere");
+  $("#slcTransporte").val((transporteSel && transporteSel.nombre) || "No Requiere");
+  $("#slcAtraccion").val((atraccionSel && atraccionSel.nombre) || "No Requiere");
+
+  // Precios seguros con valor 0 si el objeto no existe
+  var precio = (hotelSel ? parseFloat(hotelSel.precio) : 0) 
+             + (restauranteSel ? parseFloat(restauranteSel.precio) : 0) 
+             + (transporteSel ? parseFloat(transporteSel.precio) : 0) 
+             + (atraccionSel ? parseFloat(atraccionSel.precio) : 0);
+
+  $("#precio").val(precio * Number(reserva.CantDias));
+  console.log("precio:::" + precio);
+});
+
 
 $("#frmDetallePaquete").submit(function (event) {
   console.log("Interceptado submit");
@@ -33,10 +42,10 @@ $("#frmDetallePaquete").submit(function (event) {
       idMunicipio: reserva.idMunicipio,
       fechaInicio: reserva.fechaInicio,
       fechaFinal: reserva.fechaFinal,
-      idHotel: reserva.idHotel || "",
-      idRestaurante: reserva.idRestaurante || "",
-      idTransporte: reserva.idTransporte || "",
-      idAtraccion: reserva.idAtraccion || "",
+      idHotel: reserva.idHotel || null,
+      idRestaurante: reserva.idRestaurante || null,
+      idTransporte: reserva.idTransporte || null,
+      idAtraccion: reserva.idAtraccion || null,
       precioDia: $("#precio").val(),
       descuento: "0"
     };
@@ -71,4 +80,3 @@ $("#frmDetallePaquete").submit(function (event) {
 $("#atras6").click(function(){
   loadPage("paquetePersonal5",turPath);
 })
-});
