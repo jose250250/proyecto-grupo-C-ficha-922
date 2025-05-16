@@ -21,6 +21,9 @@ $("#AgPaqueteBtn").click(function(){
     $("#contenido-resumen").toggleClass("oculto");
     $(this).text($("#contenido-resumen").hasClass("oculto") ? "+" : "–");
 });  
+$("#btnHistorial").click(function(){
+  loadPage("historialCard",turPath);
+})
 
 
 

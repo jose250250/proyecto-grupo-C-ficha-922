@@ -18,11 +18,11 @@ import lombok.NoArgsConstructor;
 
 public class RestauranteDto {
 
-private long id;
+private Long id;
 
 private String nombre;
 
-private long idMunicipio;
+private Long idMunicipio;
 
 private String municipio;
 

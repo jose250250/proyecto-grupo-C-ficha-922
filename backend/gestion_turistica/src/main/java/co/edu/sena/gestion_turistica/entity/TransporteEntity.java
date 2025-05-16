@@ -23,7 +23,7 @@ public class TransporteEntity {
     @Id
      @GeneratedValue(strategy = GenerationType.IDENTITY)
      @Column(name = "id")
-     private long Id;
+     private Long Id;
 
      @Column(name ="nombre")
      private String nombre;

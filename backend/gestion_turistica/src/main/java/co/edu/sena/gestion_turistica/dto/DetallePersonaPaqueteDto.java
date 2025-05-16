@@ -17,11 +17,13 @@ import lombok.NoArgsConstructor;
 @JsonInclude(Include.NON_NULL)
 
 public class DetallePersonaPaqueteDto {
-    private long id; 
+    private Long id; 
 
     private Long idPersona;
 
     private String persona;
+
+    private String identificacion;
 
     private Long idPaquete;
 

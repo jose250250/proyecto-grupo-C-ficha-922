@@ -21,7 +21,7 @@ public class PersonaEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
-    private long Id;
+    private Long Id;
     
   
     @Column(name = "primer_nombre")
@@ -52,7 +52,7 @@ public class PersonaEntity {
     private String celular;
 
     @Column (name = "id_municipio")
-    private long idMunicipio;
+    private Long idMunicipio;
 
     @Column(name = "direccion")
     private String direccion;

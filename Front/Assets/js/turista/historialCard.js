@@ -1,18 +1,20 @@
 var emunicipio = "";
-var ReservaEdit = "";
+var historialEdit = "";
 var municipioid = "";
 var iddep = "";
-var admin = "admin/";
 
-
+var personaid = localStorage.getItem("turista");
 
 $(function(){   
-    cargarreservas();
+    cargarhistorialcard(personaid);
+    $("#divBntAgragar").attr("style", "display: none !important");
+    $("#txtTitulo").attr("style", "display: none !important");
+   
+   
     $("#Atras").click(function(){
-        page = "homeReserva";
-        loadPage(page, admin); 
-        $("#main-content-reserva").hide();
-        $("#main-content-header").show();
+        page = "home";
+        loadPage(page, turPath); 
+         $("#txtTitulo").attr("style", "display: block !important");
     });
 });
 
@@ -31,20 +33,17 @@ $("#confeliminar").click(function () {
         addAlert(apiResponse.message, "success", 3);
         closeLoader();
         $("#cerrarmodal").click();
-        cargarreservas();
+        cargarHistorialPaquetes(personaid);
     };   
     openLoader();
     callApi(url, method, request, ifSuccess, ifError);
 });
-
 $(document).on("click", ".btns-editar", function () {
     index = $(this).data('id');
     console.log("INDEX:: " + index);  
     page = "homeReserva";
-    loadPage(page, admin);   
-   
+    loadPage(page, turPath);   
     localStorage.setItem("idreserva", index); 
- 
     $(function () {
         var url = "http://localhost:8080/dperpaquete/" + index;
         console.log("VAR::" + url);
@@ -52,37 +51,25 @@ $(document).on("click", ".btns-editar", function () {
         var request = "";
         var ifSuccess = function (apiResponse) {
             ReservaEdit = (apiResponse.data);
-             $("#main-content-reserva").show();
-           
             console.log("reservaedit::" + JSON.stringify(ReservaEdit));
-            window.setTimeout(function () {               
-           
-            $("#slcNombre").val(ReservaEdit.idPersona);           
-            $("#slcPaquete").val(ReservaEdit.idPaquete);
-            $("#txtNidentificacion").val(ReservaEdit.identificacion);
-            $("#txtMotivo").val(ReservaEdit.motivo);                  
-             },1500);
-            
+        }       
+        callApi(url, method5, request, ifSuccess, ifError);
+    });
+    window.setTimeout(function () {               
+            $("#main-content-reserva").show();
+            $("#slcNombre").val(ReservaEdit.nombre);           
+            $("#slcPaquete").val(hotelReserva.paquete);
+            $("#txtDescripcion").val(ReservaEdit.descripcion);
+            $("#motivo").val(ReservaEdit.motivo);                  
+             },500);
             window.setTimeout(function () {
                 $("#txtcabecera").text("Actualizar Registro"); 
                 $("#submitreserva").text("Actualizar");                 
                 $("#main-content-header").hide();  
-                $("#main-content-header").attr("style", "display: none !important"); 
-                closeLoader();            
-            }, 2500);
-          
-        
-        }  
-        openLoader();     
-        callApi(url, method5, request, ifSuccess, ifError);
-    });
- 
+                $("#main-content-header").attr("style", "display: none !important");             
+            }, 500);
+            closeLoader();
         });  
-        $("#Atras").click(function(){
-            page = "homeReserva";
-            loadPage(page, admin); 
-            $("#main-content-reserva").hide();
-            $("#main-content-header").show();
-        });
+      
      
 

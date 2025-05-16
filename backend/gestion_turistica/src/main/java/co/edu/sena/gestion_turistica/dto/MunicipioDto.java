@@ -15,7 +15,7 @@ import lombok.NoArgsConstructor;
 @JsonInclude(Include.NON_NULL)
 public class MunicipioDto {
 
-    private long Id;
+    private Long Id;
 
     private String municipio;
 

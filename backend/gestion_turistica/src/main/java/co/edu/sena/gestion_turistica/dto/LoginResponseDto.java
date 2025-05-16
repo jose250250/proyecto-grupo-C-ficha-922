@@ -18,7 +18,7 @@ public class LoginResponseDto {
     private Long id;
     private String rol;
     private Long idrol;
-    private long persona;
+    private Long persona;
     private String PrimerNombre;
     private String PrimerApellido;  
     private boolean isActive;

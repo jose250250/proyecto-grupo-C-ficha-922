@@ -26,11 +26,9 @@ public class DetallePersonaPaqueteService {
       PersonaEntity personaEntity = new PersonaEntity();
       personaEntity.setId(dto.getIdPersona());
       entity.setPersona(personaEntity);
-  
       paqueteTuristicoEntity paqueteEntity = new paqueteTuristicoEntity();
       paqueteEntity.setId(dto.getIdPaquete());
       entity.setPaquete(paqueteEntity);
-  
       entity.setEstado(dto.getEstado());
       entity.setRegistro(dto.getRegistro());
       entity.setMotivo(dto.getMotivo());
@@ -64,6 +62,7 @@ public class DetallePersonaPaqueteService {
             dto.setPaquete(entity.getPaquete().getNombre());
             dto.setIdPersona(entity.getPersona().getId());
             dto.setPersona(entity.getPersona().getPrimerNombre()+" "+entity.getPersona().getPrimerApellido());
+            dto.setIdentificacion(entity.getPersona().getIdentificacion());
             dto.setEstado(entity.getEstado());
             dto.setRegistro(entity.getRegistro());
             dto.setMotivo(entity.getMotivo());
@@ -86,6 +85,7 @@ public class DetallePersonaPaqueteService {
             dto.setEstado(entity.getEstado());
             dto.setIdPaquete(entity.getPaquete().getId());
             dto.setPaquete(entity.getPaquete().getNombre());
+            dto.setIdentificacion(entity.getPersona().getIdentificacion());
             dto.setIdPersona(entity.getPersona().getId());
             dto.setPersona(entity.getPersona().getPrimerNombre()+" "+entity.getPersona().getPrimerApellido());
             dto.setRegistro(entity.getRegistro());
@@ -117,6 +117,27 @@ public class DetallePersonaPaqueteService {
         return newdata;
 }
 return null;
+}
+
+public List<DetallePersonaPaqueteDto> historicoPaquetes(Long idPersona){
+
+    List<DetallePersonaPaqueteEntity> paquetes = repository.findPaquetesByPersonaId(idPersona);
+    List<DetallePersonaPaqueteDto> dtos = new ArrayList<>();
+
+    for(DetallePersonaPaqueteEntity entity : paquetes){
+        DetallePersonaPaqueteDto dto = DetallePersonaPaqueteDto.builder()
+        .id(entity.getId())
+        .persona(entity.getPersona().getPrimerNombre()+" "+entity.getPersona().getPrimerApellido())
+        .paquete(entity.getPaquete().getNombre())
+        .estado(entity.getEstado())
+        .registro(entity.getRegistro())
+        .motivo(entity.getMotivo())
+        .build();
+        
+    
+    dtos.add(dto);
+}
+return dtos;
 }
 
 }

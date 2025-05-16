@@ -68,4 +68,5 @@ $(document).on("click", ".btn-paquete", function () {
       }, 1500);
  }
 });
+
 });
