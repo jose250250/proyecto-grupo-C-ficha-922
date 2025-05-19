@@ -61,15 +61,15 @@
 
 }
 .pendiente{
-    background-color: #f1e467;
-    color: #0056b3;
+    background-color: #ece02e;
+    color: #010408;
     border-color: black !important;
     border: 2px rgba(0, 0, 0, 0.2) !important;
     
 }
 .cancelado{
-    background-color: #ee7560;
-    color: #00b37d;
+    background-color: #b87064d8;
+    color: #000f11;
     border-color: black !important;
     border: 2px rgba(0, 0, 0, 0.2) !important;
     

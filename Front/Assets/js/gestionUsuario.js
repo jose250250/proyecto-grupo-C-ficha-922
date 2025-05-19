@@ -83,19 +83,21 @@ $("#slcPersona").on("change", function () {
             var ifSuccess = function (apiResponse) {
 
                 addAlert(apiResponse.message, "success", 3);
+                $('#frmUsuario')[0].reset();
+                $("#main-content-usuario").hide();
                 $("#main-content-header").show();
                 closeLoader();
 
             };
             var ifErrorLogin = function (data) {
                 addAlert("Se presento un error en el servidor", "danger", 8);
+                $('#frmUsuario')[0].reset();
+                $("#main-content-header").show();
                 closeLoader();
             };
             openLoader();
             callApi(url, method, request, ifSuccess, ifErrorLogin);
-            $('#frmUsuario')[0].reset();
-            $("#main-content-usuario").hide();
-           
+         
         }
 
         else {

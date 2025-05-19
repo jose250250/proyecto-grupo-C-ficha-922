@@ -75,6 +75,8 @@ $("#slcDepartamento").on("change", function () {
             
             var request = transporte;
             var ifSuccess = function (apiResponse) {
+             $("#main-content-transporte").hide();
+             $("#main-content-header").show();
 
                 addAlert(apiResponse.message, "success", 3);
 

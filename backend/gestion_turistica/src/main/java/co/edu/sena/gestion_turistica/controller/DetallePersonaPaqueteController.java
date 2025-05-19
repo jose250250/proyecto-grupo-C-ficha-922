@@ -67,7 +67,7 @@ public ServerResponseAll getById(@PathVariable("id") Long id){
       
     DetallePersonaPaqueteDto dto = this.service.getById(id);
     return ServerResponseAll.builder()
-    .message(dto != null ? "Registro encontrado" : "registro  no encontrado")
+    .message(dto != null ? "Registro encontrado" : "Registro  no encontrado")
     .status(dto != null ? HttpStatus.OK.value() : HttpStatus.NOT_FOUND.value())
     .data(dto)
     .build();
@@ -79,7 +79,7 @@ public ServerResponseAll deleteById(@PathVariable("id") Long id){
     this.service.delete(id);
     return ServerResponseAll
     .builder()    
-    .message("reistro  eliminado")
+    .message("registro  eliminado")
     .status(HttpStatus.OK.value())   
     .build();
 
@@ -91,7 +91,7 @@ request = this.service.update(request);
 
 return ServerResponseAll
 .builder()
-.message(request != null ? "Reistro actualizado" : "reistro  no actualizado")
+.message(request != null ? "Registro actualizado" : "registro  no actualizado")
 .status(request != null ? HttpStatus.OK.value() : HttpStatus.BAD_REQUEST.value())
 .data(request)
 .build();
