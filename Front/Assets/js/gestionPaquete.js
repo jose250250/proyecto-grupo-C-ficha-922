@@ -117,11 +117,15 @@ $("#slcAtraccion").on("change", function () {
 $("#frmPaquete").submit(function (event) {
   event.preventDefault();
   var cantidadErrores = 0;
-  $("#frmPaquete input, #frmPaquete select").each(function (i) {
-    if ($(this).val() === "") {
-      cantidadErrores++;
-    }
+
+  $("#frmPaquete").find("input, select.form-label-s").each(function (i) {
+  if ($(this).val() === "") {
+    cantidadErrores++;
+  }
   });
+  if (($("#frmPaquete").find("select.form-label-a").length)===""){
+     cantidadErrores++;
+  }
   console.log("cant errores" + cantidadErrores);
   console.log("index:::" + indexpaquete);
   if (cantidadErrores == 0) {

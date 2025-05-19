@@ -10,7 +10,7 @@ $("#fechaFinal").attr("min", hoy);
 
 
 
-$("#reservaProm").submit(function (event) {
+$("#reservaProm").off("submit").on("submit", function (event) {
     event.preventDefault();
     var urlp = "http://localhost:8080/dperpaquete"
     var detallepaquete= {
