@@ -14,24 +14,14 @@ import lombok.NoArgsConstructor;
 @Builder
 @JsonInclude(Include.NON_NULL)
 
-public class HotelDto {
+public class MunicipiosMasReservadosDto {
 
-    
-    private Long Id;
+    private Long idMunicipio;
 
     private String nombre;
 
-    private long idMunicipio;
+    private String departamento;
 
-    private String municipio;
-
-    private String celular;
-
-    private String direccion;
-
-    private Double precio;
-
-    private String urlfoto;
-
+    private Long totalReservas;
 
 }

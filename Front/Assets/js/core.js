@@ -9,6 +9,7 @@ var listaatracciones = "";
 var listarestaurantes = "";
 var listapaquetes="";
 var paquetes = "";
+var lugarFavorito = "";
 
 
 var validMethods = ["GET", "POST", "PUT", "DELETE"];
@@ -844,6 +845,32 @@ historial.forEach(function(item) {
   openLoader();
   callApi(url, method, request, ifSuccesspersona, ifError);
 }
+function cargarlugaresfavaritos(){
+   var url = "http://localhost:8080/MasReservados";
+ console.log("VAR::" + url);
+        var method = "GET";
+        var request = "";
+        var ifSuccess = function (apiResponse) {
+            lugarFavorito = (apiResponse);
+            console.log("lugar::" + JSON.stringify(lugarFavorito));
+
+    var html = "";
+    for (var i = 0; i < lugarFavorito.length; i++) {
+      var lug = lugarFavorito[i];
+      html += "<tr>";
+      html += "<th scope='col'>" + (i + 1) + "</th>";
+      html += "<td>" + lug.nombre + "</td>";
+      html += "<td>" + lug.departamento + "</td>";
+      html += "<td>" + lug.totalReservas+ "</td>";
+    
+    }
+    $("#tablaMunicipios").html(html);
+    closeLoader();
+  };
+  openLoader();
+  callApi(url, method, request, ifSuccess, ifError);
+}
+
 
  
 

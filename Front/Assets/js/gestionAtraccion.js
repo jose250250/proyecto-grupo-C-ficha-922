@@ -1,7 +1,8 @@
 var index = localStorage.getItem('idatraccion');
 $(function () {
     cargardepartamentos();  
-    cargarmunicipiosbacken();  
+    cargarmunicipiosbacken(); 
+    $("#txtGestion").text("Administrar Modulo Atraccion Turistica"); 
 });
 $("#ingresarAtraccion").click(function(){
     localStorage.setItem("idatraccion", "");
@@ -113,10 +114,12 @@ $("#slcDepartamento").on("change", function () {
     $("#atras").click(function(){
         $("#main-content-atraccion").hide();
         $("#main-content-header").show();
+       
        });
 
     $("#homeAdmin").click(function(){
      loadPage("homeAdmin",admin);
+      $("#txtGestion").text("Gestion por Modulos");
     });
 
     $("#verlistaAtraccion").click(function () {

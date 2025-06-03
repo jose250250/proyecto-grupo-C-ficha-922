@@ -42,7 +42,7 @@ public class HotelEntity {
     private List<paqueteTuristicoEntity> PQTuristico;
    
     @Column(name = "precio")
-    private Long precio;
+    private Double precio;
 
     @ManyToOne
     @JoinColumn(name = "id_municipio", nullable = false, updatable = true)

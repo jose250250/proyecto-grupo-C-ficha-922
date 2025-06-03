@@ -10,6 +10,10 @@ $(function(){
         page = "homeUsuario";
         loadPage(page, rootPath);   
      });
+      $("#entrarReportes").click(function(){
+        page = "homeReportes";
+        loadPage(page, rootPath);   
+     });
     $("#entrarHotel").click(function(){
         page = "homeHotel";
         loadPage(page, rootPath);

@@ -30,6 +30,7 @@ $(function () {
     cargarutilidadestodo();
   
   }
+  $("#txtGestion").text("Administrar Modulo Paquete Turistico");
   
 });
 $("#ingresarPaquete").click(function () {
@@ -189,7 +190,9 @@ $("#atraspaquete").click(function () {
   $("#main-content-paquete").hide();
   $("#main-content-header").show();
   $("#frmPaquete")[0].reset();
+ 
 });
 $("#homeAdmin").click(function () {
   loadPage("homeAdmin", admin);
+   $("#txtGestion").text("Gestion por Modulos");
 });

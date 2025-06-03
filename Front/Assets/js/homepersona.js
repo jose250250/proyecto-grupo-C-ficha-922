@@ -5,6 +5,7 @@ admin= "admin/"
 $(function () {
     cargardepartamentos();  
     cargarmunicipiosbacken();  
+    $("#txtGestion").text("Administrar Modulo Persona");
   
 });
 $("#ingresarPersona").click(function () {
@@ -162,9 +163,11 @@ $("#ingresarPersona").click(function () {
     $("#atrasPersona").click(function(){        
         $("#main-content-persona").hide();
         $("#main-content-header").show();
+       
     });
     $("#homeAdmin").click(function(){
         loadPage("homeAdmin",admin);
+        $("#txtGestion").text("Gestion Por Modulos");
     })
      
     $("#btnSalir").click(function(){

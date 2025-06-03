@@ -28,6 +28,7 @@ for (var i = 0; i < listapaquetes.length; i++) {
   $("#slcPaquete").html(html2);
 
     }
+ $("#txtGestion").text("Administrar Modulo Reservas");   
 
  
 });
@@ -151,10 +152,12 @@ closeLoader();
     $("#atras").click(function(){
         $("#main-content-reserva").hide();
         $("#main-content-header").show();
+       
     });
 
     $("#homeAdmin").click(function(){
      loadPage("homeAdmin",admin);
+      $("#txtGestion").text("Gestion por Modulos");
     });
 
     $("#verlistaReserva").click(function () {
