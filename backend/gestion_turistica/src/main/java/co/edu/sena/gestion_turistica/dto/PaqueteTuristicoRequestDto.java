@@ -45,5 +45,7 @@ public class PaqueteTuristicoRequestDto {
 
     private Long Descuento;
 
+   
+
 
 }

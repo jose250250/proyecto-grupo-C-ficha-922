@@ -29,7 +29,7 @@ public class HotelDto {
 
     private String direccion;
 
-    private Long precio;
+    private Double precio;
 
     private String urlfoto;
 

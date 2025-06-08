@@ -28,12 +28,13 @@ for (var i = 0; i < listapaquetes.length; i++) {
   $("#slcPaquete").html(html2);
 
     }
+ $("#txtGestion").text("Administrar Modulo Reservas");   
 
  
 });
 $("#ingresarReserva").click(function(){
     localStorage.setItem("idReserva", "");
-    $("#submitReserva").text("Enviar");
+    $("#submitreserva").text("Enviar");
     $("#txtcabecera").text("Ingresar Nuevo Registro de Reservas"); 
     $("#frmReserva")[0].reset();
 
@@ -151,10 +152,13 @@ closeLoader();
     $("#atras").click(function(){
         $("#main-content-reserva").hide();
         $("#main-content-header").show();
+         localStorage.setItem('idreserva', '');
+       
     });
 
     $("#homeAdmin").click(function(){
      loadPage("homeAdmin",admin);
+      $("#txtGestion").text("Gestion por Modulos");
     });
 
     $("#verlistaReserva").click(function () {

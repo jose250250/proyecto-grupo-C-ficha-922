@@ -18,5 +18,23 @@ spring:
       hibernate:
         #dialect: org.hibernate.dialect.MySQL5InnoDBDialect
         show_sql: true
+        
+
+upload:
+  path:
+    paquetes: C:/xampp/htdocs/Front/uploads/paquetes
+    hoteles: C:/xampp/htdocs/Front/uploads/hoteles
+
+  web:
+    resources:
+      static-locations: file:C:/xampp/htdocs/Front/uploads/
+
+
+
+servlet:
+ multipart:
+  max-file-size: 10MB
+  max-request-size: 10MB  
+
 
       

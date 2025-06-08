@@ -30,6 +30,7 @@ $(function () {
     cargarutilidadestodo();
   
   }
+  $("#txtGestion").text("Administrar Modulo Paquete Turistico");
   
 });
 $("#ingresarPaquete").click(function () {
@@ -116,20 +117,25 @@ $("#slcAtraccion").on("change", function () {
 });
 $("#frmPaquete").submit(function (event) {
   event.preventDefault();
-  var cantidadErrores = 0;
+  let cantidadErrores = 0;
 
-  $("#frmPaquete").find("input, select.form-label-s").each(function (i) {
-  if ($(this).val() === "") {
+  // Validación de inputs y selects con clase específica
+  $("#frmPaquete").find("input.form-control, select.form-label-s").each(function () {
+    if ($(this).val() === "") {
+      cantidadErrores++;
+    }
+  });
+
+  if ($("#frmPaquete").find("select.form-label-a").val() === "") {
     cantidadErrores++;
   }
-  });
-  if (($("#frmPaquete").find("select.form-label-a").length)===""){
-     cantidadErrores++;
-  }
-  console.log("cant errores" + cantidadErrores);
-  console.log("index:::" + indexpaquete);
-  if (cantidadErrores == 0) {
-    var paquete = {
+
+  console.log("Errores:", cantidadErrores);
+  console.log("index:", indexpaquete);
+
+  if (cantidadErrores === 0) {
+    // Construir el DTO
+    const paqueteDto = {
       nombre: $("#txtNombre").val(),
       clase: $("#slcClasePaquete").val(),
       descripcion: $("#txtDescripcion").val(),
@@ -141,33 +147,54 @@ $("#frmPaquete").submit(function (event) {
       idTransporte: $("#slcTransporte").val(),
       idAtraccion: $("#slcAtraccion").val(),
       precioDia: $("#precio").val(),
-      descuento: $("#descuento").val(),
-    };
-    console.log("paquete" + JSON.stringify(paquete));
-    var method = "";
-    var url = "";
-    if (indexpaquete == "" || indexpaquete == null) {
-      method = "POST";
-      url = "http://localhost:8080/paquete";
-    } else {
-      method = "PUT";
-      url = "http://localhost:8080/paquete/" + indexpaquete;
-      localStorage.setItem("idpaquete", "");
-    }
-    var request = paquete;
-    var ifSuccess = function (apiResponse) {
-      addAlert(apiResponse.message, "success", 3);
-      closeLoader();
-      $("#main-content-paquete").hide();
-      $("#main-content-header").show();
+      descuento: $("#descuento").val()
     };
 
-    var ifErrorLogin = function (data) {
-      addAlert("Se presento un error en el servidor", "danger", 8);
-      closeLoader();
-    };
-    openLoader();
-    callApi(url, method, request, ifSuccess, ifErrorLogin);
+    const formData = new FormData();
+    formData.append("dto", new Blob([JSON.stringify(paqueteDto)], { type: "application/json" }));
+
+    const archivo = $("#foto")[0].files[0];
+    if (archivo) {
+      formData.append("file", archivo);
+    }
+
+    // Opcional: mostrar datos enviados
+    for (let pair of formData.entries()) {
+      console.log(pair[0] + ":", pair[1]);
+    }
+
+    // Determinar método y URL
+    let method = indexpaquete ? "PUT" : "POST";
+    let url = indexpaquete
+      ? `http://localhost:8080/paquete/${indexpaquete}`
+      : "http://localhost:8080/paquete";
+
+    if (indexpaquete) localStorage.setItem("idpaquete", "");
+    console.log("url:::"+ url);
+    
+    // Enviar la solicitud
+    $.ajax({
+      url: url,
+      type: method,
+      data: formData,
+      processData: false,
+      contentType: false,
+      success: function (response) {
+        addAlert("Paquete guardado con éxito", "success", 3);
+          $("#main-content-paquete").hide();
+          $("#main-content-header").show();
+          $("#frmPaquete")[0].reset();
+        closeLoader();
+        // Opcional: limpiar formulario o recargar datos
+      },
+      error: function (err) {
+        console.error("Error:", err);
+        addAlert("Se presentó un error en el servidor", "danger", 8);
+        
+        closeLoader();
+      }
+    });
+ 
 
     $("#frmPaquete")[0].reset();
   } else {
@@ -189,7 +216,9 @@ $("#atraspaquete").click(function () {
   $("#main-content-paquete").hide();
   $("#main-content-header").show();
   $("#frmPaquete")[0].reset();
+ 
 });
 $("#homeAdmin").click(function () {
   loadPage("homeAdmin", admin);
+   $("#txtGestion").text("Gestion por Modulos");
 });

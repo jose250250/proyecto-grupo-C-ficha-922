@@ -2,6 +2,7 @@ var index = localStorage.getItem('idhotel');
 $(function () {
     cargardepartamentos();  
     cargarmunicipiosbacken();  
+    $("#txtGestion").text("Administrar Modulo Hotel");
 });
 $("#ingresarhotel").click(function(){
     localStorage.setItem("idhotel", "");
@@ -50,44 +51,48 @@ $("#slcDepartamento").on("change", function () {
 
         if (cantidadErrores == 0)  {
 
-            var hotel = {
-                "nombre": $("#txtNombre").val(),  
-                "idMunicipio": $("#slcMunicipio").val(),           
-                "celular": $("#txtCelular").val(),               
-                "direccion": $("#txtDireccion").val(),
-                "precio":$("#precio").val(),
-                "urlfoto":$("#urlFoto").val()              
-            };
-            console.log("hotel" + JSON.stringify(hotel));
-           
-            var method="";
-            var url = "";
-            if((index == '')||(index== null)){
-                method = "POST";
-                    url = "http://localhost:8080/hotel";
-                 }
-                else {
+     var formData = new FormData();
+    formData.append("nombre", $("#txtNombre").val());
+    formData.append("idMunicipio", $("#slcMunicipio").val());
+    formData.append("celular", $("#txtCelular").val());
+    formData.append("direccion", $("#txtDireccion").val());
+    formData.append("precio", $("#precio").val());
+
+    var archivo = $("#foto")[0].files[0];
+    if (archivo) {
+        formData.append("foto", archivo);
+       for (var pair of formData.entries()) {
+    console.log(pair[0] + ':', pair[1]);
+}
+    }    
+    var method="";
+    var url = "";
+       if((index == '')||(index== null)){
+           method = "POST";
+            url = "http://localhost:8080/hotel";
+        }
+    else {
                   
-                    method ="PUT";
-                    url = "http://localhost:8080/hotel/"+index;
-                    localStorage.setItem('idhotel', '');
-                }        
-            
-            var request = hotel;
-            var ifSuccess = function (apiResponse) {
-
-                addAlert(apiResponse.message, "success", 3);
-              
-                closeLoader();
-            };
-
-            var ifErrorLogin = function (data) {
-                addAlert("Se presento un error en el servidor", "danger", 8);
-                closeLoader();
-            };
-
-            openLoader();
-            callApi(url, method, request, ifSuccess, ifErrorLogin);
+        method ="PUT";
+        url = "http://localhost:8080/hotel/"+index;
+        localStorage.setItem('idhotel', '');
+      }        
+       openLoader();
+$.ajax({
+    url: url,
+    type: method,
+    data: formData,
+    processData: false,
+    contentType: false,
+    success: function (response) {
+        addAlert("Hotel guardado con éxito", "success", 3);
+        closeLoader();
+    },
+    error: function (err) {
+        addAlert("Se presentó un error en el servidor", "danger", 8);
+        closeLoader();
+    }
+});
 
             $('#frmhotel')[0].reset();
             $("#main-content-hotel").hide();
@@ -114,10 +119,12 @@ $("#slcDepartamento").on("change", function () {
     $("#atras").click(function(){
         $("#main-content-hotel").hide();
         $("#main-content-header").show();
+       
     });
 
     $("#homeAdmin").click(function(){
      loadPage("homeAdmin",admin);
+      $("#txtGestion").text("Gestion por Modulos");
     });
 
     $("#verlistahotel").click(function () {

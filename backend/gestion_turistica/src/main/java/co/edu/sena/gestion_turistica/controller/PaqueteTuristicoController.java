@@ -10,9 +10,12 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
+import org.springframework.http.MediaType;
+
 import co.edu.sena.gestion_turistica.dto.PaqueteResponseIDdto;
 import co.edu.sena.gestion_turistica.dto.PaqueteTuristicoRequestDto;
 import co.edu.sena.gestion_turistica.dto.PaqueteTuristicoResponseDto;
@@ -32,18 +35,19 @@ public class PaqueteTuristicoController {
     @Autowired
     private PaqueteTuristicoService service;
 
-     @PostMapping()
-    public ServerResponseAll create(@RequestBody PaqueteTuristicoRequestDto request){
-        PaqueteResponseIDdto guardado = service.save(request);
-  
-    
-    return ServerResponseAll.builder()
-    .message("Registro exitoso")
-    .status(HttpStatus.OK.value())
-    .data(guardado)
-    .build();
+    @PostMapping(consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
+    public ServerResponseAll create(
+            @RequestPart("dto") PaqueteTuristicoRequestDto dto,
+            @RequestPart(value = "file", required = false) MultipartFile foto) {
 
-   }
+        PaqueteResponseIDdto guardado = service.save(dto, foto);
+
+        return ServerResponseAll.builder()
+                .message("Registro exitoso")
+                .status(HttpStatus.OK.value())
+                .data(guardado)
+                .build();
+    }
 
 
     @GetMapping()
@@ -73,7 +77,7 @@ public ServerResponseAll getById(@PathVariable("id") Long id){
 
     PaqueteTuristicoResponseDto dto = this.service.getById(id);
     return ServerResponseAll.builder()
-    .message(dto != null ? "Reistro encontrado" : "reistro  no encontrado")
+    .message(dto != null ? "Registro encontrado" : "registro  no encontrado")
     .status(dto != null ? HttpStatus.OK.value() : HttpStatus.NOT_FOUND.value())
     .data(dto)
     .build();
@@ -92,23 +96,29 @@ public ServerResponseAll deleteById(@PathVariable("id") Long id){
 }
  
 @PutMapping("/{id}")
+public ServerResponseAll update(
+        @PathVariable Long id,
+        @RequestPart("dto") PaqueteTuristicoRequestDto dto,
+        @RequestPart(value = "file", required = false) MultipartFile foto) {
+    
+    // Asegurar que el ID del path se asigna al DTO
+    dto.setId(id);
 
+    PaqueteTuristicoRequestDto actualizado = service.update(foto, dto);
 
-public ServerResponseAll update(@PathVariable("id") Long id, @RequestBody PaqueteTuristicoRequestDto request) {
-request.setId(id);
-request = this.service.update(request);
-
-return ServerResponseAll
-.builder()
-.message(request != null ? "Reistro actualizado" : "reistro  no actualizado")
-.status(request != null ? HttpStatus.OK.value() : HttpStatus.BAD_REQUEST.value())
-.data(request)
-.build();
-
+    if (actualizado != null) {
+        return ServerResponseAll.builder()
+                .message("Paquete actualizado con éxito")
+                .status(HttpStatus.OK.value())
+                .data(actualizado)
+                .build();
+    } else {
+        return ServerResponseAll.builder()
+                .message("No se encontró el paquete con ID " + id)
+                .status(HttpStatus.NOT_FOUND.value())
+                .data(null)
+                .build();
+    }
 }
- 
-
-
-   
 
 }

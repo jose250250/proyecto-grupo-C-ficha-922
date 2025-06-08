@@ -38,6 +38,9 @@ public class DetallePersonaPaqueteEntity {
 
     @Column (name="motivo_registro")
     private String motivo;
+
+    @Column (name= "codigo_soporte_pago")
+    private String codigoPago;
    
 
 }

@@ -3,6 +3,7 @@ var validPassword= false;
 $(function () {
    cargarlistapersonas();
    cargarrol();
+   $("#txtGestion").text("Administrar Modulo Usuario");
 
     $("#txtPassword, #txtPasswordconf").on("input", function () {
       let pass1 = $("#txtPassword").val();
@@ -120,10 +121,12 @@ $("#slcPersona").on("change", function () {
     $("#Atras").click(function(){
         $("#main-content-usuario").hide();
         $("#main-content-header").show();
+       
        });
 
 $("#homeAdmin").click(function(){
      loadPage("homeAdmin",admin);
+      $("#txtGestion").text("Gestion por Modulos");
     });
 
     $("#verlistaUsuario").click(function () {

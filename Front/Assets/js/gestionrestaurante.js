@@ -2,6 +2,7 @@ var index = localStorage.getItem('idrestaurante');
 $(function () {
     cargardepartamentos();  
     cargarmunicipiosbacken();  
+    $("#txtGestion").text("Administrar Modulo Restaurante");
 });
 $("#ingresarRestaurante").click(function(){
     localStorage.setItem("idrestaurante", "");
@@ -100,9 +101,12 @@ $("#slcDepartamento").on("change", function () {
     $("#atras").click(function(){
         $("#main-content-restaurante").hide();
         $("#main-content-header").show();
+        localStorage.setItem('idrestaurante', '');
+      
        });
 $("#homeAdmin").click(function(){
      loadPage("homeAdmin",admin);
+       $("#txtGestion").text("Gestion Por Modulos");
     });
     $("#verlistaRestaurante").click(function () {
         loadPage("listarestaurante",admin);

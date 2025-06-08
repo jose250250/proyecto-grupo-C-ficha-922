@@ -2,6 +2,7 @@ var index = localStorage.getItem('idtransporte');
 $(function () {
     cargardepartamentos();  
     cargarmunicipiosbacken();  
+    $("#txtGestion").text("Administrar Modulo Transportes");
 });
 $("#ingresarTransporte").click(function(){
     localStorage.setItem("idtransporte", "");
@@ -114,10 +115,12 @@ $("#slcDepartamento").on("change", function () {
     $("#atras").click(function(){
         $("#main-content-transporte").hide();
         $("#main-content-header").show();
+       
        });
 
     $("#homeAdmin").click(function(){
      loadPage("homeAdmin",admin);
+      $("#txtGestion").text("Gestion por Modulos");
     });
 
     $("#verlistaTransporte").click(function () {
