@@ -84,10 +84,10 @@ $(document).on("click", ".btns-editar", function () {
             window.setTimeout(function () {
                 $("#slcMunicipio").val(paqueteEdit.idMunicipio);
                 $("#slcDepartamento").val(iddep);  
-                $("#slcHotel").val(paqueteEdit.idHotel); 
-                $("#slcRestaurante").val(paqueteEdit.idRestaurante); 
-                $("#slcTransporte").val(paqueteEdit.idTransporte);
-                $("#slcAtraccion").val(paqueteEdit.idAtraccion);             
+                $("#slcHotel").val(paqueteEdit.idHotel !== null && paqueteEdit.idHotel !== undefined ? paqueteEdit.idHotel : "");
+                $("#slcRestaurante").val(paqueteEdit.idRestaurante !== null && paqueteEdit.idRestaurante !== undefined ? paqueteEdit.idRestaurante : "");
+                $("#slcTransporte").val(paqueteEdit.idTransporte !== null && paqueteEdit.idTransporte !== undefined ? paqueteEdit.idTransporte : "");
+                $("#slcAtraccion").val(paqueteEdit.idAtraccion !== null && paqueteEdit.idAtraccion !== undefined ? paqueteEdit.idAtraccion : "");           
                 $("#txtcabecera").text("Actualizar Registro"); 
                 $("#submitPaquete").text("Actualizar");  
                 $("#main-content-header").attr("style", "display: none !important");                

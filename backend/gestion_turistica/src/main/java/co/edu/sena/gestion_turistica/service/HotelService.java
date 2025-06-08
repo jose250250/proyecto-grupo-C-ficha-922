@@ -56,7 +56,7 @@ public class HotelService {
                 Path ruta = Paths.get(uploadDir, nombreArchivo);
                 Files.createDirectories(ruta.getParent());
                 Files.write(ruta, foto.getBytes());
-                entity.setUrlfoto("uploads/hoteles/" + nombreArchivo);
+                entity.setUrlfoto("hoteles/" + nombreArchivo);
             } catch (IOException e) {
                 throw new RuntimeException("Error al guardar imagen", e);
             }

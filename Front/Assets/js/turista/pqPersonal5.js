@@ -29,7 +29,6 @@ $(function () {
                
                     <h5>${lisatra.nombre}</h5>
                     <p>Precio: ${lisatra.precio}</p>
-                    <button class="btn btn-primary">Ver más</button>
                     <button class="btn btn-primary btnElegir" data-id="${lisatra.id}">Elegir</button>
                 </div>
             </div>

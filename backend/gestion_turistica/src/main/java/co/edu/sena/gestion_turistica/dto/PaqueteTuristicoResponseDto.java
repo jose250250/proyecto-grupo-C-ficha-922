@@ -53,4 +53,6 @@ public class PaqueteTuristicoResponseDto {
     private Long precioDia;
 
     private Long Descuento;
+
+    private String urlfoto;
 }

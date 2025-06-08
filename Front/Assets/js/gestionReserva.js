@@ -34,7 +34,7 @@ for (var i = 0; i < listapaquetes.length; i++) {
 });
 $("#ingresarReserva").click(function(){
     localStorage.setItem("idReserva", "");
-    $("#submitReserva").text("Enviar");
+    $("#submitreserva").text("Enviar");
     $("#txtcabecera").text("Ingresar Nuevo Registro de Reservas"); 
     $("#frmReserva")[0].reset();
 
@@ -152,6 +152,7 @@ closeLoader();
     $("#atras").click(function(){
         $("#main-content-reserva").hide();
         $("#main-content-header").show();
+         localStorage.setItem('idreserva', '');
        
     });
 

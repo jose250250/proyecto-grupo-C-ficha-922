@@ -49,13 +49,35 @@ $("#frmDetallePaquete").submit(function (event) {
       precioDia: $("#precio").val(),
       descuento: "0"
     };
+    const formData = new FormData();
+    formData.append("dto", new Blob([JSON.stringify(paquete)], { type: "application/json" }));
+
+   const archivoInput = $("#foto")[0];
+   if (archivoInput && archivoInput.files.length > 0) {
+   formData.append("file", archivoInput.files[0]);
+   } else {
+  // Añade un archivo vacío (opcional)
+   formData.append("file", new Blob([]), "");
+   }
+
+
+    // Opcional: mostrar datos enviados
+    for (let pair of formData.entries()) {
+      console.log(pair[0] + ":", pair[1]);
+    }
     console.log("paquete" + JSON.stringify(paquete));
     var method = "POST";
     var url = "http://localhost:8080/paquete";
-   
-    var request = paquete;
-    var ifSuccess = function (apiResponse) {
-      paqueteresponse=apiResponse.data;
+      $.ajax({
+      url: url,
+      type: method,
+      data: formData,
+      processData: false,
+      contentType: false,
+      success: function (response) {
+        addAlert(response.message, "success", 3);
+        paqueteresponse= response.data;
+        console.log("paqueteresponse:::",paqueteresponse);
       var urlp = "http://localhost:8080/dperpaquete"
       var detallepaquete= {
         idPersona: reserva.idPersona,
@@ -64,18 +86,26 @@ $("#frmDetallePaquete").submit(function (event) {
         registro: new Date().toISOString(),
         motivo: "fecha de creacion por el usuario"       
       }
+      paqueteelegido = paqueteresponse.id;
+      console.log("Paquetelegido:::"+paqueteelegido);
       var requestp = detallepaquete;
       console.log("dpper" + JSON.stringify(detallepaquete));
       var ifSuccessdetalle = function (apiResponse) {
         addAlert(apiResponse.message, "success", 3);
-        alert("registro exitoso");
         loadPage("paquetePersonal7",turPath);
       }
       closeLoader();
       callApi(urlp, "POST", requestp, ifSuccessdetalle, ifError);
-    };
-    openLoader();
-    callApi(url, method, request, ifSuccess, ifError);
+        // Opcional: limpiar formulario o recargar datos
+      },
+      error: function (err) {
+        console.error("Error:", err);
+        addAlert("error en el servidor", "danger", 8);
+        
+        closeLoader();
+      }
+    });
+   
 });
 $("#atras6").click(function(){
   loadPage("paquetePersonal5",turPath);

@@ -24,10 +24,9 @@ $(function(){
             var hotelCard = `
             <div class="col-md-3 mb-4">
                 <div class="serv-card p-3 text-center " id="hotel-${lishot.id}">
-                <img src="${lishot.urlfoto}" alt="Imagen de ${lishot.nombre}">
+                <img src="http://localhost/Front/uploads/${lishot.urlfoto}" alt="Imagen de ${lishot.nombre}">
                     <h5>${lishot.nombre}</h5>
                     <p>Precio: ${lishot.precio}</p>
-                    <button class="btn btn-primary">Ver más</button>
                     <button class="btn btn-primary btnHotElegir" data-id="${lishot.id}">Elegir</button>
                 </div>
             </div>

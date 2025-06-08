@@ -67,6 +67,11 @@ public class paqueteTuristicoEntity {
     @Column( name = "descuento")
     private Long Descuento;
 
+    @Column( name = "foto")
+    private String urlfoto;
+
+
+
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "paquete")
     private List<DetallePersonaPaqueteEntity> detPerPaquete;
 

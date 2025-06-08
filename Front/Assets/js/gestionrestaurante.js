@@ -101,6 +101,7 @@ $("#slcDepartamento").on("change", function () {
     $("#atras").click(function(){
         $("#main-content-restaurante").hide();
         $("#main-content-header").show();
+        localStorage.setItem('idrestaurante', '');
       
        });
 $("#homeAdmin").click(function(){

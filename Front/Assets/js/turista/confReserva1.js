@@ -20,10 +20,12 @@ $("#reservaProm").off("submit").on("submit", function (event) {
       registro: new Date().toISOString(),
       motivo: "fecha de eleccion del usuario"       
     }
+    paqueteelegido = reservaProm.idPaquete;
     var requestp = detallepaquete;
     console.log("dpper" + JSON.stringify(detallepaquete));
     var ifSuccessdetalle = function (apiResponse) {
       addAlert(apiResponse.message, "success", 3);
+      
       loadPage("paquetePersonal7",turPath);
     }
     closeLoader();

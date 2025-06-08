@@ -35,6 +35,8 @@ public class DetallePersonaPaqueteDto {
 
     private String motivo;
 
+    private String codigoPago;
+
     public DetallePersonaPaqueteDto(Long id, String motivo) {
         this.id = id;
         this.motivo = motivo;

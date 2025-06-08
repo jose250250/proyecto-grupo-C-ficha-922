@@ -10,6 +10,7 @@ var listarestaurantes = "";
 var listapaquetes="";
 var paquetes = "";
 var lugarFavorito = "";
+var paqueteelegido = "";
 
 
 var validMethods = ["GET", "POST", "PUT", "DELETE"];
@@ -719,12 +720,15 @@ function recargarpaquetes(){
           <div class="col-md-3 rounded-3"> <!-- 4 tarjetas por fila -->
               <div class="card deltatur-card rounded-3">
                   <div class="deltatur-card-header rounded-2">
-                      <h5 class="card-title rounded-2">${paquete.nombre}</h5>
+                      <h6 class="card-title rounded-2">${paquete.nombre}</h6>
                   </div>
+                  
+                  <img src="http://localhost/Front/uploads/${paquete.urlfoto}"  alt="Imagen de ${paquete.nombre}" />
+                  
                   <div class="card-body text-center rounded-1">
-                      <p class="card-text"><strong>Descripción:</strong> ${paquete.descripcion}</p>
-                      <p class="card-text"><strong>Precio:</strong> $${paquete.precioDia}</p>
-                      <p class="card-text"><strong>Descuento:</strong> ${paquete.descuento}%</p>
+                      <p class="card-text fs-6"><strong>Descripción:</strong> ${paquete.descripcion}</p>
+                      <p class="card-text fs-5"><strong>Precio:</strong> $${paquete.precioDia}</p>
+                      <p class="card-text fs-5"><strong>Descuento:</strong> ${paquete.descuento}%</p>
                   </div>
                   <div class="deltatur-card-footer rounded-2">
                       <button class="btn btn-primary btn-paquete" data-id = '${paquete.id}'>Reservar ahora</button>
