@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 05-05-2025 a las 11:36:12
+-- Tiempo de generación: 14-06-2025 a las 21:05:56
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -46,7 +46,10 @@ INSERT INTO `atraccion_turistica` (`id`, `nombre`, `id_municipio`, `celular`, `p
 (7, 'paseo caminata en ciudad', 57, '32344443', 123000),
 (8, 'paseo a la cciudad amurallada', 171, '2138790', 110000),
 (9, 'paseo a los manglares', 785, '3219809098', 89000),
-(10, 'atraccion medellin', 547, '21239876', 87000);
+(10, 'atraccion medellin', 547, '21239876', 87000),
+(11, 'paseo por centro y ranchon', 507, '3212345456', 12000),
+(12, 'paseo en lorica', 507, '31287992332', 125000),
+(13, 'paseo por el copey', 299, '3236789098', 50000);
 
 -- --------------------------------------------------------
 
@@ -108,17 +111,55 @@ CREATE TABLE `detalle_persona_paquete` (
   `id` int(11) NOT NULL,
   `id_persona` int(11) NOT NULL,
   `id_paquete_turistico` int(11) NOT NULL,
-  `estado` enum('activo','reservado','terminado','cancelado','en-proceso','vencido') NOT NULL,
+  `estado` enum('activo','reservado','terminado','cancelado','en-proceso','vencido','pendiente') NOT NULL,
   `registro` date NOT NULL,
-  `motivo_registro` varchar(30) NOT NULL
+  `motivo_registro` varchar(200) NOT NULL,
+  `url_vaucher` varchar(500) DEFAULT NULL COMMENT 'aqui se guardan las url de los vaucher',
+  `total_pago` int(60) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `detalle_persona_paquete`
 --
 
-INSERT INTO `detalle_persona_paquete` (`id`, `id_persona`, `id_paquete_turistico`, `estado`, `registro`, `motivo_registro`) VALUES
-(5, 43, 7, 'activo', '2025-05-04', 'creacion');
+INSERT INTO `detalle_persona_paquete` (`id`, `id_persona`, `id_paquete_turistico`, `estado`, `registro`, `motivo_registro`, `url_vaucher`, `total_pago`) VALUES
+(20, 49, 8, 'cancelado', '2025-06-10', 'fecha de eleccion del usuario', NULL, 500000),
+(56, 49, 27, 'pendiente', '2025-06-08', 'fecha de eleccion del usuario', NULL, 500000),
+(57, 56, 42, 'activo', '2025-06-12', 'creacion por admin jp', 'vouchers/ce75a5e9-1cc9-421f-8905-7e1f17f642c9_voucher.png', 500000),
+(58, 49, 8, 'pendiente', '2025-06-08', 'fecha de eleccion del usuario', NULL, 500000),
+(59, 49, 11, 'pendiente', '2025-06-08', 'fecha de eleccion del usuario', NULL, 500000),
+(66, 49, 28, 'activo', '2025-06-11', 'fecha de eleccion del usuario', 'vouchers/6a1c7e51-ea40-4ad9-9285-32d5cf78f4ef_voucher.png', 500000),
+(67, 52, 8, 'pendiente', '2025-06-09', 'creacion por admin jp', NULL, 500000),
+(68, 52, 7, 'pendiente', '2025-06-10', 'creacion por admin jp', NULL, 500000),
+(69, 51, 37, 'pendiente', '2025-06-10', 'fecha de creacion por el usuario', NULL, 500000),
+(73, 51, 2, 'pendiente', '2025-06-10', 'fecha de creacion del usuario', NULL, 500000),
+(74, 51, 2, 'pendiente', '2025-06-10', 'fecha de creacion del usuario', NULL, 500000),
+(95, 51, 39, 'pendiente', '2025-06-10', 'fecha de creacion por el usuario', NULL, 500000),
+(96, 49, 40, 'pendiente', '2025-06-10', 'fecha de creacion por el usuario', NULL, 500000),
+(97, 49, 41, 'pendiente', '2025-06-10', 'fecha de creacion por el usuario', NULL, 500000),
+(98, 49, 2, 'pendiente', '2025-06-10', 'fecha de creacion del usuario', NULL, 500000),
+(99, 49, 7, 'pendiente', '2025-06-10', 'fecha de creacion del usuario', NULL, 500000),
+(100, 49, 10, 'pendiente', '2025-06-10', 'fecha de creacion del usuario', NULL, 500000),
+(101, 50, 7, 'pendiente', '2025-06-10', 'creacion por admin jp', 'vouchers/7071345b-e8d8-43f2-8d54-7f45217c9120_modelo de plan de accion.png', 250000),
+(102, 52, 2, 'pendiente', '2025-06-11', 'creacion por admin', 'vouchers/64ab793b-4ea0-4a5a-b079-eb232b4cd193_cartagena.jpeg', 340000),
+(103, 51, 18, 'pendiente', '2025-06-11', 'creacion por admin', 'vouchers/e9b396fc-b59e-42ba-ae7d-7dc7eb48f5d6_voucher.png', 340000),
+(104, 51, 2, 'activo', '2025-06-13', 'fecha de creacion del usuario', NULL, 260000),
+(105, 51, 2, 'activo', '2025-06-13', 'fecha de creacion del usuario', NULL, 340000),
+(106, 51, 2, 'activo', '2025-06-13', 'fecha de creacion del usuario', NULL, 500000),
+(107, 51, 11, 'activo', '2025-06-13', 'fecha de creacion del usuario', NULL, 260000),
+(108, 51, 2, 'activo', '2025-06-13', 'fecha de creacion del usuario', NULL, 484000),
+(109, 51, 2, 'activo', '2025-06-13', 'fecha de creacion del usuario', NULL, 260000),
+(110, 51, 7, 'activo', '2025-06-13', 'fecha de creacion del usuario', NULL, 260000),
+(111, 51, 9, 'activo', '2025-06-13', 'fecha de creacion del usuario', NULL, 700350),
+(112, 51, 7, 'activo', '2025-06-13', 'fecha de creacion del usuario', NULL, 260000),
+(113, 51, 3, 'activo', '2025-06-13', 'fecha de creacion del usuario', NULL, 500000),
+(114, 56, 43, 'activo', '2025-06-13', 'fecha de creacion por el usuario', NULL, 484000),
+(115, 56, 44, 'activo', '2025-06-13', 'fecha de creacion por el usuario', NULL, 650000),
+(116, 56, 45, 'reservado', '2025-06-13', 'fecha de pago del usuario', 'vouchers/4281651c-91a2-4d8c-b146-36834df6dd99_voucher.png', 2016000),
+(117, 56, 46, 'pendiente', '2025-06-12', 'fecha de creacion por el usuario', 'vouchers/59025bfb-dd9d-4fc0-a6dc-623a083b99ec_voucher.png', 484000),
+(118, 56, 2, 'pendiente', '2025-06-12', 'fecha de creacion del usuario', 'vouchers/605d6ede-e0b2-4a92-bda0-aab8b8008779_voucher.png', 329600),
+(119, 56, 27, 'reservado', '2025-06-13', 'fecha de creacion del usuario', 'vouchers/a5d759f6-cee7-40e9-a94c-9b249cf4e3bd_voucher.png', 700350),
+(120, 56, 10, 'en-proceso', '2025-06-13', 'fecha de pago del usuario', 'vouchers/c94bc6ca-3fee-45ea-8a4a-f31ceafaf304_voucher.png', 1491000);
 
 -- --------------------------------------------------------
 
@@ -143,7 +184,7 @@ CREATE TABLE `hotel` (
 INSERT INTO `hotel` (`id`, `nombre`, `id_municipio`, `celular`, `direccion`, `precio`, `foto`) VALUES
 (3, 'Hotel casa blanca', 688, '32123231', 'calle 3 n 4-39', 239000, 'https://lh6.googleusercontent.com/proxy/wDGyDnjKTvuBUsu2uaEx1paAgpNSRTjqNy4PzaTmmwluAEOQG7CBAPFKHL67T5h5xSEwWSU5vGN99Eli53YDR4xvJ4s4rteAbOIKBGgsCxaxTWdmzqByw1_VxgzahicFPWqNKuCWgkmjLOu18ZEUcBCHBRDHqg=w253-h168-k-no'),
 (4, 'hotel san antonio', 791, '31123211', 'valle 2 d 4-3', 40000, 'https://lh6.googleusercontent.com/proxy/wDGyDnjKTvuBUsu2uaEx1paAgpNSRTjqNy4PzaTmmwluAEOQG7CBAPFKHL67T5h5xSEwWSU5vGN99Eli53YDR4xvJ4s4rteAbOIKBGgsCxaxTWdmzqByw1_VxgzahicFPWqNKuCWgkmjLOu18ZEUcBCHBRDHqg=w253-h168-k-no'),
-(5, 'hotel san roque', 171, '321232323', '25 de diciembre -30', 35000, 'https://lh6.googleusercontent.com/proxy/wDGyDnjKTvuBUsu2uaEx1paAgpNSRTjqNy4PzaTmmwluAEOQG7CBAPFKHL67T5h5xSEwWSU5vGN99Eli53YDR4xvJ4s4rteAbOIKBGgsCxaxTWdmzqByw1_VxgzahicFPWqNKuCWgkmjLOu18ZEUcBCHBRDHqg=w253-h168-k-no'),
+(5, 'hotel san roque', 171, '321232323', '25 de diciembre -30', 35000, 'e1885027-214b-43ee-8737-c58604e9d077.jpg'),
 (6, 'hotel el palmar', 57, '32123212', 'cra 3 n4-31', 45000, 'https://lh6.googleusercontent.com/proxy/wDGyDnjKTvuBUsu2uaEx1paAgpNSRTjqNy4PzaTmmwluAEOQG7CBAPFKHL67T5h5xSEwWSU5vGN99Eli53YDR4xvJ4s4rteAbOIKBGgsCxaxTWdmzqByw1_VxgzahicFPWqNKuCWgkmjLOu18ZEUcBCHBRDHqg=w253-h168-k-no'),
 (7, 'hotel los robles', 877, '321232323', 'hab 34-54', 50000, 'https://lh6.googleusercontent.com/proxy/wDGyDnjKTvuBUsu2uaEx1paAgpNSRTjqNy4PzaTmmwluAEOQG7CBAPFKHL67T5h5xSEwWSU5vGN99Eli53YDR4xvJ4s4rteAbOIKBGgsCxaxTWdmzqByw1_VxgzahicFPWqNKuCWgkmjLOu18ZEUcBCHBRDHqg=w253-h168-k-no'),
 (10, 'hotel san roque', 251, '323783498', 'call 3 n 43 56', 60000, NULL),
@@ -159,7 +200,16 @@ INSERT INTO `hotel` (`id`, `nombre`, `id_municipio`, `celular`, `direccion`, `pr
 (20, 'hotel san jose', 547, '3127768987', 'cl 23 n 5-23', 90000, 'https://lh6.googleusercontent.com/proxy/wDGyDnjKTvuBUsu2uaEx1paAgpNSRTjqNy4PzaTmmwluAEOQG7CBAPFKHL67T5h5xSEwWSU5vGN99Eli53YDR4xvJ4s4rteAbOIKBGgsCxaxTWdmzqByw1_VxgzahicFPWqNKuCWgkmjLOu18ZEUcBCHBRDHqg=w253-h168-k-no'),
 (21, 'hotel don jose', 547, '321567654', 'calle 23 n 3-22', 98000, 'https://lh6.googleusercontent.com/proxy/wDGyDnjKTvuBUsu2uaEx1paAgpNSRTjqNy4PzaTmmwluAEOQG7CBAPFKHL67T5h5xSEwWSU5vGN99Eli53YDR4xvJ4s4rteAbOIKBGgsCxaxTWdmzqByw1_VxgzahicFPWqNKuCWgkmjLOu18ZEUcBCHBRDHqg=w253-h168-k-no'),
 (22, 'hotel marinilla ', 547, '3216787988', 'cra23 n 32 22', 110000, 'https://lh6.googleusercontent.com/proxy/wDGyDnjKTvuBUsu2uaEx1paAgpNSRTjqNy4PzaTmmwluAEOQG7CBAPFKHL67T5h5xSEwWSU5vGN99Eli53YDR4xvJ4s4rteAbOIKBGgsCxaxTWdmzqByw1_VxgzahicFPWqNKuCWgkmjLOu18ZEUcBCHBRDHqg=w253-h168-k-no'),
-(23, 'Hotel Nutibara Medellín', 547, '3212344323', 'calle 343 23-32', 134000, 'https://lh3.googleusercontent.com/p/AF1QipMq4R0xf3BL8w0XEDdwCsmWZXNOcnN0HLtKdgHL=w253-h168-k-no');
+(23, 'Hotel Nutibara Medellín', 547, '3212344323', 'calle 343 23-32', 134000, 'https://lh3.googleusercontent.com/p/AF1QipMq4R0xf3BL8w0XEDdwCsmWZXNOcnN0HLtKdgHL=w253-h168-k-no'),
+(24, 'hotel isis', 536, '3116789098', 'calle 3 n 4-39', 70000, 'null'),
+(25, 'Onoma Hotel', 507, '3123454323', 'Cra. 16 #1BIS - 19', 74000, 'https://www.shutterstock.com/shutterstock/photos/2441702131/display_1500/stock-photo-honeymoon-swans-made-with-towels-and-beautiful-rose-petals-on-bed-in-room-2441702131.jpg'),
+(26, 'Hotel Palmeras del Sinú', 507, '3212344334', 'Nuevo Campo Alegre, 231020', 130000, 'https://lh3.googleusercontent.com/p/AF1QipMb9nUtMxIyS6-cwrNYmYDOaT8UfTERwMbzI9sk=w253-h189-k-no'),
+(27, 'hotel prueba', 149, '3126661233', 'calle 3 n 4-39', 120000, 'https://www.shutterstock.com/shutterstock/photos/2441702131/display_1500/stock-photo-honeymoon-swans-made-with-towels-and-beautiful-rose-petals-on-bed-in-room-2441702131.jpg'),
+(29, 'h don jose', 845, '21232322', 'calle 3 n 4-39', 120000, 'uploads\\hoteles\\6a9e17bf-4522-4e11-b9c9-97d89304a7b1_fotovaca.jpg'),
+(30, 'hotel dd', 384, '3126789876', 'calle 343 23-32', 140000, 'uploads/hoteles/ba469477-1f8b-448a-9bb3-9e8d43272c44_fotovaca.jpg'),
+(31, 'hotel don luis', 388, '31123211', 'calle 4 n 6-98', 210000, 'uploads/hoteles/117ddd2d-5043-4719-b21b-634e0bdb3ae0_fotovaca.jpg'),
+(32, 'hotel jose', 1035, '3126789876', 'Calle 2 cr 3-19', 123000, 'hoteles/2a5df53d-8492-46ce-b6e7-0427977702a7_santa marta.jpeg'),
+(33, 'hotel el copey', 299, '3126789876', 'cra 34 n 23-21', 90000, 'hoteles/354f6685-d6ab-4075-a7a2-515af266d771_sanantero4.jpeg');
 
 -- --------------------------------------------------------
 
@@ -1289,7 +1339,7 @@ INSERT INTO `municipio` (`id`, `municipio`, `id_departamento`, `estado`) VALUES
 CREATE TABLE `paquete_turistico` (
   `id` int(11) NOT NULL,
   `nombre` varchar(50) NOT NULL,
-  `clase` enum('PREMIUN','BASICO','LITE','PROMOCIONAL') NOT NULL,
+  `clase` enum('PREMIUN','BASICO','LITE','PROMOCIONAL','PERSONALIZADO') NOT NULL,
   `descripcion` text NOT NULL,
   `fecha_inicio` date NOT NULL COMMENT 'fecha de inicio del paquete',
   `fecha_final` date NOT NULL COMMENT 'fecha de fin del paquete',
@@ -1299,19 +1349,51 @@ CREATE TABLE `paquete_turistico` (
   `id_atraccion_turistica` int(11) DEFAULT NULL,
   `id_transporte` int(11) DEFAULT NULL,
   `precio_dia` int(20) NOT NULL,
-  `descuento` int(30) NOT NULL
+  `descuento` int(30) NOT NULL,
+  `foto` varchar(500) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `paquete_turistico`
 --
 
-INSERT INTO `paquete_turistico` (`id`, `nombre`, `clase`, `descripcion`, `fecha_inicio`, `fecha_final`, `id_municipio`, `id_hotel`, `id_restaurante`, `id_atraccion_turistica`, `id_transporte`, `precio_dia`, `descuento`) VALUES
-(2, 'primer editado', 'BASICO', 'el paquete es uno de los mas vendido', '2025-04-26', '2025-04-28', 345, 4, 6, 3, 6, 2300, 10),
-(3, 'paquete basico', 'BASICO', 'este paquete cuenta con ....', '2025-07-01', '2025-07-03', 171, 5, 3, 3, 5, 120000, 5),
-(7, 'primer', 'PREMIUN', 'este pq es para muestra', '2025-04-10', '2025-04-16', 345, 4, 6, 3, 6, 23000, 0),
-(8, 'san antero paquete', 'PREMIUN', 'este pa eys ', '2025-04-25', '2025-07-30', 791, 4, 8, 5, 10, 404000, 0),
-(9, 'prueba', 'PREMIUN', 'jose', '2025-04-25', '2025-05-08', 547, 15, 17, 10, 16, 446900, 0);
+INSERT INTO `paquete_turistico` (`id`, `nombre`, `clase`, `descripcion`, `fecha_inicio`, `fecha_final`, `id_municipio`, `id_hotel`, `id_restaurante`, `id_atraccion_turistica`, `id_transporte`, `precio_dia`, `descuento`, `foto`) VALUES
+(2, 'lorica clasico', 'PREMIUN', 'este paquete cuenta con todo un completo disfrute en cartagena, paseo otel y restaurante.', '2025-06-05', '2025-07-03', 507, 25, 19, 11, 19, 164800, 20, 'paquetes/b9862cbb-87bc-474b-9d0c-945e27d52350_lorica.jpeg'),
+(3, 'Paquete basico cartagena.', 'BASICO', 'este paquete cuenta con todo un completo disfrute en cartagena, paseo otel y restaurante.', '2025-06-25', '2025-06-27', 171, 5, NULL, NULL, NULL, 29750, 15, 'paquetes/0850dd6d-b0f2-4755-a2f6-3599d55fe1a7_cartagena.jpeg'),
+(7, 'gran paqute', 'PREMIUN', 'este pq es para muestra', '2025-04-08', '2025-04-14', 877, 12, 9, NULL, 12, 259200, 10, 'paquetes/ef1ab12d-2517-4ce6-8d4f-b618a7e98c85_santa marta.jpeg'),
+(8, 'san antero paquete', 'PREMIUN', 'este pa eys ', '2025-04-24', '2025-07-29', 791, 4, 8, 5, 10, 404000, 0, 'paquetes/99185cd5-0c18-43a3-af00-ad8a634bc237_san antero.jpeg'),
+(9, 'paquete Playa blanca', 'PREMIUN', 'paquete para disfrutar de las playas', '2025-04-23', '2025-05-06', 791, 4, 7, NULL, 10, 194250, 25, 'paquetes/0fb84470-da14-4bb7-8863-dd84507ce3c4_san antero.jpeg'),
+(10, 'san antero2 paquete', 'PREMIUN', 'este pa eys ', '2025-05-24', '2025-05-28', 791, 4, 8, 5, 10, 213000, 0, 'paquetes/ea9ad491-ba56-4123-9e69-211652440eb3_san antero.jpeg'),
+(11, 'san antero3 paquete', 'PREMIUN', 'este modificado ', '2025-05-24', '2025-05-28', 791, 4, 8, 5, 10, 214000, 0, 'paquetes/24baffd7-971a-42ed-b0db-47d137d82131_san antero.jpeg'),
+(12, 'mi paquete', 'PERSONALIZADO', 'Paquete creado por el usuario', '2025-05-05', '2025-05-07', 547, 15, 17, 10, 16, 893800, 0, NULL),
+(13, 'mi paquete', 'PERSONALIZADO', 'Paquete creado por el usuario', '2025-05-05', '2025-05-07', 547, 15, 17, 10, 16, 893800, 0, NULL),
+(14, 'mi paquete', 'PERSONALIZADO', 'Paquete creado por el usuario', '2025-05-05', '2025-05-07', 547, 19, 17, 10, 14, 869600, 0, NULL),
+(15, 'mi paquete', 'PERSONALIZADO', 'Paquete creado por el usuario', '2025-05-05', '2025-05-07', 547, 19, 17, 10, 14, 869600, 0, NULL),
+(17, 'mi paquete', 'PERSONALIZADO', 'Paquete creado por el usuario', '2025-05-05', '2025-05-07', 547, 19, 17, 10, 14, 869600, 0, NULL),
+(18, 'mi paquete', 'PERSONALIZADO', 'Paquete creado por el usuario', '2025-05-11', '2025-05-15', 547, 23, 17, 10, 16, 1923600, 0, NULL),
+(21, 'mi paquete', 'PERSONALIZADO', 'Paquete creado por el usuario', '2025-05-11', '2025-05-13', 507, 16, NULL, NULL, NULL, 220000, 0, NULL),
+(22, 'Lorica full vacional', 'PREMIUN', 'este paquete cuenta con todo lo que necesitas para pasar un dia con tu pareja, conoceras lo mejor de lorica', '2025-05-14', '2025-10-02', 507, 25, 19, 11, 18, 144200, 30, 'paquetes/5018b76c-6277-44a7-9f0d-560e36597449_lorica.jpeg'),
+(23, 'mi paquete', 'PERSONALIZADO', 'Paquete creado por el usuario', '2025-05-20', '2025-05-29', 547, 23, 17, 10, 16, 4328100, 0, NULL),
+(24, 'paquet full lorica', 'PREMIUN', 'el paqueb....', '2025-05-18', '2025-07-23', 507, 16, 19, 12, 18, 280000, 20, 'paquetes/effb1f4c-8bd1-4173-beab-18484e1d5c93_lorica.jpeg'),
+(25, 'mi paquete', 'PERSONALIZADO', 'Paquete creado por el usuario', '2025-05-20', '2025-05-22', 507, 25, 19, 11, 20, 412000, 0, NULL),
+(26, 'mi paquete', 'PERSONALIZADO', 'Paquete creado por el usuario', '2025-05-27', '2025-06-04', 791, 4, 7, 5, 9, 7951992, 0, NULL),
+(27, 'MEDELLIN CLASICO', 'BASICO', 'este paquete cuenta con todo lo que necesitas para pasar un dia con tu pareja, conoceras lo mejor de lorica', '2025-06-02', '2025-06-22', 547, 19, 17, 10, 16, 350175, 25, 'paquetes/6e5f3467-3726-4518-9d6f-55076a8521bd_imagen de medellin.jpg'),
+(28, 'san antero max', 'PREMIUN', 'este paquete es muy completo', '2025-06-11', '2025-07-09', 791, 4, 8, 5, 10, 303000, 25, 'paquetes/d4cc654d-4eb1-4607-926d-c6cc07bf9416_sananetro5.jpeg'),
+(32, 'lorica clasico', 'PREMIUN', 'este pq es para muestra', '2025-06-23', '2025-07-10', 507, 16, 19, 11, 18, 198440, 18, 'paquetes/d9c78436-58a7-427b-8f84-7a98d188c0f1_lorica.jpeg'),
+(33, 'mi paquete', 'PERSONALIZADO', 'Paquete creado por el usuario', '2025-06-06', '2025-06-14', 507, 26, 19, NULL, 20, 2000000, 0, NULL),
+(34, 'mi paquete', 'PERSONALIZADO', 'Paquete creado por el usuario', '2025-06-06', '2025-06-10', 507, 16, 19, NULL, 19, 920000, 0, NULL),
+(35, 'mi paquete', 'PERSONALIZADO', 'Paquete creado por el usuario', '2025-06-06', '2025-06-07', 507, 16, 19, 12, 19, 350000, 0, NULL),
+(36, 'mi paquete', 'PERSONALIZADO', 'Paquete creado por el usuario', '2025-06-09', '2025-06-10', 547, 15, 17, NULL, 16, 359900, 0, NULL),
+(37, 'mi paquete', 'PERSONALIZADO', 'Paquete creado por el usuario', '2025-06-17', '2025-06-10', 507, 16, 19, NULL, 19, 1610000, 0, NULL),
+(38, 'mi paquete', 'PERSONALIZADO', 'Paquete creado por el usuario', '2025-06-08', '2025-06-11', 507, 16, 19, 12, 18, 1050000, 0, NULL),
+(39, 'mi paquete', 'PERSONALIZADO', 'Paquete creado por el usuario', '2025-06-22', '2025-06-24', 507, 16, 19, 11, 19, 242000, 0, NULL),
+(40, 'mi paquete', 'PERSONALIZADO', 'Paquete creado por el usuario', '2025-06-09', '2025-06-19', 791, 4, 7, 5, 9, 993999, 0, NULL),
+(41, 'mi paquete', 'PERSONALIZADO', 'Paquete creado por el usuario', '2025-06-09', '2025-06-12', 507, 16, 19, 12, 20, 350000, 0, NULL),
+(42, 'pack copey plus', 'PREMIUN', 'este paquete es muy completo', '2025-06-09', '2025-06-30', 299, 33, 21, 13, 22, 204800, 20, 'paquetes/b15815e6-7fbd-4a22-852d-1b10d8341979_santa marta.jpeg'),
+(43, 'mi paquete', 'PERSONALIZADO', 'Paquete creado por el usuario', '2025-06-10', '2025-06-24', 299, 33, 21, 13, 22, 256000, 0, NULL),
+(44, 'mi paquete', 'PERSONALIZADO', 'Paquete creado por el usuario', '2025-06-10', '2025-06-12', 299, 33, 21, NULL, NULL, 146000, 0, NULL),
+(45, 'mi paquete', 'PERSONALIZADO', 'Paquete creado por el usuario', '2025-06-12', '2025-06-19', 877, 12, 9, NULL, 12, 288000, 0, NULL),
+(46, 'mi paquete', 'PERSONALIZADO', 'Paquete creado por el usuario', '2025-06-10', '2025-06-12', 507, 16, 19, 11, 20, 242000, 0, NULL);
 
 -- --------------------------------------------------------
 
@@ -1340,19 +1422,16 @@ CREATE TABLE `persona` (
 --
 
 INSERT INTO `persona` (`id`, `primer_nombre`, `segundo_nombre`, `primer_apellido`, `segundo_apellido`, `tipo_identificacion`, `identificacion`, `fecha_nacimiento`, `celular`, `id_municipio`, `direccion`, `genero`, `correo`) VALUES
-(12, 'JUAN', 'jose', 'hernandez', '', 'cc', 78884238, '2008-11-19', '43234433', 672, 'jffhskfk', 'm', 'JUAN@HOTMAIL.ES'),
 (13, 'julilo', 'jose', 'calio', 'hjh', 'cc', 234238, '2008-11-22', '43234433', 403, 'jffhskfk', 'm', 'jfj@jhshj'),
 (26, 'jose', 'antonio', 'cogollo', '', 'cc', 1076345782, '1988-04-20', '3126617876', 507, 'calle 4 n 6-98', 'm', 'joseantonio@hotmail.es'),
-(28, 'dina', 'luz', 'Arteaga', '', 'cc', 1063234893, '2000-03-01', '3127890987', 508, 'calle 3 n 4-09', 'f', 'dina@gmail.com'),
 (35, 'angel', 'jesus', 'pena', '', 'pasaporte', 108837, '2009-03-10', '312456443', 710, 'call3 3hun45.99', 'm', 'angeljesus@hotmail.com'),
 (36, 'jose', 'angel', 'peña', 'ballesteros', 'cc', 1063245789, '1989-02-14', '3126617989', 507, 'Calle 2 cr 3-10', 'm', 'jose.angel@hotmail.es'),
-(37, 'jose', 'Jose angel', 'Peña', 'ballesteros', 'cc', 130999990, '2000-09-16', '3228790990', 507, 'Calle 2 cr 3-19', 'm', 'jose.angel@hotmail.com'),
-(38, 'delvi', 'ramon', 'perez', 'chica', 'cc', 780987898, '1990-05-04', '3116789098', 507, 'call34 n43-21', 'm', 'delvi@gmail.com.co'),
-(43, 'DAVID', '', 'LOPEZ', '', 'cc', 1098787656, '2001-03-11', '3126617898', 507, 'CALLE 3 M 78 43', 'm', 'DAVID@GMAIL.COM'),
-(45, 'camilo', '', 'manjarrez', '', 'cc', 109999999, '1989-05-11', '312666777', 342, 'caahh5566', 'm', 'camilojose@hotmail.com'),
-(46, 'juanb', '', 'peña', '', 'cc', 19899999, '1990-03-11', '3128900090', 149, 'calle 23 n 4-23', 'm', 'juanjose@gmail.com.co'),
 (48, 'catalina', '', 'lopez', '', 'cc', 109867876, '1990-12-11', '3212344321', 574, 'call3 4 n 65.98', 'f', 'catalina123@gmail.com'),
-(49, 'francisco', '', 'berrocal', '', 'cc', 1098678765, '2001-11-11', '3126789876', 195, 'calle 23 n 56-32', 'm', 'franscisco@gmail.com.co');
+(49, 'francisco', '', 'berrocal', '', 'cc', 1098678765, '2001-11-11', '3126789876', 195, 'calle 23 n 56-32', 'm', 'franscisco@gmail.com.co'),
+(50, 'Joel', 'david', 'peña', 'arteaga', 'cc', 109867898, '1990-08-11', '3126617898', 525, 'cra 23 n 23 76', 'm', 'joel.pena2580@gmail.com'),
+(51, 'maria', 'angel', 'peña', 'arteaga', 'pasaporte', 1890876787, '1989-09-09', '3127789890', 698, 'cra 23 n 6 78', 'f', 'maria.pena@gmail.com'),
+(52, 'jose', 'antonio', 'cogollo', 'lopez', 'cc', 1098787654, '1990-05-10', '3123456767', 493, 'calle 23 n 67-32', 'm', 'jose.cogollo@gmail.com'),
+(56, 'mario', '', 'lima', '', 'cc', 1098234876, '1985-06-09', '3125678765', 299, 'calle 23-43-23', 'm', 'mario.lima@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -1386,7 +1465,10 @@ INSERT INTO `restaurante` (`id`, `nombre`, `id_municipio`, `celular`, `direccion
 (15, 'la trasnosonn', 345, '314354', 'calle n 4356', 98000),
 (16, 'la raza', 345, '32144354', 'calle 25 n 4356', 30000),
 (17, 'meddellin restaurante', 547, '3212344332', 'calle 23 n 23-21', 139900),
-(18, 'restaurante san lazaro', 729, '3124567654', 'cra 23 n 2 23', 80000);
+(18, 'restaurante san lazaro', 729, '3124567654', 'cra 23 n 2 23', 80000),
+(19, 'La Mula Restaurante Bar', 507, '304 6815661', '90, Lorica, Córdoba', 90000),
+(20, 'rset prueba', 339, '31266178982', 'calle 4 n 6-98', 120000),
+(21, 'restaurante el copey', 299, '3236789098', 'calle 23 n 32 11', 56000);
 
 -- --------------------------------------------------------
 
@@ -1441,7 +1523,12 @@ INSERT INTO `transporte` (`id`, `nombre`, `id_municipio`, `celular`, `precio`) V
 (14, 'medellin', 547, '321678976', 87900),
 (15, 'veloz medellin', 547, '3212345432', 10000),
 (16, 'medellintaxia', 547, '3212343232', 120000),
-(17, 'taxi san lazaro', 729, '3214323433', 70000);
+(17, 'taxi san lazaro', 729, '3214323433', 70000),
+(18, 'cotrasis', 507, '310 7285822', 30000),
+(19, 'taxis lorica', 507, '3217890987', 30000),
+(20, 'taxiespress', 507, '312889232', 30000),
+(21, 'lancha paso nuevo', 798, '3126617876', 30000),
+(22, 'trans copey', 299, '3126789876', 60000);
 
 -- --------------------------------------------------------
 
@@ -1462,13 +1549,14 @@ CREATE TABLE `usuario` (
 --
 
 INSERT INTO `usuario` (`id`, `password`, `login`, `id_rol`, `id_persona`) VALUES
-(9, 'joseddidid', 'juliocaloa@hotmail.com', 2, 13),
-(10, 'josesssdidid', 'juan@gmail.com', 2, 12),
 (11, 'jose1234', 'jose@jose.com', 1, 13),
 (12, 'jose1234', 'jose@gmail.com', 1, 26),
-(13, 'jose1234', 'jose.angel.p@gmail.com', 1, 36),
+(13, '1234', 'jose.pena@gmail.com', 1, 36),
 (14, 'francisco', 'francisco@gmail.com.co', 3, 49),
-(15, '123', 'JUAN@HOTMAIL.ES', 1, 12);
+(17, 'maria2580', 'maria.pena@gmail.com', 3, 51),
+(20, '1234', 'angeljesus@hotmail.com', 1, 35),
+(21, '1234', 'catalina123@gmail.com', 1, 48),
+(26, 'mario123', 'mario.lima@gmail.com', 3, 56);
 
 --
 -- Índices para tablas volcadas
@@ -1567,7 +1655,7 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT de la tabla `atraccion_turistica`
 --
 ALTER TABLE `atraccion_turistica`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT de la tabla `departamento`
@@ -1579,13 +1667,13 @@ ALTER TABLE `departamento`
 -- AUTO_INCREMENT de la tabla `detalle_persona_paquete`
 --
 ALTER TABLE `detalle_persona_paquete`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=121;
 
 --
 -- AUTO_INCREMENT de la tabla `hotel`
 --
 ALTER TABLE `hotel`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 
 --
 -- AUTO_INCREMENT de la tabla `municipio`
@@ -1597,19 +1685,19 @@ ALTER TABLE `municipio`
 -- AUTO_INCREMENT de la tabla `paquete_turistico`
 --
 ALTER TABLE `paquete_turistico`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
 
 --
 -- AUTO_INCREMENT de la tabla `persona`
 --
 ALTER TABLE `persona`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'llave primaria de cada usuario', AUTO_INCREMENT=50;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'llave primaria de cada usuario', AUTO_INCREMENT=57;
 
 --
 -- AUTO_INCREMENT de la tabla `restaurante`
 --
 ALTER TABLE `restaurante`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT de la tabla `rol`
@@ -1621,13 +1709,13 @@ ALTER TABLE `rol`
 -- AUTO_INCREMENT de la tabla `transporte`
 --
 ALTER TABLE `transporte`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Esta es la id del tipo de usuario que va a tener l sistema', AUTO_INCREMENT=16;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Esta es la id del tipo de usuario que va a tener l sistema', AUTO_INCREMENT=27;
 
 --
 -- Restricciones para tablas volcadas
