@@ -4,15 +4,17 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
 
 import co.edu.sena.gestion_turistica.dto.DetallePersonaPaqueteDto;
 import co.edu.sena.gestion_turistica.dto.ServerResponseAll;
@@ -29,16 +31,20 @@ public class DetallePersonaPaqueteController {
     @Autowired
     private DetallePersonaPaqueteService service;
 
-    @PostMapping
-    public ServerResponseAll create(@RequestBody DetallePersonaPaqueteDto request) {
-        DetallePersonaPaqueteDto guardado = service.save(request);
-    
-        return ServerResponseAll.builder()
-            .message("Registro exitoso")
-            .status(HttpStatus.OK.value())
-            .data(guardado)
-            .build();
-    }
+   @PostMapping(consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
+public ServerResponseAll create(
+    @RequestPart("dto") DetallePersonaPaqueteDto request,
+    @RequestPart(value = "file", required = false) MultipartFile file
+) {
+    DetallePersonaPaqueteDto guardado = service.save(file, request);
+
+    return ServerResponseAll.builder()
+        .message("Registro exitoso")
+        .status(HttpStatus.OK.value())
+        .data(guardado)
+        .build();
+}
+
     
   
 
@@ -84,19 +90,19 @@ public ServerResponseAll deleteById(@PathVariable("id") Long id){
     .build();
 
 }
-@PutMapping("/{id}")
-public ServerResponseAll update(@PathVariable("id") Long id, @RequestBody DetallePersonaPaqueteDto request) {
-request.setId(id);
-request = this.service.update(request);
+@PutMapping(value = "/{id}", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
+public ServerResponseAll update(
+        @PathVariable("id") Long id,
+        @RequestPart("dto") DetallePersonaPaqueteDto dto,
+        @RequestPart(value = "file", required = false) MultipartFile file) {
 
-return ServerResponseAll
-.builder()
-.message(request != null ? "Registro actualizado" : "registro  no actualizado")
-.status(request != null ? HttpStatus.OK.value() : HttpStatus.BAD_REQUEST.value())
-.data(request)
-.build();
+    DetallePersonaPaqueteDto updated = this.service.update(id, dto, file); // Correcta llamada al service
 
+    return ServerResponseAll.builder()
+            .message(updated != null ? "Registro actualizado" : "Registro no actualizado")
+            .status(updated != null ? HttpStatus.OK.value() : HttpStatus.BAD_REQUEST.value())
+            .data(updated)
+            .build();
 }
-
 
 }

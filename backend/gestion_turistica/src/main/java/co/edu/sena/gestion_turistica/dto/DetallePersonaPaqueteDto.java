@@ -35,7 +35,9 @@ public class DetallePersonaPaqueteDto {
 
     private String motivo;
 
-    private String codigoPago;
+    private String urlVaucher;
+
+    private Long precioTotal;
 
     public DetallePersonaPaqueteDto(Long id, String motivo) {
         this.id = id;

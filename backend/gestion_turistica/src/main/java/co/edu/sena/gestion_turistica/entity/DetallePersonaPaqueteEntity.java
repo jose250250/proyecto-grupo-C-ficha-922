@@ -39,8 +39,11 @@ public class DetallePersonaPaqueteEntity {
     @Column (name="motivo_registro")
     private String motivo;
 
-    @Column (name= "codigo_soporte_pago")
-    private String codigoPago;
+    @Column (name= "url_vaucher")
+    private String urlVaucher;
+
+     @Column (name= "total_pago")
+    private Long precioTotal;
    
 
 }

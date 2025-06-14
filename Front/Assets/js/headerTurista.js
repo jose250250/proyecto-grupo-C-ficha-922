@@ -1,5 +1,5 @@
 var datoUsuario = localStorage.getItem("data-user")
-var reservaProm = [];
+
 var dUser = [];
 
 $(function () {
@@ -57,10 +57,12 @@ $(document).on("click", ".btn-paquete", function () {
           reservaProm = {
             
               idPersona: dUser.persona,
-              idPaquete: index,
+              idPaquete: paq.id,
               estado: "pendiente",
               registro: new Date().toISOString(),
-              motivo: "fecha de creacion del usuario"       
+              motivo: "fecha de creacion del usuario",  
+              precioDia: (paq.precioDia)
+               
             }
           
 

@@ -24,6 +24,7 @@ upload:
   path:
     paquetes: C:/xampp/htdocs/Front/uploads/paquetes
     hoteles: C:/xampp/htdocs/Front/uploads/hoteles
+    vaucher: C:/xampp/htdocs/Front/uploads/vouchers
 
   web:
     resources:
