@@ -8,7 +8,7 @@ $(function(){
 $("#btnEnviar").on("click", function(){
 
   if (!$("#vaucher").val()) {
-    alert("Debe subir una imagen del voucher.");
+    addAlert("Debe subir una imagen del voucher.","info", 2);
 }else{
       reservaProm = {
         idPersona: reservaelegida.idPersona,
@@ -55,4 +55,7 @@ $("#btnEnviar").on("click", function(){
     });
 
 }
+})
+$("#btnAtras").click(function(){
+   loadPage("paquetePersonal7",turPath);
 })
