@@ -11,6 +11,9 @@ var listapaquetes="";
 var paquetes = "";
 var lugarFavorito = "";
 var paqueteelegido = "";
+var reservaProm = [];
+var precioTotal = "";
+ var historial = [];
 
 
 var validMethods = ["GET", "POST", "PUT", "DELETE"];
@@ -812,7 +815,7 @@ function cargarhistorialcard(idpersona){
   var request = "";
   var ifSuccesspersona = function (apiResponse) {
     console.log("historial:response " + JSON.stringify(apiResponse));
-   var historial = apiResponse.data;
+  historial = apiResponse.data;
 
 // Asegúrate de que #container-historial tenga una sola fila
 $('#container-historial').html('<div class="row" id="fila-historial"></div>');

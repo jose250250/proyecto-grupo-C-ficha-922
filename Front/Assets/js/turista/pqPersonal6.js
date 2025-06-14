@@ -3,6 +3,7 @@ var restauranteSel=[];
 var transporteSel=[];
 var atraccionSel=[];
 var paqueteresponse=[];
+var precio = "";
 
 $(function () {
   hotelSel = listahoteles.find(hotel => hotel.id === parseInt(reserva.idHotel));
@@ -22,19 +23,24 @@ $(function () {
   $("#slcAtraccion").val((atraccionSel && atraccionSel.nombre) || "No Requiere");
 
   // Precios seguros con valor 0 si el objeto no existe
-  var precio = (hotelSel ? parseFloat(hotelSel.precio) : 0) 
+  precio = (hotelSel ? parseFloat(hotelSel.precio) : 0) 
              + (restauranteSel ? parseFloat(restauranteSel.precio) : 0) 
              + (transporteSel ? parseFloat(transporteSel.precio) : 0) 
              + (atraccionSel ? parseFloat(atraccionSel.precio) : 0);
 
-  $("#precio").val(precio * Number(reserva.CantDias));
-  console.log("precio:::" + precio);
+  $("#precio").val(precio);
+  $("#totalpaq").val(parseFloat(precio) * parseFloat(reserva.CantDias));
+
 });
 
 
 $("#frmDetallePaquete").submit(function (event) {
   console.log("Interceptado submit");
   event.preventDefault();
+   var total = (parseFloat(precio) * parseFloat(reserva.CantDias));
+   console.log("TOTAL:::"+ total);
+   reserva.precioTotal = total;
+   console.log("reserva:::"+ reserva);
     var paquete = {
       nombre: "mi paquete",
       clase: "PERSONALIZADO",
@@ -78,25 +84,37 @@ $("#frmDetallePaquete").submit(function (event) {
         addAlert(response.message, "success", 3);
         paqueteresponse= response.data;
         console.log("paqueteresponse:::",paqueteresponse);
-      var urlp = "http://localhost:8080/dperpaquete"
-      var detallepaquete= {
-        idPersona: reserva.idPersona,
-        idPaquete: paqueteresponse.id,
-        estado: "pendiente",
-        registro: new Date().toISOString(),
-        motivo: "fecha de creacion por el usuario"       
-      }
-      paqueteelegido = paqueteresponse.id;
-      console.log("Paquetelegido:::"+paqueteelegido);
-      var requestp = detallepaquete;
-      console.log("dpper" + JSON.stringify(detallepaquete));
-      var ifSuccessdetalle = function (apiResponse) {
-        addAlert(apiResponse.message, "success", 3);
-        loadPage("paquetePersonal7",turPath);
-      }
-      closeLoader();
-      callApi(urlp, "POST", requestp, ifSuccessdetalle, ifError);
-        // Opcional: limpiar formulario o recargar datos
+    var urlp = "http://localhost:8080/dperpaquete";
+     reservaProm = {
+     idPersona: reserva.idPersona,
+     idPaquete: paqueteresponse.id,
+     estado: "pendiente",
+     registro: new Date().toISOString(),
+     motivo: "fecha de creacion por el usuario",
+     precioTotal: reserva.precioTotal
+     }
+
+console.log("reservaprom" + JSON.stringify(reservaProm));
+var formData = new FormData();
+formData.append("dto", new Blob([JSON.stringify(reservaProm)], { type: "application/json" }));
+var ifSuccessdetalle = function (apiResponse) {
+  addAlert(apiResponse.message, "success", 3);
+    console.log("dataapi:::" , apiResponse);
+  localStorage.setItem("paqueteelegido", apiResponse.data.id);
+  console.log("Paquetelegido:::" , apiResponse.data.id);
+  loadPage("paquetePersonal7", turPath);
+};
+
+$.ajax({
+  url: urlp,
+  type: "POST",
+  data: formData,
+  processData: false,
+  contentType: false,
+  success: ifSuccessdetalle,
+  error: ifError
+});
+
       },
       error: function (err) {
         console.error("Error:", err);

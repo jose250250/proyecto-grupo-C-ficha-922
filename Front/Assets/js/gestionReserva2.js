@@ -87,7 +87,7 @@ closeLoader();
         estado: $('#slcEstado option:selected').text(),              
         registro: new Date().toISOString(),
         motivo: $("#txtMotivo").val(),
-        urlVoucher: $("#urlVoucher").val(),
+        
         precioTotal: $("#pagoTotal").val()
     };
      console.log("reservaaguardar:::", reserva);
@@ -95,27 +95,14 @@ closeLoader();
     const formData = new FormData();
     formData.append("dto", new Blob([JSON.stringify(reserva)], { type: "application/json" }));
 
-    // Adjuntar voucher si fue cargado
-     var archivo = $("#foto")[0].files[0];
-    if (archivo) {
-        formData.append("file", archivo);
-       for (var pair of formData.entries()) {
-    console.log(pair[0] + ':', pair[1]);
-}
-    }  
+ 
     
 
-    let method = "";
-    let url = "";
-
-    if (!index) {
-        method = "POST";
-        url = "http://localhost:8080/dperpaquete";
-    } else {
-        method = "PUT";
-        url = "http://localhost:8080/dperpaquete/" + index;
-        localStorage.setItem('idreserva', '');
-    }
+  
+     method = "PUT";
+     url = "http://localhost:8080/dperpaquete/" + index;
+     localStorage.setItem('idreserva', '');
+    
 
     const ifSuccess = function (apiResponse) {
         addAlert(apiResponse.message, "success", 3);
@@ -144,8 +131,8 @@ closeLoader();
             $('#frmReserva')[0].reset();
             $("#main-content-reserva").hide();
             $("#main-content-header").show();
-        }
-
+        
+    }
         else {
             $("#frmReserva input, #frmReserva select").each(function () {
                 if ($(this).val() === '') {

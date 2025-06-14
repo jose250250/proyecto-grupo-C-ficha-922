@@ -54,7 +54,12 @@ input.error, select.error {
 .pendiente{
     background-color: #FFC107;
 }
-
+.en-proceso{
+    background-color: #c0df8f;
+}
+.reservado{
+    background-color: #5cc98b;
+}
 
 
 .btns-eliminar{

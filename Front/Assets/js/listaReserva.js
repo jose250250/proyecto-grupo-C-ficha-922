@@ -40,7 +40,7 @@ $("#confeliminar").click(function () {
 $(document).on("click", ".btns-editar", function () {
     index = $(this).data('id');
     console.log("INDEX:: " + index);  
-    page = "homeReserva";
+    page = "homeReserva2";
     loadPage(page, admin);   
    
     localStorage.setItem("idreserva", index); 
@@ -55,12 +55,16 @@ $(document).on("click", ".btns-editar", function () {
              $("#main-content-reserva").show();
            
             console.log("reservaedit::" + JSON.stringify(ReservaEdit));
-            window.setTimeout(function () {               
-           
+            window.setTimeout(function () {  
+                
+             const rutaImagen = "http://localhost/Front/uploads/"+ ReservaEdit.urlVaucher;
+            $("#fotoVoucher").attr("src", rutaImagen);   
             $("#slcNombre").val(ReservaEdit.idPersona);           
             $("#slcPaquete").val(ReservaEdit.idPaquete);
             $("#txtNidentificacion").val(ReservaEdit.identificacion);
-            $("#txtMotivo").val(ReservaEdit.motivo);                  
+            $("#txtMotivo").val(ReservaEdit.motivo); 
+            $("#pagoTotal").val(ReservaEdit.precioTotal);
+
              },1500);
             
             window.setTimeout(function () {
