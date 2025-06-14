@@ -14,6 +14,7 @@ $(function () {
 
     var myModal = document.getElementById('loginModal');
     myModal.addEventListener('hidden.bs.modal', function () {
+        $(this).removeAttr('aria-hidden');
         resetModal();
     });
 

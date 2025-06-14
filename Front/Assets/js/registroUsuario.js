@@ -57,13 +57,14 @@ $(function(){
             var request = usuario;
             var ifSuccess = function (apiResponse) {
                 addAlert(apiResponse.message, "success", 3);
-                $("#login-form")[0].reset();
+               $('#loginModal').modal('hide');
+                $(document.activeElement).blur();
                 loadPage("mnosotros");
                 closeLoader();
                 
                 window.setTimeout(function(){
                    
-                $("#loginModal").show();
+                $('#loginModal').modal('show');
                 }, 1000);
                 
             };

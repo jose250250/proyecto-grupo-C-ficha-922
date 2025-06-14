@@ -60,6 +60,12 @@ input.error, select.error {
 .reservado{
     background-color: #5cc98b;
 }
+.terminado{
+    background-color: darkblue;
+}
+.vencido{
+    background-color: brown;
+}
 
 
 .btns-eliminar{
