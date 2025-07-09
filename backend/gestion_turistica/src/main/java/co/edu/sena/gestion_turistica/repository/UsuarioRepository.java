@@ -22,5 +22,6 @@ JpaRepository<UsuarioEntity, Long>,
 JpaSpecificationExecutor<UsuarioEntity>{
 
     Optional<UsuarioEntity>findByLoginAndPassword(String login, String password);
+
   
 }

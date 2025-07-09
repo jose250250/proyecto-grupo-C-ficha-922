@@ -64,7 +64,7 @@ public ServerResponseAll getById(@PathVariable("id") Long id){
 
     AtraccionDto dto = this.service.getById(id);
     return ServerResponseAll.builder()
-    .message(dto != null ? "Registro encontrado" : "rRgistro  no encontrado")
+    .message(dto != null ? "Registro encontrado" : "registro  no encontrado")
     .status(dto != null ? HttpStatus.OK.value() : HttpStatus.NOT_FOUND.value())
     .data(dto)
     .build();

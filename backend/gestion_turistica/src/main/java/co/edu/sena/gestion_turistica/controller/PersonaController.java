@@ -77,7 +77,7 @@ public ServerResponseDataDto deleteById(@PathVariable("id") Long id){
     this.service.delete(id);
     return ServerResponseDataDto
     .builder()
-    .message("reistro  eliminado")
+    .message("registro  eliminado")
     .status(HttpStatus.OK.value())   
     .build();
    
@@ -92,7 +92,7 @@ request = this.service.update(request);
 
 return ServerResponseDataDto
 .builder()
-.message(request != null ? "Reistro actualizado" : "reistro  no actualizado")
+.message(request != null ? "Registro actualizado" : "registro  no actualizado")
 .status(request != null ? HttpStatus.OK.value() : HttpStatus.BAD_REQUEST.value())
 .data(request)
 .build();
